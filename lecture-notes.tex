@@ -1,0 +1,190 @@
+\documentclass{amsart}
+\usepackage{amsmath, amsthm, amscd, amssymb, latexsym}
+\usepackage[all]{xy}
+\usepackage{imakeidx,enumerate}
+
+\numberwithin{equation}{section}
+\newtheorem{thm}{Theorem}[section]
+\newtheorem{cor}[thm]{Corollary}
+\newtheorem{lem}[thm]{Lemma}
+\newtheorem{prop}[thm]{Proposition}
+\theoremstyle{definition}
+\newtheorem{defin}[thm]{Definition}
+\newtheorem{rem}[thm]{Remark}
+\newtheorem{exam}[thm]{Example}
+
+\newcommand{\G}{\Gamma}
+\renewcommand{\L}{\Lambda}
+
+\usepackage{hyperref}
+\makeindex
+
+\begin{document}
+\title{Lecture notes for MA3203 Ring theory}
+
+\author{\O yvind Solberg}
+\address{Department of Mathematical Sciences\\
+NTNU\\
+N-7491 Trondheim, Norway}
+\email{oyvind.solberg@math.ntnu.no}
+
+\maketitle
+\tableofcontents
+
+\section{Quivers}
+\subsection{Quivers, vertices, arrows and paths}
+\begin{defin}
+A \emph{quiver}\index{quiver} $\G = (\G_0,\G_1)$ is an oriented graph,
+\begin{align}
+\G_0 & = \{\text{vertices}\index{quiver!vertices}\}  (= \{1,2,\ldots,n\}).\notag\\
+\G_1 & = \{\text{arrows}\index{quiver!arrows}\}.\notag
+\end{align}
+\end{defin}
+We always assume that $\G_0$ and $\G_1$ are finite sets.
+
+\begin{exam}
+$\G\colon \xymatrix{1\ar[r]^\alpha & 2}$, $\G_0=\{1,2\}$ and $\G_1=\{\alpha\}$. 
+\end{exam}
+
+\begin{exam}
+$\G\colon \xymatrix{1\ar@(ur,dr)[]^\alpha}$, $\G_0=\{1\}$ and $\G_1=\{\alpha\}$. 
+\end{exam}
+
+\begin{exam} $\G\colon
+  \xymatrix{1\ar@/^.3pc/[rr]^\alpha\ar@/_.3pc/[rr]_\beta & & 2\ar@(ur,dr)[]^\gamma\ar@/_0.3pc/[dl]_\delta\\
+    & 3\ar[ul]^\theta\ar@/_0.3pc/[ur]_\epsilon & }$, $\G_0=\{1,2,3\}$ and $\G_1=\{\alpha,\beta,\gamma,\delta,\epsilon, \theta\}$.  
+\end{exam}
+Have maps: $s, e\colon \G_1\to \G_0$
+\begin{align}
+\mathfrak{s}(\alpha) & = \text{the vertex where $\alpha\in\G_1$ starts,}\notag\index{$\mathfrak{s}$}\\
+\mathfrak{e}(\alpha) & = \text{the vertex where $\alpha\in\G_1$ ends.}\notag\index{$\mathfrak{e}$}
+\end{align}
+
+\begin{defin}
+$\G=(\G_0,\G_1)$ quiver.  A \emph{path}\index{path} in $\G$ is either
+\begin{enumerate}[\rm(i)]
+\item an ordered sequence of arrows $p=\alpha_n\alpha_{n-1}\cdots\alpha_1$, where 
+\[\mathfrak{e}(\alpha_t) = \mathfrak{s}(\alpha_{t+1})\]
+for $t = 1,2,\ldots,n-1$ (\emph{non-trivial path})\index{path!non-trivial} or
+\item $e_i$ for each $i$ in $\G_0$ (\emph{trivial path})\index{path!trivial}.
+\end{enumerate}
+In addition,
+\begin{align}
+\mathfrak{s}(p) & = \mathfrak{s}(\alpha_1)  & \mathfrak{s}(e_i) = i\notag\\
+\mathfrak{e}(p) & = \mathfrak{e}(\alpha_n)  & \mathfrak{e}(e_i) = i\notag
+\end{align}
+\end{defin}
+
+\begin{exam}\label{exam:1.6}
+$\G\colon \xymatrix{ 1\ar[r]^\alpha & 2 \ar[r]^\beta\ar[d]^\gamma & 3\\
+& 4 & }$
+
+Paths: 
+\begin{enumerate}[\rm(i)]
+\item $\alpha, \beta, \gamma, \beta\alpha, \gamma\alpha$.
+\item $e_1$, $e_2$, $e_3$, $e_4$.
+\end{enumerate}
+\end{exam}
+
+\begin{exam}
+$\G\colon \xymatrix{1\ar@(ur,dr)[]^\alpha}$.
+
+Paths: 
+\begin{enumerate}[\rm(i)]
+\item $\alpha, \alpha^2 = \alpha\alpha, \alpha^3 = \alpha\alpha\alpha, \ldots$.
+\item $e_1$.
+\end{enumerate}
+\end{exam}
+
+\subsection{Path algebras}
+
+Given $\G=(\G_0,\G_1)$, a quiver, and $k$ a field.
+
+The \emph{path algebra}\index{path algebra} $k\G$:  $k\G$ is the
+vector space with all the paths in $\G$ as a basis. 
+
+The elements in $k\G$:
+\[a_1p_1 + a_2p_2 + \cdots + a_tp_t\]
+where $a_i\in k$ and $p_i$ are paths in $\G$.
+
+\begin{exam}
+Continueing \hyperref[exam:1.6]{Example \ref*{exam:1.6}}:
+\begin{align}
+x & = a_1e_1 + a_2e_2 + a_3e_3 + a_4e_4 + a_5\alpha + a_6\beta +
+a_7\gamma + a_8\beta\alpha + a_9\gamma\alpha\notag\\
+y & = b_1e_1 + b_2e_2 + b_3e_3 + b_4e_4 + b_5\alpha + b_6\beta +
+b_7\gamma + b_8\beta\alpha + b_9\gamma\alpha\notag
+\end{align}
+\begin{multline}
+x + y = (a_1 + b_1)e_1 + (a_2 + b_2)e_2 + (a_3 + b_3)e_3 + (a_4 +
+b_4)e_4 + (a_5 + b_5)\alpha\notag\\ 
+ + (a_6 + b_6)\beta + (a_7 + b_7)\gamma
++ (a_8 + b_8)\beta\alpha + (a_9 + b_9(\gamma\alpha\notag
+\end{multline}
+\end{exam}
+
+$p$, $q$ paths in $\G$:
+\begin{enumerate}[\rm(1)]
+\item $p$, $q$ both non-trivial 
+\[p\cdot q = \begin{cases} pq, & \text{\ if $\mathfrak{e}(q) =\mathfrak{s}(p)$}\notag\\
+0, & \text{\ otherwise}\notag
+\end{cases}\]
+\item $p$ non-trivial, $q$ trivial, $q = e_i$
+\[p\cdot q = \begin{cases} p, & \text{\ if $\mathfrak{s}(p) = i =\mathfrak{e}(q)$}\notag\\
+0, & \text{\ otherwise}\notag
+\end{cases}\]
+\[q\cdot p = \begin{cases} p, & \text{\ if $\mathfrak{e}(p) = i = \mathfrak{s}(q)$}\notag\\
+0, & \text{\ otherwise}\notag
+\end{cases}\]
+\item $p = e_i$, $q = e_j$ (both trivial)
+\[p\cdot q = \begin{cases} e_i, & \text{\ if $\mathfrak{e}(q) = j = i
+    = \mathfrak{s}(p)$}\notag\\
+0, & \text{\ otherwise}\notag
+\end{cases}\]
+\end{enumerate}
+ This is extended distributively to an operator on $k\G$ (see
+ \cite[page 50]{ARS}). 
+
+\begin{exam}
+$\Gamma\colon \xymatrix{1\ar[r]^\alpha & 2}$, $k$ field.  
+
+Elements in $k\Gamma$:  $a_1e_1 + a_2e_2 + a_3\alpha = y$. 
+
+\[\begin{array}{c||c|c|c}
+      & e_1 & e_2 & \alpha \\ \hline\hline 
+e_1 & e_1 &  0   &    0   \\ \hline
+e_2 &   0   & e_2 &  \alpha \\ \hline
+\alpha & \alpha & 0 & 0
+\end{array}\]
+\end{exam}
+\begin{align}
+(e_1 + e_2)\cdot y & = (e_1 + e_2)(a_1e_1 + a_2e_2 +
+                     a_3\alpha)\notag\\
+& = a_1e_1^2 + a_2\underbrace{e_1e_2}_{=0} + a_3\underbrace{e_1\alpha}_{=0} + a_1\underbrace{e_2e_1}_{=0} + a_2e_2^2 + a_3
+  e_2\alpha\notag\\
+& = a_1e_1 + a_2e_2 + a_3\alpha = y\notag
+\end{align} 
+Similary $y\cdot (e_1 + e_2) = y$.  Hence,  $e_1 + e_2$ acts like $1$
+in $k\Gamma$. 
+
+Basis for $k\Gamma$: $\{ e_1, e_2, \alpha\}$, $\dim_kk\Gamma = 3$.
+
+\begin{exam}
+$\Gamma\colon \xymatrix{1\ar@(ur,dr)[]^\alpha}$, and $k$ a field.
+
+$k\Gamma$ has basis: $\{e_1, \alpha, \alpha^2, \alpha^3, \ldots\}$,
+that is, $\dim_k k\Gamma = \infty$. 
+
+Elemenets in $k\Gamma$: $a_0e_1 + a_1\alpha + a\alpha^2 + \cdots +
+a_t\alpha^t$, with $a_i$ in $k$ and $t\geqslant 0$.  
+\end{exam}
+
+\printindex
+\begin{thebibliography}{ARS}
+\bibitem{ARS} Auslander, M., Reiten, I., Smal\o, S.\ O.,
+  \emph{Representation theory of Artin algebras}. Corrected reprint of
+  the 1995 original. Cambridge Studies in Advanced Mathematics,
+  36. Cambridge University Press, Cambridge, 1997. xiv+425 pp. ISBN:
+  0-521-41134-3; 0-521-59923-7.
+\end{thebibliography}
+\end{document}
