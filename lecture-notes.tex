@@ -1,5 +1,5 @@
 \documentclass{amsart}
-\usepackage{amsmath, amsthm, amscd, amssymb, latexsym}
+\usepackage{amsmath, amsthm, amscd, amssymb, latexsym, mathtools, centernot}
 \usepackage[all]{xy}
 \usepackage{imakeidx,enumerate}
 
@@ -15,6 +15,7 @@
 
 \newcommand{\G}{\Gamma}
 \renewcommand{\L}{\Lambda}
+\newcommand {\defeq}{\stackrel{\mathclap{\normalfont\mbox{def}}}{=}}
 
 \usepackage{hyperref}
 \makeindex
@@ -178,6 +179,124 @@ that is, $\dim_k k\Gamma = \infty$.
 Elemenets in $k\Gamma$: $a_0e_1 + a_1\alpha + a\alpha^2 + \cdots +
 a_t\alpha^t$, with $a_i$ in $k$ and $t\geqslant 0$.  
 \end{exam}
+
+Notes\index{note}
+\begin{enumerate}
+	\item  In general, $\{e_i\}_{i\epsilon\G}$ are orthogonal idempotents in $k\Gamma$, ie. 
+	\[ \begin{cases}\text{\ $e_i^2 = e_i$}\notag\\
+	\text{$e_ie_j = 0$ for i$\neq$j}\notag
+	\end{cases}\]
+	
+	\item Suppose $\G_0 = \{1,2,...,n\}$. Then $e_1 + e_2 + ... + e_n$ acts like 1 in $k\G$. Enough to show that $p = (e_1 + e_2 + ... + e_n)p = p(e_1 + e_2 + ... + e_n)$ for any path p. Suppose that $\mathfrak{s}(p) = i$ and $\mathfrak{e}(p) = j$ Then
+	\newline $(e_1 + e_2 + ... + e_n)p = e_1p + e_2p + ... + e_jp + ... + e_np = e_jp \defeq p$ \newline
+	\newline $p(e_1 + e_2 + ... + e_n) = pe_1 + pe_2 + ... + pe_i + ... + pe_n = e_jp \defeq p$ \newline
+	
+	\item $\implies e_1 + e_2 + ... + e_n = 1_{k\G}$ = identity in $k\G$ 
+\end{enumerate}
+
+Can show: $k\G$ is a k-algebra with $e_1 + e_2 + ... + e_n$ as an identity (see \cite[page 50]{ARS})\newline
+
+recall: $\Lambda$ ring, $k$ field
+\begin{defin}
+	$\Lambda$ is a $k$-algebra, if $\Lambda$ is a vector space over $k$ ($\xymatrix{k\times\Lambda \ar[r] & \Lambda}$, $\Lambda$ is a module over $k$, $\alpha \in k, \lambda \in \Lambda, \alpha\cdot\lambda$) and $\alpha(\lambda\cdot\lambda^{'})=(\alpha\cdot\lambda)\cdot\lambda^{'} = \lambda(\alpha\cdot\lambda^{'})$ \newline $\forall \alpha \in k, \forall \lambda, \lambda^{'}\in\Lambda$\newline
+	
+	\underline{Equivalent}: $\Lambda$ is a $k$-algebra, if $\exists \phi\colon k \to \Lambda$ a ring homomorphism such that \newline
+	Im $\phi \subseteq Z(\Lambda)= \{z\in \Lambda \arrowvert z\lambda=\lambda z,\forall \lambda \in \Lambda\}$ ($\iff \exists R \subseteq \Lambda$ subring such that $R \simeq k$ with $R \subseteq Z(\Lambda)$)\newline
+	
+	$\phi (a)=a \cdot 1_{\Lambda}$ For $ k\G $ the ring homomorphisme $\phi \colon k \rightarrow k\G $ is given by $\phi(a) = ae_1 + ae_2 + ... + ae_n$ 
+\end{defin}
+\newpage
+\underline{Exercises}:
+\begin{enumerate}
+	\item $\Gamma\colon \xymatrix{1\ar[r]^\alpha & 2}$, k field. \newline
+	Find a $k$-algebra isomorphisme \newline
+	
+	$\psi\colon k\G \rightarrow $
+	$\begin{pmatrix}
+	$k$ & 0\\
+	$k$ & $k$
+	\end{pmatrix}
+	$\newline
+	\item $\G\colon \xymatrix{1\ar@(ur,dr)[]^\alpha}$. $k$ field. \newline
+	Show that $k\G\simeq k[x]$ as $k$-algebra's. 
+\end{enumerate}
+
+\begin{defin}
+	A non-trival path $p$ in $\G$ is an oriented cycle if \[\mathfrak{e}(p) = \mathfrak{s}(p)\]
+\end{defin}
+
+wrong path!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!! 
+\begin{exam}
+	$\G\colon \xymatrix{1\ar@(ur,dr)[]^\alpha}$\\ \newline
+	\underline{Cycles}: $\alpha,\alpha^3,\gamma\beta\alpha,\beta\alpha^10\gamma, ...$  $\text{dim}_k k\G = \infty$ 
+\end{exam}
+
+\begin{prop}\label{prop1}
+	$\G = (\G_0,\G_1)$ quiver, $k$ field. $\text{dim}_kk\G < \infty \iff \G$ has no oriented cycles.
+\end{prop}
+
+\begin{proof}
+	Exercise
+\end{proof}
+
+\begin{prop}
+	Assume that $\G=(\G_0,\G_1)$ has no oriented cycles. $k\G$ is semisimpel $\iff \G_1 = \emptyset$
+\end{prop}
+
+\begin{proof}
+	proposition \ref{prop1} $ \implies \text{dim}_kk\G < \infty \implies k\G$ is a left artinian ring. \\
+	$k\G$ semisimpel $\iff $ no non-zero nilpotent left ideals in $k\G$\\
+	$\implies\colon$ Assume that $\G_1\neq\emptyset.$ Let $\alpha_1$ be an arrow in $\G$. Want to find a vertex where at least one arrow ends and no arrow starts. if \[\mathfrak{e}(\alpha_1)\] is such a vertex, we are done. If not, there is an arrow $\alpha_2$ starting in \[\mathfrak{e}(\alpha_1) \]. If also\[\mathfrak{e}(\alpha_2)\] is not as above, we continue. Since $\G$ has no oriented cycles and $\G$ is finite, we must end up in a vertex $ v$, where arrows only end and no arrows starts. Say, $\alpha = \alpha_t$ is an arrow ending in $v$. Then consider $k\G\alpha = k\alpha$ Since $(a_1\alpha)(a_2\alpha = (a_1a_2)\underbrace{(\alpha\alpha)}_{=0} = 0$ $\implies (k\G\alpha)^2=(0)$ and $k\G\alpha \neq (0)$\\
+	$\implies k\G$ is not semisimpel.\\\newline
+	$\impliedby\colon$ assume that $\G_1 = \emptyset$. then $\G$ 1 2 $\cdots$ n (n vertice)\\
+	Basis for $k\G\colon \{e_1, e_2, \cdots, e_n\}$. Elements in $k\G\colon a_1e_1 + a_2e_2 + \cdots + a_ne_n$ with $a_i \in k$. Have a ring homomorphisme. $ \psi\colon \underbrace{k \times \cdots \times k}_{n}  \rightarrow k\G$\\
+	given by $\psi(a_1,a_2,\cdots,a_n)=a_1e_1 + a_2e_2+ \cdots a_ne_n$(check this!). Show that $\psi$ is an isomorphisme. Therefore $k\G$ is semisimpel, since $k\G$ is isomorphic to a finite product of full matrix rings over divisjon rings.
+\end{proof}
+
+$k\G$ is not always semisimpel, but some factor of $k\G$ is.\newline
+
+\begin{prop}
+	$\G=(\G_0,\G_1) $ quiver, k field. Let $J = \{\text{all linear combinations of non-trivial paths}\}$
+	Then $J$ is an ideal in $k\G$ and $k\G/J \simeq \underbrace{k \times \cdots \times k}_{|\G_0|}$, -semisimpel
+\end{prop}
+
+\begin{proof}"proof"\\
+	Define $\psi\colon k\G \rightarrow \underbrace{k \times \cdots \times}_{|\G_0|=n} = k^n $\\
+	$\psi(a_1e_1 + a_2e_2 + \cdots + a_ne_n + \text{ linear combinations of non-trivial paths} ) = (a_1, a_2, \cdots, a_n)$\\\newline
+	\underline{Check:} \begin{enumerate}
+		\item  $\psi$ is well-defined
+		\item $\psi$ homomorphism of rings
+		\item ker$\psi=J$
+	\end{enumerate}
+	$\implies k\G/J \simeq$ Im$\psi=k^n$
+\end{proof}
+
+\subsection{Modules}
+\begin{exam}
+	$\Gamma\colon \xymatrix{1\ar[r]^\alpha & 2}$, k field
+	What is a module over $k\G$? Let M be a left $k\G$-module.
+	\underline{Recall:} 
+	$1_{k\G}=e_1 + e_2$, \[e_ie_j=  
+	\begin{cases}	\text{\ $e_i^2 = e_i$}\\
+	\text{$e_ie_j = 0$ for i$\neq$j}
+	\end{cases}\]
+	\underline{Claim:} $M = e_1M\oplus e_2M$ as vector space over k.\\\newline
+	\underline{Proof:}
+	
+	\begin{align*}
+	m &= 1_{k\G}*m=(e_1 + e_2)m = e_1m+e_2m \in e_1M + e_2M\\
+	\implies M &\subseteq e_1M + e_2M \subseteq M \implies M = e_1M + e_2M\\\\
+	\text{Let } m&\in e_1M \cap e_2M \text{, i.e } m=e_1m'=e_2m''\\\\
+	e_1m&=e_1(e_1m')=(e_1e_1)m'=e_1m'=m\\
+	&= e_1(e_2m'')=\underbrace{(e_1e_2)m''}_{=0}=0\cdot m''=0\\
+	\implies m &=0. \text{ hence } e_1M \cap e_2M = (0)\\
+	\implies M &= e_1M \oplus e_2M\\ 
+	\end{align*}
+	
+	
+	
+\end{exam}
+
 
 \printindex
 \begin{thebibliography}{ARS}
