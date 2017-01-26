@@ -15,7 +15,9 @@
 
 \newcommand{\G}{\Gamma}
 \renewcommand{\L}{\Lambda}
-
+\newcommand{\extto}{\xrightarrow}
+\newcommand{\Ker}{\operatorname{Ker}\nolimits}
+\renewcommand{\Im}{\operatorname{Im}\nolimits}
 \usepackage{hyperref}
 \makeindex
 
@@ -177,6 +179,63 @@ that is, $\dim_k k\Gamma = \infty$.
 
 Elemenets in $k\Gamma$: $a_0e_1 + a_1\alpha + a\alpha^2 + \cdots +
 a_t\alpha^t$, with $a_i$ in $k$ and $t\geqslant 0$.  
+\end{exam}
+
+
+\subsection{Modules and representations}
+
+$\Gamma = (\Gamma_0,\Gamma_1)$ - quiver, $k$ field.
+
+$M$ left $k\Gamma$-module $\leadsto\begin{cases}
+(V,f) \text{\ representation of $\Gamma$}\\
+V(i) = e_iM\\
+\text{for\ } \alpha\colon i\to j \in \Gamma_1, \text{\ we have\ }  f_\alpha\colon
+V(i)=e_iM\extto{\alpha\cdot -} e_jM = V(j)\\
+f_\alpha(e_im) = \alpha e_im
+\end{cases}$
+
+$(V,f)$ representaion of $\Gamma\leadsto \begin{cases}
+M = \oplus_{i\in\Gamma_0} V(i)\\
+m = (v_1,v_2,\ldots, v_n) \in M\\
+e_im \extto{\text{def}}{=} (0,\ldots,0,v_i,0,\ldots,0)\\
+\text{for $\alpha\colon i\to j$ in $\Gamma_1$, remember $\alpha =
+  e_j\alpha e_i$}\\
+\alpha m \extto{\text{def}}{=} (0,\ldots,0,f_\alpha(v_i),0,\ldots,0)
+\text{\ with $f_\alpha(v_i)$ in the $j$-th coordinate}
+\end{cases}$
+
+\begin{exam}
+$\Gamma\colon \xymatrix{1\ar[r]^\alpha & 2}$, $k$ field.
+
+$(V,f)\colon \xymatrix{k\ar[r]^1 & k} \leadsto M = k\oplus k = k^2$
+
+\begin{align}
+e_1\cdot (a,b) & = (a, 0)\notag\\
+e_2\cdot (a,b) & = (0,b)\notag\\
+\alpha\cdot(a,b) & = (0,a)\notag
+\end{align}
+Note: $k\Gamma e_1 = k\{ e_1,\alpha\}$.  Define $\varphi\colon M\to
+k\Gamma e_1$ by letting 
+\[\varphi(1,0) = e_1 \text{\ and\ } \varphi(0,1) = \alpha.\]
+
+Have: 
+\begin{align}
+\alpha \varphi(a,b)  & = \alpha(ae_1 + b\alpha) =
+a\underbrace{\alpha e_1}_{=\alpha} +
+                       b\underbrace{\alpha^2}_{=0}\notag\\
+& = a\alpha\notag\\
+& = \varphi(0,a) = \varphi(\alpha(a,b))\notag
+\end{align} 
+Similarly, $e_i\varphi(a,b) = \varphi(e_i(a,b))$. This implies that
+$\varphi$ is a $k\Gamma$-homomorphism.\medskip 
+
+$\left.\begin{matrix}
+\Ker \varphi = (0)\\
+\Im\varphi = k\Gamma e_1
+\end{matrix}\right\} \Rightarrow M\simeq k\Gamma e_1 \text{\ as a left $k\Gamma$-module}.$
+
+
+
 \end{exam}
 
 \printindex
