@@ -1,0 +1,67 @@
+\section{Modules}
+
+\begin{exam}
+\(\Gamma :1\xmapsto{\alpha} 2\), \(k\) field\\
+What is a module over \(k\Gamma\)? Let \(M\) be a left \(k\Gamma\)-module.\\
+\underline{Recall}: \(1_{k\Gamma} = e_1 + e_2, e_ie_j = \begin{cases}
+    e_i &, i=j \\
+    0\, & ,i\not=j.
+\end{cases}\)\\
+\begin{prop}
+ \(M = e_1\oplus e_2M\) as a vector space over \(k\).
+\end{prop}
+\noindent\underline{Proof}: \(m = 1_{k\Gamma}\cdot m = (e_1 + e_2)m = e_1m + e_2m \in e_1M + e_2M \implies M\subseteq e_1M + e_2M \subseteq M \implies M = e_1M + e_2M\). Let \(m\in e_1M\cap e_2M\), i.e. \(m = e_1m' = e_2m''\)\\[0.5cm]
+\begin{tabular}{l}
+     \(e_1m = e_(e_1m') = (e_1e_1)m' = e_1m' = m\)  \\
+     \(\quad\parallel\) \\
+     \(e_1(e_2m'') = (e_1e_2)m'' = 0m'' = 0\)
+\end{tabular}\\[0.5cm]
+\(\implies m= 0.\) Hence \(e_1M\cap e_2M = (0) \implies M = e_1M \oplus e_2M\).\\
+Let \(m\in M\) Then \(e_1m = e_1(e_m + e_2m) = e_1^2m + (e_1e_2)m = e_1m)\) and \(e_2m = e_2(e_1m + e_2m) = e_2m\)\\
+\(\alpha m = \alpha(e_1m + e_2m) = \alpha(e_1m) + \alpha(e_2m) = \alpha(e_1m) + 0 = \alpha m = \alpha e_1 m = (e_2\alpha)e_1m = e_2(\alpha e_1 m)\in e_2M\).\\[1cm]
+\(M \xmapsto{\alpha\cdot-} M \quad\quad\)linear map \(\alpha:e_1M\xmapsto{\alpha\cdot-}e_2M\)\\
+\(M\xmapsto{e_1\cdot-}M\quad\quad\)linear map, projection \(M\mapsto e_1M\)\\
+\(M\xmapsto{e_2\cdot-}M\quad\quad\)linear map, projection \(M\mapsto e_2M\)\\
+
+\begin{center}
+\(e_1M \xmapsto{\alpha\cdot -}e_2M\)
+\end{center}
+is a representation of \(\Gamma\) over \(k\). A vector-space in each vertex and a linear map as the arrow.
+\end{exam}
+\noindent Given \(V\xmapsto{f}V',\quad V,V'\) vector spaces over \(k\), \(f\) a linear map. How can we construct a left \(k\Gamma\)-module?\\
+From above: \(M = V\oplus V'\) as a vector space. Let \(m = (v, v')\), then\\
+\begin{center}
+\begin{tabular}{l}
+\(e_1m \defeq (v, 0)\)\\
+\(e_2m \defeq (0, v)\)\\
+\(\alpha m \defeq (0, f(v))\)
+\end{tabular}
+\end{center}
+\underline{Check}: \(M\) becomes a left \(k\Gamma\)-module!
+\begin{defin}
+A representation \((V, f)\) of a quiver \(\Gamma = (\Gamma_0, \Gamma_1)\) over a field \(k\) is a collection of vector spaces \(\{V(i)\}_{i\in\Gamma_0}\) over \(k\) and \(k\)-linear maps \(f_\alpha:V(i)\mapsto V(j)\) for each arrow \(\alpha: i\mapsto j\) in \(\Gamma_1\). (We assume that \(\text{dim}_kV(i) < \infty\) for all \(i\in\Gamma_0\).
+\end{defin}
+\begin{exam}
+\begin{enumerate}[(i)]
+    \item \(\Gamma: 1.\) A representation of \(\Gamma\) over \(k\) is just a vector space over \(k\).
+    \item \(\Gamma: 1\xmapsto{\alpha}2\). Representation \(V(1)\xmapsto{f_\alpha}V(2)\). For example \\
+    \(k\xmapsto{1}k\quad\quad k\xmapsto{0}0\quad\quad 0\xmapsto{0}k\)\quad\quad
+    \(k^2\xmapsto{\tiny\begin{pmatrix} 1 & 2\\ 0 & 3 \\ -1 & 1 \end{pmatrix}}k^3\)
+    \item Hjelp til denne 
+\end{enumerate}
+\end{exam}
+\subsection{Maps Between representations}
+\begin{exam}
+\(\Gamma: 1\xmapsto{\alpha}2\), \(k\) a field\\
+Let \(f:M\xmapsto{}N\) be a homomorphism of left \(k\Gamma\)-modules. Then
+\begin{align*}
+    f(e_1m) = f((e_1e_1)m) = f(e_1(e_1m)) = e_1f(e_1m) \in e_1N
+\end{align*}
+\(\implies f|_{e_1M}:e_1M \xmapsto{}e_1N\)\\
+Similarly, \(f|{e_2M}:e2M\xmapsto{}e_2N\). Furthermore, \\
+\begin{tabular}{rcl}
+     \(\alpha f(e_1m)\) & \(=\) & \(f(\alpha(e_1m)) \quad\quad (\alpha = e_2\alpha)\) \\
+     \(\parallel\quad\) & & \(\quad\parallel\) \\
+     \(\alpha f|_{e_1M}(e_1m)\) & & \(f|_{e_2M}(\alpha(e_1m))\)
+\end{tabular}
+\end{exam}
