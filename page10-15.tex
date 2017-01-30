@@ -49,7 +49,78 @@ $\left.\begin{matrix}
 \Ker \varphi = (0)\\
 \Im\varphi = k\Gamma e_1
 \end{matrix}\right\} \Rightarrow M\simeq k\Gamma e_1 \text{\ as a left $k\Gamma$-module}.$
+\end{exam}
 
+\begin{exam}
+$\Gamma\colon \xymatrix{ & 1\ar[dl]^\alpha\ar[dr]^\beta & \\
+2\ar[dr]^\gamma & & 3\ar[dl]^\delta\\
+& 4 & }$, $k$ field.
+
+$(V,f)\colon \xymatrix{ & k\ar[dl]_{f_\alpha = 1}\ar[dr]^{f_\beta=1} & \\
+k\ar[dr]_{f_\gamma=\left(\begin{smallmatrix} 1\\ 0\end{smallmatrix}\right)} & & k\ar[dl]^{f_\delta=\left(\begin{smallmatrix} 0\\ 1\end{smallmatrix}\right)}\\
+& k^2 & }$
+
+$M = V(1) \oplus V(2) \oplus V(3) \oplus V(4) = k\oplus k\oplus
+k\oplus k^2$.
+
+\begin{align}
+\alpha (v_1,v_2,v_3,v_4)  & = (0, v_1, 0, 0 )\notag\\
+\gamma (v_1,v_2,v_3,v_4)  & = (0, 0, 0, (v_2, 0) )\notag\\
+\gamma\alpha (v_1,v_2,v_3,v_4)  & = (0, 0, 0, (v_1, 0) )\notag
+\end{align}
+
+\begin{exer} Show that $M\simeq k\Gamma e_1$ as a left
+  $k\Gamma$-module.
+\end{exer}
+
+\subsection{Special representations}
+\begin{itemize}
+\item Zero representation:  
+$\begin{cases} 
+V(i) = (0), \text{\ for all $i\in\Gamma_0$}\notag\\
+f_\alpha = 0, \text{\ for all $\alpha\in \Gamma_1$}\notag
+\end{cases}$
+\item For each $i\in\Gamma_0$, we have a representation $T_i$ given by
+$T_i(j) = \begin{cases} k, \text{\ if $j = i$}\notag\\
+(0), \text{\ otherwise}\notag
+\end{cases}$
+and $f_\alpha = 0$ for all $\alpha\in \Gamma_1$. 
+
+$T_i$ corresponds to a left $\Gamma$-module $S_i$:
+
+$S_i\simeq k$ as a vector space and $e_j v = \begin{cases} v, \text{\
+    if $j = i$}\notag\\ 0, \text{\ otherwise}\notag\end{cases}$ and
+$\alpha v = 0$ for all $\alpha\in \Gamma_1$. 
+\end{itemize}
+
+\begin{recall}
+$\Lambda$ $k$-algebra, $k$ field.
+
+\begin{tabular}{lcr}
+$M$ left $\Lambda$-module & $\Rightarrow$ & $M$ $k$-vector space\\
+ $\cup$ & & \\
+$N$ submodule & $\Rightarrow$ & $N\subseteq M$ subspace
+\end{tabular}
+\end{recall}
+\begin{note}
+$\dim_k S_i = 1 \Rightarrow S_i$ is a simple $k\Gamma$-module.
+\end{note}
+\begin{defin}
+$\Lambda$ ring, $(0)\neq M$ left $\Lambda$-module.  The module $M$ is
+\emph{indecomposable}\index{module!indecomposable} if 
+\[M\simeq M_1\oplus M_2\]
+implies that $M_1=(0)$ or $M_2 = (0)$.
+\end{defin}
+\begin{defin}
+Let $V = (V,f)$ and $V' = (V',f')$ be two representations of a quiver
+$\Gamma$. Define $W = (W,h) = V \oplus V'$, \emph{the direct sum of
+  the representations}\index{representation!direct sum} $V$ and $V'$ by 
+\[W(i) = V(i) \oplus V'(i)\]
+and
+\[h_\alpha = f_\alpha\oplus f'_\alpha \colon W(i) = V(i)\oplus
+  V'(i)\to V(j)\oplus V'(j) = W(j)\]
+for all $i\in \Gamma_0$ and for all $\alpha\in\Gamma_1$. 
+\end{defin}
 
 
 \end{exam}
