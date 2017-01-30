@@ -1,0 +1,132 @@
+\section{Modules}
+
+\begin{exam}
+\(\Gamma :1\xmapsto{\alpha} 2\), \(k\) field\\
+What is a module over \(k\Gamma\)? Let \(M\) be a left \(k\Gamma\)-module.\\
+\underline{Recall}: \(1_{k\Gamma} = e_1 + e_2, e_ie_j = \begin{cases}
+    e_i &, i=j \\
+    0\, & ,i\not=j.
+\end{cases}\)\\
+\begin{prop}
+ \(M = e_1\oplus e_2M\) as a vector space over \(k\).
+\end{prop}
+\noindent\underline{Proof}: \(m = 1_{k\Gamma}\cdot m = (e_1 + e_2)m = e_1m + e_2m \in e_1M + e_2M \implies M\subseteq e_1M + e_2M \subseteq M \implies M = e_1M + e_2M\). Let \(m\in e_1M\cap e_2M\), i.e. \(m = e_1m' = e_2m''\)\\[0.5cm]
+\begin{tabular}{l}
+     \(e_1m = e_(e_1m') = (e_1e_1)m' = e_1m' = m\)  \\
+     \(\quad\parallel\) \\
+     \(e_1(e_2m'') = (e_1e_2)m'' = 0m'' = 0\)
+\end{tabular}\\[0.5cm]
+\(\implies m= 0.\) Hence \(e_1M\cap e_2M = (0) \implies M = e_1M \oplus e_2M\).\\
+Let \(m\in M\) Then \(e_1m = e_1(e_m + e_2m) = e_1^2m + (e_1e_2)m = e_1m)\) and \(e_2m = e_2(e_1m + e_2m) = e_2m\)\\
+\(\alpha m = \alpha(e_1m + e_2m) = \alpha(e_1m) + \alpha(e_2m) = \alpha(e_1m) + 0 = \alpha m = \alpha e_1 m = (e_2\alpha)e_1m = e_2(\alpha e_1 m)\in e_2M\).\\[1cm]
+\(M \xmapsto{\alpha\cdot-} M \quad\quad\)linear map \(\alpha:e_1M\xmapsto{\alpha\cdot-}e_2M\)\\
+\(M\xmapsto{e_1\cdot-}M\quad\quad\)linear map, projection \(M\mapsto e_1M\)\\
+\(M\xmapsto{e_2\cdot-}M\quad\quad\)linear map, projection \(M\mapsto e_2M\)\\
+
+\begin{center}
+\(e_1M \xmapsto{\alpha\cdot -}e_2M\)
+\end{center}
+is a representation of \(\Gamma\) over \(k\). A vector-space in each vertex and a linear map as the arrow.
+\end{exam}
+\noindent Given \(V\xmapsto{f}V',\quad V,V'\) vector spaces over \(k\), \(f\) a linear map. How can we construct a left \(k\Gamma\)-module?\\
+From above: \(M = V\oplus V'\) as a vector space. Let \(m = (v, v')\), then\\
+\begin{center}
+\begin{tabular}{l}
+\(e_1m \defeq (v, 0)\)\\
+\(e_2m \defeq (0, v)\)\\
+\(\alpha m \defeq (0, f(v))\)
+\end{tabular}
+\end{center}
+\underline{Check}: \(M\) becomes a left \(k\Gamma\)-module!
+\begin{defin}
+A representation \((V, f)\) of a quiver \(\Gamma = (\Gamma_0, \Gamma_1)\) over a field \(k\) is a collection of vector spaces \(\{V(i)\}_{i\in\Gamma_0}\) over \(k\) and \(k\)-linear maps \(f_\alpha:V(i)\mapsto V(j)\) for each arrow \(\alpha: i\mapsto j\) in \(\Gamma_1\). (We assume that \(\text{dim}_kV(i) < \infty\) for all \(i\in\Gamma_0\).
+\end{defin}
+\begin{exam}
+\begin{enumerate}[(1)]
+    \item \(\Gamma: 1.\) A representation of \(\Gamma\) over \(k\) is just a vector space over \(k\).
+    \item \(\Gamma: 1\xmapsto{\alpha}2\). Representation \(V(1)\xmapsto{f_\alpha}V(2)\). For example \\
+    \(k\xmapsto{1}k\quad\quad k\xmapsto{0}0\quad\quad 0\xmapsto{0}k\)\quad\quad
+    \(k^2\xmapsto{\tiny\begin{pmatrix} 1 & 2\\ 0 & 3 \\ -1 & 1 \end{pmatrix}}k^3\) \\
+    \item \(\Gamma: \xymatrix{ & 1\ar[dl]_\alpha \ar[dr]^\beta & \\
+    2\ar[dr]_{\gamma} & & 3 \ar[dl]^\delta \\
+    & 4 & }
+    \quad\quad \text{Representation: }\xymatrix{ & V(1)\ar[dl]_{f_\alpha} \ar[dr]^{f_\beta} & \\
+    V(2)\ar[dr]_{f_\gamma} & & V(3) \ar[dl]^{f_\delta} \\
+    & V(4) & }\)\\
+    For example:\\
+    \(\xymatrix{ & k\ar[dl]_{1} \ar[dr]^{1} & \\
+    k\ar[dr]_{1} & & k \ar[dl]^{1}\\
+    & k & }\quad\quad\xymatrix{ & k^2\ar[dl]_{\small\begin{pmatrix} 1 & 0 \end{pmatrix}} \ar[dr]^{\small\begin{pmatrix} 1 & -1 \\ 0 & 1 \end{pmatrix}} & \\
+    k\ar[dr]_{\small\begin{pmatrix} 1 \\ 1 \end{pmatrix}} & & k^2 \ar[dl]^{\small\begin{pmatrix} 0 & 0\\ 0 & 1 \end{pmatrix}}\\
+    & k^2 & }\)
+\end{enumerate}
+\end{exam}
+\subsection{Maps Between representations}
+\begin{exam}
+\(\Gamma: 1\xmapsto{\alpha}2\), \(k\) a field\\
+Let \(f:M\xmapsto{}N\) be a homomorphism of left \(k\Gamma\)-modules. Then
+\begin{align*}
+    f(e_1m) = f((e_1e_1)m) = f(e_1(e_1m)) = e_1f(e_1m) \in e_1N \implies f|_{e_1M}:e_1M \xmapsto{}e_1N
+\end{align*}
+Similarly, \(f|{e_2M}:e2M\xmapsto{}e_2N\). Furthermore, \\[0.5cm]
+\begin{tabular}{rcl}
+     \(\alpha f(e_1m)\) & \(=\) & \(f(\alpha(e_1m)) \quad\quad (\alpha = e_2\alpha)\) \\
+     \(\parallel\quad\) & & \(\quad\parallel\) \\
+     \(\alpha f|_{e_1M}(e_1m)\) & & \(f|_{e_2M}(\alpha(e_1m))\)
+\end{tabular}
+\end{exam}
+\noindent Hence\\
+\(\xymatrix{e_1M\ar[r]^{f|_{e_1M}}\ar[d]^{\alpha\cdot-} & e_1M\ar[d]^{\alpha\cdot\Large-} \\
+e_2M\ar[r]^{f|_{e_2M}} & e_2M}\)
+\begin{rem}
+\( f\left(\begin{tabular}{c}
+     \(1 - 1\) \\ onto \\ isom.
+\end{tabular}\right)\)\(\quad\Leftrightarrow\quad\) \(f|_{e_iM}\left(\begin{tabular}{c}
+     \(1 - 1\) \\ onto \\ isom.
+\end{tabular}\right)\quad\) for all \(i\).
+\end{rem}
+\begin{defin}
+Let \((V, f)\) and \((V', f')\) be two representations of \(\Gamma\) over \(k\). A \underline{homomorphism} \(h:(V, f)\mapsto (V', f')\) is a collection of linear maps
+\begin{align*}
+    h(i): V(i) \mapsto V'(i)
+\end{align*}
+for all \(i\in\Gamma_0\), such that \(\forall\alpha :i\mapsto j\in\Gamma_1\) the following diagram commutes:
+\begin{align*}
+  \xymatrix{V(i)\ar[rr]^h(i)\ar[dd]^{f_\alpha} & & V'(i)\ar[dd]^{f'_\alpha} \\
+ & \ar@(ur,dr) & \\
+ V(j)\ar[rr]^{h(j)}& & V'(j)}  
+\end{align*}
+i.e. \(f'_\alpha h(i) = h(j)f_\alpha\quad\forall\alpha\in\Gamma_1\). \(h\) is a(n) isomorphism, monomorphism, epimorphism if \(h(i):V(i)\mapsto V'(i)\) are all isomorphisms, monomorphisms, epimorphisms respectively.
+\end{defin}
+\begin{exam}
+\begin{enumerate}[(1)]
+    \item \(\Gamma: \xymatrix{1\ar[r]^{\alpha}& 2}, k\) is a field
+    \begin{enumerate}[(a)]
+        \item .\xymatrix{k\ar@{-->}[r]^{a\cdot-}\ar[d]^{1} & k\ar[d]^{0} \\
+        k\ar@{-->}[r]^{0}\ar@{=}[d] & k\ar@{=}[d]\\
+        (V, f) & (V', f')}
+        Here \(h(1) = a\cdot-\) and \(h(2) = 0\) so \(h = (a\cdot-, 0)\)
+        \item .\xymatrix{k\ar@{-->}[r]^0\ar[d]^1 & 0\ar[d]^0 \\
+        k\ar@{=}[d]\ar@{-->}[r]^0 &  k\ar@{=}[d]\\
+        (V, f) & (V', f') } No non-zero homomorphisms
+        \item .\xymatrix{k^2\ar@{-->}[r]^{\small\begin{pmatrix}1&0\\0&1 \end{pmatrix}}\ar[d]_{\small\begin{pmatrix}0&1\\1&0 \end{pmatrix}} & k^2\ar[d]^{\small\begin{pmatrix}0&1\\1&0 \end{pmatrix}} \\
+        k^2\ar@{=}[d]\ar@{-->}[r]_{\small\begin{pmatrix}1&0\\0&1 \small\end{pmatrix}} &  k^2\ar@{=}[d]\\
+        (V, f) & (V', f') }
+        \(h = \left(\begin{pmatrix}1&0\\0&1\end{pmatrix}, \begin{pmatrix}0&1\\1&0\end{pmatrix}\right)\) is an isomorphism.
+    \end{enumerate}
+\item \(\Gamma: \xymatrix{ & 1\ar[dl]_\alpha\ar[dr]^\beta & \\
+                            2\ar[dr]_\gamma & & 3\ar[dl]^\delta\\
+                            & 4 & }
+                            \quad
+                            \xymatrix{ & k\ar[dl]_1\ar[dr]^1 & \\
+                            k\ar[dr]_1 & & k\ar[dl]^1\\
+                            & k\ar@{=}[d] & \\
+                            &(V, f) & }
+                            \quad
+                            \xymatrix{ & k\ar[dl]_1\ar[dr]^1 & \\
+                            k\ar[dr]_1 & & k\ar[dl]^0\\
+                            & k\ar@{=}[d] & \\
+                            & (V', f')& }\)\\
+                            here we have no isomorphism between \((V, f)\) and \((V', f')\).
+\end{enumerate}
+\end{exam}
