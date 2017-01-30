@@ -1,6 +1,28 @@
 \section{Modules}
 
 \begin{exam}
+	$\Gamma\colon \xymatrix{1\ar[r]^\alpha & 2}$, k field
+	What is a module over $k\G$? Let M be a left $k\G$-module.
+	\underline{Recall:} 
+	$1_{k\G}=e_1 + e_2$, \[e_ie_j=  
+	\begin{cases}	\text{\ $e_i^2 = e_i$}\\
+	\text{$e_ie_j = 0$ for i$\neq$j}
+	\end{cases}\]
+	\underline{Claim:} $M = e_1M\oplus e_2M$ as vector space over k.\\\newline
+	\underline{Proof:}
+	
+	\begin{align*}
+	m &= 1_{k\G}*m=(e_1 + e_2)m = e_1m+e_2m \in e_1M + e_2M\\
+	\implies M &\subseteq e_1M + e_2M \subseteq M \implies M = e_1M + e_2M\\\\
+	\text{Let } m&\in e_1M \cap e_2M \text{, i.e } m=e_1m'=e_2m''\\\\
+	e_1m&=e_1(e_1m')=(e_1e_1)m'=e_1m'=m\\
+	&= e_1(e_2m'')=\underbrace{(e_1e_2)m''}_{=0}=0\cdot m''=0\\
+	\implies m &=0. \text{ hence } e_1M \cap e_2M = (0)\\
+	\implies M &= e_1M \oplus e_2M\\ 
+	\end{align*}
+\end{exam}
+
+\begin{exam}
 \(\Gamma :1\xmapsto{\alpha} 2\), \(k\) field\\
 What is a module over \(k\Gamma\)? Let \(M\) be a left \(k\Gamma\)-module.\\
 \underline{Recall}: \(1_{k\Gamma} = e_1 + e_2, e_ie_j = \begin{cases}
