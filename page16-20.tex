@@ -1,0 +1,219 @@
+\section{quiver with relations}
+Can all algebras over a field k be represented as $k\G$?\\\newline
+\underline{No}: 
+$\Lambda = \frac{k[x]}{\langle x^2\rangle} \ncong k\G \text{ for all quivers }\G
+\text{dim}_{k}\Lambda = 2, \Lambda\text{ not semisimple}.\\\newline \text{Assume that}  \Lambda \cong k\G.\\
+2= \text{dim}_kk\G \ge \text{\# vertices in } \G $
+
+$ \G \colon \xymatrix{1& 2} \implies k\G$ is semisimple \blitza\\
+$\implies \G$ has one vertex, $\xymatrix{1\ar@(ur,dr)^\alpha} $ $\implies$ $\text{dim}_kk\G = \infty$ \blitza\\
+\newline But, $\G\colon \xymatrix{1 \ar@(ur,dr)^\alpha}$, $\Lambda \simeq \frac{k\G}{\langle \alpha^2\rangle} $\\
+\rule{\textwidth}{1pt}\\
+Let $\G=(\G_0,\G_1)$ be a quiver, k field.\\
+\begin{defin}
+\begin{enumerate}[(a)]
+	~\\ \item A \underline{relation} $\sigma$ in the quiver $\G$ over k is a k-linear combination of paths
+	\begin{center}
+		$\sigma = a_1p_1 + a_2p_2+ \cdots + a_tp_t$\\
+	\end{center}
+	where $a_i\in k$, $e(p_i)=e(p_1)$ and $s(p_i)=s(p_1)$ for all $i$, and $l(p_i)\geq 2$ (the length of the path $p_i$ )
+	\item if $\varrho = \{\sigma\}_{l \in T}$ is a set of relations in $\G$ over k, then $(\G,\varrho)$ is a \underline{quiver with relations over k.}  
+\end{enumerate}
+\end{defin}
+\begin{exam}
+	$\xymatrix{ & 1\ar[dl]_\alpha\ar[dr]^\beta & \\
+		\G \colon 2\ar[dr]_\gamma & & 3\ar[dl]^\delta\\
+		& 4 & }$\newline $k$ field, $\sigma = \gamma\alpha - \delta\beta$.\\\newline
+		$ \G=\frac{k\G}{\langle\sigma\rangle}$. Let $M$ be a left $k\Lambda$-module. Any left $\Lambda$-module is a left $k\Lambda$-module, since $k\G \xrightarrow{\pi} \frac{k\G}{\large\sigma\rangle} = \Lambda$.\\
+		$\implies M$ gives rise to a representation of $\G$.\\
+		
+	$\xymatrix{ & e_1M\ar[dl]_{f_\alpha = \alpha\cdot-}\ar[dr]^{\beta\cdot-=f_\beta} & \\
+	 e_2M\ar[dr]_{f_\gamma=\gamma\cdot-} & & e_3M\ar[dl]^{\delta\cdot-=f_\delta}\\
+	& 4 & }$\newline
+
+$\sigma\in k\G, m \in M.$\\ $ \sigma\cdot m\defeq\pi(\sigma)\cdot m = 0\cdot m = 0, \forall m \in M$\\
+$m=e_1m+e_2m+e_3m+e_4m$, $sigma = e_4\sigma e_1$\\
+$0 = \sigma\cdot m = (\gamma\alpha-\delta\beta)e_1m = \gamma(\alpha e_1m)-\delta(\beta e_1m) = f_\gamma f_\alpha(e_1m)-f_\sigma f_\beta(e_1m) = \underbrace{f_\gamma f_\alpha-f_\sigma f_\beta}_{f_\sigma}(e_im) \implies f_\sigma(e_1M)=0 \implies f_\sigma = 0 $.\\
+Hence $\Lambda$-module $M$ corresponds to a representation of $\G$ satisfying the relation $\sigma(f_\sigma=0)$.\\
+Conversely, we claim that a representation $(V,f)$ of $\G$ 	such that
+\begin{center}
+	$f_\sigma=f_\gamma f_\alpha-f_\sigma f_\beta=0$
+\end{center} 
+ gives a module over $\Lambda$.\\\newline
+\underline{Recall:} $I \subseteq R$ ideal: $\frac{R}{I}$-module $M$ is the same as an $R$-module $M$ such that $I\cdot M = (0)$.\\
+\begin{center}
+	$M = V(1) \oplus V(2) \oplus V(3) \oplus V(4) \leftarrow k\G$-module\\
+	$e_1\cdot(v_1,v_2,v_3,v_4)=(v_1,0,0,0)$\\
+	$\alpha\cdot(v_1,v_2,v_3,v_4)=(0,f_\alpha(v_1),0,0)$\\
+\end{center}
+~\\$\sigma\cdot(v_1,v_2,v_3,v_4) = (\gamma\alpha-\delta\beta)\cdot(v_1,v_2,v_3,v_4) = (0,0,0,f_\gamma f_\alpha(v_1)-f_\sigma f_\beta(v_1)) =  (0,0,0,(f_\gamma f_\alpha-f_\sigma f_\beta)(v_1)) = (0,0,0,0) $\\\newline
+$\implies M$ is a $\Lambda$-module $(\Lambda=\frac{k\G}{\langle\sigma\rangle})$.
+\end{exam}
+
+\begin{exam}
+$\G\colon \xymatrix{1 \ar@(ur,dr)^\alpha}, P=\{\alpha^2 \}$, $k$ field. $ \Lambda=\frac{k\G}{\langle\alpha^2\rangle}$. Find all induced $\Lambda$-modules.\\
+$M$ left $\Lambda$-module $\leadsto 
+(V,f) $ representation of $\G$ satisfying the relation $\alpha^2, $i.e.  $ f_{\alpha^2}=(f_\alpha)^2$\\  
+	
+	$\xymatrix{V \ar@(ur,dr)^{f_\alpha}}, (f_\alpha)^2=0$\\\newline
+	$\implies$ The minimal polynomial of $f_\alpha$ is $x$ or $x^2$\\
+	$\implies$ The ivariant factor of $f_\alpha$ is $x$ or $x^2$\\
+	$\implies$ The matrix of $f_\alpha$ is similar to a direct sum of companion matrices of $x$ or $x^2$, $M_{(x)}=0$ and $M_{(x^2)}= \begin{pmatrix}0&0\\1&0\end{pmatrix}$\\~\\
+	
+Let T be the matrix of $f_\alpha$ w.r.t some basis $\beta$.\\
+Then $\exists$ an invertible matrix $P$ such that\newline
+	
+$ T = P \underbrace{ \left(\begin{smallmatrix} r\begin{cases} \left(\begin{smallmatrix} 0 \cdots 0  \\\vdots \ddots \vdots \\0 \cdots 0 \end{smallmatrix}\right) \end{cases} & \overbrace{\text{\huge0}}^{2s}\\\text{\huge0} & 
+\left(\begin{smallmatrix}  
+\left( \begin{smallmatrix} 0 & 0\\ 1 & 0\\ \end{smallmatrix}\right) & & & \text{\huge0}  \\
+& \begin{smallmatrix} 0 & 0\\ 1 & 0\\ \end{smallmatrix} & & \\
+& &\ddots &  & \\
+\text{\huge0} & & &\begin{smallmatrix} 0 & 0\\ 1 & 0\\ \end{smallmatrix} \\
+\end{smallmatrix}\right) \end{smallmatrix}\right)}_{T_0}P^{-1} $ $\implies TP= PT_0$ \nolinebreak[4]\\\newline
+$\xymatrix{V \ar@(ur,dr)^{T}} \iff \xymatrix{V \ar@(ur,dr)^{T_0}} \simeq (\xymatrix{k \ar@(ur,dr)^{0}})^r \oplus (\xymatrix{k^2 \ar@(ur,dr)^{\left(\begin{smallmatrix}0&0\\1&0\end{smallmatrix}\right)}})^s  $  isomorphisme of representation
+
+\underline{Show:} $\xymatrix{k \ar@(ur,dr)^{0}} \iff \frac{k\G}{\langle\alpha\rangle}$ and $\xymatrix{k^2 \ar@(ur,dr)^{\left(\begin{smallmatrix}0&0\\1&0\end{smallmatrix}\right)}} \iff \frac{k\G}{\langle\alpha^2\rangle} \implies \Lambda$ is of finite representation type.
+\end{exam}
+\subsection{Finite length}
+$\Lambda$ ring, $A$ a (left) $\Lambda$-module.
+\begin{defin}
+	A has \emph{finite length}\index{finite length} if there exists a finite filtration.\\
+	\begin{center}
+			$\mathscr{F}\colon A = A_0 \supseteq A_1 \supseteq A_2 \supseteq \cdots A_{n-1} \supseteq A_{n} \supseteq A_{n+1} = (0) $\\
+	\end{center}
+of submodules of $A$ such that $\frac{A_i}{A_{i+1}} = 0$ or simple for i$=0,1,\cdots,n.$. 	$\mathscr{F}$ is a \emph{generalized composition series}\index{generalized composition series} of $A$, and if $\frac{A_i}{A_{i+1}} \ne 0$ for all i, then $\mathscr{F}$ is a \emph{composition series}\index{composition series}. If $S=\frac{A_i}{A_{i+1}} \ne 0$, then $S$ is called a \emph{composition factor of $A$}\index{composition factor}\\
+
+Let $S$ be a simple $\Lambda$-module. Let
+\begin{equation*}
+m_s^{\mathscr{F}}(A) \defeq\mid\{i !!!!!!! \frac{A_i}{A_{i+1}}\simeq S \}\mid \text{ , } 
+l_{\mathscr{F}} \defeq \sum_{\mathclap{\substack{\small[S] \text{isomorphism} \\ \small\text{classes of simples}}}}m_s^{\mathscr{F}}(A) \text{ and } l(A) \defeq \min_{\mathclap{\substack{\mathscr{F} \text{generalized} \\ \text{composition series}}}} l_{\mathscr{F}}(A)
+\end{equation*}
+\end{defin}
+
+\begin{exam}
+	\begin{enumerate}[(1)]
+		\item $\Lambda$ ring, $S$ simple $\Lambda$-module.\\
+		Composition series: $S \supseteq (0)$\\
+		composition factors: $\{S\}$\\
+		$\implies m_T(S) = \left\{\!\begin{aligned}
+			&1 &\text{if } T \simeq S\\[1ex]
+			&0 &\text{otherwise}\\[1ex]
+		\end{aligned}\right\}\implies l(S)=1$
+		\item $\Lambda = k[x], f(x)$ irredicible\\
+		$S_f=\frac{k[x]}{\langle f(x) \rangle}$ - simple $\Lambda$- module.\\
+		$\implies l(S_f)=1$, while $\dim_kS_f = \deg f(x)$ \\
+		\item $\G\colon  \xymatrix{1\ar[r]^\alpha & 2\ar[r]^\beta & }, k \text{ field } , \Lambda=k\G$\\
+		$
+		\xymatrix
+		{
+			& k\ar[d]^1 & 0 \ar[l]^0\ar[d]^0  & 0\ar[l]^0\ar[d]^0 & 0\ar[l]^0\ar[d]^0 \\
+		\mathscr{F}\colon	&k \ar[d]^1  & k\ar[l]^1\ar[d]^1 & 0\ar[l]^0\ar[d]^0 & 0\ar[l]^0\ar[d]^0 \\
+			&k \ar@{}[d]|-*[@]{=}& k\ar@{}[d]|-*[@]{=} & k\ar@{}[d]|-*[@]{=} & 0\ar@{}[d]|-*[@]{=} \\\
+			&V_o\ar@{<~>}[d] & V_1\ar@{<~>}[d] & V_2\ar@{<~>}[d] & V_3\ar@{<~>}[d]\\
+			M \ar@{}[r]|-*[@]{=} & M_0 \ar@{}[r]|-*[@]{\supseteq}  &  M_1 \ar@{}[r]|-*[@]{\supseteq} & M_2 \ar@{}[r]|-*[@]{\supseteq} & M_3 = (0) \\
+		}$\\~\\
+	
+	$\xymatrix
+	{
+		& k\ar[d] & \\
+		\frac{V_0}{V_1} \ar@{}[r]|-*[@]{\simeq}	& 0\ar[d]\ar@{<~>}[r] & S_1 , \\
+		& 0 & \\
+	}$
+$\xymatrix
+{
+	& k\ar[d] & \\
+	\frac{V_1}{V_2} \ar@{}[r]|-*[@]{\simeq}	& 0\ar[d]\ar@{<~>}[r] & S_2 , \\
+	& 0 & \\
+}$
+$\xymatrix
+{
+	& k\ar[d] & \\
+	\frac{V_2}{V_3} \ar@{}[r]|-*[@]{\simeq}	& 0\ar[d]\ar@{<~>}[r] & S_3 \\
+	& 0 & \\
+}$\\
+$\implies l_{\mathscr{F}}(M)=3$\\~\\
+
+\item $\G \xymatrix{ & 1\ar[dr]^{\beta} \ar[dl]_{\alpha} & \\ 2 & & 3  } , k$ field, $ M = k\G e_1 \iff \xymatrix{ & k\ar[dr]^{1} \ar[dl]_{1} & \\ k & & k }\\$
+need more	!!!!!!!!!!!!!!!!!!!!!
+\end{enumerate}
+\end{exam}
+
+\begin{note}
+	\begin{enumerate}[(1)]
+		\item Composition serice are not unique!
+		\item $l_{\mathscr{F}}(M) = l_{\mathscr{G}}(M)$
+		\item The set of composition factors is the same for $\mathscr{F}$ and $\mathscr{G}$
+	\end{enumerate}
+\end{note}
+\rule{\textwidth}{1pt}\\
+The proof of Jordan-Hølder theorem goes bu induction on length and using short exact sequences.
+\begin{defin}
+	$\xymatrix{0 \ar[r] & A\ar[r]^f & B\ar[r]^g & C \ar[r] & 0}$ is a \emph{text}((short) exact sequence)\index{exact sequence} of (left) $\Lambda$-module if
+	\begin{enumerate}[(i)]
+		\item $f$ is injective (1-1)
+		\item $g$ is surjective (onto)
+		\item Im(f) = ker(g)
+	\end{enumerate}
+\end{defin} 
+\begin{note}
+	\begin{enumerate}[(1)]
+		\item $A \supseteq B \Lambda$-modules, submodule then\\
+		\begin{center}
+			$\xymatrix{0 \ar[r] & A\ar[r]^f & B\ar[r]^g & C \ar[r] & 0}$
+		\end{center}
+	is an exact sequence
+	\item If $\xymatrix{0 \ar[r] & A\ar[r]^f & B\ar[r]^g & C \ar[r] & 0}$ is an exact sequence, then
+	\begin{enumerate}[(a)]
+		\item $C = \text{Im}(g) \simeq \frac{B}{\text{Ker(g)}} \simeq \frac{B}{\text{Im(f)}}, \text{Im}(f)\simeq A. $
+		\item $B = (0) \implies A = (0) \text{ and } C=(0). $ 
+	\end{enumerate}
+	\end{enumerate}
+\end{note}
+
+\begin{exam}
+	\begin{enumerate}[(1)]
+		\item  $\xymatrix{0 \ar[r] & \mathbb{Z}\ar[r]^{-\cdot n} & \mathbb{Z}\ar[r] & \frac{\mathbb{Z}}{n\mathbb{Z}} \ar[r] & 0}$ exact
+		\item $M, N$ $\Lambda$-modules.
+		$\xymatrix
+		{
+			0\ar[r] & M\ar[r]^{\left(\begin{smallmatrix} 1 \\ 0 \end{smallmatrix}\right)} & M\oplus N\ar[r]^{\left(\begin{smallmatrix} 1 & 0 \end{smallmatrix}\right)} & N & O \\
+			  & m \ar@{|->}[r]& (m,0) \\
+			  &   & (m,n) \ar@{|->}[r]    & n\\
+		}$ exact
+	\item $\Lambda = \frac{k\G}{\langle p \rangle}$, $\xymatrix{0 \ar[r] & A\ar[r]^f & B\ar[r]^g & C \ar[r] & 0}$ exact sequence of $\Lambda$-modules.
+	$\xymatrix
+	{
+		 & V_A(i)\ar@{}[d]|-*[@]{=} \ar[r]^{f\vert_{V_A(i)}} & V_B(i)\ar@{}[d]|-*[@]{=} \ar[r]& V_C(i)\ar@{}[d]|-*[@]{=} & \\
+		0\ar[r]& e_iA \ar[r]^{f\vert_{e_iA}}  & e_iB  \ar[r]^{g\vert_{e_iB}}  & e_iC \ar[r]  & 0\\
+	}$ exact sequence for all i\\
+Hence, 	$\xymatrix{0 \ar[r] & (V',f')\ar[r]^g & (V,f)\ar[r]^h & (V'',f'') \ar[r] & 0}$ is an exact sequence of representation if $\xymatrix{0 \ar[r] & V'(i)\ar[r]^{g(i)} & V(i)\ar[r]^{h(i)} & V''(i) \ar[r] & 0}$ is exact for all i $\in\G_0$
+	
+	\end{enumerate}
+\end{exam}
+\rule{\textwidth}{1pt}\\
+\begin{exer}
+		$f\colon\xymatrix{A\ar[r] & B}$ and $g\colon\xymatrix{B\ar[r] & C}$, $\Lambda$-homomorphisme, $B' \subseteq B$ submodule.
+		\begin{enumerate}[(1)]
+			\item $f^{-1}(B')= \{ a\in A\mid f(a)\in B'\}\subseteq A$ submodule
+			\item $g(B')= \{ g(b')\mid b'\in B'\}\subseteq C$ submodule
+		\end{enumerate}
+\end{exer}
+\rule{\textwidth}{1pt}\\
+Let $\xymatrix{0 \ar[r] & A\ar[r]^f & B\ar[r]^g & C \ar[r] & 0}$ be an exact sequence and let $\mathscr{F}$ be a generalized composition series of B.\\
+$\xymatrix
+{
+	0\ar[r] & A\ar[r]^f & B\ar[r]^g\ar & C\ar[r] & 0\\
+			& A_o=f^{-1}(B_0)\ar@{}[u]|-*[@]{=}	  & B_0	\ar@{}[u]|-*[@]{=}				& g(B_0)= C_0\ar@{}[u]|-*[@]{=} \\
+			& A_1=f^{-1}(B_1)\ar@{}[u]|-*[@]{\subseteq} & B_1\ar@{}[u]|-*[@]{\subseteq}& g(B_1)= C_1\ar@{}[u]|-*[@]{\subseteq} \\
+			& A_2=f^{-1}(B_2)\ar@{}[u]|-*[@]{\subseteq} & B_2\ar@{}[u]|-*[@]{\subseteq}& g(B_2)= C_2\ar@{}[u]|-*[@]{\subseteq} \\
+			& \vdots\ar@{}[u]|-*[@]{\subseteq} & \vdots\ar@{}[u]|-*[@]{\subseteq}& \vdots\ar@{}[u]|-*[@]{\subseteq} \\
+			& A_n=f^{-1}(B_n)=(0)\ar@{}[u]|-*[@]{\subseteq} & B_n=(0)\ar@{}[u]|-*[@]{\subseteq}& g(B_n)= C_n=(0)\ar@{}[u]|-*[@]{\subseteq} \\
+			& \mathscr{F}'\ar@{}[u]|-*[@]{\colon} & \mathscr{F}\ar@{}[u]|-*[@]{\colon}& \mathscr{F}''\ar@{}[u]|-*[@]{\colon} \\
+}$
+\begin{prop}
+	\begin{enumerate}[(a)]
+		\item $\mathscr{F}'$ is generalized composition series of $A$.\\
+		$\mathscr{F}''$ is generalized composition series of $C$.\\
+		\item $m^{\mathscr{F}}_S(B)=m^{\mathscr{F}'}_S(A) + m^{\mathscr{F}''}_S(C) \forall S$ simple
+	\end{enumerate}
+\end{prop}
