@@ -150,10 +150,164 @@ $M$, $N$ $k\Gamma$-modules, $N\subseteq M$ submodule.
 
 $\Rightarrow e_iN\subseteq e_iM$ subspace.
 
-Given $\alpha\colon i\to j \in \Gamma_1$, 
+Given $\alpha\colon i\to j \in \Gamma_1$, the following diagram commutes
 
 \[\xymatrix{
+e_i N \ar@{^(->}[r] \ar[d]_{\alpha\cdot-} & e_i M\ar[d]^{\alpha\cdot
+  -}\\
+e_jN \ar@{^(->}[r] & e_j M
+}\]
+\begin{defin}
+\begin{enumerate}[\rm(a)]
+\item $(V,f)\subseteq (V',f')$ is a
+\emph{subrepresentation}\index{representation!subrepresentation}\index{subrepresentation}
+if
+\begin{enumerate}[\rm(i)]
+\item $V(i) \subseteq V'(i)$ subspace for all $i\in\Gamma_0$, 
+\item \[\xymatrix{
+V(i) \ar@{^(->}[r] \ar[d]_{f_\alpha} & V'(i)\ar[d]^{f'_\alpha}\\
+V(j) \ar@{^(->}[r] & V'(j)}\]
+for $\alpha\colon i\to j\in\Gamma_1$, that is, $f|_\alpha =
+f'_\alpha|_{V(i)}$. 
+\end{enumerate}
+\item If $(V,f)\subseteq (V',f')$ is a subrepresentation, then the
+  \emph{factor representation}\index{representation!factor
+    representation} $W=(W,f'')$ of $V$ and $V'$ is given as
+\begin{enumerate}[\rm(i)] 
+\item $W(i) = V'(i)/V(i)$, 
+\item \[\xymatrix{
+V(i) \ar@{^(->}[r] \ar[d]_{f_\alpha} & V'(i)\ar[d]^{f'_\alpha}\ar[r] & V'(i)/V(i)=W(i)\ar@{-->}[d]^{f''_\alpha} \\
+V(j) \ar@{^(->}[r] & V'(j) \ar[r] & V'(j)/V(j)=W(j)}\]
+where $f''_\alpha(v' + V(i)) = f'_\alpha(v') + V(j)$ for $\alpha\colon
+i\to j\in\Gamma_1$. 
+\end{enumerate}
+\end{enumerate}
+\end{defin}
+Check: 
+\begin{enumerate}[\rm(i)]
+\item $f''_{\alpha}$ is well-defined.
+\item $(W,f'')$ is a representation of ${\Gamma}$ over $k$. 
+\item We have
+\[\xymatrix{
+(V,f) \ar@{^(->}[r]\ar@{~>}[d] & (V',f') \ar@{~>}[d]&  W = V'/V \ar@{~>}[d] \\
+M_V \ar@{^(->}[r] & M_{V'} & M_W \simeq M_{V'}/M_V
+}\]
+\end{enumerate}
 
+\begin{defin}
+$\Lambda$ finite dimensional $k$-algebra, $k$ field.  Then $\Lambda$
+is of \emph{finite representation type}\index{representation
+  type!finite} if there is only a finite number of non-isomorphic
+indecomposable finitely generated left $\Lambda$-modules.
+\end{defin}
 
+\begin{exam}
+$\Lambda = k$.  The only indecomposable $\Lambda$-module is $k$. 
+\end{exam}
+
+\begin{exam}
+$\Gamma\colon \xymatrix{1\ar[r]^\alpha & 2}$, $k$ field.
+
+The indecomposable left $k\Gamma$-modules $\leftrightsquigarrow$ The
+indecomposable representations of $\Gamma$ over $k$. 
+
+Let $(V,f) = V_1\extto{f} V_2$ is an indecomposable representation of
+$\Gamma$ over $k$.
+
+Know: $h_1\colon V_1 \extto{~} \Im f\oplus \Ker f$
+
+In particular, $\xymatrix{V\ar@<1ex>[r]^f & \Im f\ar@<1ex>[l]^{f'}}$
+such that $ff' = 1_{\Im f}$.
+
+$h_1\colon V_1 \to \Im f \oplus \Ker f$ given by $v\mapsto (f(v), v -
+f'f(v))$. 
+
+\[\xymatrix{
+V_1 \ar[rr]^f \ar[d]_{h_1} & &  V_2\ar[d]^{h_2=1_{V_2}} & \\
+\Im f\oplus \Ker f \ar[rr]^-{(\nu,0)} & & V_2 & \\
+& \simeq & & \\
+\Im f\ar@{^(->}[rr]^\nu && V_2 & =(0) \text{\ (ii)}\\
+ & \oplus & \\
+\Ker f \ar[rr]^0 && 0 & = (0) \text{\ (i)}
+}\]
+where $\nu\colon \Im f \hookrightarrow V_2$.
+
+\textbf{Case (ii)}: \[\xymatrix{
+\Ker f \ar[r]^0\ar[d]^\simeq & 0\ar@{=}[d]\\
+k^t \ar[r]^0 & 0} \simeq \xymatrix{(k\ar[r]^0 & 0)^t}\]
+
+$(V,f)$ indecomposable $\Rightarrow$ $t = 1$ and $(V,f)\simeq
+\xymatrix{k\ar[r]^0 & 0}$ 
+
+\textbf{Case (i)}: $\xymatrix{\Im f \ar@{^(->}[r] & V_2}$
+
+Know: $V_2 = \Im f\oplus V_2'$
+
+\[\xymatrix{
+\Im f \ar@{^(->}[rr] \ar@{=}[d] & &  V_2\ar@{=}[d] & \\
+\Im f \ar[rr]^-{\left(\begin{smallmatrix}1_{\Im f} \\ 0\end{smallmatrix}\right)} & & V_2 & \\
+& \simeq & & \\
+\Im f\ar@{=}[rr] && \Im f & =(0) \text{\ (i)'}\\
+ & \oplus & \\
+0\ar[rr]^0 && V'_2 & = (0) \text{\ (i)''}
 }\]
 
+\textbf{Case (i)'}:
+\[\xymatrix{
+0 \ar[r]^0\ar@{=}[d] & V'_2\ar[d]^\simeq\\
+0 \ar[r]^0 & k^t} \simeq \xymatrix{(0\ar[r]^0 & k)^t}\]
+$(V,f)$ indecomposable $\Rightarrow$ $t = 1$ and $(V,f)\simeq
+\xymatrix{0\ar[r]^0 & k}$ 
+
+\textbf{Case (i)''}: 
+\[\xymatrix{
+\Im f \ar[r]^{1_{\Im f}}\ar[d]^\varphi & \Im f\ar[d]^\varphi\\
+k^t \ar[r]^{1_{k^t}} & k^t} \simeq \xymatrix{(k\ar[r]^1 & k)^t}\]
+$(V,f)$ indecomposable $\Rightarrow$ $t = 1$ and $(V,f)\simeq
+\xymatrix{0\ar[r]^0 & k}$ 
+
+\textbf{Check}: $\xymatrix{k \ar[r]^1 & k}$, $\xymatrix{k\ar[r]^0 & 0}$ and
+$\xymatrix{0 \ar[r]^0 & k}$ are indecomposable. 
+
+\textbf{Hence}: The only indecomposable representations are the ones
+above  $\Rightarrow$ The only indecomposable left $k\Gamma$-modules
+are $k\Gamma e_1$, $k\Gamma e_1/\langle \alpha e_1\rangle$ and $S_2 =
+k\Gamma e_2$. 
+\end{exam}
+
+\begin{thm}
+$k$ field, $\kar k = p$, $G$ finite group with $p\mid |G|$. Then,
+
+$kG$ of finite representation type $\Leftrightarrow$ All $p$-Sylow
+subgroups of $G$ are cyclic.
+\end{thm}
+
+\begin{thm}
+$\Gamma$ connected quiver without oriented cycles, $k$  field.
+
+$k\Gamma$ is of finite representation type $\Leftrightarrow$ The
+underlying graph of $\Gamma$ is a Dynkin diagram.
+
+\[\xymatrix{\mathbb{A}_n\colon & 1\ar@{-}[r] & 2\ar@{-}[r] & \cdots &
+    \ar@{-}[r] & n-1 \ar@{-}[r] & n}\]
+
+\[\xymatrix@R=3pt{
+& 1\ar@{-}[dr] &  & & & & \\
+\mathbb{D}_n\colon &  & 3\ar@{-}[r] & \cdots &  \ar@{-}[r] & n-1 \ar@{-}[r] & n\\
+& 2\ar@{-}[ur] & & & & & }\]
+
+\[\xymatrix{
+& & & 4\ar@{-}[d] & & \\
+\mathbb{E}_6\colon & 1\ar@{-}[r] & 2\ar@{-}[r] & 3\ar@{-}[r] &
+   5 \ar@{-}[r] & 6}\]
+
+\[\xymatrix{
+& & & 4\ar@{-}[d] & & & \\
+\mathbb{E}_7\colon & 1\ar@{-}[r] & 2\ar@{-}[r] & 3\ar@{-}[r] &
+   5 \ar@{-}[r] & 6 \ar@{-}[r] & 7}\]
+
+\[\xymatrix{
+& & & 4\ar@{-}[d] & & & &\\
+\mathbb{E}_6\colon & 1\ar@{-}[r] & 2\ar@{-}[r] & 3\ar@{-}[r] &
+   5 \ar@{-}[r] & 6 \ar@{-}[r] & 7 \ar@{-}[r] & 8}\]
+\end{thm}
