@@ -1,0 +1,315 @@
+\section{Radical}
+
+\begin{defin}
+$\Lambda$ ring.  The \emph{(left) radical of $\Lambda$} is the left ideal
+\[\mathfrak{r} = \rad \Lambda = \cap_{\mathfrak{m} \text{maximal left ideal}} \mathfrak{m}\]
+(Also called the Jacobsen radical of $\Lambda$).
+\end{defin}
+
+\textbf{Know}: $\mathfrak{r}$ is a left ideal.
+
+\textbf{Show}: $\mathfrak{r}$ is an ideal.
+
+\begin{exam}
+If $\Lambda$ is a division ring, then $\mathfrak{r} = (0)$. 
+\end{exam} 
+
+\begin{exam}
+$\Lambda = \mathbb{Z}$, $\langle p\rangle$ -- maximal ideal if $p$ is
+a prime.
+
+\[\mathfrak{r} = \cap_{p \text{\ prime}} \langle p\rangle = \langle
+n\rangle = (0)\]
+
+\[\langle n\rangle \subseteq \langle p\rangle \Rightarrow p\mid n,
+\forall p \text{\ prime} \Rightarrow n = 0.\]
+\end{exam}
+
+\begin{exam}
+$\Lambda = \mathbb{Q}\times \mathbb{Q}$, $\mathfrak{m}_1 =
+\mathbb{Q}\times (0)$, $\mathfrak{m}_2 = (0)\times\mathbb{Q}$ - both are
+maximal ideals.
+
+\[(0) = \mathfrak{m}_1 \cap \mathfrak{m}_2 \subseteq \mathfrak{r}
+  \Rightarrow \mathfrak{r} = (0).\] 
+\end{exam}
+In general, if we can find a finite set of maximal ideals
+$\{\mathfrak{m}_i\}_{i=1}^t$ such that $\cap_{i=1}^t \mathfrak{m}_i =
+(0)$, then $\mathfrak{r} = (0)$. 
+
+\begin{exer}
+Show that $\Lambda$ semisimple $\Rightarrow$ $\rad\Lambda = (0)$.
+\end{exer}
+
+\begin{exam}
+$\Gamma\colon \xymatrix{ & 1\ar[dl]^\alpha\ar[dr]^\beta & \\
+2\ar[dr]^\gamma & & 3\ar[dl]^\delta \\
+& 4 & 
+}$, $\rho=\{\gamma\alpha - \delta\beta\}$, $k$ a field and $\Lambda =
+k\Gamma/\langle \rho\rangle$.  What is $\rad\Lambda$?
+
+\textbf{Know}: $1_\Lambda = \overline{e_1} + \overline{e_2} +
+\overline{e_3} + \overline{e_4}$, where
+$\overline{e_i}\cdot\overline{e_j} = \begin{cases} \overline{e_i},
+  \text{\ if $i = j$}\\
+0, i\neq j
+\end{cases}$
+
+\begin{exer}
+\begin{align}
+\Lambda & = \Lambda\overline{e_1} \oplus \Lambda\overline{e_2} \oplus \Lambda\overline{e_3} \oplus \Lambda\overline{e_4}\notag\\
+\mathfrak{m}_1 & = \Lambda\{\alpha,\beta\} \oplus \Lambda\overline{e_2} \oplus \Lambda\overline{e_3} \oplus \Lambda\overline{e_4}\notag\\
+\mathfrak{m}_2 & = \Lambda\overline{e_1} \oplus \Lambda\overline{\gamma} \oplus \Lambda\overline{e_3} \oplus \Lambda\overline{e_4}\notag\\
+\mathfrak{m}_3 & = \Lambda\overline{e_1} \oplus \Lambda\overline{e_2}  \oplus \Lambda\overline{\delta} \oplus \Lambda\overline{e_4}\notag\\
+\mathfrak{m}_4 & = \Lambda\overline{e_1} \oplus \Lambda\overline{e_2} \oplus \Lambda\overline{e_3} \oplus (0)\notag\\
+\end{align}
+\[\mathfrak{m}_1 \cap \mathfrak{m}_2 \cap \mathfrak{m}_3 \cap
+  \mathfrak{m}_4 = \langle
+  \overline{\alpha},\overline{\beta},\overline{\gamma},\overline{\delta}\rangle
+  \xrightarrow{\text{?}} \rad\Lambda.\]
+\end{exer}
+\end{exam}
+
+\begin{prop}\label{prop:radcharacterization}
+For any ring $\Lambda$ and any $\lambda\in\Lambda$, the following are
+equivalent.
+\begin{enumerate}[\rm(i)]
+\item $\lambda\in\rad\Lambda$, 
+\item $1 - x\lambda$ is \emph{left invertible} for all $x\in \Lambda$
+  (i.e.\ $\exists x'\in\Lambda$ such that $x'(1-x\lambda) = 1$), 
+\item $\lambda S = (0)$ for any simple $\Lambda$-module $S$.
+\end{enumerate}
+\end{prop}
+\begin{proof}
+(i) $\Rightarrow$ (ii): Suppose $\exists x \in \Lambda$ such that $1 -
+x\lambda$ is not left invertible with $\lambda\in\Lambda$.  Then
+$\Lambda(1 - x\lambda)$ is a proper left ideal in $\Lambda$.  Any
+proper left ideal is contained in a maximal left ideal.  If
+$\lambda\in\mathfrak{m}$, then $1\in\mathfrak{m}$, contradiction. So
+$\lambda\not\in\mathfrak{m}$ and in particular
+$\lambda\not\in\rad\Lambda$. 
+
+(ii) $\Rightarrow$ (iii): Suppose $\exists$ a simple $\Lambda$-module
+$S$ such that $\lambda S \neq (0)$, i.e.\ $\exists 0\neq s \in S$ with
+$\lambda s \neq 0$.  Have $(0)\neq \Lambda(\lambda s)\subseteq S$.  
+
+$S$ simple $\Rightarrow$ $\Lambda \lambda s = S$.
+
+Hence, $\exists x \in \Lambda$ such that $x\lambda s = s$
+$\Rightarrow$ $(1 - x\lambda) s = 0$
+
+If $1 - x\lambda$ is left invertible, then $s=0$ $\Rightarrow$
+$1-x\lambda$ is not left invertible.
+
+(iii) $\Rightarrow$ (i): Let $\mathfrak{m}$ be a maximal left ideal in
+$\Lambda$.  Then $\Lambda/\mathfrak{m}$ is a simple left
+$\Lambda$-module.  By assumption
+\[\lambda\cdot \Lambda/\mathfrak{m} = (0),\]
+in particular
+\[\lambda(1 + \mathfrak{m}) = \lambda + \mathfrak{m} = \overline{0}\]
+and $\lambda\in\mathfrak{m}$ for all maximal left ideals
+$\mathfrak{m}$ in $\Lambda$.   Hence $\lambda\in\rad\Lambda$. 
+\end{proof}
+
+\begin{defin}
+Let $M$ be a (left) $\Lambda$-module, and let 
+\[\Ann_\Lambda(M) = \{\lambda\in\Lambda\mid \lambda m = 0, \forall
+  m\in M\}.\]
+The set $\Ann_\Lambda(M)$ is called the
+\emph{annihilator}\index{module!annihilator}\index{annihilator} of
+$M$. 
+\end{defin}
+
+\textbf{Note}: $\Ann_\Lambda(M)$ is a two-sided ideal in $\Lambda$. 
+
+\begin{cor}
+Given a ring $\Lambda$
+\[\rad\Lambda = \cap_{S \text{\ simple}\\ \text{left
+      $\Lambda$-module}} \Ann_\Lambda(S).\]
+In particular, $\rad\Lambda$ is a two-sided ideal in $\Lambda$. 
+\end{cor}
+\begin{proof}
+Follows from (i) $\Leftrightarrow$ (iii) in Proposition
+\ref{prop:radcharacterization}. 
+\end{proof}
+
+Can we find $\rad\Lambda$ from this?
+
+$S\simeq S' \Rightarrow \Ann_\Lambda(S) = \Ann_\Lambda(S')$. 
+
+\begin{thm}[Nakayama Lemma]
+Given a ring $\Lambda$ and a finitely generated $\Lambda$-module $M$.
+If $\mathfrak{a}$ is an ideal in $\Lambda$ with $\mathfrak{a}\subseteq
+\rad\Lambda$, then $\mathfrak{a} M = M$ implies that $M = (0)$. 
+\end{thm}
+\begin{proof}
+Suppose that $M\neq (0)$ and $\mathfrak{a}M = M$.  Let
+$\{m_1,m_2,\ldots,m_t\}$ be a minimal set of generators for $M$ as a
+$\Lambda$.  Since $\mathfrak{a}M=M$, we have that 
+\[m_1 = \sum_{i=1}^t \lambda_im_i\]
+for $\lambda_i\in\mathfrak{a}\subseteq \rad\Lambda$. 
+\[\Rightarrow (1 - \lambda_1)m_1 = \sum_{i=2}^t \lambda_im_i\]
+Since $\lambda_1\in\mathfrak{a}\subseteq \rad\Lambda
+\stackrel{\textrm{Proposition \ref{prop:radcharacterization}}}{\Rightarrow} 1 -
+\lambda_1$ has a left inverse, say $u$.
+\[\Rightarrow m_1 = u(1 - \lambda_1) m_1 = \sum_{i=2}^t
+  u\lambda_im_i\]
+\[\Rightarrow \text{\ $M$ can be generated by $\{m_2,\ldots,m_t\}$.  Contradiction!}\]
+If $t=1$, then $M = (0)$.  Contradiction!  If $t > 1$, then we have a
+contradiction to the choice of generating set
+$\{m_1,m_2,\ldots,m_t\}$. $\Rightarrow \mathfrak{a} M \neq M$. 
+\end{proof}
+
+\begin{recall}
+A left ideal $\mathfrak{a}\subseteq \Lambda$ is
+\emph{nilpotent}\index{ideal!nilpotent}\index{nilpotent!ideal} if
+$\exists n \geq 1$ such that $\mathfrak{a}^n = (0)$. 
+\end{recall}
+
+\begin{lem}
+$\Lambda$ ring.
+\begin{enumerate}[\rm(a)]
+\item If $\Lambda$ is a left (right) artinian, then $\rad\Lambda$ is
+  nilpotent. 
+\item If $\mathfrak{a}\subseteq \Lambda$ is a nilpotent left ideal,
+  then $\mathfrak{a} \subseteq \rad\Lambda$
+\end{enumerate}
+\end{lem}
+\begin{proof}
+(a) $\mathfrak{r} = \rad\Lambda$. 
+\[\cdots \supseteq \mathfrak{r}^i \supseteq \mathfrak{r}^{i+1}
+  \supseteq \cdots\]
+is a descending chain of left ideals in $\Lambda$.
+
+$\Lambda$ left artinian $\Rightarrow$ $\mathfrak{r}^m =
+\mathfrak{r}^{m+1} = \cdots$ for some $m$
+\[M=\mathfrak{r}^m = \mathfrak{r}^{m+1} = \mathfrak{r}\mathfrak{r}^m = \mathfrak{r}M\]
+$\Lambda$ left artinian $\Rightarrow$ $\Lambda$ left noetherian.
+
+$\mathfrak{r}^m = M \subseteq \Lambda$ left ideal $\Rightarrow$
+$M=\mathfrak{r}^m$ finitely generated $\Lambda$-module.
+
+Nakayama Lemma $\Rightarrow$ $\mathfrak{r}^m = (0)$ and $\rad\Lambda$
+is nilpotent.
+
+(b)  Assume that $\mathfrak{a}$ is a nilpotent left ideal in
+$\Lambda$, say $\mathfrak{a}^n = (0)$ for some $n\geq 1$.  Let $a\in
+\mathfrak{a}$. Then for all $x\in\Lambda$ we have $xa\in\mathfrak{a}$
+and $(xa)^n=0$.
+
+$\Rightarrow  (1 + (xa) + (xa)^2 + \cdots (xa)^{n-1} = 1 - (xa)^n = 1$
+
+$\Rightarrow 1 -xa$ has a left inverse for all $x\in\Lambda$.
+
+Proposition \ref{prop:radcharacterization} $\Rightarrow a\in\rad\Lambda \Rightarrow
+\mathfrak{a}\subseteq \rad\Lambda$. 
+\end{proof}
+
+\begin{recall}
+\begin{align}
+\Lambda \textrm{\ semisimple}\index{ring!semisimple} & \Leftrightarrow {_\Lambda\Lambda}
+                                \textrm{\ semisimple $\Lambda$-module}\notag\\
+& \Leftrightarrow \Lambda\simeq M_{n_1}(D_1)\times
+  M_{n_2}(D_2)\times\cdots \times M_{n_t}(D_t)\notag\\
+& \hphantom{\Leftrightarrow}\qquad \qquad n_i\geq 1, D_i \textrm{\ division ring}, t
+  < \infty\notag\\
+& \Leftrightarrow \Lambda \textrm{\ left artinian and has no nilpotent
+  (left) ideals}\notag
+\end{align}
+\end{recall}
+
+\begin{thm}\label{thm:semisimplechar}
+$\Lambda$ ring.
+
+$\Lambda$ semisimple $\Leftrightarrow$ $\Lambda$ left artinian and
+$\rad\Lambda = (0)$. 
+\end{thm}
+\begin{proof}
+$\Mapsto$ 
+\[\Lambda \textrm{\ semisimple} \Rightarrow \Lambda \textrm{\ left
+  artinian}\Rightarrow \rad\Lambda \textrm{\ is nilpotent}\]
+Using this we obtain:
+\[\Lambda \textrm{\ semisimple} \Rightarrow \Lambda \textrm{\ has no non-zero nilpotent left ideals} 
+\Rightarrow \rad\Lambda = (0)\]
+
+$\Mapsfrom$ Assume that $\Lambda$ is left artinian with $\rad\Lambda =
+(0)$
+
+Lemma \ref{lem:} $\Rightarrow$ $\Lambda$ has no non-zero nilpotent
+left ideals.
+
+$\Rightarrow$ $\Lambda$ is semisimple.
+\end{proof}
+
+\begin{thm}
+$\Lambda$ left artinian, $\mathfrak{r} = \rad\Lambda$.
+Then
+\begin{enumerate}[\rm(a)]
+\item $\Lambda/\mathfrak{r}$ is a semisimple ring. 
+\item A left $\Lambda$-module $M$ is semisimple if and only if
+  $\mathfrak{r}M=(0)$. 
+\item There are only finitely many non-isomorphic simple
+  $\Lambda$-modules, and they all occur as direct summands of
+  $\Lambda/\mathfrak{r}$. 
+\item $\Lambda$ is left noetherian.
+\end{enumerate}
+\end{thm}
+\begin{proof}
+(a) $\Lambda$ left artinian $\Rightarrow$ $\Lambda/\mathfrak{r}$ left
+artinian.
+
+$\rad(\Lambda/\mathfrak{r}) = (\rad\Lambda)/\mathfrak{r}$.
+
+Theorem \ref{thm:semisimplechar} $\Rightarrow$ $\Lambda/\mathfrak{r}$
+is semisimple. 
+
+(b)--(d):  Exercise, see the book Proposition 3.1 page 9. 
+\end{proof}
+
+\begin{recall}
+$\Lambda$ left artinian $\Leftrightarrow$ $l(_\Lambda\Lambda) <
+\infty$. 
+\end{recall}
+
+\begin{cor}
+$\Lambda$ ring. TFAE:
+\begin{enumerate}[\rm(a)]
+\item $\Lambda$ left artinian.
+\item Every finitely generated $\Lambda$-module has finite length.
+\item $\mathfrak{r} = \rad\Lambda$ is nilpotent and
+  $\mathfrak{r}^i/\mathfrak{r}^{i + 1}$ is finitely generated
+  semisimple $\Lambda$-module for all $i\geq 0$. 
+\end{enumerate}
+\end{cor}
+\begin{proof}
+(b) $\Rightarrow$ (a): In particular, $\Lambda$ as a left
+$\Lambda$-module has finite length. 
+
+$\Rightarrow$ $\Lambda$ is left artinian (and left noetherian). 
+
+(a) $\Rightarrow$ (c):  $\mathfrak{r}$ is nilpotent by Lemma
+\ref{lem:} (a), say $\mathfrak{r}^n = (0)$. 
+\begin{center}
+\begin{tabular}{rl}
+Theorem \ref{thm:} (d) $\Rightarrow$ & $\Lambda$ left noetherian.\\
+$\Rightarrow$ & $\mathfrak{r}^i$ finitely generated for all $i$ (as a
+left ideal)\\
+$\Rightarrow$ & $\mathfrak{r}^i/\mathfrak{r}^{i+1}$ finitely generated for all $i$ (as a
+left ideal)\\
+\end{tabular}
+\end{center}
+Theorem \ref{thm:} (b) $\Rightarrow$
+$\mathfrak{r}^i/\mathfrak{r}^{i+1}$ semisimple $\Lambda$-module for
+all $i\geq 0$, since $\mathfrak{r}\cdot \mathfrak{r}^i/\mathfrak{r}^{i+1}=(0)$
+
+(c) $\Rightarrow$ (b):  Suppose $\mathfrak{r}^n = (0)$ for some $n\geq
+1$.  Consider: $\Lambda \supseteq \mathfrak{r}\supseteq \mathfrak{r}^2
+\supseteq \mathfrak{r}^3\supseteq \cdots \supseteq
+\mathfrak{r}^{n-1}\supseteq \mathfrak{r}^n =(0)$.
+
+\label{2017-pages}
+
+In particular, we have exact sequences 
+
+
+\end{proof}
