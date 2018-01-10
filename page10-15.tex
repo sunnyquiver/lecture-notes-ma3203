@@ -3,7 +3,7 @@
 $\Gamma = (\Gamma_0,\Gamma_1)$ - quiver, $k$ field.
 
 $M$ left $k\Gamma$-module $\leadsto\begin{cases}
-(V,f) \text{\ representation of $\Gamma$}\\
+(V,f) \text{, representation of $\Gamma$}\\
 V(i) = e_iM\\
 \text{for\ } \alpha\colon i\to j \in \Gamma_1, \text{\ we have\ }  f_\alpha\colon
 V(i)=e_iM\extto{\alpha\cdot -} e_jM = V(j)\\
@@ -11,20 +11,20 @@ f_\alpha(e_im) = \alpha e_im
 \end{cases}$
 
 $(V,f)$ representaion of $\Gamma\leadsto \begin{cases}
-M = \oplus_{i\in\Gamma_0} V(i)\\
+M = \oplus_{i\in\Gamma_0} V(i) \textrm{, $k\Gamma$-module}^*\\
 m = (v_1,v_2,\ldots, v_n) \in M\\
 e_im \extto{\text{def}}{=} (0,\ldots,0,v_i,0,\ldots,0)\\
 \text{for $\alpha\colon i\to j$ in $\Gamma_1$, remember $\alpha =
   e_j\alpha e_i$}\\
 \alpha m \extto{\text{def}}{=} (0,\ldots,0,f_\alpha(v_i),0,\ldots,0)
 \text{\ with $f_\alpha(v_i)$ in the $j$-th coordinate}
-\end{cases}$
-
+\end{cases}$\medskip 
+$^*$Can show: This induces a left $k\Gamma$-module structure on $M$
+(see \cite[page 57]{ARS}). 
 \begin{exam}
 $\Gamma\colon \xymatrix{1\ar[r]^\alpha & 2}$, $k$ field.
 
 $(V,f)\colon \xymatrix{k\ar[r]^1 & k} \leadsto M = k\oplus k = k^2$
-
 \begin{align}
 e_1\cdot (a,b) & = (a, 0)\notag\\
 e_2\cdot (a,b) & = (0,b)\notag\\
@@ -52,8 +52,8 @@ $\left.\begin{matrix}
 \end{exam}
 
 \begin{exam}
-$\Gamma\colon \xymatrix{ & 1\ar[dl]^\alpha\ar[dr]^\beta & \\
-2\ar[dr]^\gamma & & 3\ar[dl]^\delta\\
+$\Gamma\colon \xymatrix{ & 1\ar[dl]_\alpha\ar[dr]^\beta & \\
+2\ar[dr]_\gamma & & 3\ar[dl]^\delta\\
 & 4 & }$, $k$ field.
 
 $(V,f)\colon \xymatrix{ & k\ar[dl]_{f_\alpha = 1}\ar[dr]^{f_\beta=1} & \\
@@ -62,7 +62,6 @@ k\ar[dr]_{f_\gamma=\left(\begin{smallmatrix} 1\\ 0\end{smallmatrix}\right)} & & 
 
 $M = V(1) \oplus V(2) \oplus V(3) \oplus V(4) = k\oplus k\oplus
 k\oplus k^2$.
-
 \begin{align}
 \alpha (v_1,v_2,v_3,v_4)  & = (0, v_1, 0, 0 )\notag\\
 \gamma (v_1,v_2,v_3,v_4)  & = (0, 0, 0, (v_2, 0) )\notag\\
@@ -78,8 +77,8 @@ k\oplus k^2$.
 \begin{itemize}
 \item Zero representation:  
 $\begin{cases} 
-V(i) = (0), \text{\ for all $i\in\Gamma_0$}\notag\\
-f_\alpha = 0, \text{\ for all $\alpha\in \Gamma_1$}\notag
+V(i) = (0), \text{\ for all $i\in\Gamma_0$},\notag\\
+f_\alpha = 0, \text{\ for all $\alpha\in \Gamma_1$}.\notag
 \end{cases}$
 \item For each $i\in\Gamma_0$, we have a representation $T_i$ given by
 $T_i(j) = \begin{cases} k, \text{\ if $j = i$}\notag\\
@@ -90,7 +89,7 @@ and $f_\alpha = 0$ for all $\alpha\in \Gamma_1$.
 $T_i$ corresponds to a left $\Gamma$-module $S_i$:
 
 $S_i\simeq k$ as a vector space and $e_j v = \begin{cases} v, \text{\
-    if $j = i$}\notag\\ 0, \text{\ otherwise}\notag\end{cases}$ and
+    if $j = i$},\notag\\ 0, \text{\ otherwise},\notag\end{cases}$ and
 $\alpha v = 0$ for all $\alpha\in \Gamma_1$. 
 \end{itemize}
 
@@ -167,7 +166,7 @@ if
 \item \[\xymatrix{
 V(i) \ar@{^(->}[r] \ar[d]_{f_\alpha} & V'(i)\ar[d]^{f'_\alpha}\\
 V(j) \ar@{^(->}[r] & V'(j)}\]
-for $\alpha\colon i\to j\in\Gamma_1$, that is, $f|_\alpha =
+for $\alpha\colon i\to j\in\Gamma_1$, that is, $f_\alpha =
 f'_\alpha|_{V(i)}$. 
 \end{enumerate}
 \item If $(V,f)\subseteq (V',f')$ is a subrepresentation, then the
@@ -208,8 +207,8 @@ $\Lambda = k$.  The only indecomposable $\Lambda$-module is $k$.
 \begin{exam}
 $\Gamma\colon \xymatrix{1\ar[r]^\alpha & 2}$, $k$ field.
 
-The indecomposable left $k\Gamma$-modules $\leftrightsquigarrow$ The
-indecomposable representations of $\Gamma$ over $k$. 
+The indecomposable left $k\Gamma$-modules $\leftrightsquigarrow$ \parbox{6cm}{The
+indecomposable representations of $\Gamma$ over $k$.} 
 
 Let $(V,f) = V_1\extto{f} V_2$ is an indecomposable representation of
 $\Gamma$ over $k$.

@@ -91,7 +91,7 @@ b_4)e_4 + (a_5 + b_5)\alpha\notag\\
 \end{multline}
 \end{exam}
 
-\subsubsection*{Multiplication} $p$, $q$ paths in $\G$:
+\subsubsection*{Multiplication}\index{path algebra!multiplication} $p$, $q$ paths in $\G$:
 \begin{enumerate}[\rm(1)]
 \item $p$, $q$ both non-trivial 
 \[p\cdot q = \begin{cases} pq, & \text{\ if $\mathfrak{e}(q) =\mathfrak{s}(p)$}\notag\\
@@ -183,14 +183,15 @@ Recall: $\Lambda$ ring, $k$ field.
   $\forall \alpha \in k, \forall \lambda,
   \lambda'\in\Lambda$. 
 	
-\subsection*{Equivalent}: $\Lambda$ is a $k$-algebra, if
-  $\exists\ \phi\colon k \to \Lambda$ a ring homomorphism such that
+\begin{note}
+  $\Lambda$ is a $k$-algebra, if $\exists\ \phi\colon k \to \Lambda$ a
+  ring homomorphism such that
  \[\Image\phi \subseteq Z(\Lambda)= \{z\in \Lambda \mid 
   z\lambda=\lambda z,\forall \lambda \in \Lambda\}\]
   ($\iff \exists R \subseteq \Lambda$ subring such that $R \simeq k$
   with $R \subseteq Z(\Lambda)$, just define $\phi (a)=a \cdot
   1_{\Lambda}$). 
-
+\end{note}
   For $ k\G $ the ring homomorphism $\phi \colon k \rightarrow k\G $
   is given by $\phi(a) = ae_1 + ae_2 + \cdots + ae_n$
 \end{defin}
@@ -219,7 +220,7 @@ Show that $k\G\simeq k[x]$ as $k$-algebras.
   $\G\colon \xymatrix{\ar@(ul,dl)[]_\alpha 1 \ar@/^.3pc/[r]^\beta &
     \ar@/^.3pc/[l]^\gamma 2}$\\ \newline 
 
-\underline{Cycles}:
+\subsubsection*{Cycles}
   $\alpha,\alpha^3,\gamma\beta\alpha,\beta\alpha^{10}\gamma, \ldots$
   $\dim_k k\G = \infty$
 \end{exam}
@@ -247,29 +248,25 @@ $k\G$ is semisimple $\iff \G_1 = \emptyset$.
 
   $\Mapsto$: Assume that $\G_1\neq\emptyset.$ Let $\alpha_1$ be an
   arrow in $\G$. Want to find a vertex where at least one arrow ends
-  and no arrow starts. If
-\[\mathfrak{e}(\alpha_1)\] 
-is such a vertex, we are done. If not, there is an arrow $\alpha_2$
-starting in
-\[\mathfrak{e}(\alpha_1).\] 
-If also
-\[\mathfrak{e}(\alpha_2)\] 
-is not as above, we continue. Since $\G$ has no oriented cycles and
-$\G$ is finite, we must end up in a vertex $ v$, where arrows only end
-and no arrows starts. Say, $\alpha = \alpha_t$ is an arrow ending in
-$v$. Then consider $k\G\alpha = k\alpha$.  Since
-$(a_1\alpha)(a_2\alpha = (a_1a_2)\underbrace{(\alpha\alpha)}_{=0} =
-0$ $\implies (k\G\alpha)^2=(0)$ and $k\G\alpha \neq (0)$, we infer
-that $k\G$ is not semisimple.
+  and no arrow starts. If $\mathfrak{e}(\alpha_1)$ is such a vertex,
+  we are done. If not, there is an arrow $\alpha_2$ starting in
+  $\mathfrak{e}(\alpha_1)$.  If also $\mathfrak{e}(\alpha_2)$ is not
+  as above, we continue. Since $\G$ has no oriented cycles and $\G$ is
+  finite, we must end up in a vertex $ v$, where arrows only end and
+  no arrows starts. Say, $\alpha = \alpha_t$ is an arrow ending in
+  $v$. Then consider $k\G\alpha = k\alpha$.  Since
+  $(a_1\alpha)(a_2\alpha = (a_1a_2)\underbrace{(\alpha\alpha)}_{=0} =
+  0$ $\implies (k\G\alpha)^2=(0)$ and $k\G\alpha \neq (0)$, we infer
+  that $k\G$ is not semisimple.
 
 $\Mapsfrom$: Assume that $\G_1 = \emptyset$. Then 
 \[\G\colon \xymatrix{1 & 2\ar@{..}[rr] & &  n} \text{ ($n$ vertices)}\]
-  Basis for $k\G\colon \{e_1, e_2, \cdots, e_n\}$. Elements in
+  Basis for $k\G\colon \{e_1, e_2, \ldots, e_n\}$. Elements in
   $k\G\colon a_1e_1 + a_2e_2 + \cdots + a_ne_n$ with $a_i \in k$. Have
   a ring homomorphism
 \[\psi\colon \underbrace{k \times \cdots \times k}_{n}  \rightarrow k\G\]
   given by
-\[\psi(a_1,a_2,\ldots,a_n)=a_1e_1 + a_2e_2+ \cdots a_ne_n\] 
+\[\psi(a_1,a_2,\ldots,a_n)=a_1e_1 + a_2e_2+ \cdots + a_ne_n\] 
 (check this!).  Show that $\psi$ is an isomorphism. Therefore $k\G$ is
   semisimple, since $k\G$ is isomorphic to a finite product of full
   matrix rings over divisjon rings.
