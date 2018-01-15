@@ -136,7 +136,7 @@ $\Gamma\colon \xymatrix{1\ar[r]^\alpha & 2}$, $k$ field.
 \begin{itemize}
 \item $\xymatrix{k^2\ar[r]^{\left(\begin{smallmatrix}1 & 0 \\ 0 &
           1\end{smallmatrix}\right)} & 2}
-\simeq \xymatrix{k\ar[r]^1 & k}\oplus \xymatrix{k\ar[r]^1 & k}$
+\simeq (\xymatrix{k\ar[r]^1 & k})\oplus (\xymatrix{k\ar[r]^1 & k})$
 \item $\xymatrix{k\ar[r]^1 & k}$ indecomposable? Others?
 \end{itemize}
 \end{exam}
@@ -215,7 +215,8 @@ $\Gamma$ over $k$.
 
 Know: $h_1\colon V_1 \extto{~} \Im f\oplus \Ker f$
 
-In particular, $\xymatrix{V\ar@<1ex>[r]^f & \Im f\ar@<1ex>[l]^{f'}}$
+In particular, $\xymatrix{V\ar@<1ex>[r]^f & \Im f\ar@<1ex>[l]^{\exists
+    f'}}$
 such that $ff' = 1_{\Im f}$.
 
 $h_1\colon V_1 \to \Im f \oplus \Ker f$ given by $v\mapsto (f(v), v -
@@ -231,34 +232,36 @@ V_1 \ar[rr]^f \ar[d]_{h_1} & &  V_2\ar[d]^{h_2=1_{V_2}} & \\
 }\]
 where $\nu\colon \Im f \hookrightarrow V_2$.
 
-\textbf{Case (ii)}: \[\xymatrix{
+\textbf{Case (i)}: \[\xymatrix{
 \Ker f \ar[r]^0\ar[d]^\simeq & 0\ar@{=}[d]\\
 k^t \ar[r]^0 & 0} \simeq \xymatrix{(k\ar[r]^0 & 0)^t}\]
 
 $(V,f)$ indecomposable $\Rightarrow$ $t = 1$ and $(V,f)\simeq
 \xymatrix{k\ar[r]^0 & 0}$ 
 
-\textbf{Case (i)}: $\xymatrix{\Im f \ar@{^(->}[r] & V_2}$
+\textbf{Case (ii)}: $\xymatrix{\Im f \ar@{^(->}[r] & V_2}$
 
 Know: $V_2 = \Im f\oplus V_2'$
 
 \[\xymatrix{
 \Im f \ar@{^(->}[rr] \ar@{=}[d] & &  V_2\ar@{=}[d] & \\
-\Im f \ar[rr]^-{\left(\begin{smallmatrix}1_{\Im f} \\ 0\end{smallmatrix}\right)} & & V_2 & \\
+\Im f \ar[rr]^-{\left(\begin{smallmatrix}1_{\Im f} \\
+      0\end{smallmatrix}\right)} & & 
+\Im f \oplus V_2' & \\
 & \simeq & & \\
-\Im f\ar@{=}[rr] && \Im f & =(0) \text{\ (i)'}\\
+\Im f\ar@{=}[rr] && \Im f & =(0) \text{\ (i)}\\
  & \oplus & \\
-0\ar[rr]^0 && V'_2 & = (0) \text{\ (i)''}
+0\ar[rr]^0 && V'_2 & = (0) \text{\ (ii)}
 }\]
 
-\textbf{Case (i)'}:
+\textbf{Case (i)}:
 \[\xymatrix{
 0 \ar[r]^0\ar@{=}[d] & V'_2\ar[d]^\simeq\\
 0 \ar[r]^0 & k^t} \simeq \xymatrix{(0\ar[r]^0 & k)^t}\]
 $(V,f)$ indecomposable $\Rightarrow$ $t = 1$ and $(V,f)\simeq
 \xymatrix{0\ar[r]^0 & k}$ 
 
-\textbf{Case (i)''}: 
+\textbf{Case (ii)}: 
 \[\xymatrix{
 \Im f \ar[r]^{1_{\Im f}}\ar[d]^\varphi & \Im f\ar[d]^\varphi\\
 k^t \ar[r]^{1_{k^t}} & k^t} \simeq \xymatrix{(k\ar[r]^1 & k)^t}\]
@@ -269,9 +272,13 @@ $(V,f)$ indecomposable $\Rightarrow$ $t = 1$ and $(V,f)\simeq
 $\xymatrix{0 \ar[r]^0 & k}$ are indecomposable. 
 
 \textbf{Hence}: The only indecomposable representations are the ones
-above  $\Rightarrow$ The only indecomposable left $k\Gamma$-modules
+above  
+
+$"\Rightarrow"$ The only indecomposable left $k\Gamma$-modules
 are $k\Gamma e_1$, $k\Gamma e_1/\langle \alpha e_1\rangle$ and $S_2 =
 k\Gamma e_2$. 
+
+$\Rightarrow$ $k\Gamma$ is of finite representation type. 
 \end{exam}
 
 \begin{thm}

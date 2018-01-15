@@ -255,9 +255,10 @@ $k\G$ is semisimple $\iff \G_1 = \emptyset$.
   finite, we must end up in a vertex $ v$, where arrows only end and
   no arrows starts. Say, $\alpha = \alpha_t$ is an arrow ending in
   $v$. Then consider $k\G\alpha = k\alpha$.  Since
-  $(a_1\alpha)(a_2\alpha = (a_1a_2)\underbrace{(\alpha\alpha)}_{=0} =
-  0$ $\implies (k\G\alpha)^2=(0)$ and $k\G\alpha \neq (0)$, we infer
-  that $k\G$ is not semisimple.
+  \[(a_1\alpha)(a_2\alpha = (a_1a_2)\underbrace{(\alpha\alpha)}_{=0} =
+  0\quad \implies \quad (k\G\alpha)^2=(0)
+\]
+and $k\G\alpha \neq (0)$, we infer that $k\G$ is not semisimple.
 
 $\Mapsfrom$: Assume that $\G_1 = \emptyset$. Then 
 \[\G\colon \xymatrix{1 & 2\ar@{..}[rr] & &  n} \text{ ($n$ vertices)}\]
@@ -284,11 +285,11 @@ Then $J$ is an ideal in $k\G$ and
 \begin{proof}[Sketch of proof]
   Define $\psi\colon k\G \rightarrow \underbrace{k \times \cdots \times}_{|\G_0|=n} = k^n $
 \[\psi(a_1e_1 + a_2e_2 + \cdots + a_ne_n + \text{ linear combinations
-    of non-trivial paths} ) = (a_1, a_2, \cdots, a_n)\]
+    of non-trivial paths} ) = (a_1, a_2,\ldots, a_n)\]
   \underline{Check:} \begin{enumerate}
-		\item  $\psi$ is well-defined
-		\item $\psi$ homomorphism of rings
-		\item ker$\psi=J$
+		\item  $\psi$ is well-defined,
+		\item $\psi$ homomorphism of rings,
+		\item ker$\psi=J$. 
 	\end{enumerate}
 	$\implies k\G/J \simeq$ Im$\psi=k^n$.
 \end{proof}
