@@ -3,17 +3,17 @@
 \usepackage[all]{xy}
 \usepackage{imakeidx,enumerate, stmaryrd}
 \numberwithin{equation}{section}
-\newtheorem{thm}{Theorem}[section]
+\newtheorem{thm}{Theorem}
 \newtheorem{cor}[thm]{Corollary}
 \newtheorem{lem}[thm]{Lemma}
 \newtheorem{prop}[thm]{Proposition}
 \theoremstyle{definition}
-\newtheorem{defin}[thm]{Definition}
-\newtheorem{rem}[thm]{Remark}
-\newtheorem{exam}[thm]{Example}
-\newtheorem{note}[thm]{Note}
-\newtheorem{exer}[thm]{Exercise}
-\newtheorem{recall}[thm]{Recall}
+\newtheorem{defin}{Definition}[section]
+\newtheorem{rem}[defin]{Remark}
+\newtheorem{exam}[defin]{Example}
+\newtheorem{note}[defin]{Note}
+\newtheorem{exer}[defin]{Exercise}
+\newtheorem{recall}[defin]{Recall}
 
 \newcommand{\G}{\Gamma}
 \renewcommand{\L}{\Lambda}
@@ -52,6 +52,7 @@ spring 2017 for typesetting parts of the lecture notes up to page
 \input{page6-9}
 \input{page10-15}
 \input{page16-20}
+\input{page-25-31}
 \input{page31-39}	
 
 \printindex
@@ -62,4 +63,4 @@ spring 2017 for typesetting parts of the lecture notes up to page
   36. Cambridge University Press, Cambridge, 1997. xiv+425 pp. ISBN:
   0-521-41134-3; 0-521-59923-7.
 \end{thebibliography}
-\end{document}
+\end{document})
