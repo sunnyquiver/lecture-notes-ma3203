@@ -1,0 +1,231 @@
+%page 40
+\section{Radical of a module}
+\begin{defin}
+$\Lambda$ ring, $A \subseteq B$ $\Lambda$-modules.\\
+$A$ is small in $B$ if $A+X=B$ implies that $X=B$ for every submodule $X$ of $B$. 
+\end{defin}
+
+\begin{exam}
+\begin{enumerate}
+\item[(1)] $\Lambda=\mathbb{Z}$ and $B=\Lambda$ then the only small submodule of $B$ is $(0)$. If $(0)\neq A \subsetneq B$ then $A = \mathbb{Z}_n$ for some $n \neq 0,\; 1$. Choose an integer $m \neq 0, \; 1$ such that $\gcd(n, m) = 1$. Then $B = \mathbb{Z}_n + \mathbb{Z}_m = A + X$ but $X \neq B$. Hence $A$ is not small.
+
+\item[(2)] $\G : \xymatrix{1\ar[r]^\alpha & 2\ar[r]^\beta & 3}$, $k$ a field $\Lambda = k\G$, $B=k\G e_1$\\
+$\xymatrix{
+							&					&			& && A\ar@{}[d]|-*[@]{=} &&\\
+							& k \ar@{->}[d]^1 	&			&0\ar@{->}[d]&&0\ar@{->}[d]&&0\ar@{->}[d]\\
+B = k\G e_1	\ar@{~>}[r] 	& k \ar@{->}[d]^1 	&\supseteq 	&k\ar@{->}[d]^1&\supseteq&0\ar@{->}[d]&\supseteq&0\ar@{->}[d]\\
+						 	& k 				&			&k&&k&&0\\
+}$\\
+$\left. \xymatrix@C-2pc{
+(i) & A &+&(0)& =& A &\neq& B\\
+(ii) & A&+&A&=&A & \neq & B\\
+&&& 0\ar@{->}[d] && 0\ar@{->}[d] &&\\
+(iii) & A &+& k\ar@{->}[d]^1 &=& k\ar@{->}[d]^1 &\neq &B\\
+&&& k && k &&
+} \right\rbrace \implies A$ is small in $B$.
+\\
+\item[(3)] $\G : \vcenter{\xymatrix
+{& 1\ar[dr]\ar[dl] && 4\ar[dl]\\
+2 && 3 &}}, \Lambda = k\G,$ 
+$$B = 
+\vcenter{\xymatrix@C-1pc
+{& k\ar[dr]^1\ar[dl]_1 && k\ar[dl]_1\\
+k && k &}} 
+\supset 
+\vcenter{\xymatrix@C-1pc
+{& k\ar[dr]^1\ar[dl]_1 && 0\ar[dl]\\
+k && k &}} 
+= A' \supset 
+\vcenter{\xymatrix@C-1pc
+{& 0\ar[dr]\ar[dl] && 0\ar[dl]\\
+k && 0 &}}
+=A$$
+\begin{exer}
+\begin{enumerate}
+\item[]
+\item[$\cdot$]$A$ small in $B$
+\item[$\cdot$]$A'$ not small in $B$
+\end{enumerate}
+\end{exer}
+\end{enumerate}
+\end{exam}
+
+%page 41
+\begin{defin}
+$\Lambda$ a ring, $B$ a $\Lambda$-module
+$$\rad B = \bigcap_{A \text{ max. submod. of }B} A = \text{the radical of }B$$
+\begin{note}
+$\rad_\Lambda \Lambda = $ the radical of $\Lambda$ as a ring.
+\end{note}
+\end{defin}
+
+\begin{prop}
+\label{prop:41.25}
+$\Lambda$ a ring, $B$ a finitely generated $\Lambda$-module\\
+$A \subseteq B$ is small in $B \iff A \subseteq \rad B$
+\begin{proof}
+$\Leftarrow :$ Assume $A \subseteq \rad B$. Let $X \subsetneq B$. WTS: $A+X \neq B$\\
+Consider $\mathfrak{F} = \{ M \mid M \subsetneq B \text{ submodule }, X \subseteq M \}$. $\mathfrak{F} \neq \emptyset$, since $X \in \mathfrak{F}$. Let $\{ C_\alpha \}_{\alpha \in I}$ be a chain of submodules  of $B$ in $\mathfrak{F}$.\\ Let $u = \bigcup_{\alpha \in I} C_\alpha$, $u$ is a submodule of $B$. If $u = B$ each element in a set of generators $\{ b_1, b_2, \cdots, b_n \}$ of $B$ must be in one $C_\alpha$. Say $b_i \in C_{\alpha_i}$. The chain condition implies that $\{ b_1, b_2, \cdots, b_n \} \subseteq C_\alpha$ for some $\alpha \in I \implies C_\alpha = B$. Contradiction! $\implies$ each chain in $\mathfrak{F}$ has an upper bound in $\mathfrak{F}$.\\
+Zorn's Lemma $\implies \mathfrak{F}$ has a maximal element $B_1$, i.e. $B_1$ is a maximal submodule of $B$.\\
+Then $A \subseteq \rad B \subseteq B_1$ and $X=B_1$, so that $A+X \subseteq B_1 \subsetneq B$\\
+Hence $A$ is small in $B$.\\
+$\Rightarrow :$ Suppose that $A \not\subseteq \rad B$, that is, $\exists $ maximal submodule $B_1 \subseteq B$ such that $A \not\subseteq B_1$. Then $B_1 \not\subseteq A \ B_1 \subseteq B$, and consequently $A+B_1 = B$ (since $B_1$ is maximal) $B_1 \subsetneq B \implies A$ is not small in $B$.
+\end{proof}
+\end{prop}
+
+%page 42
+\begin{thm}
+$\Lambda$ left artinian, $A$ a finitely generated $\Lambda$-module. Then $\rad A=\mathfrak{r}A$ where $\mathfrak{r} = \rad \Lambda$.
+\begin{proof}
+\begin{equation}
+\label{eq:rA_in_rad}
+\mathfrak{r}A \subseteq \rad A
+\end{equation}
+WTS: $\mathfrak{r}A$ is small in $A$.\\
+%prop 25 page 41
+(Prop \ref{prop:41.25} $\implies \mathfrak{r}A \subseteq \rad A$)\\
+Let $X$ be a submodule of $A$ and suppose that $\mathfrak{r}A + X = A$.\\
+$\xymatrix@C-1pc{
+\implies & \mathfrak{r}^2A &+& \mathfrak{r}X &=& \mathfrak{r}A\\
+\implies & \mathfrak{r}^2A &+& \relax\underbrace{\mathfrak{r}X + X}\ar@{}[d]|-*[@]{=} &=& A\\
+\implies & \mathfrak{r}^2A &+& X &=& A
+}$\\
+\\
+\underline{Induction}: $\mathfrak{r}^nA + X = A$ for all $n \geq 1$.\\
+%Lemma 19 page 35
+Lemma \ref{•} $\implies \mathfrak{r}$ nilpotent $\implies X = A \implies \mathfrak{r}A$ is small in $A \implies \mathfrak{r}A \subseteq \rad A$.
+
+\begin{equation}
+\label{eq:rad_in_rA}
+\rad A \subseteq \mathfrak{r}A 
+\end{equation}
+%theorem 21 b page 36
+$A/\mathfrak{r}A$ is a semisimple module since $\mathfrak{r} A/\mathfrak{r}A = (0)$ (Theroem \ref{} (b))\\
+We have: $A/\mathfrak{r}A = \bigoplus_{i=1}^t S_i$, $S_i$ simple $\Lambda$-module. Let $A_j =\bigoplus_{i=1, i\neq j}^t S_i \subseteq A/\mathfrak{r}A$, which is a maximal submodule. Furthermore $\bigcap_{j=1}^t A_j = (0)$, so that $\rad(A/\mathfrak{r}A) = (0)$.\\
+\ref{eq:rA_in_rad} $\implies \mathfrak{r}A$ is contained in all maximal submodules of $A$\\
+$\implies \rad (A/\mathfrak{r}A) = (\rad (A)+\mathfrak{r}A)/\mathfrak{r}A = (0)$\\
+$\implies \rad A \subseteq \mathfrak{r}A$\\
+$\implies \rad A = \mathfrak{r}A$
+\end{proof} 
+\end{thm}
+
+\begin{exam}
+$\G : 
+\vcenter{\xymatrix@C-1pc@R-1pc
+{
+& 1\ar[dl]_\alpha\ar[dr]^\beta & \\
+2\ar[dr]_\gamma && 3\ar[dl]^\delta\\
+& 4 &
+}}, 
+\rho = \gamma\alpha-\delta\beta, k$ field, $\Lambda = k\G / \langle rho \rangle$.
+\\
+We have seen: $\mathfrak{r} = \langle \overline{arrows} \rangle = \overline{J}$.\\
+$\xymatrix@R-1pc
+{
+&& 1\ar[dl]_\alpha\ar[dr]^\beta & \\
+\Lambda \overline{e_1}\ar@{~>}[r]\ar@{}[dd]|-*[@]{\supseteq} & 2\ar[dr]_\gamma && 3\ar[dl]^\delta\\
+&& 4 &
+\\
+&& 1\ar[dl]_\alpha\ar[dr]^\beta & \\
+\rad \Lambda \overline{e_1} = \mathfrak{r}(\Lambda \overline{e_1}) = \mathfrak{r}\overline{e_1}\ar@{~>}[r] &  2\ar[dr]_\gamma && 3\ar[dl]^\delta\\
+&& 4 &
+}$
+\end{exam}
+%page 43
+\section{The radical of representation}
+$(\G, \rho)$ quiver with relations, $J^t \subseteq \langle \rho \rangle \subseteq J^2$, $k$ field, $\Lambda = k\G / \langle \rho \rangle$, $\G_0 = \{ 1, 2, \cdots , n \}$, $\mathfrak{r} = \overline{J}$.\\
+\\
+$\xymatrix
+{
+(V, f) \text{ representation of } (\G, \rho)\ar@{}[d]|-*[@]{\supseteq}\ar@{~>}[r] & M_{(V, f)} = V(1) \oplus V(2) \oplus \cdots \oplus V(n) \ar@{}[d]|-*[@]{\supseteq}\\
+(V', f') \text{ radical of } (V, f)\ar@{~>}[r] & \mathfrak{r}M_{(V, f)} = \{ r_1m_1 + \cdots + r_tm_t \mid r_i \in \mathfrak{r}, m_i \in M_{(V, f)} \}\\
+}
+$\\
+$\mathfrak{r}$ generated by the arrows $\implies \mathfrak{r}M_{(V,f)}$ is generated by elements on the form
+$\xymatrix@C-3pc@R-1pc{\beta \cdot (v_1, v_2, \cdots v_n) = (0, \cdots, 0, & f_\beta(v_r), & 0, \cdots , 0 )\\
+&s\text{-th coordinate}\ar[u]&}$ for $\beta : r \rightarrow s \in \G_1$\\
+$$\implies \overline{e_s}\mathfrak{r}M_{(V, f)} = \sum_{\begin{smallmatrix}
+\beta \in \G_1,\\ e(\beta)=s
+\end{smallmatrix}} \Image f_\beta$$\\
+$\implies V'(i) =\overline{e_i}\mathfrak{r}M_{(V, f)}= \sum_{\begin{smallmatrix}
+\beta \in \G_1,\\ e(\beta)=i
+\end{smallmatrix}} \Image f_\beta$ and\\ $f'_\alpha = f_\alpha \mid_{V'(i)} : V'(i) \rightarrow V'(j)$ for $\alpha: i \rightarrow j$.\\
+The range is by definition OK since $\Image f_\alpha \subseteq V'(j)$.
+
+\begin{exam}
+\begin{enumerate}
+\item[(1)] $\G : \xymatrix{1 \ar[r]^\alpha & 2\ar[r]^\beta & 3 }, k$ field, $\Lambda = k\G$.\\
+$\xymatrix@R-1pc{
+&k\ar[d]^1\\
+\Lambda e_1 \ar@{~>}[r]&k\ar[d]^1\\
+&k
+}
+\;\;\;\; 
+\xymatrix@R-1pc{
+&0\ar[d]\\
+\rad (\Lambda e_1) \ar@{~>}[r]&k\ar[d]^1\\
+&k
+}$
+\\
+$\xymatrix@R-1pc{
+&0\ar[d]\\
+\Lambda e_2 \ar@{~>}[r]&k\ar[d]^1\\
+&k
+}
+\;\;\;\; 
+\xymatrix@R-1pc{
+&0\ar[d]\\
+\rad (\Lambda e_2) \ar@{~>}[r]&0\ar[d]\\
+&k
+}$\\
+$\xymatrix@R-1pc{
+&0\ar[d]\\
+\Lambda e_3 \ar@{~>}[r]&0\ar[d]\\
+&k
+}
+\;\;\;\; 
+\xymatrix@R-1pc{
+&0\ar[d]\\
+\rad (\Lambda e_3) \ar@{~>}[r]&0\ar[d]\\
+&0
+}$
+
+%page 43
+\item[(2)] $\G : \xymatrix{1 \ar[r]^\alpha & 2 \ar@(ur, dr)^\beta}, \rho = \{ \beta^2 \}, \Lambda = k\G / \langle \rho \rangle$\\
+$\Lambda e_1 : \xymatrix{k \ar[r]^{\begin{psmallmatrix} 1\\0 \end{psmallmatrix}}  & k^2 \ar@(ur, dr)^{\begin{psmallmatrix} 0&0\\1&0 \end{psmallmatrix}}}, \rad (\Lambda e_1) : \xymatrix{0 \ar[r] & k^2 \ar@(ur, dr)^{\begin{psmallmatrix} 0&0\\1&0 \end{psmallmatrix}}}$\\
+$\Lambda e_2 : \xymatrix{0 \ar[r]  & k^2 \ar@(ur, dr)^{\begin{psmallmatrix} 0&0\\1&0 \end{psmallmatrix}}}, \rad (\Lambda e_2) : \xymatrix{0 \ar[r] & (0) \oplus k \ar@(ur, dr)^0}$\\
+\end{enumerate}
+\end{exam}
+
+\begin{note}
+In general, $M$ and $N$ $\Lambda$-modules then $\rad(M \oplus N) = \rad M \oplus \rad N$
+\end{note}
+
+\begin{defin}
+$\Lambda$ left artinian, $\mathfrak{r} = \rad \Lambda$, $A$ finitely generated $\Lambda$-module. Then $A / \mathfrak{r}A$ is called \underline{the top of $A$}. 
+\end{defin}
+\begin{exam}
+\begin{enumerate}
+\item[(1)] $\G : \xymatrix{1 \ar[r]^\alpha & 2\ar[r]^\beta & 3 }, k$ field, $\Lambda = k\G$.\\
+\begin{equation*}
+\begin{split}
+A = \Lambda e_1 :& \vcenter{\xymatrix@R-1pc{
+k\ar[r]^1 &
+k\ar[r]^1 &
+k
+}}\\
+\mathfrak{r}A :& \vcenter{\xymatrix@R-1pc{
+0\ar[r] &
+k\ar[r]^1 &
+k
+}}\\
+A/\mathfrak{r}A :& \vcenter{\xymatrix@R-1pc{
+k\ar[r] &
+0\ar[r] &
+0\ar@{~>}[r] & e_1 \Lambda e_1 = ke_1
+}}
+\end{split}
+\end{equation*}
+ 
+\end{enumerate}
+\end{exam}
