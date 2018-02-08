@@ -193,7 +193,7 @@ $\xymatrix@R-1pc{
 &0
 }$
 
-%page 43
+%page 44
 \item[(2)] $\G : \xymatrix{1 \ar[r]^\alpha & 2 \ar@(ur, dr)^\beta}, \rho = \{ \beta^2 \}, \Lambda = k\G / \langle \rho \rangle$\\
 $\Lambda e_1 : \xymatrix{k \ar[r]^{\begin{psmallmatrix} 1\\0 \end{psmallmatrix}}  & k^2 \ar@(ur, dr)^{\begin{psmallmatrix} 0&0\\1&0 \end{psmallmatrix}}}, \rad (\Lambda e_1) : \xymatrix{0 \ar[r] & k^2 \ar@(ur, dr)^{\begin{psmallmatrix} 0&0\\1&0 \end{psmallmatrix}}}$\\
 $\Lambda e_2 : \xymatrix{0 \ar[r]  & k^2 \ar@(ur, dr)^{\begin{psmallmatrix} 0&0\\1&0 \end{psmallmatrix}}}, \rad (\Lambda e_2) : \xymatrix{0 \ar[r] & (0) \oplus k \ar@(ur, dr)^0}$\\
@@ -230,7 +230,6 @@ k\ar[r] &
 \end{split}
 \end{equation*}
 
-%page 44
 \item[(2)]$\xymatrix
 {
 A = \Lambda \overline{e}_1  \ar@{~>}[r] & 
@@ -401,4 +400,132 @@ g: B \to C & \text{ ess. epi}
 \right\rbrace \implies g\circ f : A \to C$ ess. epi
 \end{exer}
 
+%page 47
+
+\begin{prop}
+$\Lambda$ left artinian, $A, B$ finitely generated $\Lambda$-modules. Let $f : A \to B$ be onto. TFAE:
+\begin{enumerate}
+\item[(a)] $f$ is an essential epimorphism.
+\item[(b)] $\Ker f \subseteq \mathfrak{r}A$, $(\mathfrak{r} = \rad \Lambda)$
+\item[(c)] $\overline{f}: A / \mathfrak{r}A \to B / \mathfrak{r}B$ is an isomorphism.
+\end{enumerate}
+
+\begin{proof}
+$\underline{(a)\Rightarrow(b):}$ Assume $f$ is an essential epimorphism. \underline{WTS:} $\Ker f$ is small in $A$, i.e. $\Ker f \subseteq \mathfrak{r}A$ (Prop \ref{prop:41.25} and Theorem \ref{thm:rA_eq_radA})\\ %mener du theorem 26 ikke 27? side 42
+Let $X \subseteq A$. Assume that $\Ker f + X = A$. Then the composition $\xymatrix{
+X\ar@{^{(}->}[r]^i & A\ar[r]^f & B
+}$ is onto (proof?), such that $\xymatrix{
+X\ar@{^{(}->}[r]^i & A
+}$ is onto, since $f$ is an essential epimorphism\\
+$\implies X = A \implies \Ker f$ is small in $A \implies \Ker f \subseteq \mathfrak{r}A$\\
+\\
+$\underline{(b)\Rightarrow(c):}$ Assume that $\Ker f \subseteq \mathfrak{r}A$. \\
+We have
+$\vcenter{\xymatrix@R-2pc{
+A/\Ker f \ar@{}[r]|-*[@]{\xrightarrow{\sim}}^{f'} & \Im f = B\\
+a + \Ker f \ar@{|->}[r] & f(a)
+}}$ ($f$ onto)\\
+and therefor $\mathfrak{r}(A / \Ker f) = \mathfrak{r}A / \Ker f \xrightarrow{\sim}^{f'} \mathfrak{r}B$ and $
+\left.\left(A / \Ker f \right) \middle/\left(\mathfrak{r}A / \Ker f \right) \right. \simeq B/\mathfrak{r}B
+$\\
+\\
+$$\xymatrix@C8pc{
+a + \mathfrak{r}A \ar@{|->}[r] \ar@{|->}@/_6pc/[ddd] & f(a) + \mathfrak{r}B\\
+A / \mathfrak{r}A \ar[r]^{\overline{f}} \ar@{}[d]|-*[@]{\simeq} & B / \mathfrak{r}B\\
+\left.\left(A / \Ker f \right) \middle/\left(\mathfrak{r}A / \Ker f \right) \right. \ar[ur]^{\overline{f'}\sim} & f(a) + \mathfrak{r}B\\
+(a + \Ker f) + \mathfrak{r}A / \Ker f \ar@{|->}[ur]
+}$$
+$\overline{f}$ is the composition of two isomorphisms $\implies \overline{f}$ is an isomorphism.\\
+\\
+$\underline{(c) \Rightarrow (a):}$ Assume that $\overline{f}: A/\mathfrak{r}A \to B / \mathfrak{r}B$ is an isomorphism. Let $g: X \to A$
+
 %page 48
+$$\xymatrix{
+X\ar[r]^g \ar[d]^{P_X} & A\ar[r]^f \ar[d]^{P_A} & B \ar[d]^{P_B}\\
+X /\mathfrak{r} X \ar[r]^{\overline{g}} & A/\mathfrak{r}A\ar@{}[r]|-*[@]{\xrightarrow{\sim}}^{\overline{f}} & B/\mathfrak{r}B\\
+}$$
+Asuume $f \circ g$ is onto\\ $\implies \overline{f \circ g} = \overline{f} \circ \overline{g}:X /\mathfrak{r} X \to B /\mathfrak{r} B$ is onto\\ 
+$\implies \overline{g} = \overline{f}^{-1}\overline{f}\overline{g}:X /\mathfrak{r} X \to A /\mathfrak{r} A$ is onto\\ 
+Lemma \ref{lem:f_onto_iff_f-bar_onto} $\implies g$ is onto $\implies f$ is essential epimorphsim.
+
+\end{proof}
+\end{prop}
+
+\begin{exam}
+$\G : 
+\vcenter{\xymatrix@C-1pc@R-1pc{
+&1\ar[ld]_\alpha \ar[rd]^\beta&\\
+2\ar[rd]_\gamma&&3\ar[ld]^\delta\\
+&4&
+}}
+\rho = \{ \gamma\alpha - \delta\beta \}, k$ field, $\Lambda = k\G / \langle \rho \rangle$\\
+$B = 
+\vcenter{\xymatrix@C-1pc@R-1pc{
+&k\ar[ld]_1 \ar[rd]&\\
+k\ar[rd] && 0 \ar[ld]\\
+&0&
+}}$ 
+Find some $f: A \to B$ which is essential epimorphism.\\
+
+\[
+\xy
+\POS(15,5)
+\xymatrix"A"@C-1pc@R-1pc{
+A=\Lambda \overline{e_1}
+}
+\POS(42,0)
+\xymatrix"Adi"{
+&k\ar[ld]_1 \ar[rd]^1&\\
+\ar@{<~}["A"u] k\ar[rd]_1 && k \ar[ld]^1\\
+&k&
+}
+
+\POS(84,0)
+
+\xymatrix"Bdi"{
+&k\ar[ld]_1 \ar[rd] \ar@/_1pc/@{<.}["Adi"]_1&\\
+\ar@/_1pc/@{<.}["Adi"]_1 k\ar[rd] && 0 \ar[ld] \ar@/^1pc/@{<.}["Adi"]_0\\
+&0 \ar@/^1pc/@{<.}["Adi"]_0&
+}
+
+\POS(10, -15)
+\xymatrix"kerf"{
+&k\ar[ld]_1 \ar[rd]& \ar@{^{(}->}["Adi"dll]\\
+ k\ar[rd] && 0 \ar[ld]\\
+&0&
+}
+
+\POS(45, -32)
+\xymatrix"rA"@C-1pc@R2pc{
+& A\ar@{}["Adi"dd]|-*[@]{=} & \\
+ & \mathfrak{r}A \ar@{}[u]|-*[@]{\subseteq} & \\
+&&
+}
+
+\POS(22, -36)
+\xymatrix"ker"@C-1pc@-1pc{
+& & \\
+ & \Ker f\ar@{}["rA"]|-*[@]{\subseteq} \ar@{}["kerf"d]|-*[@]{=} & \\
+&&
+}
+
+\POS(60, -36)
+\xymatrix"rAdi"@C1pc{
+&0\ar[ld] \ar[rd]& \\
+ *+[l]{=\;\; k}\ar[rd]_1 && k \ar[ld]^1\\
+&k&
+}
+
+\endxy
+\]
+
+$\implies f$ is essential epimorphism, or
+\[
+\xymatrix{
+                                     &           &k\ar[dr]\ar[dl]&                                                &&           &k\ar[dr]\ar[dl]\\
+A / \mathfrak{r}A \ar@{}[r]|-*[@]{=} & 0 \ar[dr] && 0 \ar[dl]  \ar@{}[rr]|-*[@]{\xrightarrow{\sim}}^{\overline{f}} &&  0 \ar[dr] && 0 \ar[dl] \ar@{}[r]|-*[@]{=} & B / \mathfrak{r}B\\
+                                     &           &0&                                                &&           &0\\
+}
+\]
+
+\end{exam}
