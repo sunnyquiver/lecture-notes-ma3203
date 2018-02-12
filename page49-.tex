@@ -1,0 +1,225 @@
+%page 49
+\section{Projective Modules}
+$\Lambda$ a ring, $P$ a $\Lambda$-module
+\begin{defin}
+$P$ is \underline{projective} if for every epimorphism $g: B \to C$ and every  $\Lambda$-homomorphism $f: P \to C$ there exists a homomorphism $h: P \to B$ such that
+$$\xymatrix{
+& P\ar[d]^f \ar@{-->}[ld]_{\exists h}\\
+B \ar[r]^g & C
+}$$ commutes.
+\end{defin}
+
+\begin{exam}
+$\Lambda$ is a projective $\Lambda$-module
+$$\xymatrix{
+& \Lambda\ar[d]^f \ar@{-->}[ld]_{\exists h} & 1\ar@/_2pc/@{|->}[dd]|\hole\\
+B \ar[r]^g & C \ar[r] & 0\\
+b\ar@{|->}[rr] && f(1)
+}$$
+$f(\lambda) = f(\lambda \cdot 1) = \lambda f(1)$. Choose $b \in B$ such that $g(b) = f(1)$, and define $h: \Lambda \to B$ by $h(\lambda) = \lambda b$\\
+\underline{Check:} $h$ is $\Lambda$-homomorphism.\\
+Then $gh(\lambda) = g(\lambda b) = \lambda g(b) = \lambda f(1) = f(\lambda \cdot 1) = f(\lambda), \forall \lambda \in \Lambda$\\
+$\implies \Lambda$ projective.
+\end{exam}
+
+\begin{exer}
+$F$ free $\Lambda$-module $\implies F$ is projective ($F \simeq \bigoplus_{i \in I} \Lambda a_i$, $_\Lambda \Lambda a_i \simeq _\Lambda \Lambda$, $\forall i \in I$)
+\end{exer}
+
+\begin{prop}
+$\Lambda$ a ring, $P$ a projective $\Lambda$-module\\
+$P$ projectiv $\iff$ $\exists$ free $\Lambda$-module $F$ and a $\Lambda$-module $Q$ such that $F \simeq P \oplus Q$
+\begin{proof}
+$\underline{\Rightarrow :}$ Assume that $P$ is projective. Any module $M$ is a factor of a free module $F_M : $ Let $F_M = \bigoplus_{m \in M} \Lambda_m$, $_\Lambda\Lambda_m = _\Lambda\Lambda$ and define $\varphi: F_M \to M$ by $\varphi((\lambda_m)_{m \in M}) = \sum_{m \in M} \lambda_m m$\\
+%page 50
+\underline{Check:} $\varphi$ $\Lambda$-homomorphism, $\varphi$ onto, $m = \varphi((\lambda_x)_{x \in M})$, where $\lambda_x = \begin{cases}
+0, & x \neq m\\
+1, & x = m
+\end{cases}$ 
+
+Let $g: F \to P$ be onto with $F$ free.
+$$\xymatrix{
+& P\ar@{-->}[ld]_h \ar@{}[d]^{1_P}|-*[@]{=} & \text{projective} \ar[l]\\
+F \ar[r]^g & C \ar[r] & 0\\
+b\ar@{|->}[rr] && f(1)
+}$$
+$\implies \exists h: P \to F$ such that $gh = 1_P$\\
+
+\underline{Calim:} $F \simeq \Ker g \oplus \Im h$ (Excersice)\\
+
+$\underline{\Leftarrow :}$ Assume that $F \xrightarrow{\sim}^\varphi P \oplus Q$ where $F$ is a free $\Lambda$-module. Suppose that $g: B \to C$ is onto nd let $f: P \to C$.
+$$
+\xymatrix{
+(p, q)\ar@{|->}[r] & p\\
+*+[l]{F \xrightarrow{\sim}^\varphi P \oplus Q} \ar[r]^\pi \ar@{-->}[d]_{\exists h'} & P \ar@/^1pc/@{-->}[l]^\nu \ar[d]^f\\
+B \ar[r]^g & C \ar[r] & 0
+}
+$$
+$\nu(p) = (p, 0)$, $\pi\nu(p) = \pi(p,0) = p$\\
+$F$ projective $\implies \exists h': F \to B$ such that 
+\begin{equation*}
+\begin{split}
+gh' &= f\pi \varphi \;\;\;\;\;\;\; \mid \cdot \varphi^{-1}\\
+gh'\varphi^{-1} &= f\pi \;\;\;\;\;\;\;\;\; \mid \cdot \nu\\
+g(\underbrace{h'\varphi \nu}_h) &= f\phi\nu = f 1_P = f
+\end{split}
+\end{equation*}
+
+$\implies P$ is projective.
+\end{proof}
+\end{prop}
+
+\begin{exam}
+$(\G, \rho)$ a quiver with relations, $k$ a field, $J^t \subseteq \langle \rho \rangle \subseteq J^2$, $\G_0 = \{ 1, 2, \cdots , n \}$. $\Lambda = k\G / \langle \rho \rangle$\\
+\underline{Have seen:} $_\Lambda\Lambda = \Lambda \overline{e_1} \oplus \Lambda \overline{e_2} \oplus \cdots \oplus \Lambda \overline{e_n}$\\
+$\implies \Lambda \overline{e_i}$ projective $\Lambda$-modules
+\end{exam}
+
+%page 51
+\begin{defin}
+Let $f: P \to M$ be a $\Lambda$-homomorphism. Then $f:P\to M$ is a \underline{projective cover of $M$} if P is projectiv and $f$ is an essential epimorphism. 
+\end{defin}
+
+\begin{exam}
+$\G:
+\vcenter{\xymatrix@C-1pc@R-1pc{
+&1\ar[dl]_\alpha \ar[dr]^\beta&\\
+2 \ar[dr]_\gamma&&3 \ar[dl]^\delta\\
+&4&
+}},$ 
+$\rho = \{ \gamma\alpha -\delta\beta \}$, $\Lambda = k\G / \langle \rho \rangle$, $M = \vcenter{\xymatrix@C-1pc@R-1pc{
+&k\ar[dl]_1 \ar[dr]&\\
+k \ar[dr]&&0 \ar[dl]\\
+&0&
+}}$
+
+\[
+\xy
+\POS(0,0)
+\xymatrix"seq"@C5pc{
+0 \ar[r] & \Ker f \ar[r] & \Lambda \overline{e_1} \ar[r]^f & M \ar[r] & 0
+}
+\POS(20, -15)
+\xymatrix@C-4pc@R-1pc{
+&0\ar[dl] \ar[dr] \ar@{}["seq"]|-*[@]{=}&\\
+0 \ar[dr]&&k \ar[dl]^1\\
+&k&
+}
+\POS(50, -15)
+\xymatrix{
+&k\ar[dl]_1 \ar[dr]^1 \ar@{}["seq"r]|-*[@]{=}&\\
+k \ar[dr]_1&&k \ar[dl]^1\\
+&k&
+}\POS(78, -15)
+\xymatrix{
+&k\ar[dl]_1 \ar[dr] \ar@{}["seq"rr]|-*[@]{=}&\\
+k \ar[dr]&&0 \ar[dl]\\
+&0&
+}
+
+\endxy
+\]
+We have $\Ker f \subseteq \mathfrak{r}(\Lambda \overline{e_1})$\\
+$\implies f$ is essential epimorphism\\
+$\implies f$ is projective cover.
+\end{exam}
+
+\begin{thm}
+$\Lambda$ left artinian, $A$ finitely generated
+\begin{enumerate}
+\item[(a)] There exists a projective cover $f:P\to A$ ($P$ finitely generated)
+\item[(b)] Let $f_1 : P_1 \to A$ and $f_2 : P_2 \to A$ be two projective covers of $A$. Then there exists an isomorphism $g : P_1 \to P_2$ such that $f_1 = f_2g$
+\[
+\xymatrix@R-2pc{
+P_1\ar@{}[dd]_g|-*[@]{\xrightarrow{\sim}} \ar[dr]^{f_1}\\
+& A\\
+P_2 \ar[ur]_{f_2}
+}
+\]
+\end{enumerate}
+
+\begin{proof}
+\begin{enumerate}
+\item[(a)]$A$ finitely generated $\implies \exists$ onto $f: \Lambda^n \to A$, $n < \infty$.\\
+Choose $P$ projective, $f : P \to A$ an onto $\Lambda$-homomorphism with $l(P)$ minimal. \underline{WTS:} $f$ projective cover. Consider
+\[
+\xymatrix{
+0\ar[r] & \Ker f \ar@{^{(}->}[r]  & P \ar[r]^f \ar[d]^{\pi_P} & A \ar[r] \ar[d]^{\pi_A} & 0\\
+  &        & P/\mathfrak{r}P \ar[r]^{\overline{f}} & A/\mathfrak{r}A \ar[r] & 0
+}
+\]
+Assume that $\Ker f \not\subseteq \mathfrak{r}P$. Then $\pi_P(\Ker f) \neq (0)$ in $P/\mathfrak{r}P$, which is semisimple. We know that
+$ P/\mathfrak{r}P = \pi_P(\Ker f) \oplus X $
+for some $X \subseteq P/\mathfrak{r}P$.\\
+%page 52
+Define $e : P/\mathfrak{r}P \to P/\mathfrak{r}P$ by letting $e(v, w) = (0, w)$ for $(v, w) \in P/\mathfrak{r}P = \pi_P(\Ker f) \oplus X$.
+
+\[
+\xymatrix{
+P\ar@{-->}[r]^{e'} \ar[d]^{\pi_P} & P \ar[d]^{\pi_P}\\
+P/\mathfrak{r}P \ar[r]^e & P/\mathfrak{r}P \ar[d]\\
+&0
+}
+\]
+Then $\pi_P e'e' = ee\pi_P = e\pi_P = \pi_P e' \implies \pi_P(e'-e'e') = 0$. Hence, if $x = e'(1_P - e') = (1_P-e')e'$ then $\Im x \subseteq \mathfrak{r}P$. Since $\Im x^2 \subseteq \mathfrak{r}^2 P$ and so on, and $\mathfrak{r}^t = (0)$ for some $t \geq 1$, we have that $x^t = 0$. Let $a = e'$ and $b = 1_P - e'$. Then $$a^tb^t = b^ta^t = x^t = 0$$
+\centerline{and}
+$$1_P = (a+b)^{2t} = \underbrace{a^{2t} + r_1a^{2t-2}b + \cdots r_ta^tb^t}_{\tilde{e}} + \underbrace{r_{t+1}a^{t-1}b^{t+1} + \cdots + r_{2t-1}ab^{2t-1} + b^{2t}}_{\tilde{e}'}$$
+It follows that $\tilde{e} = \tilde{e}\cdot 1_P = \tilde{e}(\tilde{e} + \tilde{e}') = \tilde{e}^2 + \tilde{e}\tilde{e}' = \tilde{e}^2 + 0 = \tilde{e}^2$\\
+$\implies \tilde{e}$ is aan idempotent.\\
+\underline{Check:} $\overline{\tilde{e}} = e^{2t} = e$ and $\overline{f}(P/\mathfrak{r}P) = \overline{f}(X) = \overline{f}(\Im e)$.\\
+\leavevmode\\
+Then we have 
+\[
+\xymatrix{
+P \ar[r]^{\tilde{e}} \ar[d]_{\pi_P} & P \ar[r]^{f} \ar[d]_{\pi_P} & A \ar[d]_{\pi_A}\\
+P/\mathfrak{r}P \ar[r]^e & P/\mathfrak{r}P \ar[r]^{\overline{f}} & A/\mathfrak{r}A
+}
+\]
+\[\xymatrix@R-2pc{
+*+[F_\}]{\overline{f}e \pi_P} \ar@{}[r]|-*[@]{=} & *+[F_\}]{\pi_A f \tilde{e}}\\
+\text{onto} \ar@{}[r]|-*[@]{\implies} & \text{onto} 
+}\]
+\underline{Seen:} $\pi_A$ essential epimorphism $\implies f \tilde{e}$ onto $\implies f \mid_{\Im \tilde{e}}: \Im \tilde{e} \to A$ onto.\\
+
+$$\xymatrix@R-1pc@C-1pc{
+\text{We have } & P \ar@{}[r]|-*[@]{=} & \Im \tilde{e} \ar@{}[r]|-*[@]{\oplus} & \Ker \tilde{e}\\
+\text{Check:} && \text{projective} \ar[u] & \Im(1_P - \tilde{e}) \ar@{}[u]|-*[@]{=}
+}$$\\
+%page 53
+$\overline{(1_P - \tilde{e})} = 1 - e \neq 0 \implies \Im (1_P \tilde{e}) \neq (0)$.\\
+$\implies l(\Im \tilde{e}) < l(P)$, Contradiction!\\
+$\implies \Ker f \subseteq \mathfrak{r}P$ and $f$ is an essential epimorphsim.\\
+$f$ is projective cover.
+
+\item[(b)] Let $f_i : P_i \to A$ be a projective cover of $A$ for $i = 1, 2$.
+\[\xymatrix{
+P_1 \ar[dr]^{f_1} \ar[d]_{\exists g}&& 0\\
+P_2 \ar[r]^{f_2} \ar[d]_{\exists h} & A \ar[r]\ar[dr]\ar[ur] & 0\\
+P_1 \ar[ur]_{f_1} && 0
+}\]
+$P_1$ projective and $f$ epimorphic $\implies \exists g: P_1 \to P_2$ such that $f_1 = f_2g$.\\
+$f_2$ essential epimorphism and $f_1$ epimorphic $\implies g$ epimorphic.\\
+Similarly $h$ is epimorphic.\\
+$\implies l(P_2) \leq l(P_1) \leq l(P_1) \implies l(P_1) = l(P_2) \implies g$ isomorphism. 
+\end{enumerate}
+\end{proof}
+\end{thm}
+
+\begin{prop}
+$\Lambda$ left artinian, $f: P \to A$ an epimorphism, $A$ finitely generated, $P$ projective $\Lambda$-module.
+\begin{enumerate}
+\item[(a)] $f:P \to A$ projective cover $\iff \overline{f}: P/\mathfrak{r}P \to A/\mathfrak{r}A$ isomorphic.
+\item[(b)] $\{ f_i : P_i \to A_i \}_{i=1}^m$, $f_i$ onto, $P_i$ projective\\
+The map $f: P_1 \oplus P_2 \oplus \cdots \oplus P_m \to A_1 \oplus A_2 \oplus \cdots \oplus A_m $ defined by $(p_1, p_2, \cdots , p_m) \mapsto (f_1(p_1), f_2(p_2), \cdots , f_m(p_m))$ is a projectiv cover $\iff$ each $f_i:P_i \to A$ is a projectiv cover.
+\end{enumerate}
+
+\begin{proof}
+\begin{enumerate}
+\item[]
+%prop 28 page 48
+\item[(a)] Prop \ref{•}
+\item[(b)] \underline{Exercise:} Use that $\mathfrak{r}(P_1 \oplus \cdots \oplus P_m) = \mathfrak{r}P_1 \oplus \cdots \oplus \mathfrak{r}P_m$, $\mathfrak{r} = \rad \Lambda$ and $(a)$
+\end{enumerate}
+\end{proof}
+\end{prop}
+%page 54
