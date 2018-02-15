@@ -226,6 +226,7 @@ The map $f: P_1 \oplus P_2 \oplus \cdots \oplus P_m \to A_1 \oplus A_2 \oplus \c
 
 %page 54
 \begin{prop}
+\label{prop:P_and_rP}
 $\Lambda$ left artinian, finitely generated modules.
 \begin{enumerate}
 \item[(a)] $P$ projective module then $P \to P/\mathfrak{r}P$ is projective cover.
@@ -586,6 +587,154 @@ $\implies 0,1$ the only idempotents in $\Lambda$.
 \begin{enumerate}
 \item[(1)] $\Lambda = k\G / \langle \rho \rangle$, $k$ a field $J^t \subseteq \langle \rho \rangle \subseteq J^2$, $|\G_0| \geq 2$ $\implies \Lambda$ not local (Why?)
 \item[(2)] $\Lambda$ a ring, $M \neq (0)$ a $\Lambda$-module.\\
-\underline{We have seen:} $\End_\Lambda$
+\underline{We have seen:} $\End_\Lambda(M)$ contains an idempotenet $\neq 0,1$ $\iff M$ decomposes.
 \end{enumerate}
 \end{note}
+
+%page 58
+
+\begin{cor}
+\label{cor:local_imply_indec}
+$M$ $\Lambda$-module, $\End_\Lambda(M)$ a local ring $\implies M$ indecomposable.
+\end{cor}
+
+\begin{prop}
+\label{prop:local_iff_proj-indec}
+$\Lambda$ left artinian, $P$ finitely generated projective $\Lambda$-module. TFAE:
+\begin{enumerate}
+\item[(a)] $P$ indecomposable
+\item[(b)] $\End_\Lambda(P)$ local
+\item[(c)] $\mathfrak{r}P$ is the only maxiaml submodule of $P$.
+\item[(d)] $P/ \mathfrak{r}P$ is simple.
+\end{enumerate}
+\begin{proof}
+\begin{enumerate}
+\item[]
+\item[$\underline{(a) \iff (d):}$] Prop \ref{prop:P_and_rP} (c).
+
+\item[$\underline{(d) \Rightarrow (c):}$] $P/\mathfrak{r}P$ simple $\implies \mathfrak{r}P$ maximal submodule of $P$.\\
+$$\text{\underline{We have:} } \mathfrak{r}P = \rad P = \bigcap_{\begin{smallmatrix} M \text{ max.} \\ \text{submod. of } P\end{smallmatrix}} M$$
+$\implies \mathfrak{r}P \subseteq M$, $\forall M \subseteq P$ maximal submodule.\\
+$\implies \mathfrak{r}P$ is the only maximal submodule of $P$.
+
+\item[$\underline{(c) \Rightarrow (b):}$] Let $f: P \to P$. Then\\ \begin{tabular}{cl}
+$f$ invertible &$\stackrel{\mathclap{\normalfont\mbox{def}}}{\iff}$ $f$ isomorphism\\
+&$\iff f$ is an epimorphsm ($l(P) < \infty$)\\
+&$\stackrel{\mathclap{\normalfont\mbox{$\mathfrak{r}P$ max}}}{\iff}$ $\Im f \not\subseteq \mathfrak{r}P$
+\end{tabular}
+Hence, $\{ $non-invertable elements in $\End_\Lambda(P) \} = \{ f \in End_\Lambda(P) \mid \Im f \subseteq \mathfrak{r}P \} = I$\\
+\underline{$I$ ideal:} $f_1, f_2 \in I$, $p \in P$
+\[\xy
+\xymatrix"eq"@C-1pc{
+(f_1-f_2)(p) \ar@{}[r]|-*[@]{=} & f_1(p) \ar@{}[r]|-*[@]{-} & f_2(p) \ar@{}[r]|-*[@]{\in} & \mathfrak{r}P \ar@{}[r]|-*[@]{\Rightarrow} & f_1-f_2 \in I
+}
+\POS(27, -8)
+\xymatrix{
+\mathfrak{r}P \ar@{}["eq"r]|-*[@]{\ni} \ar@{}["eq"rr]|-*[@]{\ni} \ar@{}["eq"rrr]|-*[@]{\Rightarrow}
+}
+\endxy\]
+$f_1, f_2 \in \End_\Lambda(P)$:
+\[\xymatrix@R-1pc@C-1pc{
+\Im f_1f_2 \ar@{}[r]|-*[@]{=} & f_1(\Im f_2) \ar@{}[r]|-*[@]{\subseteq} \ar@{}[d]|-*[@]{\subseteq}="ar" & \mathfrak{r}P, \text{ if } f_1 \in I\\
+           & f_1(\mathfrak{r}P) \ar@{}[d]|-*[@]{=} & \text{ if } f_2 \in I \ar"ar"\\
+           & \mathfrak{r}f_1(P) \ar@{}[r]|-*[@]{\subseteq} & \mathfrak{r}P
+}\]
+$\implies ff_1, f_1f \in I$, when $f_1 \in I$ and $f \in \End_\Lambda(P)$.\\
+$\implies I$ is an ideal $\implies \End_\Lambda(P)$ a local ring.
+
+\item[$\underline{(b) \Rightarrow (a):}$] Corollary \ref{cor:local_imply_indec}
+\end{enumerate}
+\end{proof}
+\end{prop}
+
+%page 59
+
+\begin{exam}
+\begin{enumerate}
+\item[]
+\item[(1)] $\mathbb{Z}$ projective $\mathbb{Z}$-module, $\mathbb{Z}$ not artinian, $End_\mathbb{Z}(\mathbb{Z}) \simeq \mathbb{Z}$ not local, but $\mathbb{Z}$ indecomposable.
+\item[(2)] $\Lambda = k\G / \langle \rho \rangle$, $k$ field, $J^t \subseteq \langle \rho \rangle \subseteq J^2$, $\Lambda$ left artinian.\\
+\underline{We have:} $\Lambda\overline{e}_i$ indecomposable projective $\Lambda$-modules.\\
+Prop \ref{prop:local_iff_proj-indec} $\implies \End_\Lambda(\Lambda\overline{e}_i) \simeq \overline{e}_i \Lambda \overline{e}_i$ is a local ring.
+\end{enumerate}
+\end{exam}
+
+\begin{cor}
+$\Lambda$ left artinian. TFAE:
+\begin{enumerate}
+\item[(a)] $\Lambda$ local
+\item[(b)] $\mathfrak{r} = \rad \Lambda$ is a maximal left ideal
+\item[(c)] $\Lambda/\mathfrak{r}$ is simple $\Lambda$-module
+\end{enumerate}
+\begin{proof}
+Follows from Prop \ref{prop:local_iff_proj-indec}, noting that $\Lambda \simeq \End_\Lambda(\Lambda)^{op}$
+\end{proof}
+\end{cor}
+
+\begin{prop}
+$\Lambda$ left artinian
+\begin{enumerate}
+\item[(a)] $1 = e_1 +e_2 + \cdots + e_n$ - a sum of primitive orthogonal idempotents.
+\begin{enumerate}
+\item[orthogonal:] $e_ie_j = 0$, $\forall i \neq j$
+\item[primitive:] $e_i \neq 0$ is not a sum of non-zero idempotents
+\end{enumerate}
+
+\item[(b)] Let $e_1, e_2, \cdots, e_m$ be idempotents in $\Lambda$, and let $e = e_1 + e_2 + \cdots + e_m$.\\
+If $e_1, e_2, \cdots, e_m$ are orthogonal then $\Lambda e = \Lambda e_1 \oplus \Lambda e_2 \oplus \cdots \oplus \Lambda e_m$.
+
+\item[(c)] Let $e\neq 0$ be an idempotent. Then $\Lambda e$ indecomposable $\iff e$ is primitive.
+\end{enumerate}
+
+%page 60
+
+\begin{proof}
+\begin{enumerate}
+\item[(a)] $\Lambda / \mathfrak{r}$ semisimple\\
+$\implies \Lambda / \mathfrak{r} = S_1 \oplus S_2 \oplus \cdots \oplus S_n$, $S_i$ simple.\\
+Let $P(S_i) \to S_i$ be the projective cover of $S_i$. Then $P(S_i)$ is indecomposable by Prop \ref{prop:P_and_rP} (c). Then by Prop \ref{prop:proj_covers->top_iso} (b): $\bigoplus_{i=1}^n P(S_i) \to \Lambda/ \mathfrak{r}$ is a projective cover. Also $\Lambda \to \Lambda / \mathfrak{r}$ is a projective cover.\\
+Uniqueness $\implies \Lambda \simeq \bigoplus_{i=1}^n P(S_i)$\\
+$\implies \Lambda = P_1 \oplus P_2 \oplus \cdots \oplus P_n$, $P_i$ indecomposable.\\
+Then $1 = e_1 + e_2 + \cdots + e_n$ with $e_i \in P_i$\\
+$\implies \xymatrix@C-1pc@R-1pc{
+e_i \ar@{}[r]|-*[@]{=} \ar@{}[d]|-*[@]{\in} & e_i \cdot 1 \ar@{}[r]|-*[@]{=} & e_ie_1 \ar@{}[r]|-*[@]{+}\ar@{}[d]|-*[@]{\in} & e_ie_2 \ar@{}[r]|-*[@]{+}\ar@{}[d]|-*[@]{\in} & \cdots \ar@{}[r]|-*[@]{+} & e_ie_i \ar@{}[r]|-*[@]{+}\ar@{}[d]|-*[@]{\in} & \cdots \ar@{}[r]|-*[@]{+} & e_ie_n\ar@{}[d]|-*[@]{\in}\\
+P_i &             & P_1    & P_2    &        & P_i    &        &  P_n
+}$\\
+Direct sum $\implies e_ie_j = \left\lbrace \begin{matrix}
+0, & \text{if } i \neq j\\
+e_i, & \text{if } i = j
+\end{matrix} \right.$\\
+$\implies \{ e_i \}$ are orthogonal idempotents.\\
+\\
+\underline{Claim:} $P_i = \Lambda e_i$\\
+$e_i \in P_i \implies \Lambda e_i \subseteq P_i$\\
+$x \in P_i = \xymatrix@C-1pc@R-1pc{
+x \ar@{}[r]|-*[@]{=}  & x \cdot 1 \ar@{}[r]|-*[@]{=} & xe_1 \ar@{}[r]|-*[@]{+}\ar@{}[d]|-*[@]{\in} & xe_2 \ar@{}[r]|-*[@]{+}\ar@{}[d]|-*[@]{\in} & \cdots \ar@{}[r]|-*[@]{+} & xe_i \ar@{}[r]|-*[@]{+}\ar@{}[d]|-*[@]{\in} & \cdots \ar@{}[r]|-*[@]{+} & xe_n\ar@{}[d]|-*[@]{\in}\\
+ &             & P_1    & P_2    &        & P_i    &        &  P_n
+}$\\
+Direct sum $\implies x = xe_i \in \Lambda e_i \implies P_i = \Lambda e_i$\\
+\\
+\underline{$e_i$ primitive:} Let $e_i = f_1 + f_2$ with $f_i \neq 0$ fro $i=1,2$, and $f_1$ and $f_2$ are orthogonal idempotents. Using (b):
+\[
+\Lambda e_i = \xymatrix@C-1pc@R-1pc{ \Lambda f_1 \ar@{}[r]|-*[@]{\oplus}\ar@{}[d]|-*[@]{\neq} & \Lambda f_2 \ar@{}[d]|-*[@]{\neq}\\ (0) & (0)}
+\]
+$\implies P_i $ not indecomposable. Contradiction!\\
+$\implies e_i$ primitive for $i = 1, 2, \cdots , n$.
+
+\item[(b) and (c):] Exercises.
+\end{enumerate}
+\end{proof}
+\end{prop}
+
+\begin{prop}
+$\Lambda$ left artinian, $P$ finitely generated projective $\Lambda$-module. Then \[P \simeq \bigoplus_{i=1}^n P_i\] with $P_i$ indecomposable and decomposition is unique up to isomorphism an ordering.
+
+\begin{proof}
+$P / \mathfrak{r}P = \bigoplus_{i=1}^n S_i$, $S_i$ simple $\Lambda$-modules.\\
+$P \to \mathfrak{r}P$ projective cover and $\bigoplus_{i=1}^n P(S_i) \to \bigoplus_{i=1}^n S_i = P / \mathfrak{r}P$ is a projective cover.\\
+\\
+\centerline{Uniqueness $\implies P \simeq \bigoplus_{i=1}^n \underbrace{P(S_i)}_{indec}$}
+\end{proof}
+\end{prop}
+
+% page 61
