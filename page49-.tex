@@ -116,7 +116,6 @@ k \ar[dr]_1&&k \ar[dl]^1\\
 k \ar[dr]&&0 \ar[dl]\\
 &0&
 }
-
 \endxy
 \]
 We have $\Ker f \subseteq \mathfrak{r}(\Lambda \overline{e_1})$\\
@@ -125,6 +124,7 @@ $\implies f$ is projective cover.
 \end{exam}
 
 \begin{thm}
+\label{thm:proj-cov_unique}
 $\Lambda$ left artinian, $A$ finitely generated
 \begin{enumerate}
 \item[(a)] There exists a projective cover $f:P\to A$ ($P$ finitely generated)
@@ -206,6 +206,7 @@ $\implies l(P_2) \leq l(P_1) \leq l(P_1) \implies l(P_1) = l(P_2) \implies g$ is
 \end{thm}
 
 \begin{prop}
+\label{prop:proj_covers->top_iso}
 $\Lambda$ left artinian, $f: P \to A$ an epimorphism, $A$ finitely generated, $P$ projective $\Lambda$-module.
 \begin{enumerate}
 \item[(a)] $f:P \to A$ projective cover $\iff \overline{f}: P/\mathfrak{r}P \to A/\mathfrak{r}A$ isomorphic.
@@ -222,4 +223,369 @@ The map $f: P_1 \oplus P_2 \oplus \cdots \oplus P_m \to A_1 \oplus A_2 \oplus \c
 \end{enumerate}
 \end{proof}
 \end{prop}
+
 %page 54
+\begin{prop}
+$\Lambda$ left artinian, finitely generated modules.
+\begin{enumerate}
+\item[(a)] $P$ projective module then $P \to P/\mathfrak{r}P$ is projective cover.
+\item[(b)] $P,Q$ projective modules, $P \simeq Q \iff P/\mathfrak{r}P \simeq Q/\mathfrak{r}Q$
+\item[(c)] $P$ projective module, $P$ indecomposable $\iff P/\mathfrak{r}P$ simple.
+\item[(d)] Assume that $P = \bigoplus_{i=1}^n P_i \simeq \bigoplus_{j=1}^m Q_j$, with $P$ projective and $P_i$ and $Q_j$ indecomposable.\\
+$\implies n = m$ and $\exists $ permutation $\pi$ of $\{ 1, 2, \cdots, n \}$ such that $P_i \simeq Q_{\pi(i)}$, for $i=1,2,\cdots,n$.
+\end{enumerate}
+\begin{proof}
+\begin{enumerate}
+\item[]
+\item[(a)] \underline{We have seen:} $A \to A/\mathfrak{r}A$ is essential epimorphism for finitely generated $A$.\\
+$P$ projective $\implies$ $P \to P/\mathfrak{r}P$ projective cover.
+
+\item[(b)] $\underline{\Rightarrow :}$ Clear.\\
+$\underline{\Leftarrow:}$ Assume that $P/\mathfrak{r}P \simeq Q/\mathfrak{r}Q$.\\
+$(a) \implies P \to P/\mathfrak{r}P, Q/\mathfrak{r}Q$ are projective covers. Assumption plus projective cover unique up to isomorphism (Theorem \ref{thm:proj-cov_unique} (b)) $\implies P \simeq Q$.
+
+\item[(c)] $\underline{\Leftarrow:}$ Assume that $P = P_1 \oplus P_2$ with $P_i \neq (0)$. Since $\mathfrak{r}P = \mathfrak{r}P_1 \oplus \mathfrak{r}P_2$ we have that
+\[\xymatrix@C-1pc@R-2pc{
+P / \mathfrak{r}P \ar@{}[r]|-*[@]{=} & P_1 \oplus P_2 / \mathfrak{r}P_1 \oplus \mathfrak{r}P_2 \ar@{}[r]|-*[@]{\simeq} & P_1 / \mathfrak{r}P_1 \ar@{}[r]|-*[@]{\oplus} \ar@{}[dd]|-*[@]{\neq} & P_2 /\mathfrak{r}P_2 \ar@{}[dd]|-*[@]{\neq}\\
+                  &                                                         &                 &                 \\
+                  &                                                         &      (0)        &      (0)       \\
+                  &            \text{Nakayama Lemma} \ar@/^/[uur] \ar@/_1pc/[uurr]                       &                 &                 \\
+}
+\]
+$\implies P/ \mathfrak{r}P$ not simple
+\\\\
+$\underline{\Rightarrow :}$ Assume that $P / \mathfrak{r}P$ is not simple. $P/\mathfrak{r}P$ is a semisimple $\Lambda$-module $\implies P / \mathfrak{r}P = U_1 \oplus U_2$, where $U_i \neq (0)$, $i=1,2$.\\
+Let $P_i$ be a projective cover of $U_i$ for $i=1,2$.\\
+(a) gives that $P \to P /\mathfrak{r}P$ is a projective cover.\\ 
+\underline{We know:} $P_1 \oplus P_2 \to U_1 \oplus U_2 = P / \mathfrak{r}P$ is a projective cover.\\
+Uniqueness (Theorem \ref{thm:proj-cov_unique} (b)) $\implies P \simeq P_1 \oplus P_2$ with $P_i \neq (0)$, $i=1,2$.
+$\implies P$ decomposes.
+
+%page 55
+
+\item[d] \underline{Exercise:}\\
+\underline{Note:} $\xymatrix@R-1pc{
+P_i / \mathfrak{r}P_i \ar@{^{(}->}[r] & P_1 / \mathfrak{r}P_1  \oplus \cdots P_n / \mathfrak{r}P_n \ar@{}[d]|-*[@]{\simeq} \\
+ & Q_1 / \mathfrak{r}Q_1  \oplus \cdots Q_n / \mathfrak{r}Q_n \ar@{->>}[r] & Q_j / \mathfrak{r}Q_j  \\
+}$\\
+$\implies \exists j$ such that $ Q_j / \mathfrak{r}Q_j \simeq  P_i / \mathfrak{r}P_i \implies P_i \simeq Q_j$
+\end{enumerate}
+\end{proof}
+\end{prop}
+
+\begin{recall}
+$\Lambda$ left artinian.\\
+$\implies \Lambda / \mathfrak{r} = S_1 \oplus \cdots \oplus S_n$, $S_i$ simple. Furthermore if $T$ is a simple $\Lambda$-module then $\exists j$ such that $T \simeq S_j$, i.e $\{ S_i \}_{i=1}^n$ has representatives from all isomorphism classes of simple $\Lambda$-modules.\\
+\\
+Let $\xymatrix@C-1pc{P_i \ar[r]^{f_i} & S_i}$ be a projective cover of $S_i$.\\
+Prop \ref{prop:proj_covers->top_iso} (a) $\implies P_i / \mathfrak{r}P_i \simeq S_i$, since $\mathfrak{r}S_i = (0)$.\\
+Prop \ref{prop:proj_covers->top_iso} (c) $\implies P_i$ indecomposable.\\
+\\
+Let $P$ be an indecomposable projective $\Lambda$-module. Then $P \to P/\mathfrak{r}P$ is a projective cover and $P/\mathfrak{r}P$ is simple. Hence $\exists j$ such that $P/\mathfrak{r}P \simeq S_j$.
+$$P \to P/\mathfrak{r}P \simeq S_j \leftarrow P_j \text{ projective cover}$$
+Uniqueness $\implies P \simeq P_j$.
+\end{recall}
+
+\begin{cor}
+$\Lambda$ left artinian. The only indecomposable projective $\Lambda$-modules are $P_1, P_2, \cdots, P_n$ up to isomorphsim.
+
+\begin{exam}
+$\G : 
+\vcenter{\xymatrix@C-1pc@R-1pc{
+&1 \ar[dl]_\alpha \ar[dr]^\beta &\\
+2 \ar[dr]_\gamma &&3 \ar[dl]^\delta\\
+&4&
+}}$, $\rho = \{ \gamma\alpha-\delta\beta \}$, $k$ field $\Lambda = k\G / \langle \rho \rangle$.\\
+\underline{We have seen:} $\xymatrix@C-1pc@R-1pc{
+\Lambda/\mathfrak{r} \ar@{}[r]|-*[@]{=} & k\overline{e}_1 \ar@{}[r]|-*[@]{\oplus}\ar@{}[d]|-*[@]{=} & k\overline{e}_2 \ar@{}[r]|-*[@]{\oplus}\ar@{}[d]|-*[@]{=} & k\overline{e}_3 \ar@{}[r]|-*[@]{\oplus}\ar@{}[d]|-*[@]{=} & k\overline{e}_4 \ar@{}[d]|-*[@]{=}\\
+                     & S_1              & S_2              & S_3              & S_4
+}$\\
+Projective covers:
+\[
+\begin{matrix}
+\xy
+\POS(25, 0)
+\xymatrix"S1"@C-1pc@R-1pc{
+&k \ar[dl] \ar[dr]&\\
+0\ar[dr] && 0 \ar[dl]\\
+&0&
+}
+\POS+(23, -8)
+\xymatrix{
+= S_1}
+\POS(0,0)
+\xymatrix"e1"{
+&k \ar[dl]_1 \ar[dr]^1 \ar@{.>}@/^/["S1"]^1&\\
+k \ar[dr]_1 && k \ar[dl]^1\\
+&k&
+}
+\POS(-8, -9)
+\xymatrix{
+\Lambda \overline{e}_1:}
+\endxy
+
+&
+
+\xy
+\POS(25, 0)
+\xymatrix"S1"@C-1pc@R-1pc{
+&0 \ar[dl] \ar[dr]&\\
+k\ar[dr] && 0 \ar[dl]\\
+&0&
+}
+\POS+(23, -8)
+\xymatrix{
+= S_2}
+\POS(0,0)
+\xymatrix"e1"{
+&0 \ar[dl] \ar[dr] &\\
+k \ar[dr]_1 \ar@{.>}@/_/["S1"]^1 && 0 \ar[dl]\\
+&k&
+}
+\POS(-8, -9)
+\xymatrix{
+\Lambda \overline{e}_2:}
+\endxy
+
+\\
+\\
+
+\xy
+\POS(25, 0)
+\xymatrix"S1"@C-1pc@R-1pc{
+&0 \ar[dl] \ar[dr]&\\
+0\ar[dr] && k \ar[dl]\\
+&0&
+}
+\POS+(23, -8)
+\xymatrix{
+= S_3}
+\POS(0,0)
+\xymatrix"e1"{
+&0 \ar[dl] \ar[dr] &\\
+0 \ar[dr]  && k \ar[dl]^1 \ar@{.>}@/_/["S1"]^1\\
+&k&
+}
+\POS(-8, -9)
+\xymatrix{
+\Lambda \overline{e}_3:}
+\endxy
+
+&
+
+\xy
+\POS(25, 0)
+\xymatrix"S1"@C-1pc@R-1pc{
+&0 \ar[dl] \ar[dr]&\\
+0\ar[dr] && 0 \ar[dl]\\
+&k&
+}
+\POS+(23, -8)
+\xymatrix{
+= S_4}
+\POS(0,0)
+\xymatrix"e1"{
+&0 \ar[dl] \ar[dr] &\\
+0 \ar[dr]  && 0 \ar[dl] \ar@{}["S1"ll]|-*[@]{=}\\
+&k&
+}
+\POS(-8, -9)
+\xymatrix{
+\Lambda \overline{e}_4:}
+\endxy
+
+\end{matrix} 
+\]
+\end{exam}
+\end{cor}
+
+%page 56
+\begin{lem}
+$\Lambda$ left artinian, $M$ finitely generated.\\
+Let $\xymatrix@C-1pc{P\ar[r]^{f'} & M/\mathfrak{r}M}$ be a projective cover. Then a homomorphism $f: P \to M$ such that 
+\[\xymatrix{
+& P \ar[dl]_f \ar[d]^{f'}\\
+M \ar[r]^{\pi_M} & M/\mathfrak{r}M
+}\]
+commutes, is a projective cover of $M$.
+\begin{proof}
+$$\left.\begin{matrix}
+f' = \pi_M \cdot f & \text{epi.}\\
+\xymatrix@C-1pc{M \ar[r]^{\pi_M} & M/\mathfrak{r}M} & \text{ess. epi.}
+\end{matrix}\right\rbrace
+\implies f \text{ epimorphism}$$
+\begin{tabular}{cl}
+$\vcenter{\xymatrix{
+P \ar@{}[d]|-*[@]{=} \ar[r]^f & M \ar[d]^{\pi_M}\\
+P \ar[d]^{\pi_P} \ar[r]^{f'} & M/\mathfrak{r}M \ar@{}[d]|-*[@]{=}\\
+P/\mathfrak{r}P \ar[r]^{\overline{f}} & M/\mathfrak{r}M\\
+}}$ &  
+\begin{tabular}{ll}
+\underline{Know:} $\overline{f'}: P/\mathfrak{r}P \xrightarrow{\sim} M/\mathfrak{r}M$ isomorphism.\\ 
+\\
+\underline{We have:} $\overline{f}\pi_P = \pi_M f = f' = \overline{f'}\pi_P$
+\end{tabular}
+\end{tabular}
+$\pi_P$ epimorphic $\implies \overline{f} = \overline{f'} \leftarrow$ isomorphism\\
+$\implies \overline{f}$ isomorphism $\implies f: P \to M$ projective cover.
+\end{proof}
+\end{lem}
+
+\begin{exam}
+\[\begin{matrix}
+\vcenter{\xymatrix@C-1pc@R-1pc{
+& &k \ar[dl]_{\begin{psmallmatrix} 1\\1 \end{psmallmatrix}} \ar[dr]^0&\\
+M: & k^2 \ar[dr]_{\begin{psmallmatrix} 1 & -1 \end{psmallmatrix}} && k\ar[dl]^1\\
+&& k &
+}}
+
+&
+
+\vcenter{\xymatrix@C-1pc@R-1pc{
+& &0 \ar[dl] \ar[dr]&\\
+\mathfrak{r}M: & k{\begin{psmallmatrix} 1 \\ 1 \end{psmallmatrix}} \ar[dr] && 0\ar[dl]\\
+&& k &
+}}
+
+\\
+
+\vcenter{\xymatrix@C-1pc@R-1pc{
+& &k \ar[dl]_0 \ar[dr]&\\
+M / \mathfrak{r}M: & k^2 / k{\begin{psmallmatrix} 1 \\ 1 \end{psmallmatrix}}  \ar[dr] && 0\ar[dl]\\
+&& 0 &
+}}
+
+&
+
+\simeq S_1 \oplus S_2 \oplus S_3
+
+\end{matrix}
+\]
+
+\[
+\xy
+
+\POS(0,0)
+\xymatrix"D1"@C-1pc@R-1pc{
+&k \ar[dr] \ar[dl]&\\
+0\ar[dr]&&0\ar[dl]\\
+&0&
+}
+
+\POS+(22, -9)
+\xymatrix{\bigoplus}
+\POS-(22, -9)
+
+
+\POS+(30, 2)
+\xymatrix"D2"{
+&0 \ar[dr] \ar[dl]&\\
+\frac{k^2}{k{\begin{psmallmatrix} 1 \\ 1 \end{psmallmatrix}}}\ar[dr]&&0\ar[dl]\\
+&0&
+}
+
+\POS+(24, -11)
+\xymatrix{\bigoplus}
+\POS-(24, -11)
+
+
+\POS+(30, -2)
+\xymatrix"D3"{
+&0 \ar[dr] \ar[dl]&\\
+0\ar[dr]&&k\ar[dl]\\
+&0&
+}
+\POS(-30, 0)
+\xymatrix"M"{
+&k \ar[dl]_{\begin{psmallmatrix} 1\\1 \end{psmallmatrix}} \ar[dr]^0 \ar@{.>}["D1"]^1&\\
+k^2 \ar[dr]_{\begin{psmallmatrix} 1 & -1 \end{psmallmatrix}} \ar@{.>}@/_4pc/["D2"]_{\text{proj.}} && k\ar[dl]^1 \ar@{.>}@/_4pc/["D3"]_1 \ar["D1"ll]\\
+& k &
+}
+
+\POS(0,35)
+\xymatrix"U1"{
+&k \ar[dr]^1 \ar[dl]_1 \ar@{.>}@/_3pc/["M"]_1 \ar@{.>}@/^4pc/["D1"]^1\\
+k\ar[dr]_1&&k\ar[dl]^1\\
+&k \ar["D1"uu]&
+}
+
+\POS+(24, -9)
+\xymatrix{\bigoplus}
+\POS-(24, -9)
+
+\POS+(33, 0)
+\xymatrix"U2"{
+&0 \ar[dr] \ar[dl]&\\
+\ar@{.>}@/^1pc/["M"]_{\begin{psmallmatrix} 1\\0\end{psmallmatrix}} \ar@{.>}["D2"]^{\begin{psmallmatrix} 1\\0\end{psmallmatrix}} k \ar[dr]_1&&0\ar[dl]\\
+&k\ar["D2"uu]&
+}
+
+\POS+(22, -9)
+\xymatrix{\bigoplus}
+\POS-(22, -9)
+
+
+\POS+(27, 0)
+\xymatrix{
+&0 \ar[dr] \ar[dl]&\\
+0\ar[dr]&&k\ar[dl]^1 \ar@{.>}@/_10pc/["M"]_1 \ar@{.>}["D3"]^1\\
+&k\ar["D3"uu]&
+}
+
+\endxy
+\]
+\end{exam}
+
+%page 57
+
+\begin{defin}
+$\Lambda$ is a \underline{local ring} if the non-invertible elements in $\Lambda$ is an ideal.
+\end{defin}
+
+\begin{exam}
+\begin{enumerate}
+\item[]
+\item[(1)] $\mathbb{Z}$ is not a local ring. Invertible elements: $\{ -1, 1 \}$, but $3 + (-2) = 1 \implies 	$ non-invertible elements is not an ideal.
+\item[(2)] $k$ fiel $\implies k$ local
+\item[(3)] $\Lambda_n = k[x]/\langle x^n \rangle$, $k$ a field.\\
+Non-invertibel elements: $\langle x \rangle / \langle x^n \rangle$.\\
+Invertible elements: $\{ a + f(x)x + \langle x^n \rangle \mid  a \in k\setminus \{ 0 \}, f(x) \in k[x] \}$.\\
+$\implies \Lambda$ is a local ring.
+\item[(4)] $$\G : 
+\vcenter{\xy\xymatrix{
+1 \ar@(l,ul)^{\alpha_1} \ar@(u,ur)^{\alpha_2} \ar@(d,dl)^{\alpha_n}
+}
+\POS(3, 5)
+\xymatrix"an"{{}}
+\POS(0, -5)
+\xymatrix"a2"{ \ar@{.}@/_1pc/["an"]}
+\endxy
+}, \rho \text{ relation such that } J^t \subseteq \langle \rho \rangle \subseteq J^2$$
+$\Lambda = k\G / \langle \rho \rangle$ - finitedimensional $k$-algebra, $k$ field.\\
+Non-invertible elements: $J / \langle \rho \rangle = \mathfrak{r}$ - ideal\\
+Invertible elements: $\{ ae_1 + r \mid a \in k \setminus \{ 0 \}, r \in \mathfrak{r} \}$\\
+$\implies \Lambda$ a local ring.
+\end{enumerate}
+\end{exam}
+
+\begin{prop}
+$\Lambda$ a local ring $\implies 0$ and 1 are the only idempotents.
+\begin{proof}
+Let $e$ be an idempotent in $\Lambda$. Suppose that $e$ is an invertible element, i.e. $\exists f \in \Lambda$ such that $ef = fe = 1$.\\
+$\implies e = e\cdot 1 = e(ef) = e^2f = ef = 1$.\\
+Suppose that $e \neq 0,1$, i.e. $e$ and $1-e$ are both not invertible. Then \[\xy\xymatrix"eq"@C-2pc{1  = & e &+ & (1-e)}
+\POS+(10, -10)
+\xymatrix{\text{not invertible} \ar["eq"r] \ar["eq"rrr]}
+\endxy\]
+$\Lambda$ local $\implies 1$ not invertible. Contradiction!\\
+$\implies 0,1$ the only idempotents in $\Lambda$.
+\end{proof}
+\end{prop}
+
+\begin{note}
+\begin{enumerate}
+\item[(1)] $\Lambda = k\G / \langle \rho \rangle$, $k$ a field $J^t \subseteq \langle \rho \rangle \subseteq J^2$, $|\G_0| \geq 2$ $\implies \Lambda$ not local (Why?)
+\item[(2)] $\Lambda$ a ring, $M \neq (0)$ a $\Lambda$-module.\\
+\underline{We have seen:} $\End_\Lambda$
+\end{enumerate}
+\end{note}
