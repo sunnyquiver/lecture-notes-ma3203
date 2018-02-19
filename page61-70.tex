@@ -88,8 +88,8 @@ We have that
 
 \xymatrix{
 M \ar@{}[r]|-*[@]{=} & \bigoplus\limits_{r=1}^n M_r \ar@{}[d]|-*[@]{=} \ar[r]^{1_M = (\varphi_{ji})} & \bigoplus\limits_{s=1}^n N_s \ar@{}[r]|-*[@]{=} \ar@{}[d]|-*[@]{=} & M\\
-& M_i \oplus \hat{M_i} \ar[r]^{\begin{psmallmatrix} \varphi_{ji} & a\\b&c \end{psmallmatrix}} & N_j \oplus \hat{N_j} \ar@{}[d]^{\begin{psmallmatrix} 1_{N_j} & 0\\ -b\varphi_{ji}^{-1} & 1_{N_j} \end{psmallmatrix}}|-*[@]{\xrightarrow{\sim}}\\
-& M_i \oplus \hat{M_i} \ar@{}[u]^{\begin{psmallmatrix} 1_{N_j} & -\varphi_{ji}^{-1}a\\ 0 & 1_{N_j} \end{psmallmatrix}}|-*[@]{\xrightarrow{\sim}} \ar[r]^A & N_j \oplus \hat{N_j}
+& M_i \oplus \hat{M_i} \ar[r]^{\begin{psmallmatrix} \varphi_{ji} & a\\b&c \end{psmallmatrix}} & N_j \oplus \hat{N_j} \ar@{}[d]^{\begin{psmallmatrix} 1_{N_j} & 0\\ -b\varphi_{ji}^{-1} & 1_{\hat{N}_j} \end{psmallmatrix}}|-*[@]{\xrightarrow{\sim}}\\
+& M_i \oplus \hat{M_i} \ar@{}[u]^{\begin{psmallmatrix} 1_{M_j} & -\varphi_{ji}^{-1}a\\ 0 & 1_{\hat{M}_j} \end{psmallmatrix}}|-*[@]{\xrightarrow{\sim}} \ar[r]^A & N_j \oplus \hat{N_j}
 }
 
 \POS(-15, -20)
@@ -216,7 +216,7 @@ $\Lambda$ artin $R$-algebra, finitely generated $\Lambda$-modules.
 \begin{proof}
 \begin{enumerate}
 \item[(a)] \underline{Have:} \begin{enumerate}
-\item[$\cdot$] $Hom_\Lambda(A,B) \subseteq \Hom_R(A,B)$
+\item[$\cdot$] $\Hom_\Lambda(A,B) \subseteq \Hom_R(A,B)$
 \item[$\cdot$] $R$ artinian $\implies R$ noetherian
 \end{enumerate}
 Enough to show that $\Hom_R(A,B)$ is a finitely generated $R$-module.\\
@@ -251,20 +251,21 @@ $\implies \Lambda$ is left-artinian.
 \begin{defin}
 A \underline{category} $\mathcal{C}$ consist of a collection of \underline{objects}, $\Obj\mathcal{C}$, and for each pair $(A,B)$ in $\mathcal{C}$ a set of morphisms $\Hom_\mathcal{C}(A,B)$ (can be $\emptyset$), write $f:A\to B$ for $f \in \Hom_\mathcal{C}(A,B)$, and \underline{composition of morphisms} 
 \[\xymatrix@R-1pc{
-\Hom_\mathcal{C}(C,B) \times \Hom_\mathcal{C}(A, B) \ar[r] & \Hom_\mathcal{C}(A, C)\\
+\Hom_\mathcal{C}(B,C) \times \Hom_\mathcal{C}(A, B) \ar[r] & \Hom_\mathcal{C}(A, C)\\
 (g,f) \ar@{|->}[r]& gf
 }\]
 such that
 \begin{enumerate}
-\item[(i)] For each $A \in \mathcal{C}$, $\exists 1_A \in \Hom_\mathcal{C}(A,A)$ such that $f \cdot 1_A = f$ $\forall f \in \Hom_\mathcal{C}(A,B)$ and $1_A \cdot g = g$ $\forall g \in \Hom_\mathcal{C}(C, A)$.
+\item[(i)] For each $A \in \mathcal{C}$, $\exists 1_A \in \Hom_\mathcal{C}(A,A)$ such that $f \cdot 1_A = f$, $\forall f \in \Hom_\mathcal{C}(A,B)$ and $1_A \cdot g = g$, $\forall g \in \Hom_\mathcal{C}(C, A)$.
 \item[(ii)] Associative law is satisfied \[h(gf) = (hg)f\] when $\xymatrix{A \ar[r]^f & B \ar[r]^g & C \ar[r]^h & D}$.
 \end{enumerate}
 \end{defin}
 
 \begin{exam}
 \begin{enumerate}
+\item[]
 \item $\G$ a quiver, $J^t \subseteq \langle \rho \rangle \subseteq J^2$, $t \geq 2$.\\
-$\Rep(\G, \rho) = $ category of representations of $(\G, \rho)$.\\
+$\Rep(\G, \rho) = $ category of all representations of $(\G, \rho)$.\\
 $\Obj(\Rep(\G, \rho)) = $ all representations of $(\G, \rho)$ over $k$.\\
 morphisms = morphisms of representations.\\
 composition = composition of morphisms of representations.
@@ -272,7 +273,7 @@ composition = composition of morphisms of representations.
 \item $\Lambda$ ring\\
 $\Mod\Lambda$ = the category of all left $\Lambda$-modules.\\
 $\Obj(\Mod(\Lambda$)) = all left $\Lambda$-modules.\\
-morphisms = $\Lambda$-morphisms of left $\Lambda$-modules.\\
+morphisms = $\Lambda$-homomorphisms of left $\Lambda$-modules.\\
 composition = usual composition of maps.\\
 \underline{Special cases:}\\
 $Ab = $ abelian groups = $\Mod(\mathbb{Z}$).\\
@@ -281,7 +282,7 @@ $\Vec(k)$ = vectorspaces over $k$ = $\Mod(k)$.
 \end{exam}
 
 \begin{defin}
-$\mathcal{C}$ a category $A,B$ objects in $\mathcal{C}$. A morphism $f:A\to B$ in $\mathcal{C}$ is an isomorphism if in $\mathcal{C}$ if $\exists$ a morphism $g:B\to A$ such that\\
+$\mathcal{C}$ a category $A,B$ objects in $\mathcal{C}$. A morphism $f:A\to B$ in $\mathcal{C}$ is an isomorphism in $\mathcal{C}$ if $\exists$ a morphism $g:B\to A$ such that\\
 \centerline{$gf = 1_A$ and $fg=1_B$.}
 \end{defin}
 \begin{note}
@@ -305,8 +306,7 @@ Full subcategory - enough to describe the objects in the subcategory.
 \begin{exam}
 \begin{enumerate}
 \item $\Lambda$ not commutative: $\Mod \Lambda$ is a subcategory of $\Mod\mathbb{Z}$ which is not full: \[\Hom_\Lambda(\Lambda, \Lambda) \subsetneq \Hom_\mathbb{Z}(\Lambda, \Lambda)\]
-%Mener du z ikke i senteret av lambda?????????????
-Choose $z \in Z(\Lambda)$, $f: \Lambda \to \Lambda$ by $f(\lambda) = z\cdot \lambda$. Then $f \in \Hom_\mathbb{Z}(\Lambda, \Lambda)$, but $f \not\in \Hom_\Lambda()\Lambda,\Lambda)$ 
+Choose $z \not\in Z(\Lambda)$, $f: \Lambda \to \Lambda$ by $f(\lambda) = z\cdot \lambda$. Then $f \in \Hom_\mathbb{Z}(\Lambda, \Lambda)$, but $f \not\in \Hom_\Lambda(\Lambda,\Lambda)$ 
 
 \item $\Lambda$ a ring $I \subseteq \Lambda$ an ideal, $\pi : \Lambda \to \Lambda/I$ natural.\\
 Any $\Lambda/I$-module $M$ is also a $\Lambda$-module via $\lambda \cdot m \stackrel{\mathclap{\normalfont\mbox{def}}}{=} \pi(\lambda)m$
@@ -324,13 +324,13 @@ $\add M = $ &all direct summands in a finite number of coppies of $M$\\&($X \in 
 \begin{defin}
 A (covariant) \underline{functor} $F: \mathcal{C} \to \mathcal{D}$ associates to each object $C$ in $\mathcal{C}$ an object $F(C)$ in $\mathcal{D}$, and to each morphsim $f:A\to B$ in $\mathcal{C}$ a morphism $F(f):F(A)\to F(B)$ in $\mathcal{D}$ such that
 \begin{enumerate}
-\item[(i)] $F(gf) = F(g)F(f)$ all composable morphisms in $\mathcal{C}$
+\item[(i)] $F(gf) = F(g)F(f)$ for all composable morphisms in $\mathcal{C}$
 \item[(ii)] $F(1_A) = 1_{F(A)}$ $\forall A \in \Obj \mathcal{C}$
 \end{enumerate}
-$F$ \underline{contracariant} functor:
+$F$ \underline{contravariant} functor:
 \begin{enumerate}
 \item[] $\xymatrix{f:A\to B \ar@{~>}[r] & F(f): F(B) \to F(A)}$
-\item[(i)] $F(gf) = F(f)F(g)$ all composable morphisms in $\mathcal{C}$
+\item[(i)] $F(gf) = F(f)F(g)$ for all composable morphisms in $\mathcal{C}$
 \item[(ii)] $F(1_A) = 1_{F(A)}$ $\forall A \in \Obj \mathcal{C}$
 \end{enumerate}
 \end{defin}
@@ -339,6 +339,7 @@ $F$ \underline{contracariant} functor:
 
 \begin{exam}
 \begin{enumerate}
+\item[]
 \item $\Lambda = k\G/\langle\rho \rangle$, $J^t \subseteq \langle \rho \rangle \subseteq J^2$, $\G_0 = \{ 1, 2, \cdots, n \}$
 \[\xymatrix@R-2pc{
 F: \mod\Lambda \ar[r] & \Rep(\G, \rho)\\
@@ -349,7 +350,7 @@ M \ar@{|->}[r] & F(M) = (V,f)\\
 & \overline{e}_i m \ar@{|->}[r] & \overline{\alpha}\cdot\overline{e}_i m
 }\]
 \[\xymatrix{
-M \ar[d]^h="h" & F(M) \ar[d]^{F(h)}="F(h)" \ar@{|->}"h";"F(h)" & V(i) =  \overline{e}_i M \ar[d]^{F(h)(i) = h\mid_{\overline{e}_i M}}\\
+M \ar[d]^h="h" & F(M)=(V,f) \ar[d]^{F(h)}="F(h)" \ar@{|->}"h";"F(h)" & V(i) =  \overline{e}_i M \ar[d]^{F(h)(i) = h\mid_{\overline{e}_i M}}\\
 M' & F(M') = (V', f') & V'(i) = \overline{e}_i M'
 }\]
 
@@ -369,7 +370,7 @@ g: A\to B \ar@{|->}[r] & F(g) = f\cdot g
 }}$
 
 \item $\G$ a quiver, $\Obj(\G) = \G_0$\\
-morphsims = $i\to j$ = all paths from $i$ to $j$.\\
+morphsims $i\to j$ = all paths from $i$ to $j$.\\
 $\xymatrix{F: \G \to \mod k = \vec k \ar@{~>}[r]&}$ representations of $\G$ over $k$
 \end{enumerate}
 \end{exam}
@@ -377,7 +378,7 @@ $\xymatrix{F: \G \to \mod k = \vec k \ar@{~>}[r]&}$ representations of $\G$ over
 %page 69
 
 \begin{defin}
-$\mathcal{C}$ a category, $R$ a commutative ring. $\mathcal{C}$ is \underline{preadditive} ($R$-category) if $\Hom_\mathcal{C}(A,B)$ is an abelian group ($R$-module) for all objects $A$ and $B$ in $\mathcal{C}$ and the composition \[ \varphi: \Hom_\mathcal{C}(B,C) \times \Hom_\mathcal{C}(A,B) \to \Hom_\mathcal{C}(A,C) \] is bilnear ($R$-bilinear) for all $A,B$ and $C$ in $\mathcal{C}$, i.e
+$\mathcal{C}$ a category, $R$ a commutative ring. $\mathcal{C}$ is \underline{preadditive} ($R$-category) if $\Hom_\mathcal{C}(A,B)$ is an abelian group ($R$-module) for all objects $A$ and $B$ in $\mathcal{C}$, and the composition \[ \varphi: \Hom_\mathcal{C}(B,C) \times \Hom_\mathcal{C}(A,B) \to \Hom_\mathcal{C}(A,C) \] is bilinear ($R$-bilinear) for all $A,B$ and $C$ in $\mathcal{C}$, i.e
 \begin{equation*}
 \begin{split}
 \varphi(g_1 + g_2, f) &= \varphi(g_1,f) + \varphi(g_2, f)\\
@@ -388,11 +389,12 @@ $\mathcal{C}$ a category, $R$ a commutative ring. $\mathcal{C}$ is \underline{pr
 \end{defin}
 
 \begin{defin}
-$\mathcal{C}, \mathcal{D}$ preadditve $(R-)$categories. A functor $F: \mathcal{C} \to \mathcal{D}$ is an \underline{additive} $(R-)$functor if the map \[ F: \Hom_\mathcal{C}(A, B) \to Hom_\mathcal{D}(F(A), F(B))\] is a homomorphism of groups ($R$-modules) for all objects $A$ and $B$ in $\mathcal{C}$.
+$\mathcal{C}, \mathcal{D}$ preadditve $(R-)$categories. A functor $F: \mathcal{C} \to \mathcal{D}$ is an \underline{additive} $(R-)$functor if the map \[ F: \Hom_\mathcal{C}(A, B) \to \Hom_\mathcal{D}(F(A), F(B))\] is a homomorphism of groups ($R$-modules) for all objects $A$ and $B$ in $\mathcal{C}$.
 \end{defin}
 
 \begin{exam}
 \begin{enumerate}
+\item[]
 \item $\Lambda = k\G / \langle \rho \rangle$, $J^t \subseteq \langle \rho \rangle \subseteq J^2$, $\G_0 = \{ 1,2,\cdots, n \}$\\
 \begin{tabular}{rl}
 $\Rep(\G, \rho)$ -& preadditive $k$-kategory\\
@@ -403,8 +405,8 @@ $H:\Rep(\G, \rho) \to \mod\Lambda$ additive $k$-functor\\
 $(V, f) \mapsto H(V,f) = V(1) \oplus V(2) \oplus \cdots \oplus V(n)$\\
 $\overline{e}_i \cdot (v_1, v_2, \cdots, v_n) = (0,0, \cdots, 0, v_i, 0, \cdots, 0)$\\
 $\alpha: i \to j \in \G$\\
-$\xymatrix@C-2pc@R-1pc{
- && *+[r]{j\text{-th coord}}\ar[dl]\\
+$\xymatrix@C-2pc@R-2pc{
+ && *+[r]{j\text{-th coord}}\ar@/_1pc/[dl]\\
 \overline{\alpha}\cdot (v_1, v_2, \cdots, v_n) = (0,0, \cdots, 0,& f_\alpha(v_i), & 0, \cdots, 0)
 }$\\
 \[\vcenter{\xymatrix{
@@ -421,7 +423,7 @@ H(V',f') \ar@{}[r]|-*[@]{=} & V'(1) \oplus V'(2) \oplus \cdots \oplus V'(n)\\
 
 \item $\mathcal{C}$ preadditive, $\mathcal{D} \subseteq \mathcal{C}$ a full subcategory $\implies \mathcal{D}$ preadditive.\\
 In particular, $\Lambda$ artin $R$-algebra $\Mod \Lambda$, $\mod \Lambda$, $\add M$ are $R$-categories\\
-$Hom_\Lambda(A, -): \mod\Lambda \to \mod R$ additve functor.
+$\Hom_\Lambda(A, -): \mod\Lambda \to \mod R$ additve $R$-functor.
 
 \end{enumerate}
 \end{exam}
