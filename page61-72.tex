@@ -427,3 +427,106 @@ $\Hom_\Lambda(A, -): \mod\Lambda \to \mod R$ additve $R$-functor.
 
 \end{enumerate}
 \end{exam}
+
+\subsection{Morphisms of Functors}
+\begin{defin}
+$\mathcal{C}, \mathcal{D}$ categories, $F, G : \mathcal{C} \to \mathcal{D}$ functors. Then $\varphi : F \to G$ is a \underline{morphism of functors} if for each object $C \in \mathcal{C}$ there is a morphism $\varphi_C : F(C) \to G(C)$ in $\mathcal{D}$ such that for each morphism $f : A \to B$ in $\mathcal{C}$ there is a commutative diagram.
+\[\xymatrix{
+F(A) \ar[r]^{\varphi_A} \ar[d]_{F(f)} & G(A) \ar[d]^{G(f)}\\
+F(B) \ar[r]^{\varphi_B} & G(B)
+}\]
+$\varphi: F \to G$ is an \underline{isomorphism} if $\varphi_C : F(C) \to G(C)$ is an isomorphism in $\mathcal{D}$ for all $C$ in $\mathcal{C}$.
+\end{defin}
+
+\begin{exam}
+\begin{enumerate}
+\item[]
+\item[(1)] $k$ field.
+\[(-)^* = \Hom_k(-, k) : \Vec(k) \to \Vec(k)\]
+Define $\varphi: id_{\Vec(k)} \to (-)^* = \Hom_k(\Hom_k(-,k), k)$ by
+\[\xymatrix@R-1pc{
+\varphi_V : id_{\Vec(k)}(V) \ar@{}[r]|-*[@]{=} & V \ar[r] & V^{**}\ar@{}[r]|-*[@]{=} & \Hom_k(\Hom_k(V,k), k)\\
+                            & v \ar@{}[u]|-*[@]{\in} \ar@{|->}[r] & \varphi_V(v)
+}\]
+where $\varphi_V(v)(f) = f(v)$, $f \in \Hom_k(V,k)$. $\varphi$ is a morphism of functors.
+\begin{exer}
+\begin{enumerate}
+\item[]
+\item[(i)] $\varphi_V$ is 1-1
+\item[(ii)] $\dim_k(V) < \infty \implies \varphi_V$ isomorphism
+\end{enumerate}
+\end{exer}
+
+\item[(2)] $\G$ a quiver, $F, G: \G \to \vec(k)$ functors. What is a morphsim $\varphi : F \to G$?
+\end{enumerate}
+\end{exam}
+
+%page 71
+
+\begin{defin}
+$\mathcal{C}, \mathcal{D}$ ($R$-)categories, $F: \mathcal{C} \to \mathcal{D}$ an ($R$-)functor. Then $F: \mathcal{C} \to \mathcal{D}$ is an \underline{equivalence} of ($R$-)categories if $\exists$ an ($R$-)functor $H: \mathcal{D} \to \mathcal{C}$ such that $HF \simeq id_\mathcal{C}$ and $FH \simeq id_\mathcal{D}$.
+\end{defin}
+
+\begin{defin}
+$F: \mathcal{C} \to \mathcal{D}$ ($R$-)functor
+\begin{enumerate}
+\item[(a)] $F$ is \underline{full} if $F: \Hom_\mathcal{C}(A,B) \to \Hom_\mathcal{D}(F(A), F(B))$ is onto for all $A, B$ in $\mathcal{C}$
+\item[(b)] $F$ is \underline{faithfull} if $F: \Hom_\mathcal{C}(A,B) \to \Hom_\mathcal{D}(F(A), F(B))$ is 1-1 for all $A, B$ in $\mathcal{C}$
+\item[(c)] $F$ is \underline{dense} if for each object $D$ in $\mathcal{D}$, $\exists$ an object $C$ in $\mathcal{C}$ such that $F(C) \simeq D$.
+\end{enumerate}
+\end{defin}
+
+\underline{It can be shown:}
+\begin{prop}
+$\mathcal{C}, \mathcal{D}$ ($R$-)categories, $F: \mathcal{C} \to \mathcal{D}$ ($R$-)functor.\\
+$F$ is an equivalance $\iff$ $F$ is full, faithfull and dense
+\end{prop}
+
+\begin{thm}
+$(\G, \rho)$ quiver with relations, $J^t \subseteq \langle \rho \rangle \subseteq J^2$, $\Lambda = k\G/\langle \rho \rangle$. The functors $F: \mod \Lambda \to \Rep(\G, \rho)$ and $H: \Rep(\G, \rho) \to \mod \Lambda$ are inverse equivalenses of $k$-categories. $HF \simeq id_{\mod \Lambda}$ and $FH \simeq id_{\Rep(\G, \rho)}$
+
+\begin{proof}
+\begin{enumerate}
+\item[]
+\item \underline{$F$ equivalense:}
+\begin{enumerate}
+\item[(i)] \underline{$F$ faithfull:} $h:A \to B \in \mod \Lambda$, $\G_0 = \{ 1, 2, \cdots , n \}$\\
+$F(h) = \{ h_i \}_{i=1}^n$, where $h_i = h_{\mid \overline{e}_iA} : \overline{e}_iA \to \overline{e}_iB$\\
+$F(h) = 0 \implies \xymatrix@C-1pc@R-1pc{
+h_i \ar@{}[r]|-*[@]{=} & 0, \forall i = 1, 2, \cdots, n\\
+h_{\mid \overline{e}_iA} \ar@{}[r]|-*[@]{=} \ar@{}[u]|-*[@]{=} & 0, \forall i = 1, 2, \cdots, n\\
+}$\\
+\[\xymatrix@C-1pc@R-1pc{
+\Rightarrow h \ar@{}[r]|-*[@]{=} & h_{\mid \overline{e}_1A} \ar@{}[d]|-*[@]{=} \ar@{}[r]|-*[@]{\oplus} & h_{\mid \overline{e}_2A} \ar@{}[d]|-*[@]{=} \ar@{}[r]|-*[@]{\oplus}& \cdots \ar@{}[r]|-*[@]{\oplus}& h_{\mid \overline{e}_nA} \ar@{}[d]|-*[@]{=} \ar@{}[r]|-*[@]{:} & \overline{e}_1A \ar@{}[r]|-*[@]{\oplus} & \cdots \ar[d] \ar@{}[r]|-*[@]{\oplus} & \overline{e}_nA\\
+              & 0                        & 0                        &        &   0                      &         & B
+}\]
+$\implies h=0 \implies F$ is faithfull.
+
+%page 72
+
+\item[(ii)] \underline{$F$ dense:}\\
+\underline{Check:} Given $(V, f) \in \Rep(\G, \rho)$ then \[ FH(V, f) \simeq (V, f),\;\;\; (V, f) \in \Rep(\G, \rho) \]
+$\implies F$ dense.
+
+\item[(iii)] \underline{$F$ full:} Given $\{ h_i \}: F(A) \to F(B)$ i.e. $h_i : \overline{e}_i A \to \overline{e}_iB$ for $i = 1, 2, \cdots , n$.\\
+\underline{Know:} $\xymatrix{
+*+[l]{\tilde{h} = h_1 \oplus \cdots \oplus h_n : A} \ar@{}[d]|-*[@]{=} \ar[r] & B\\
+ \overline{e}_1A \oplus \cdots \oplus \overline{e}_nA \ar[r] & \overline{e}_1B \oplus \cdots \oplus \overline{e}_nB
+}$\\
+\underline{Check:} $F(\tilde{h}) = \{ h_i \} \implies F$ full.\\
+$\implies F$ is an equivalence.
+\end{enumerate}
+\item \underline{$F$ and $H$ ar inverse equivalences:}\\
+Exercise.
+\end{enumerate}
+\end{proof}
+
+\end{thm}
+
+\underline{Can be shown:}\\
+$F: \Mod R \to \Mod S$ equivalence
+\begin{enumerate}
+\item[$\cdot$] $M$ (semi)simple, finitely generated, artinian, noetherian, indecomposable\\
+$\iff F(M)$ is
+\item[$\cdot$] $Z(R) \simeq Z(S)$ 
+\end{enumerate}
