@@ -1,0 +1,376 @@
+%page 73
+
+\section{Projectivization}
+$\Lambda$ artin $R$-algebra, $A \in \mod \Lambda$\\
+\underline{Have seen:} $\G = \End_\Lambda(A)^{op}$ is an artin $R$-algebra.\\
+$A$ is a left $\End_\Lambda(A)$-module:\\
+$f \in \End_\Lambda(A), a \in A$, then $f\cdot a \stackrel{\mathclap{\normalfont\mbox{def}}}{=} f(a)$ (Exercise)\\
+$\implies A$ is a right $\G$-module.
+
+\begin{exer}
+\begin{enumerate}
+\item[]
+\item[$\cdot$] $_\Lambda A_\G$ is a $\Lambda-\G$-bimodule
+\begin{enumerate}
+\item[-] left $\Lambda$-module
+\item[-] right $\G$-module
+\item[-] $(\lambda \cdot a)\gamma = \lambda(a \cdot \gamma)$
+\end{enumerate}
+
+\item[$\cdot$] $\Hom_\Lambda(_\Lambda A_\G, X)$ is a left $\G$ module, ($X \in \mod \Lambda$) by\\
+$f \in \Hom_\Lambda(_\Lambda A_\G, X)$, $g \in \G$; $(g\cdot f)(a) \stackrel{\mathclap{\normalfont\mbox{def}}}{=} f(g(a))$, $\forall a \in A$
+\end{enumerate}
+$\implies$ Have $R$-functor \[ F = \Hom_\Lambda(A, -): \mod\Lambda \to \mod\G \]
+\end{exer}
+
+\begin{lem}
+\label{lem:47}
+$\Lambda$ ring
+\begin{enumerate}
+\item[(a)] \[\xymatrix{\Hom_\Lambda(A, B_1 \oplus B_2) \ar@{}[r]^-\alpha|-*[@]{\xleftarrow{\sim}}  & \Hom_\Lambda(A, B_1) \oplus \Hom_\Lambda(A,B_2)}\]
+given by $\alpha(f, g)(a) \stackrel{\mathclap{\normalfont\mbox{def}}}{=} (f(a), g(a)) $ for $a \in A$, is an isomorphism.
+\item[(b)] $\Hom_\Lambda(A_1 \oplus A_2) \simeq \Hom_\Lambda(A_1, B) \oplus \Hom_\Lambda(A_2, B)$\\
+In particular, if $\G = \End_\Lambda(A)^{op}$, then the isomorphism $\alpha$ in (a) is an isomorphism of $\G$-modules. Similarly in (b).
+\end{enumerate}
+
+\begin{proof}
+Exercise.
+\end{proof}
+\end{lem}
+
+\begin{prop}
+\label{prop:48}
+$\Lambda$ artin $R$-algebra, $A \in \mod\Lambda$, $\G = \End_\Lambda(A)^{op}$ \[ e_A = \Hom_\Lambda(A, -) : \mod\Lambda \to \mod\G \;\;\;\; (R\text{-functor}) \] has the following properties:
+\begin{enumerate}
+\item[(a)] $e_A : \Hom_\Lambda(Z, X) \to \Hom_\G(e_A(Z), e_A(X))$ is an $R$-isomorphism for all $Z$ in $\add A$ (i.e. $\exists Y$ such that $X \oplus Y \simeq A^t$ for some $t \geq 1$)
+
+%page 74
+
+\item[(b)] $X \in \add A \implies e_A(X)$ is a projective $\G$-module
+
+\item[(c)] ${e_A}_{\mid \add A} : \add A \to \mathcal{P}(\G) = \{ $finitely generated projective $\G$-modules$ \}$ is an equivalence of $R$-categories.
+\end{enumerate}
+
+\begin{proof}
+\begin{enumerate}
+\item[]
+\item[(a)]
+\begin{enumerate}
+\item[(i)] $\xymatrix@R-1pc@C-2pc{
+e_A : \Hom_\Lambda(A, X) \ar[rrr]^-\alpha &&& \Hom_\G(e_A(A), e_A(X))\\
+f \ar@{}[u]|-*[@]{\in} \ar@{|->}[rrr] &&& \alpha(f) = f_* :  & {}_{\Lambda}(A,A) \ar[rr] && {}_\Lambda(A,X)\\
+                                    & & &                  &    g \ar@{|->}[rr]   &&  f \cdot g
+}$\\ is an isomorphism of $R$-modules.
+\item[$\cdot$] $\alpha$ is an $R$-homomorphism: Exercise.
+\item[$\cdot$] \underline{$\alpha$ is 1-1:} Assume that $\alpha(f)=f_*=0$\\
+$\implies$ $f_*(g) = f \circ g = 0$, $\forall g \in \Hom_\Lambda(A, A)$.\\
+Choose $g= 1_A \implies f = 0 \implies \alpha$ is 1-1
+\item[$\cdot$] \underline{$\alpha$ is onto:} Given $h: \Hom_\Lambda(A,A) \to \Hom_\Lambda(A, X)$.\\ 
+Let $f = h(1_A): A \to X \in \Hom_\Lambda(A,X)$. Then for $g \in \Hom_\Lambda(A,A)$\\
+$\alpha(f)(g) = fg = h(1_A) \cdot g$ (action of $\G$ on $\Hom_\Lambda(A, X)$)\\
+$h$ a $\G$-homomorphism $\implies h(1_A)\cdot g = h(1_A \cdot g) = h(g)$\\
+$\implies \alpha(f) = h \implies \alpha$ is onto.
+
+\item[(ii)] \underline{$e_A$ "additive":} The following diagram commutes, $\xymatrix{M \ar[r]^-{i_M} & M \oplus N & \ar[l]_-{i_N} N}$
+\[\xymatrix@R-1pc@C-2pc{
+f \ar@{|->}[r] \ar@{|->}@/_4pc/[dddd]|!{[d];[dr]}\hole|!{[ddd];[dddr]}\hole & f_* \ar@{|->}@/^1pc/[ddr]^{Lemma \ref{lem:47}}\\
+e_A: \Hom_\Lambda(M \oplus N, X) \ar[r] \ar@{}[dd]|-*[@]{\xrightarrow{\sim}}& \Hom_\G(e_A(M\oplus N), e_A(X)) \ar@{}[d]|-*[@]{\xrightarrow{\sim}}\\
+ & \Hom_\G(e_A(M)\oplus e_A(N), e_A(X)) \ar@{}[d]|-*[@]{\xrightarrow{\sim}} & (fi_M)_* \oplus (fi_N)_* \ar@{|->}@/^2pc/[ddl]\\
+e_A \oplus e_A: \Hom_\Lambda(M, X) \oplus \Hom_\Lambda(N, X) \ar[r] & \Hom_\G(e_A(M), e_A(X)) \oplus \Hom_\G(e_A(N), e_A(X))\\
+(fi_M, fi_N) \ar@{|->}[r] & ((fi_M)_*, (fi_N)_*)\\
+}\]
+
+\item[(iii)] \underline{$Z = A^n$:} Diagram commutes by (ii)
+\[\xymatrix@C+4pc{
+\Hom_\Lambda(A^n, X) \ar@{}[d]|-*[@]{\xrightarrow{\sim}} \ar[r]^-{e_A} & \ar@{}[d]|-*[@]{\xrightarrow{\sim}}\Hom_\G(e_A(A^n), e_A(X))\\
+\Hom_\Lambda(A, X)^n \ar[r]^-{\overbrace{e_A \oplus \cdots \oplus e_A}^n}="pil" & \Hom_\G(e_A(A), X)^n\\
+& *+[r]{\text{isomorphism by (i)}} \ar@/^2pc/;"pil" 
+}\]
+$\implies e_A$ is an isomorphism for $Z=A^n$
+
+%page 75
+
+\item[(iv)] \underline{$Z \in \add A$, $Z \oplus Y \simeq A^n$, $n \geq 1$:}
+\[\xymatrix{
+\text{diagram comutes by (ii)}\ar@{}[r]="b" &  *+[r]{\text{isomorphism by (iii)}}\\
+\Hom_\Lambda(Z \oplus Y, X) \ar@{}[r]^<<<<<<<<<<<<<{e_A}|-*[@]{\xrightarrow{\sim}}="a" \ar@/^1pc/@{<-}"a";"b" \ar@{}[d]|-*[@]{\xrightarrow{\sim}} & \Hom_\G(e_A(Z \oplus Y), e_A(X)) \ar@{}[d]|-*[@]{\xrightarrow{\sim}} \\
+\Hom_\Lambda(Z, X) \oplus \Hom_\Lambda(Y, X) \ar[r]^-{e_A \oplus e_A} & \Hom_\G(e_A(Z), e_A(X)) \oplus \Hom_\G(e_A(Y), e_A(X))
+}\]
+$\implies e_A \oplus e_A$ is an isomorphism\\
+$\implies e_A : \Hom_\Lambda(Z, X) \to \Hom_\G(e_A(Z), e_A(X))$ is an isomorphism for all $Z \in \add A$ and $X \in \mod \Lambda$.
+\end{enumerate}
+
+\item[(b)]
+Let $X \in \add A$, i.e. $\exists n \geq 1$ such that $A^n \simeq X \oplus Y $ for some $Y$\\
+$\implies$
+\[\xymatrix@C-1pc{
+e_A(A^n) \ar@{}[r]|-*[@]{=} \ar@{}[d]|-*[@]{\simeq}="s1" & \Hom_\Lambda(A, A^n) \ar@{}[r]|-*[@]{\simeq}="s2" & \Hom_\Lambda(A, A)^n \ar@{}[r]|-*[@]{\simeq} & \G^n\\
+e_A(X \oplus Y) \ar@{}[r]|-*[@]{=} & \Hom_\Lambda(A, X \oplus Y) \ar@{}[r]|-*[@]{\simeq}="s3" & \Hom_\Lambda(A, X) \ar@{}[r]|-*[@]{\oplus} & \Hom_\Lambda(A, Y)\\
+\text{as }\G\text{-modules} \ar@/^4pc/;"s1" \ar;"s2"|!{[u];[ur]}\hole \ar@/_1pc/;"s3" & & e_A(X) \ar@{}[u]|-*[@]{=}
+}\]
+$\implies e_A(X)$ is a projective $\G$-module.
+
+\item[(c)] (b) $\implies e_A : \add A \to \mathcal{P}(\G)$\\
+(a) $\implies e_A$ is full and faithfull\\
+\underline{$e_A$ dense:} Let $P \in \mathcal{P}(\G)$. Then $\exists n \geq 1$ and a $Q$ suc that $\G^n \stackrel{\mathclap{\normalfont\mbox{$\varphi$}}}{\xrightarrow{\sim}} P \oplus Q$\\
+Let $f': P \oplus Q \to P \oplus Q$ be given by $f'(p, q) = (0, q)$. Then $(f')^2 = f'$ and $\Ker f' \simeq P$, and
+\[\xymatrix@C-2pc@R-1pc{
+                   &                              &&& \G^n\\
+e_A : \Hom_\Lambda(A^n, A^n) \ar@{}[rrr]|-*[@]{\xrightarrow{\sim}} &&& \Hom_\G(e_A(A^n), & e_A(A^n)) \ar@{}[u]|-*[@]{\xrightarrow{\sim}}_-\sigma & g \ar@{|->}[d]\\
+&\ar@{}[r]|-*[@]{\xrightarrow{\sim}}^-\psi && \Hom_\G(\G^n, \G^n) && \sigma g \sigma^{-1}\\
+ &&& \varphi^{-1}f'\varphi \ar@{}[u]|-*[@]{\in}
+}\]
+
+Choose $u: A^n \to A^n $ such that \[ \psi e_A(u) = \varphi^{-1} f' \varphi : \G^n \to \G^n \]
+Let $f = \varphi^{-1} f' \varphi$. Note that $f^2 = f$. We have an exact sequence \[\xymatrix{
+0 \ar[r]& \Ker u \ar[r] & A^n \ar[r]^u & A^n
+}\] 
+
+%page 76
+
+This induces the exact sequence
+\[\xymatrix{
+0 \ar[r] & e_A(\Ker u) \ar@{<.}[dd]="s2"|-*[@]{\simeq} \ar[r] & e_A(A^n) \ar[r]^{e_A(u)} \ar@{}[dd]="sigma"|-*[@]{\xleftarrow{\sim}}^-\sigma & e_A(A^n) \ar@{}[dd]|-*[@]{\xleftarrow{\sim}}^-\sigma\\
+         &                                              &      \ar@{}[l]|-*[@]{\Rightarrow}              &\\
+0 \ar[r] & \Ker f \ar@{.>}[dd]="s1"|-*[@]{\simeq} \ar[r] & \G^n \ar[r]^{\psi e_A(u) = f} \ar@{}[dd]="phi"|-*[@]{\xrightarrow{\sim}}^\varphi & \G^n \ar@{}[dd]|-*[@]{\xrightarrow{\sim}}^\varphi\\
+         &                                              &      \ar@{}[l]|-*[@]{\Rightarrow}              &\\
+0 \ar[r] & P \ar[r] & P \oplus Q \ar[r]^{f'} & P \oplus 
+}\]
+Problem sheets $\implies e_A(\Ker u) \simeq \Ker f \simeq P$\\
+\underline{$\Ker u \in \add A$:} $f = \psi e_A(u) = f^2 = (\psi e_A(u))^2 = \psi(e_A(u)^2) = \psi e_A(u^2)$\\
+$\implies u = u^2$ since $\psi$ is an isomorphism and $e_A$ is full and faithfull. \[(A^n \in \add A\]
+$\implies A^n = \Ker u \oplus \Im u \implies \Ker u \in \add A$\\
+$\implies P \in e_A(\add A) \implies e_{A \mid \add A}$ is dense.
+\end{enumerate}
+\end{proof}
+\end{prop}
+
+\begin{lem}
+$\Lambda$ artin $R$-algerba, $A \in \mod \Lambda$, $\G = \End_\Lambda(A)^{op}$
+\[ e_A: \add A \to \mathcal{P}(\G) \]
+\begin{enumerate}
+\item[(a)] $X \neq (0)$ in $\add A$ $\iff$ $e_A(X) \neq (0)$ in $\mathcal{P}(\G)$, for $X \in \add A$
+
+\item[(b)] $X \in \add A$\\
+$X$ is indecomposable $\iff e_A(X)$ is indecomposable
+\item[(c)] $X, Y \in \add A$\\
+$e_A(X) \simeq e_A(Y)$ $\iff$ $X \simeq Y$
+\end{enumerate}
+
+\begin{proof}
+\begin{enumerate}
+\item[]
+\item[(a)] Proposition \ref{prop:48} $\implies \Hom_\Lambda(X, X) \simeq \End_\G(e_A(X), e_A(X))$ for $X \in \add A$\\
+\underline{$\Leftarrow:$} $e_A(X) = (0) \implies \Hom_\Lambda(X,X) = 0 \implies 1_X = 0 \implies X = (0)$\\
+\underline{$\Rightarrow:$} $X = (0) \implies e_A(X) = \Hom_\Lambda(A, (0)) = (0)$
+\item[(b)] Have: $\End_\Lambda(X) \simeq \End_\G(e_A(X))$ as rings\\
+Follows from this.
+\item[(c)] \underline{Exercise:} General property of and equivalence.
+\end{enumerate}
+\end{proof}
+\end{lem}
+
+%page 77
+
+\section{Basic Artin Algebras}
+\begin{defin}
+$\Lambda$ artin $R$-algebra. Then $\Lambda$ is \underline{basic} if \[\Lambda = P_1 \oplus P_2 \oplus \cdots \oplus P_n\] with $P_i$ indecomposable, then $P_i \not\simeq P_j$ for $i \neq j$.
+\end{defin}
+\begin{recall}
+$\Lambda / \mathfrak{r} = S_1 \oplus \cdots S_n$ - semisimplie, $S_i$ simple.\\
+$P(S_i) \to S_i$ projective cover $\implies \Lambda \simeq P(S_1) \oplus \cdots \oplus  P(S_n)$\\
+\underline{We have:} $P(S_i) \simeq P(S_j) \iff S_i \simeq S_j$
+\end{recall}
+$\Lambda$ basic $\iff S_i \not\simeq S_j$ for $i \neq j$
+\begin{exam}
+\begin{enumerate}
+\item[]
+\item $\Lambda = \begin{psmallmatrix} k & k\\ k & k \end{psmallmatrix}$, $k$ a field
+\[ \Lambda = \xymatrix@C-1pc@R-1pc{
+{\begin{psmallmatrix} k & 0\\ k & 0 \end{psmallmatrix} } \ar@{}[r]|-*[@]{\oplus}& {\begin{psmallmatrix} 0 & k\\ 0 & k \end{psmallmatrix}} &&\\
+&  & \ar@/^1pc/[ul] \ar@/^1pc/[ull] {\text{simple }\Lambda\text{-modules}} \ar@{}[r]|-*[@]{\implies}& \text{indecomposable}
+}\]
+$\xymatrix{{\begin{psmallmatrix} k & 0\\ k & 0 \end{psmallmatrix} } \ar[r]^{- \cdot {\begin{psmallmatrix} 0 & 1\\ 0 & 0 \end{psmallmatrix}}}& {\begin{psmallmatrix} 0 & k\\ 0 & k \end{psmallmatrix}}}$ is an isomorphism of left $\Lambda$-modules\\
+$\implies \Lambda$ is not basic.
+
+\item $(\G, \rho)$ a quiver with relations $k$ a field, $J^t \subseteq \langle \rho \rangle \subseteq J^2$, $\G_0 = \{ 1, 2, \cdots, n \}$.\\
+\underline{$\Lambda = k\G/\langle \rho \rangle$ is basic:}\\
+$\Lambda/\mathfrak{r} \simeq k\overline{e}_1 \oplus k\overline{e}_2 \oplus \cdots \oplus k\overline{e}_n$ with $k\overline{e}_i \not\simeq k\overline{e}_j$ for $i \neq j$\\
+$\implies \Lambda$ basic.
+\end{enumerate}
+\end{exam}
+
+\begin{note}
+$\Lambda$ artin $R$-algebra\\
+\underline{We know:} $\Lambda \simeq P_1^{n_1} \oplus P_2^{n_2} \oplus \cdots \oplus P_t^{n_t}$, $P_i$ indecomposable, $P_i \not\simeq P_j$ for $i \neq j$\\
+$\Lambda$ basic $\iff n_i = 1$ for all $i = 1, 2, \cdots, t $.\\
+Let $P = P_1 \oplus P_2 \oplus \cdots \oplus P_t$, and let $\Sigma = \End_\Lambda(P)^{op}$. Have that \[ e_P = \Hom_\Lambda(P,-): \mod \Lambda \to \mod \Sigma \]
+where \[ e_P(P) = \Sigma \simeq
+\xy
+\xymatrix@C-1pc"sum"{e_P(P_1) \ar@{}[r]|-*[@]{\oplus} & e_P(P_2) \ar@{}[r]|-*[@]{\oplus} & \cdots \ar@{}[r]|-*[@]{\oplus} & e_P(P_t)}
+\POS+(40, -10)
+\xymatrix{ \ar@/^1pc/["sum"]\ar@/^1pc/["sum"r]\ar["sum"rrr] \text{indec since } P_i \text{ is indec}}
+\endxy
+\]
+$e_P(P_i) \not\simeq e_P(P_j)$ for $i \neq j$, since $P_i \not\simeq P_j$ for $i \neq j$ $\implies \Sigma$ basic.
+\end{note}
+
+%page 78
+
+\begin{note}
+$\Lambda$ basic then $P = \Lambda$ and \[ \Sigma = \End_\Lambda(\Lambda)^{op} \simeq \Lambda \]
+\end{note}
+
+\begin{prop}
+\label{prop:49}
+$\Lambda$ and $\Sigma$ as above. Then \[ e_P = \Hom_\Lambda(P,-):\mod\Lambda \to \mod\Sigma \] is an equivalence of $R$-categories.
+\begin{proof}
+\underline{Know:} $e_P$ is an $R$-functor.\\
+Proposition \ref{prop:48} (c) $\implies e_{P\mid \add P}: \add P \to \mathcal{P}(\Sigma)$ is an equivalence.\\
+\underline{$e_P$ dense:} Let $C \in \mod\Sigma$. Then $\exists$ exact sequence $\xymatrix@C-1pc{Q_1 \ar[r]^f & Q_0 \ar[r] & C \ar[r] & 0}$ with $Q_1, Q_0 \in \mathcal{P}(\Sigma)$. Since $\xymatrix@C-1pc{Q_1 \ar[r]^f & Q_0}\in \mathcal{P}(\Sigma)$ $\exists Q_1', Q_0' \in \add P$ and $f': Q_1' \to Q_0' \in \add P$, such that $e_P(Q_i') \simeq Q_i$ and the following diagram commutes
+\[\xymatrix@R-1pc{
+e_P(Q_1') \ar[r]^{e_P(f')} \ar@{}[dd]|-*[@]{\simeq} & e_P(Q_0') \ar@{}[dd]|-*[@]{\simeq} \ar[r] & e_P(\Coker f') \ar@{.>}[dd]|-*[@]{\simeq} \ar[r] & 0\\
+& \ar@{}[r]|-*[@]{\Rightarrow} &&\\
+Q_1 \ar[r]^f & Q_0 \ar[r] & C \ar[r] & 0
+}\]
+$\xymatrix{Q_1' \ar[r]^{f'} & Q_0' \ar[r] & \Coker f' \ar[r] & 0}$ exact.
+
+\begin{exer}
+$P$ projective $\implies$\\
+$\xymatrix{e_P(Q_1') \ar[r]^{e_P(f')} & e_P(Q_0') \ar[r] & e_P(\Coker f') \ar[r] & 0}$ exact.
+\end{exer}
+
+Problem sheets $\implies e_P(\Coker f') \simeq C \implies e_P$ dense.\\
+
+\underline{$e_P$ full and faithfull:} Let $X, Y \in \mod\Lambda$, $\exists$ 
+$\xymatrix{\eta':Q_1' \ar[r] & Q_0' \ar[r] & X \ar[r] & 0}$ exact in $\mod\Lambda$ with $Q_i' \in \add P = \mathcal{P}(\Lambda)$\\
+$\implies \xymatrix{\eta: e_P(Q_1') \ar[r] & e_P(Q_0') \ar[r] & e_P(X) \ar[r] & 0}$ exact.\\
+Apply $\Hom_\Lambda(-,Y)$ to $\eta':$ 
+\[\hspace*{-3pc} \xy
+\xymatrix@C-1pc"dia"{
+0 \ar[r] & \Hom_\Lambda(X,Y) \ar@{}[dd]|-*[@]{\xrightarrow{\sim}}_{e_P} \ar[r] & \Hom_\Lambda(Q_0',Y) \ar@{}[dd]|-*[@]{\xrightarrow{\sim}}_{e_P} \ar[rr] && \Hom_\Lambda(Q_1',Y) \ar@{}[dd]|-*[@]{\xrightarrow{\sim}}_{e_P}\\
+&                \ar@{}[r]|-*[@]{\Leftarrow}  &                             &\circlearrowleft&\\
+0 \ar[r] & \Hom_\G(e_P(X),e_P(Y)) \ar[r] & \Hom_\G(e_P(Q_0'),e_P(Y)) \ar[rr] && \Hom_\G(e_P(Q_1'),e_P(Y))
+}
+\POS(90, 8)
+\xymatrix{\text{Prop } \ref{prop:48}(c) \ar@/^1pc/["dia"drr]\ar@/_1pc/["dia"drrrr]}
+\POS(-5, -13)
+\xymatrix{\left.{\begin{smallmatrix}\text{Problem}\\\text{sheets} \end{smallmatrix}}\right\rbrace \text{exact} \ar["dia"] \ar["dia"dd]}
+\endxy\]
+
+$\implies e_P$ full and faithfull $\implies e_P: \mod\Lambda \to \mod\Sigma$ is an equivalence.
+\end{proof}
+\end{prop}
+
+\begin{defin}
+$\Lambda$, $\Sigma$ two rings. Then $\Lambda$ and $\Sigma$ are \underline{Morita equivalent} if $\Mod\Lambda$ and $\Mod\Sigma$ are equivalent categories.\\
+$\begin{psmallmatrix} \text{Anderson \& Fuller}\\ \text{page 266 Exer. 4} \end{psmallmatrix}$ : $($ or $\mod\Lambda$ and $\mod\Sigma$ are equivalent categories $)$
+\end{defin}
+
+%page 79
+
+\begin{thm}
+Let $\Lambda$ be a finite dimensional $k$-algebra over an algebraically closed field $k$.
+\begin{enumerate}
+\item[(a)] $\exists$ a basic $k$-algebra $\Sigma$ such that $\Lambda$ and $\Sigma$ are Morita equivalent.
+\item[(b)] Suppose that $\Lambda$ is basic. Then $\exists (\G, \rho)$ a quiver with relations over $k$ such that $\Lambda \simeq k\G/\langle \rho \rangle$, where $J^t \subseteq \langle \rho \rangle \subseteq J^2$ for some $t \geq 2$.
+\end{enumerate}
+
+\begin{proof}
+\begin{enumerate}
+\item[(a)] Proposition \ref{prop:49}
+\item[(b)]
+
+\begin{enumerate}
+\item[(1)] \underline{Claim:} $\Lambda / \mathfrak{r} \simeq k^s$ for some $s \geq 1$.\\
+\underline{Know:} $\Lambda / \mathfrak{r}$ is semisimple $\implies \Lambda / \mathfrak{r} \simeq M_{n_1}(D_1) \times \cdots \times M_{n_r}(D_r)$, $D_i$ division ring.
+\[e_{1,1} = diag(1, 0, \cdots, 0), e_{2,2} = diag(0,1, \cdots, 0), e_{n_1,n_1} = diag(0, \cdots, 0, 1) \in M_{n_1}(D_1)\]
+-complete set of primitive orthogonal idempotents of $M_{n_1}(D_1)$. Similarly for the other $M_{n_i}(D_i)$. Let
+\[f_{ij} = (0, \cdots, 0, \xymatrix@C-3pc@R-1pc{e_{jj}, & 0, \cdots, 0)\\
+&  *+[r]{i\text{th coordinate}} \ar@/^1pc/[ul] }, j = 1, 2, \cdots , n_i\]
+$\implies \bigcup\limits_{i=1}^r \{ f_{ij} \}_{j=1}^{n_i}$ complete set of orthogonal idempotents for $\Lambda / \mathfrak{r}$\\
+We have $\Lambda / \mathfrak{r} f_{ij} \simeq \Lambda / \mathfrak{r} f_{ij'}$ $\forall j, j' \in \{ 1, 2, \cdots, n_i \}$.\\
+Lift $\bigcup\limits_{i=1}^r \{ f_{ij} \}_{j=1}^{n_i}$ to $\Lambda$; $\bigcup\limits_{i=1}^r \{ \tilde{f}_{ij} \}_{j=1}^{n_i}$, complete set of primitive orthogonal idempotents in $\Lambda$.\\
+\underline{Know:} $\Lambda \tilde{f}_{ij} \to \Lambda \tilde{f}_{ij} / \mathfrak{r} \tilde{f}_{ij} \simeq \Lambda  / \mathfrak{r} f_{ij}$ projective cover.\\
+$\implies \Lambda \tilde{f}_{ij}  \simeq \Lambda \tilde{f}_{ij'} $, $\forall j, j' \in \{ 1, 2, \cdots, n_i \}$.\\
+$\Lambda$ basic $\implies n_i = 1$ for all $i = 1, 2, \cdots, r$.\\
+\[\implies \Lambda / \mathfrak{r} \simeq D_1 \times D_2 \times \cdots \times D_r \]
+
+\item[(2)] \underline{Claim:} $D_i \simeq k$ for all $i = 1, 2, \cdots, r$.
+\[ \dim_k(\Lambda) < \infty \implies \dim_k(\Lambda / \mathfrak{r}) z \infty \implies d_i = \dim_k(D) < \infty \;\;\;\; \forall i = 1, 2, \cdots, r \]
+\underline{We have:} $\xymatrix@C-1pc{k \ar@{^{(}->}[r]^\nu & D_i}$, $k \simeq \xymatrix@C-1pc{\nu(k) \ar@{^{(}->}[r]^\nu & D_i}$\\
+Suppose $D_i \setminus \nu(k) \neq \emptyset$. Let $z \in D_i \setminus \nu(k)$. Then $\{ 1, z, z^2, \cdots, z^{d_i} \}$ is linearly dependent.
+
+%page 80
+
+$\implies \exists a_i \in \nu(k), i = 0, 1, 2, \cdots, d_i$ such that \[ a_0 \cdot 1 + a_1 z + a_2 z^2 + \cdots + a_{d_i}z^{d_i} = 0 \]
+that is, $z$ is a root in the polynomial 
+\[ f(x) = a_0 + a_1 x + \cdots + a_{d_i}x^{d_i} \]
+$k \simeq \nu(k)$ - algebraically closed $\implies z \in \nu(k)$ Contradiction!\\
+$\implies D_i = \nu(k) \simeq k$ for all $i$.\\
+$\implies \Lambda / \mathfrak{r} \simeq k^r \ni f_i = (0, \cdots, 0, 
+\xymatrix@C-3pc@R-1pc{1, & 0, \cdots, 0)\\
+&  *+[r]{i\text{th coordinate}} \ar@/^1pc/[ul] }$, complete set of primitive orthogonal idempotents
+
+\item[$\cdot$] Lift $\{ f_i \}_{i=1}^r$ to a complete set of primitive orthogonal idempotents $\{ v_i \}_{i=1}^r$  in $\Lambda$
+\item[$\cdot$] Choose a basis $B_{ji} = \{ a_{ji}(l) \}_l$ of $v_j \mathfrak{r} / \mathfrak{r}^2 v_i$ for all $i, j \in \{ 1, 2, \cdots, r \}$.
+
+\item[$\cdot$] Lift the elements in each $B_{ji}$ to elements in $v_j \mathfrak{r} v_i$, $\tilde{B_{ji}} = \{ \tilde{a}_{ji}(l) \}_l$
+
+\item[$\cdot$] Define $\G$, $\G_0 = \{ i \}_{i=1}^r$, \[ \G_1 = \{ \alpha_{ji}(l): i \to j \mid l = 1, 2, \cdots, \dim_k(v_j \mathfrak{r} / \mathfrak{r}^2 v_i) \} \]
+
+\item[$\cdot$] Define $\xymatrix@R-1pc{
+\varphi: k\G \ar[r] & \Lambda\\
+\varphi(e_i) \ar@{}[r]|-*[@]{=} & v_i\\
+\varphi(\alpha_{ji}(l)) \ar@{}[r]|-*[@]{=} & \tilde{a}_{ji}(l)\\
+}$ by letting\\
+Problem sheets $\implies \varphi: k\G \to \Lambda$ is a $k$-algebra homomorphism.
+
+\item[(3)] \underline{$\Ker \varphi$ is admissable:} Suppose that 
+\begin{equation*}(*)
+\begin{split}
+\varphi \left( \underbrace{\sum_i \gamma_i(0)e_i + \sum_{r,s,l} \gamma_{r,s,l}(1)\alpha_{rs}(l) + \text{longer paths} }_{=x}\right) = 0 
+\end{split}
+\end{equation*}
+
+\item[(i)] (*) $\implies \varphi(x) + \mathfrak{r} = 0$ 
+\begin{equation*}
+\begin{split}
+= \sum_i \gamma_i(0) v_i + \underbrace{"\langle \tilde{a}_{ji}(l) \mid j, i, l \rangle"}_{\subseteq \mathfrak{r}} + \mathfrak{r} = 0\\
+\implies \sum_i \gamma_i(0)v_i + \mathfrak{r} = 0\\
+\implies \sum_i \gamma_i(0)f_i = 0 \text{ in } \Lambda / \mathfrak{r} \simeq k^r
+\end{split}
+\end{equation*}
+$\{ f_i \}$ a basis for $\Lambda / \mathfrak{r} \simeq k^r$ $\implies \gamma_i(0) = 0$, $\forall i = 1, 2, \cdots, r$
+
+\item[(ii)] (*) $\implies \varphi(x) + \mathfrak{r}^2 = 0$
+
+%page 81
+
+\begin{equation*}
+\begin{split}
+= \sum_{r,s,l} \gamma_{r,s,l}(1)\tilde{a}_{rs}(l) + \underbrace{"\langle \tilde{a}_{rs}(l)\tilde{a}_{r's'}(l') \rangle"}_{\subseteq \mathfrak{r}^2} + \mathfrak{r}^2 = 0\\
+\implies \sum_{r,s,l} \gamma_{r,s,l}(1)\tilde{a}_{rs}(l) + \mathfrak{r}^2 = 0\\
+\implies \xymatrix@C-2pc@R-1pc{
+\sum_{r,s,l} \gamma_{r,s,l}(1) & a_{rs}(l) & +\;\;\mathfrak{r}^2 = 0 \text{ in } & \mathfrak{r} / \mathfrak{r}^2\\
+&& \text{basis for} \ar@/^1pc/[ul] \ar@/_1pc/[ur]&
+}
+\end{split}
+\end{equation*}
+$\implies \gamma_{rsl}(1) = 0$, $\forall r, s, l \implies x \in J^2$\\
+$\implies \Ker \varphi \subseteq J^2$\\
+\underline{We have:} $\alpha_{rs}(l) \mapsto \tilde{a}_{rs}(l) \in \mathfrak{r}$, $\mathfrak{r}^m = (0)$ for some $m \geq 1$\\
+$\implies \{ $all paths of length $\geq m \} \subseteq \Ker \varphi$\\
+$\implies J^m \subseteq \Ker \varphi $\\
+$\Ker\varphi$ is admissable. 
+
+\item[(4)] \underline{$\varphi$ onto:} Let $\lambda \in \Lambda$. Then $\exists \gamma_i(0) \in k$ for $i = 1, 2, \cdots , r$ such that \[ x_1 = \lambda - \sum \gamma_i(0)v_i \in \mathfrak{r} \]
+since $\{ \overline{v}_i = v_i + \mathfrak{r} \}$ is a basis for $\Lambda/\mathfrak{r}$.\\
+\underline{Can show:} $\mathfrak{r}$ is generated by $\{ \tilde{a}_{ji}(l) \}_{j,i,l}$ and $\tilde{a}_{ji}(l)$ is in the image of $\varphi$ $\implies \varphi$ is onto.\\
+$\implies k\G/ \Ker \varphi \simeq \Im \varphi = \Lambda$
+\end{enumerate}
+\end{enumerate}
+\end{proof}
+\end{thm}
+
+%page 90
