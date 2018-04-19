@@ -1,0 +1,535 @@
+%page 82
+
+\section{Duality}
+\begin{defin}
+$\mathcal{C}$, $\mathcal{D}$ ($R$-)categories, $F: \mathcal{C} \to \mathcal{D}$ a contravariant ($R$-)functor. Then $F$ is a \underline{duality} if there exists a contravariant ($R$-)functor $H: \mathcal{D} \to \mathcal{C}$ such that \\
+\centerline{$HF \simeq id_\mathcal{C}$ and $FH \simeq id_\mathcal{D}$}\\
+as ($R$-)functors.
+\end{defin}
+
+$k$ a field, $V$ a vector space \[ D:= \Hom_k(-,k): \Vec(k) \to \Vec(k) \] is a contravariant functor. Assume that $\dim_k V = t < \infty$. If $\{ v_i \}^t_{i=1}$ is a $k$-basis for $V$, then $\{ v_i^* \}_{i=1}^t$ where $v_i^* \in D(V) = \Hom_k(V, k)$ is given by \[v_i^*\left(\sum_{j=1}^t a_jv_j\right) = a_i, \;\;\;\; a_j \in k\] is a basis for $D(V)$ (the dual basis).\\
+$\implies \dim_k V = \dim_k D(V) = \dim_k DD(V)$\\
+Define $\varphi_V$ by 
+\[\xymatrix{
+\varphi_V : V \ar[r] & DD(V) = \Hom_k(\Hom_k(V, k), k)\\
+            v \ar@{|->}[r]& \varphi_V(v) : \Hom_k(V, k) \to k
+}\]
+where $\varphi_V(v)(f) = f(v)$ for $f \in D(V)$
+
+\begin{exer}
+\begin{enumerate}
+\item[]
+\item[(a)] $\varphi_V$ is 1-1 ($\Rightarrow \varphi_V$ is an isomorphism for $\dim_k V < \infty$)
+\item[(b)] $\varphi = \{ \varphi_V \}_{V \in \vec(k)} : id_{\vec(k)} \to DD$ is an isomorphism of functors.\\
+\underline{Check:}
+\item[(a)] $\Lambda$ finite dimensional $k$-algebra.\\
+For $X \in \mod \Lambda$, then $D(X) = \Hom_k(X, k)$ is a left $\Lambda^{op}$-module via
+\[ (\lambda \cdot f)(x) = f(\lambda x) \] for $f \in D(X)$, $\lambda \in \Lambda^{op}$ and $x \in X$.
+\item[(b)] $f: X \to Y \in \mod \Lambda$. Then \[D(f): \xymatrix@C-1pc@R-1pc{
+D(Y) \ar@{}[r]|-*[@]{=}& \Hom_k(Y, k) \ar[r]& \Hom_k(X, k)\ar@{}[r]|-*[@]{=} & D(X)\\
+&g \ar@{|->}[r]& g\cdot f&}\] is a $\Lambda^{op}$-homomorphism.\\
+$\implies D = \Hom_k(-,k): \mod\Lambda \to \mod\Lambda^{op}$\\ 
+and $D = \Hom_k(-,k): \mod\Lambda^{op} \to \mod\Lambda$ 
+
+%page 83
+
+$\left[
+\begin{tabular}{rl}
+\underline{Note:} & $X$ finitely generated $\Lambda$-module\\
+& $\implies \dim_k X < \infty$\\
+& $\implies \dim_k D(X) < \infty$\\
+& $\implies D(X)$ finitely generated $\Lambda^{op}$-module
+\end{tabular}
+\right]$
+\end{enumerate}
+\end{exer}
+
+\begin{prop}
+$\Lambda$ finite dimensional $k$-algebra, $k$ a field.\\
+Then $D = \Hom_k(-,k): \mod\Lambda \to \mod\Lambda^{op}$ is a duality.
+\end{prop}
+
+$\Lambda = k\G/\langle \rho \rangle$ - a finite dimensional $k$-algebra, $k$ a field. $D$ induces a duality on representations.
+\[\xymatrix{
+\Rep(\G, \rho) & \ar@{}[l]|-*[@]{\in} (V, f) \ar@{.>}[d] \ar@{|->}[r] & F(V, f) \ar@{|->}[d] \ar@{}[r]|-*[@]{\in} & \mod\Lambda\\
+\Rep(\G^{op}, \rho^{op}) & \ar@{}[l]|-*[@]{\in} H(D(F(V,f))) & \ar@{|->}[l] DF(V, f) \ar@{}[r]|-*[@]{\in} & \mod\Lambda^{op}
+}\] 
+
+$(\G, \rho)$, $J^t \subseteq \langle \rho \rangle \subseteq J^2$, $\G_0 = \{ 1, 2, \cdots, n \}$\\
+Define $(\G^{op}, \rho^{op})$ by
+\begin{enumerate}
+\item[]
+\item[] $\G_0^{op} = \G_0$
+\item[] $\G_1^{op}$: for each arrow $\alpha: i \to j$ in $\G_1$, there is an arrow $\alpha^{op} : j \to i$ in $\G_1^{op}$
+\item[] If $p= \alpha_1 \alpha_2 \cdots \alpha_{r-1}\alpha_r$ is a path in $\G$, let\\
+$p^{op}= \alpha^{op}_r \alpha^{op}_{r-1} \cdots \alpha^{op}_{2}\alpha^{op}_1$ be a path in $\G^{op}$.
+\end{enumerate} 
+
+Then $\Lambda^{op} \simeq k\G^{op}/\langle \rho^{op} \rangle$ and $(\G^{op}, \rho^{op})$ is equivalent to $\mod\Lambda^{op}$.\\
+Let $(V, f) \in \Rep(\G, \rho)$. Then $F(V,f) \in \mod\Lambda$ and $DF(V,f) \in \mod\Lambda^{op}$. The underlying vector space of $DF(V, f)$ is $D(\bigoplus\limits_{i=1}^n V(i))$\\
+$HDF(V,F) = (V', f')$: \[ V'(i) = e_i^{op}DF(V,f) = e_i^{op}\Hom_k\left(\bigoplus\limits_{j=1}^n V(j), k\right) \]
+\[ \nu_j: \xymatrix@C-1pc{V_j \ar@{^{(}->}[r] & \bigoplus\limits_{l=1}^n V(l)}, \;\;\;\; g \in \Hom_k\left(\bigoplus_{j=1}^n V(j), k\right) \]
+
+%page 84
+
+Then 
+\begin{equation*}
+\begin{split}
+e_i^{op}g(v_1, v_2, \cdots, v_n) &= g(e_i(v_1, v_2, \cdots, v_n))\\
+&= g((0,0, \cdots,0, v_i,0, \cdots, 0 ))\\
+&= g\nu_i(v_i)
+\end{split}
+\end{equation*}
+
+\[\xymatrix{
+e_i^{op}g \ar@{~>}[r]& g\nu_i \in D(V(i)) = \Hom_k(V(i), k)
+}\]
+\[ V'(i) = D(V(i)) = \Hom_k(V(i), k) \]
+\[ DF(V, f) \ni g \mapsto g\nu_i \]
+\[ \alpha^{op}: j \to i \]
+
+\[\xymatrix@R-1pc{
+h \ar@{}[d]|-*[@]{=}  & f\cdot f_\alpha \ar@{}[d]|-*[@]{=}\\
+g\nu_j \ar@{|->}[r] & g \nu_j f_\alpha\\
+V'(j) = D(V(j)) \ar@{}[d]|-*[@]{\simeq} \ar[r] & V'(i) = D(V(i)) \ar@{}[d]|-*[@]{\simeq}\\
+e_j^{op}DF(V, f) \ar[r]^{\alpha^{op} \cdot -} & e_i^{op}DF(V,f)\\
+\ar@{|->}@/^5pc/[uuu] g \ar@{|->}[r] & g\nu_j(f_\alpha(v_i))
+}\]
+\begin{equation*}
+\begin{split}
+(\alpha^{op}\cdot g)(v) &= g(\alpha \cdot v) = g(\alpha(v_1, v_2, \cdots, v_n))\\
+&= \xymatrix@C-2pc@R-2pc{g((0, \cdots, & 0, f_\alpha(v_i), 0, & \cdots , 0))\\
+&& \ar@/^1pc/[ul] j\text{-th coordinate} }\\
+&= g\nu_j(f_\alpha(v_i))
+\end{split}
+\end{equation*}
+\\
+\[\xymatrix@C-1pc@R-1pc{
+f'_{\alpha^{op}} \ar@{}[d]|-*[@]{=} \ar@{}[r]|-*[@]{:} & V'(j) \ar@{}[r]|-*[@]{=} & D(V(j)) \ar[r] & D(V(i)) \ar@{}[r]|-*[@]{=} & V'(i)\\
+D(f_\alpha) 
+}\]
+$\implies (V', f') = \Big( \{ D(V(i)) \}_{i=1}^n, \{ D(f_\alpha) \}_{\alpha \in \G_1} \Big)$.
+
+\begin{exer}
+$V$, $W$ finite dimensional vector spaces $B$, $B'$ basis for $V$ and $W$ respectively. $B^*$, $B'^*$ dual basis for $D(V)$ and $D(W)$.\\
+Let $f: V \to W$. Suppose that \[m_B^{B'}(f) = A\]
+Then for $D(f): D(W) \to D(V)$ we have the matrix representation \[ m_{B'^*}^{B^*}(D(f)) = A^T \] for the dual map $D(f)$.
+\end{exer}
+
+%page 85
+
+\begin{exam}\[\]
+$\G: \xymatrix{
+1 \ar@/^0.5pc/[r]^\alpha \ar@/_0.5pc/[r]_\beta & 2 \ar[r]^\gamma & 3
+}$, $\rho = \{ \gamma\beta \}$, $\Lambda = k\G/\langle \rho \rangle$, $k$ a field.\\
+$\G^{op}: \xymatrix{
+1 \ar@{<-}@/^0.5pc/[r]^{\alpha^{op}} \ar@{<-}@/_0.5pc/[r]_{\beta^{op}} & 2 \ar@{<-}[r]^{\gamma^{op}} & 3
+}$, $\rho^{op} = \{ \beta^{op}\gamma^{op} \}$
+
+\begin{minipage}{0.5\textwidth}
+\[\Lambda\overline{e}_1 : \xymatrix{
+k \ar@/^0.5pc/[r]^{\begin{psmallmatrix} 1\\0 \end{psmallmatrix}} \ar@/_0.5pc/[r]_{\begin{psmallmatrix} 0\\1 \end{psmallmatrix}} & k^2 \ar[r]^{\begin{psmallmatrix} 1 & 0 \end{psmallmatrix}} & k
+}\]
+\vspace*{4pt}
+\[
+\Lambda\overline{e}_2 : \xymatrix{
+0 \ar@/^0.5pc/[r]\ar@/_0.5pc/[r] & k \ar[r]^1 & k
+}\]
+\vspace*{8pt}
+\[
+\Lambda\overline{e}_3 : \xymatrix{
+0 \ar@/^0.5pc/[r]\ar@/_0.5pc/[r] & 0 \ar[r] & k
+}\]
+\end{minipage}
+\rule[-50pt]{1.5pt}{100pt}
+\begin{minipage}{0.5\textwidth}
+\[D(\Lambda\overline{e}_1) : \xymatrix{
+k \ar@{<-}@/^0.5pc/[r]^{\begin{psmallmatrix} 1 & 0 \end{psmallmatrix}} \ar@{<-}@/_0.5pc/[r]_{\begin{psmallmatrix} 0 &1 \end{psmallmatrix}} & k^2 \ar@{<-}[r]^{\begin{psmallmatrix} 1 \\ 0 \end{psmallmatrix}} & k
+}\]
+\vspace*{4pt}
+\[
+D(\Lambda\overline{e}_2) : \xymatrix{
+0 \ar@{<-}@/^0.5pc/[r]\ar@{<-}@/_0.5pc/[r] & k \ar@{<-}[r]^1 & k
+}\]
+\vspace*{8pt}
+\[
+D(\Lambda\overline{e}_3) : \xymatrix{
+0 \ar@{<-}@/^0.5pc/[r]\ar@{<-}@/_0.5pc/[r] & 0 \ar@{<-}[r] & k
+}\]
+\end{minipage}
+\end{exam}
+
+\begin{lem}
+$\Lambda$ finite dimensional $k$-algebra, $k$ a field.
+\begin{enumerate}
+\item[(a)] $\eta: \xymatrix@C-1pc{0 \ar[r] & A \ar[r]^f & B \ar[r]^g & C \ar[r] & 0}$ exact in $\mod\Lambda$\\
+$\iff \xymatrix@C-1pc{0 \ar[r] & D(C) \ar[r]^{D(g)} & D(B) \ar[r]^{D(f)} & D(A) \ar[r] & 0}$ exact in $\mod\Lambda^{op}$.
+
+\item[(b)] $S$ simple $\Lambda$-module $\iff D(S)$ simple $\Lambda^{op}$-module.
+
+\item[(c)] $l(A) = l(D(A))$ for $A \in \mod\Lambda$
+\end{enumerate}
+
+\begin{proof} (Sketch of proof)
+\begin{enumerate}
+\item[(a)] Use that $\eta$ splits as a sequence of $k$-modules, that $D$ preserves $k$-dimesnion and that $D^2 \simeq id_{\mod\Lambda}$.
+
+\item[(b)] Use (a).
+
+\item[(c)] Induction on length.
+\end{enumerate}
+\end{proof}
+\end{lem}
+
+Given a statement $S$ in a category $\mathcal{C}$ then \underline{the dual statement $S^*$} is the statement about $\mathcal{C}$ reversing the direction of all morphisms and replacing all compositions $\alpha\beta$ of morphisms with $\beta\alpha$.
+
+\begin{exam}\[\]
+$P$ projective:\\
+$\vcenter{\xymatrix{
+&P \ar@{.>}[dl]_{\exists h} \ar[d]^f\\
+\text{exact } B \ar[r]^-g & C \ar[r] & 0
+}}$ $\forall g$, $\forall f$ $\implies \exists h: P \to B$ such that $gh=f$\\
+\\
+$I$ injective:\\
+$\vcenter{\xymatrix{
+&I \ar@{<.}[dl]_{\exists h} \ar@{<-}[d]^f\\
+\text{exact } B \ar@{<-}[r]^-g & C \ar@{<-}[r] & 0
+}}$ $\forall g$, $\forall f$ $\implies \exists h: B \to I$ such that $hg=f$
+\end{exam} 
+
+%page 86
+
+\section{Injective modules}
+
+\begin{defin}
+$\Lambda$ a ring, $I \in \Mod\Lambda$. Then $I$ is \underline{injective} if for every monomorphism $i: A \to B$ in $\Mod\Lambda$ and every homomorphism $f: A \to I$ there exists an $h:B\to I$ such that $hi = f$ i.e. the following diagram commutes.
+
+\[\xymatrix{
+0 \ar[r] & A \ar[r]^i \ar[d]_f & B \ar@{-->}[dl]^{\exists h}\\
+& I
+}\]
+\end{defin}
+
+\begin{prop}
+\label{prop:53}
+$\Lambda$ finite dimensional $k$-algebra, $k$ a field, $P \in \mod \Lambda$.
+\begin{enumerate}
+\item[(a)] $P$ projective $\Lambda$-module $\iff$ $D(P)$ is injective $\Lambda^{op}$-module.
+
+\item[(b)] Any $\Lambda$-module $M \in \mod\Lambda$ is a submodule of an injective $\Lambda$-module in $\mod\Lambda$.
+\end{enumerate}
+\begin{proof}
+\begin{enumerate}
+\item[]
+\item[(a)] \underline{$\Rightarrow$:} $P$ projective. Consider 
+$\vcenter{\xymatrix{
+0 \ar[r] & A \ar[r]^i \ar[d]_f & B\\
+& D(P)
+}}$ in $\Mod\Lambda^{op}$.\\ Apply $D$:
+\[\xymatrix{
+& D^2(P) \ar@{-->}[dl]_{\exists h} \ar[d]^{D(f)} \ar@{}[r]|-*[@]{\simeq} & P & \ar[l] \text{projective}\\
+D(B) \ar[r]^{D(i)} & D(A) \ar[r] & 0
+}\]
+
+$\implies$
+
+\[\xymatrix@C-1pc@R-1pc{
+\ar[dd]_f A \ar[rr]^i \ar[dr]_{\alpha_A} && B \ar[dr]^{\alpha_B}\\
+& D^2(A) \ar[dd]^{D^2(f)} \ar[rr]^{D^2(i)} && D^2(B) \ar[ddll]^{D(h)}\\
+D(P) \ar@{}[dr]|-*[@]{\xrightarrow{\sim}}_{\alpha_{D(P)}}\\
+& D^3(P)
+}\]
+
+$\implies \alpha_{D(P)}f = D(h)\alpha_Bi$\\
+$\left. \alpha_{D(P)}^{-1} \cdot -  \right\rvert \;\;\;\;\; f = \left( \alpha_{D(P)}^{-1}D(h)\alpha_B \right)i$\\
+$\implies D(P) \in \mod\Lambda^{op}$ is injective.\\
+\\
+$\underline{\Leftarrow:}$ Baer criterion \& $\Lambda$ noetherian\\
+$\implies$ we can restrict ourselves to finitely generated modules. Use dual arguments.
+
+\item[(b)] Let $M \in \mod\Lambda$. Then $D(M) \in \mod\Lambda^{op}$. Let $\xymatrix{P \ar@{->>}[r] & D(M)}$ be the projective cover of $D(M)$. Then 
+\[\xymatrix@C-1.5pc@R-2pc{M \ar[rrr]^-{\alpha_M}_-\sim &&& D^2(M) \ar@{^{(}->}[rrr] &&& D(P) \ar@{}[r]|-*[@]{\in} & \mod\Lambda \hspace{1cm}\\
+              &&&        &&&      & \ar@/^1pc/[ul] \text{injective $\Lambda$-module}}\]
+
+\end{enumerate}
+\end{proof}
+\end{prop}
+
+% page 87
+
+\begin{rem}
+$\Lambda$ a ring, $M \in \Mod\Lambda$.\\
+\underline{Can be shown:} $\xymatrix{M \ar@{^{(}->}[r] & I}$, $I$ injective $\Lambda$-module.\\
+However: Even if $M$ is a finitely generated $\Lambda$-module $I$ need not be a finitely generated $\Lambda$-module.
+\[\left( \mathbb{Z}\text{-modules} = Ab : \xymatrix{\mathbb{Z} \ar@{^{(}->}[r] & \mathbb{Q}} \right)\]
+\end{rem}
+
+\begin{defin}
+$\Lambda$ a ring
+\begin{enumerate}
+\item[(a)] $A \subseteq X$ $\Lambda$-modules. Then $A$ is an \underline{essential submodule of $X$}, if for each non-zero submodule $B$ of $X$, then $A\cap B \neq (0)$.
+\item[(b)] A monmorphism $i: A \to X$ is essential if $i(A)$ is an essential submodule of $X$.
+
+\item[(c)] A monomorphism $i: A \to I$ is an \underline{injective envelope} if 
+\begin{enumerate}
+\item[(i)] $I$ is injective
+\item[(ii)] $i$ is an essential monomorphism.
+\end{enumerate} 
+\end{enumerate}
+\end{defin}
+
+\underline{Can be shown:} (MA3204) $\Lambda$ a ring. Every $\Lambda$-module has an injective envelope.
+
+\begin{defin}
+$\Lambda$ artin $R$-algebra, $A \in \mod\Lambda$. The \underline{socle of $A$}, $\soc A$ is the sum of all simple submodules of $A$.
+\end{defin}
+
+\begin{exam}
+$\G: \vcenter{\xymatrix@C-2pc@R-1pc{
+&1 \ar[dl] \ar[dr]&\\
+2&&3}}$, $k$ a field, $\Lambda = k\G$
+\[
+\xy
+\POS(20, 6)
+
+\xymatrix@C-2pc{
+&k \ar[dl]_1="l" \ar[dr]^1="r" \\
+k&&k
+}
+
+\POS(0,0)
+\xymatrix{\Lambda e_1 \ar@{{}{ }{}}@(ul,ur)^{}="a" \ar@{~>}"a";"l"}
+
+\POS(40, 6)
+
+\xymatrix{
+&0 \ar[dl]_{}="b" \ar[dr] \ar@{<-^{)}}"r";"b" \\
+k&&0
+}
+
+\POS(60, 6)
+
+\xymatrix{
+&0 \ar[dl]_{}="b" \ar[dr]\\
+0&&k
+}
+
+\POS(55,0)
+\xymatrix{+}
+
+\POS(75, 0)
+
+\xymatrix@C-1pc@R-1pc{=  \Lambda e_2 & \oplus & \Lambda e_3\\
+                         &  \soc \Lambda e_1 \ar@{}[u]|-*[@]{=}}
+
+\endxy\]
+\end{exam}
+
+\begin{note}
+\begin{enumerate}
+\item[]
+\item[(1)] In general, $\soc S = S$, when $S$ is a (semi-)simple $\Lambda$-module.
+
+\item[(2)] $\soc A \subseteq A$ is a semisimple submodule of $A$.
+
+\item[(3)] $\Lambda$ artin $R$-algebra, $A \in \mod\Lambda$, $A \neq (0)$.\\
+Since $l(A) < \infty$, then $\exists$ a simple $\Lambda$-submodule $S \subseteq A$, that is, $\soc A \neq (0)$. Furthermore $A \neq (0) \iff \soc A \neq (0)$, and $D(A / \mathfrak{r}A) \simeq \soc D(A)$. 
+\end{enumerate}
+\end{note}
+
+%page 88
+
+\begin{lem}
+\label{lem:54}
+$\Lambda$ artin $R$-algebra, $A \subseteq X \in \mod\Lambda$\\
+TFAE
+\begin{enumerate}
+\item[(a)] $A$ essential submodule of $X$
+\item[(b)] $\soc X \subseteq A$
+\item[(c)] $\soc A \subseteq \soc X$.
+\end{enumerate} 
+
+\begin{proof}
+\underline{(a) $\Rightarrow$ (c):} $A \subseteq X$ essential submodule\\
+\begin{equation*}
+\begin{split}
+S \subseteq X \text{ simple} &\implies S \neq (0)\\
+&\implies (0) \neq S\cap A \subseteq S\\
+\text{Simple } &\implies S \cap A = S \subseteq A\\
+\implies \sum_{\begin{smallmatrix} S \subseteq X\\ S \text{ simple} \end{smallmatrix}} S &= \soc X \subseteq A\\
+A \subseteq X &\implies \soc A \subseteq \soc X\\
+\text{Hence, } \soc A &= \soc X
+\end{split}
+\end{equation*}
+\underline{(c) $\Rightarrow$ (b):} Obviously, $\soc A = \soc X$\\
+$\implies \soc X \subseteq \soc A \subseteq A$.\\
+\\
+\underline{(b) $\Rightarrow$ (a):} Assume that $\soc X \subseteq A$.\\
+Let $(0) \neq B \subseteq X$. Then $(0) \neq \soc B \subseteq \soc X$\\
+Hence, $(0) \neq \soc B = \soc B \cap \soc X \subseteq \soc B \cap A \subseteq B \cap A \implies B \cap A \neq (0)$.
+\end{proof}
+\end{lem}
+
+\begin{prop}
+\label{prop:55}
+$\Lambda$ artin $R$-algebra, $(0) \neq A \in \mod\Lambda$
+\begin{enumerate}
+\item[(a)] $\xymatrix{A \ar@{^{(}->}[r] & I}$ injective envelope $\iff I$ injective and $\soc A = \soc I$.
+
+\item[(b)] Injective envelopes are unique up to isomorphism.
+
+\item[(c)] Injective envelope of $A$ $\simeq$ injective envelope of $\soc A$
+\end{enumerate}
+
+\begin{proof}
+\begin{enumerate}
+\item[(a)] Use the definition of injective envelope and Lemma \ref{lem:54}
+
+\item[(b)] Let $\xymatrix{A \ar@{^{(}->}[r]^{\nu_i} & I_i}$ be two injective envelopes 
+\[\xymatrix@C-1pc@R-0.3pc{
+&0\ar[dr]\\
+0 \ar[rr] && A \ar[rr]^{\nu_1} \ar[dr]_{\nu_2} && I_1 \ar@{-->}[dl]^{\exists \varphi}\\
+&&& I_2
+}\]
+
+%page 89
+
+Assume that $\Ker \varphi \neq (0)$\\
+$\implies A \cap \Ker\varphi \neq (0)$\\
+$\implies \exists a \in A \setminus \{ 0 \}$ s.t. $0=\varphi(a) = \varphi\nu_1(a) = \nu_2(a) \implies a= 0$ Contradiction!\\
+$\implies \Ker\varphi = (0) \implies I_1 \simeq 
+\xymatrix@C-2pc@R-2pc{\Im \varphi \ar@{}[r]|-*[@]{\subseteq} & I_2\\
+& \ar@/^1pc/[ul] \text{injective}} $
+
+\begin{recall}
+$\xymatrix{0 \ar[r] & I \ar@{^{(}->}[r] & B \ar[r] & C \ar[r] & 0}$ exact, and $I$ injective\\
+$\implies B = I \oplus B'$
+\end{recall}
+
+$\implies I_2 = \Im\varphi \oplus I_2'$\\
+$\implies \xymatrix@C+2pc{A \ar@{^{(}->}[r]^{\nu_2 = \varphi\nu_1} & I_2} = \Im\varphi \oplus I_2'$ and $\Im\nu_2 \subseteq \Im \varphi\nu_1$\\
+$\implies A \cap I_2' = (0)$\\
+$A$ essential submodule of $I_2$\\
+$\implies I_2' = (0)$ and $\Im\varphi = I_2$\\
+$\implies \varphi$ is an isomorphism and therefor injective envelopes are unique up to isomorphism.
+
+\item[(c)] Consider
+\[
+\xy
+
+\xymatrix{0 \ar[r] & \soc A \ar@{^{(}->}[r]^{\nu} \ar@{^{(}->}[d]_{i}="env"  & A \ar@{-->}[dl]^{\begin{smallmatrix} \exists f \text{, since }\\I(\soc A)\text{ is inj.} \end{smallmatrix}}\\
+& I(\soc A)}
+
+\POS(0, -6)
+
+\xymatrix{{\begin{smallmatrix} \text{inj}\\\text{envelope}\end{smallmatrix}} \ar@{{}{ }{}}@(ul,ur)^{}="a" \ar"a";"env"}
+
+\endxy
+\]
+\begin{enumerate}
+\item[$\cdot$] $f\nu=i$ 1-1 $\implies \Ker f \cap \soc A = (0)$\\ 
+$\soc A \hookrightarrow A$ essential $\implies \Ker f = (0) \implies f$ 1-1.
+
+\item[$\cdot$] Let $(0) neq A' \subseteq I(\soc A)$. WTS: $f(A) \cap A' \neq (0)$\\
+\underline{We have:} $f(A) \cap A' \supseteq \soc A \cap A' \neq (0)$, since $\soc A$ is an essential submodule of $I(\soc A)$\\
+$\implies f(A)$ is an essential submodule of $I(\soc A)$\\
+$\implies \xymatrix{A \ar[r]^-{f} & I(\soc A)}$ is an injective envelope
+\end{enumerate}
+\end{enumerate}
+\end{proof}
+\end{prop}
+
+\begin{lem}
+\label{lem:56}
+$\Lambda$ artin $R$-algebra, $A \in \mod\Lambda$, $\rad\Lambda = \mathfrak{r}$
+\[\soc A = \{ a \in A \mid \mathfrak{r}\cdot a = (0) \} = S_A\]
+
+%page 90
+
+\begin{proof}
+$\soc A$ semisimple $\implies \mathfrak{r}\soc A = (0) \implies \soc A \subseteq S_A$\\
+$S_A$ is a submodule of $A$.\\
+$\mathfrak{r}S_A=(0) \implies S_A$ is a semisimple submodule\\
+$\implies S_A \subseteq \soc A \implies \soc A = S_A$ 
+\end{proof}
+\end{lem}
+
+\begin{exer}
+$\Lambda$ artin $R$-algebra, $A, A_1, A_2 \in \mod\Lambda$
+\begin{enumerate}
+\item[(a)] $\soc A \simeq \Hom_\Lambda(\Lambda/\mathfrak{r}, A)$
+\item[(b)] $\soc(A_1 \oplus A_2) = \soc A_1 \oplus \soc A_2$
+\end{enumerate}
+\end{exer}
+
+\begin{prop}
+\label{prop:57}
+$\Lambda$ finite dimensional $k$-algebra, $k$ a field.\\
+$\xymatrix{P \ar[r]^f & A}$ is a projective cover in $\mod\Lambda$ \[\Updownarrow\] $\xymatrix{D(A) \ar[r]^{D(f)} & D(P)}$ is a injective envelope in $\mod\Lambda^{op}$
+
+\begin{proof}
+Use $X \in \mod\Lambda \implies \soc D(X) \simeq D(X/\mathfrak{r}X)$\\
+Using duality one can show for $\Lambda$ a finite dimensional $k$-algebra, $k$ a field.
+\begin{enumerate}
+\item[(a)] $A,B \in \mod\Lambda \implies I(A\oplus B) = I(A) \oplus I(B)$
+\item[(b)] $I$ injective in $\mod\Lambda$\\
+\centerline{$I$ indecomposable $\iff$ $\soc I$ simple}
+\item[(c)] There is a 1-1 correspondance between isomorphism classes of simple $\Lambda$-modules and isomorphism classes of indecomposable injective $\Lambda$-modules:
+\[\xy
+
+\POS(-25,0)
+\xymatrix@C-1pc@R-1pc{
+S \ar@{|->}[d] & \soc I \ar@{<-|}[d]\\
+I(S) & I
+}
+
+\POS(0, 7)
+
+\xymatrix@R+3pc{
+\{ \text{isomorphism classes of simple modules} \} \ar@{<->}[d]^{1-1}\\
+\{ \text{isomorphism classes of indecomposable injective modules} \}
+}
+
+\endxy\]
+\end{enumerate}
+\end{proof}
+\end{prop}
+
+%page 91
+\subsection{The socle of a representation}
+$(\G, \rho)$ quiver with relations $\rho$, $k$ a field, $J^t \subseteq \langle \rho \rangle \subseteq J^2$, $\G_0 = \{ 1, 2, \cdots, n \}$. $\Lambda = k\G/\langle \rho \rangle$, $\mathfrak{r} = \rad\Lambda = J/\langle \rho \rangle \subseteq \Lambda$
+\[\xymatrix{
+(V, f) \ar@{|->}[rr] && F(V,f) \ar@{}[d]|-*[@]{\supseteq} \ar@{}[r]|-*[@]{=} & \bigoplus\limits_{i=1}^n V(i)\\
+\Rep(\G, \rho) \ar@/^0.5pc/[r]^F & \ar@/^0.5pc/[l]^H \mod\Lambda & \soc F(V,f) \ar@{}[d]|-*[@]{=}\\
+               &             & \{ m \in F(V,f) \mid \mathfrak{r}\cdot m = (0) \}
+}\]
+\[m= (v_1, v_2, \cdots, v_n) \in F(V, f)\]
+$ m \in \soc F(V, f) \iff \overline{\alpha} \cdot m = 0, \;\;\;\; \forall \alpha : i \to j \in \G $ since $\mathfrak{r} = J/\langle \rho \rangle$, ($J = \langle$arrows$\rangle$)\\
+$\iff (0, \cdots,0, 
+\xymatrix@R-2pc@C-2.5pc{
+f_\alpha(v_i), & 0, \cdots, 0)\\ 
+& j\text{-th coord} \ar@/^1pc/[ul]}=0$, $\forall \alpha: i \to j \in \G$\\
+$\iff f_\alpha(v_i) = 0$, $\forall \alpha : i \to j \in \G$\\
+$\iff v_i \in \bigcap\limits_{\alpha : i \to j \in \G} \Ker f_\alpha$, $\forall i = 1, 2, \cdots, n$
+\[H(\soc F(V, f)) = ?\]
+Let $V'(i) = \bigcap\limits_{\alpha : i \to j} \Ker f_\alpha \subseteq V(i)$ and let $f'_\alpha = f_\alpha\mid_{V'(i)} = 0$
+
+\begin{exam}
+\[\]
+$\G: \xymatrix{
+1 \ar@/^0.5pc/[r]^\alpha \ar@/_0.5pc/[r]_\beta & 2 \ar[r]^\gamma & 3
+}$, $\rho = \{ \gamma\beta \}$, $k$ a field, $\Lambda = k\G/\langle \rho \rangle$
+\[
+\Lambda \overline{e}_1: \vcenter{\xymatrix{
+k \ar@/_0.5pc/[d]_-{\begin{psmallmatrix} 1\\0 \end{psmallmatrix}} \ar@/^0.5pc/[d]^-{\begin{psmallmatrix} 0\\1 \end{psmallmatrix}}\\
+k^2 \ar[d]^-{\begin{psmallmatrix} 0 & 1 \end{psmallmatrix}}\\
+k
+}}
+\hspace{2cm}
+\Lambda \soc\overline{e}_1: \vcenter{\xymatrix{
+0 \ar@/_0.5pc/[d]_-{0} \ar@/^0.5pc/[d]^-{0}\\
+k \oplus (0) \ar[d]^-{0}\\
+k
+}}
+\]
+\end{exam}
