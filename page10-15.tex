@@ -1,4 +1,5 @@
 \subsection{Modules and representations}
+Here is how to construct modules from representations and vice versa.
 
 $\Gamma = (\Gamma_0,\Gamma_1)$ - quiver, $k$ field.
 
@@ -13,12 +14,13 @@ f_\alpha(e_im) = \alpha e_im
 $(V,f)$ representaion of $\Gamma\leadsto \begin{cases}
 M = \oplus_{i\in\Gamma_0} V(i) \textrm{, $k\Gamma$-module}^*\\
 m = (v_1,v_2,\ldots, v_n) \in M\\
-e_im \extto{\text{def}}{=} (0,\ldots,0,v_i,0,\ldots,0)\\
+e_im \defeq (0,\ldots,0,v_i,0,\ldots,0)\\
 \text{for $\alpha\colon i\to j$ in $\Gamma_1$, remember $\alpha =
   e_j\alpha e_i$}\\
-\alpha m \extto{\text{def}}{=} (0,\ldots,0,f_\alpha(v_i),0,\ldots,0)
+\alpha m \defeq (0,\ldots,0,f_\alpha(v_i),0,\ldots,0)
 \text{\ with $f_\alpha(v_i)$ in the $j$-th coordinate}
 \end{cases}$\medskip 
+
 $^*$Can show: This induces a left $k\Gamma$-module structure on $M$
 (see \cite[page 57]{ARS}). 
 \begin{exam}
@@ -30,7 +32,7 @@ e_1\cdot (a,b) & = (a, 0)\notag\\
 e_2\cdot (a,b) & = (0,b)\notag\\
 \alpha\cdot(a,b) & = (0,a)\notag
 \end{align}
-Note: $k\Gamma e_1 = k\{ e_1,\alpha\}$.  Define $\varphi\colon M\to
+\textbf{Note}: $k\Gamma e_1 = k\{ e_1,\alpha\}$.  Define $\varphi\colon M\to
 k\Gamma e_1$ by letting 
 \[\varphi(1,0) = e_1 \text{\ and\ } \varphi(0,1) = \alpha.\]
 
@@ -166,7 +168,7 @@ if
 \item \[\xymatrix{
 V(i) \ar@{^(->}[r] \ar[d]_{f_\alpha} & V'(i)\ar[d]^{f'_\alpha}\\
 V(j) \ar@{^(->}[r] & V'(j)}\]
-for $\alpha\colon i\to j\in\Gamma_1$, that is, $f_\alpha =
+commutes for $\alpha\colon i\to j\in\Gamma_1$, that is, $f_\alpha =
 f'_\alpha|_{V(i)}$. 
 \end{enumerate}
 \item If $(V,f)\subseteq (V',f')$ is a subrepresentation, then the
@@ -281,14 +283,14 @@ k\Gamma e_2$.
 $\Rightarrow$ $k\Gamma$ is of finite representation type. 
 \end{exam}
 
-\begin{thm}
+\begin{thm}\label{thm:4}
 $k$ field, $\kar k = p$, $G$ finite group with $p\mid |G|$. Then,
 
 $kG$ of finite representation type $\Leftrightarrow$ All $p$-Sylow
 subgroups of $G$ are cyclic.
 \end{thm}
 
-\begin{thm}
+\begin{thm}\label{thm:5}
 $\Gamma$ connected quiver without oriented cycles, $k$  field.
 
 $k\Gamma$ is of finite representation type $\Leftrightarrow$ The

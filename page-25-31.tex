@@ -1,10 +1,9 @@
-\begin{prop}
-\label{Prop 11}
+\begin{prop}\label{prop:11}
 Given a \(\Lambda\)-module \(A\) of finite length and a \(\Lambda\)-homomorphism \(f:A\mapsto A\). The following are equivalent
 \begin{enumerate}[(a)]
-    \item \(f\) is an isomorphism
-    \item \(f\) is a monomorphism (1-1)
-    \item \(f\) is an epimorphism (onto)
+    \item \(f\) is an isomorphism,
+    \item \(f\) is a monomorphism (1-1),
+    \item \(f\) is an epimorphism (onto).
 \end{enumerate}
 \end{prop}
 \begin{proof}
@@ -18,15 +17,14 @@ Clearly \((a)\implies (b)\) and \((a)\implies (c)\) by def. We have the exact se
 c\rightarrow \Ker f \hookrightarrow A \rightarrow f(A) \rightarrow 0 \text{  exact} \implies l(\Ker f) = 0 \implies \Ker f = (0) \implies f \text{ 1-1 } \implies f \text{ isomorphism}.\)
 \end{proof}
 \begin{rem}
-The proof of \ref{Prop 11} holds for all \(f:A\mapsto B\) with \(l(A) = l(B)\), so if \(l(A) = l(B)\) and \(f:A\mapsto B\), then 
+The proof of Proposition \ref{prop:11} holds for all \(f:A\mapsto B\) with \(l(A) = l(B)\), so if \(l(A) = l(B)\) and \(f:A\mapsto B\), then 
 \begin{align*}
     f \text{ isomorphism } \Leftrightarrow f \text{ 1-1 } \Leftrightarrow f \text{  onto}.
 \end{align*}
 \end{rem}
 
 \noindent\textbf{Recall}: \(0\rightarrow A \rightarrow B \rightarrow C \rightarrow 0\) exact and \(l(B) < \infty\), then \(l(A)\) and \(l(C)\) are finite too.
-\begin{prop}
-\label{Prop 12}
+\begin{prop}\label{prop:12}
 If \(\xymatrix{0\ar[r] & A\ar[r]^f & B\ar[r]^g & C\ar[r] & 0}\) is exact and \(A\) and \(C\) have finite length, then also \(B\) has finite length and \(l(B) = l(A) + l(C)\).
 \end{prop}
 \begin{proof}
@@ -76,43 +74,58 @@ where \(p_i(b_i) = b_i + f(A_{i+1})\), is onto (composition of two onto maps) an
 \end{align*}
 
 \begin{defin}
-    A collection \(\mathcal{C}\) of modules (a full subcategory) is \underline{closed under extensions} if for each exact sequence 
+  A collection \(\mathcal{C}\) of modules (a full subcategory) is
+  \emph{closed under extensions} if for each exact sequence
     \begin{align*}
         \xymatrix{0\ar[r] & A\ar[r] & B\ar[r] & C\ar[r] & 0}
     \end{align*}
     with \(A, C\in\mathcal{C}\), then \(B\) is also in \(\mathcal{C}\)
 \end{defin}
 \index{Closed under extensions}
-Let \(fl(\Lambda\) be the collection of \(\Lambda\)-modules of finite length.
-\begin{prop}
-\label{Proposition 13}
+Let $\fl(\Lambda)$ be the collection of \(\Lambda\)-modules of finite length.
+\begin{prop}\label{prop:13}
 \begin{enumerate}[(a)]
-    \item \(fl(\Lambda)\) is closed under extensions and contains the simples. Furthermore, \(fl(\Lambda)\) is closed under submodules and factor modules.
-    \item Let \(\mathcal{C}\) be a collection of \(\Lambda\)-modules that is closed under extensions and contains the simple \(\Lambda\)-modules. Then \(fl(\Lambda)\subseteq\mathcal{C}\)
+\item \(\fl(\Lambda)\) is closed under extensions and contains the
+  simples. Furthermore, \(\fl(\Lambda)\) is closed under submodules
+  and factor modules.
+\item Let \(\mathcal{C}\) be a collection of \(\Lambda\)-modules that
+  is closed under extensions and contains the simple
+  \(\Lambda\)-modules. Then \(\fl(\Lambda)\subseteq\mathcal{C}\). 
 \end{enumerate}
 \end{prop}
-\begin{proof}(a): [FIX REFERENCES]\\
-(b) Let \(B\in fl(\Lambda)\) with \(l(B) = n\). Induction on \(n\).\\
+\begin{proof}(a): Follows from Proposition \ref{prop:12} and Corollary
+  \ref{cor:8}. 
+(b) Let \(B\in \fl(\Lambda)\) with \(l(B) = n\). Induction on \(n\).\\
 \noindent \(n = 1\): Then \(B\) is simple and \(B\in\mathcal{C}\).\\
-\noindent\(n>1\): Choose \(0\not\subseteq A\not\subseteq B\) submodule. This is possible since \(B\) is not simple. Then
+\noindent\(n>1\): Choose \(0\not\subseteq A\not\subseteq B\)
+submodule. This is possible since \(B\) is not simple. Then 
 \begin{align*}
     \xymatrix{0\ar[r] & A\ar[r] & B\ar[r] & C\ar[r] & 0}
 \end{align*}
-is exact with \(l(A),l(B/A)<l(B) = n\). Induction \(\implies A, B/A\in\mathcal{C}\). \(\mathcal{C}\) is closed under extensions so \(B\in\mathcal{C}\) and hence \(fl(\Lambda) \subseteq \mathcal{C}\).
+is exact with \(l(A),l(B/A)<l(B) = n\). Induction \(\implies A,
+B/A\in\mathcal{C}\). \(\mathcal{C}\) is closed under extensions so
+\(B\in\mathcal{C}\) and hence \(fl(\Lambda) \subseteq \mathcal{C}\). 
 \end{proof}
-\noindent\underline{Recall:} A module \(M\) is Noetherian (Artinian) if for every ascending (descending) chain of submodules of M:
+\noindent\textbf{Recall}: (i) A module \(M\) is Noetherian (Artinian)
+if for every ascending (descending) chain of submodules of M: 
 \begin{gather*}
     M_1\subseteq M_2\subseteq\dots\subseteq M_n \subseteq M_{n+1} \subseteq\dots\subseteq M \\
     (M \supseteq M_1\supseteq M_2\supseteq\dots\supseteq M_n \supseteq M_{n+1} \supseteq\dots)
 \end{gather*}
 \(\exists n\) such that \(M_n = M_{n+1} = \dots\).
 
-\noindent \(M\) is Noetherian (Artinian) if, and only if, every non-empty set of sub-modules of \(M\) has a maximal (minimal) element.
+\noindent (ii) \(M\) is Noetherian (Artinian) if, and only if, every
+non-empty set of sub-modules of \(M\) has a maximal (minimal)
+element. 
 
-\begin{prop}
-A \(\Lambda\)-module. \(l(A) < \infty \Leftrightarrow\) A is  Artinian and Noetherian.
+\begin{prop}\label{prop:14}
+Let $A$ be a \(\Lambda\)-module. \(l(A) < \infty \Leftrightarrow\) A
+is  Artinian and Noetherian. 
 \end{prop}
-\begin{proof}\underline{\(\implies\):} Want to show: \(fl(\Lambda) \subseteq \text{art}(\Lambda) = \) collection of Artinian \(\Lambda\)-modules. Will use Proposition \ref{Proposition 13} (b). Let 
+\begin{proof}\underline{\(\implies\):} Want to show: \(\fl(\Lambda)
+  \subseteq \text{art}(\Lambda) = \) collection of Artinian
+  \(\Lambda\)-modules. Will use Proposition \ref{prop:13}
+  (b). Let  
 \begin{align*}
     \xymatrix{0\ar[r] & A\ar[r] & B\ar[r] & C\ar[r] & 0}
 \end{align*}
@@ -133,9 +146,14 @@ A_i = A_{i+1} \text{ and } C_i = C_{i+1}\quad i\geq N\\
 \implies B\in\text{art}(\Lambda) \\
 \implies \text{art}(\Lambda) \text{ is closed under extensions.}
 \end{gather*}
-Clear that \(\text{art}(\Lambda)\) contains the simple \(\Lambda\)-modules: Proposition \ref{Proposition 13}(b)\(\implies  \text{fl}(\Lambda)\subseteq\text{art}(\Lambda)\)
+Clear that \(\text{art}(\Lambda)\) contains the simple
+\(\Lambda\)-modules: Proposition \ref{prop:13} (b)\(\implies  \text{fl}(\Lambda)\subseteq\text{art}(\Lambda)\)
 
-\noindent\underline{Exercise:} Similarly, \(\text{fl}(\Lambda)\subseteq\text{noeth}(\Lambda)\), collection of noehterian \(\Lambda\)-modules. This implies that \(\text{fl}(\Lambda)\subseteq\text{art}(\Lambda)\cap\text{noeth}(\Lambda)\).\\[0.5cm]
+\noindent\begin{exer} Similarly,
+  \(\text{fl}(\Lambda)\subseteq\text{noeth}(\Lambda)\) = collection of
+  noehterian \(\Lambda\)-modules. This implies that
+  \(\text{fl}(\Lambda)\subseteq\text{art}(\Lambda)\cap\text{noeth}(\Lambda)\).
+\end{exer}
 
 \noindent\underline{\Large\(\Leftarrow\)}: Assume that \(B\neq (0)\) is Artinian and Noetherian. Since \(B\) is Artinian \(B\) has a simple submodule \(S\subseteq B\). (\(\mathcal{F} = \{U\subseteq B\,\, |\,\, U\neq (0)\}\) has a minimal element). Consider \(\mathcal{F}' = \{U\subseteq B\,\, |\,\, l(U) < \infty \}\). Then \(\mathcal{F}' \neq \emptyset\) since \(S\in\mathcal{F}'\). Since \(B\) is Noetherian \(\mathcal{F}'\) has a maximal element \(A\subseteq B\) and \(A \in \text{fl}(\Lambda)\). Assume that \(A\subsetneq B\), i.e. \(B/A\neq (0)\). \(B\) Artinian \(\implies B/A\) Artinian \(\implies \exists T\subseteq B/A\) simple submodule. Consider the natural projection \(p:B\rightarrow B/A\). Then 
 \begin{align*}
@@ -153,17 +171,17 @@ Now \(l(p^{-1}(T)) = l(A) + 1\), a contradiction and we conclude that \(A = B\) 
     \begin{proof} \underline{\(\Rightarrow\)}: \(\Lambda\) left Artinian \(\implies \Lambda\) left Noetherian \(\implies _\Lambda\Lambda\in\text{art}(\Lambda)\cap\text{noeth}(\Lambda)\implies l(_\Lambda\Lambda)<\infty\)\\
     \underline{\(\Leftarrow: \)} \(l(_\Lambda\Lambda) < \infty \implies _\Lambda\Lambda \in \text{art}(\Lambda)\cap\text{noeth}(\Lambda)\implies\Lambda\) left Artinian.
     \end{proof}
-    \item \(\Lambda\) is left Artinian. \textit{Challenge:} \(\text{fl}(\Lambda) = \text{mrd(?)}(\Lambda)\) - finitely generated \(\Lambda\)-modules. 
+    \item \(\Lambda\) is left Artinian. \textit{Challenge:} \(\fl(\Lambda) = \mod(\Lambda)\) - finitely generated \(\Lambda\)-modules. 
     \item \(\Lambda = \mathbb{Z}, M = \mathbb{Z}/(n)\) \\
     \(n = p_1^{m_1}p_2^{m_2}\dots p_t^{m_t}\quad,\quad p_i\) different primes and \(m_i\geq 1\)\\
-    \(m_{\mathbb{Z}/p}(M) = \begin{cases}m_i & \text{if } p = p_i \\ 0 & \text{otherwise}\end{cases}\)
+    \(m_{\mathbb{Z}/p}(M) = \begin{cases}m_i, & \text{if } p = p_i, \\ 0, & \text{otherwise}.\end{cases}\)
 \end{enumerate}
-\begin{prop}
+\begin{prop}\label{prop:15}
     \(\Lambda\) a ring, \(B\) semisimple \(\Lambda\)-module. TFAE:
     \begin{enumerate}[(a)]
         \item \(l(B) <\infty \)
         \item \(B\) is Artinian. 
-        \item \(B\) is Noetherian
+        \item \(B\) is Noetherian. 
     \end{enumerate}
 \end{prop}
 \begin{proof}

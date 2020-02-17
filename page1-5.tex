@@ -164,7 +164,7 @@ a_t\alpha^t$, with $a_i$ in $k$ and $t\geqslant 0$.
       \[(e_1 + e_2 + \cdots + e_n)p = e_1p + e_2p + \cdots + e_jp + \cdots +
       e_np = e_jp \defeq p\]
       \[p(e_1 + e_2 + \cdots + e_n) = pe_1 + pe_2 + \cdots + pe_i + \cdots +
-      pe_n = e_jp \defeq p\]
+      pe_n = pe_i \defeq p\]
 	
     $\implies e_1 + e_2 + \cdots + e_n = 1_{k\G}$ = identity in $k\G$
 \end{enumerate}
@@ -220,12 +220,12 @@ Show that $k\G\simeq k[x]$ as $k$-algebras.
   $\G\colon \xymatrix{\ar@(ul,dl)[]_\alpha 1 \ar@/^.3pc/[r]^\beta &
     \ar@/^.3pc/[l]^\gamma 2}$\\ \newline 
 
-\subsubsection*{Cycles}
+\textbf{Cycles}:
   $\alpha,\alpha^3,\gamma\beta\alpha,\beta\alpha^{10}\gamma, \ldots$
   $\dim_k k\G = \infty$
 \end{exam}
 
-\begin{prop}\label{prop1}
+\begin{prop}\label{prop:1}
   $\G = (\G_0,\G_1)$ quiver, $k$ field.
 \begin{center}
   $\dim_kk\G < \infty$ if and only $\G$ has no oriented cycles.
@@ -235,15 +235,14 @@ Show that $k\G\simeq k[x]$ as $k$-algebras.
   Exercise.
 \end{proof}
 
-\begin{prop}
-  Assume that $\G=(\G_0,\G_1)$ has no oriented cycles. 
+\begin{prop}\label{prop:2}
+Assume that $\G=(\G_0,\G_1)$ has no oriented cycles. 
 \begin{center}
 $k\G$ is semisimple $\iff \G_1 = \emptyset$.
 \end{center}
 \end{prop}
-
 \begin{proof}
-  Proposition \ref{prop1} $ \implies \text{dim}_kk\G < \infty \implies k\G$ is a left artinian ring. \\
+  Proposition \ref{prop:1} $ \implies \text{dim}_kk\G < \infty \implies k\G$ is a left artinian ring. \\
   $k\G$ semisimple $\iff $ no non-zero nilpotent left ideals in $k\G$.\\
 
   $\Mapsto$: Assume that $\G_1\neq\emptyset.$ Let $\alpha_1$ be an
@@ -255,7 +254,7 @@ $k\G$ is semisimple $\iff \G_1 = \emptyset$.
   finite, we must end up in a vertex $ v$, where arrows only end and
   no arrows starts. Say, $\alpha = \alpha_t$ is an arrow ending in
   $v$. Then consider $k\G\alpha = k\alpha$.  Since
-  \[(a_1\alpha)(a_2\alpha = (a_1a_2)\underbrace{(\alpha\alpha)}_{=0} =
+  \[(a_1\alpha)(a_2\alpha) = (a_1a_2)\underbrace{(\alpha\alpha)}_{=0} =
   0\quad \implies \quad (k\G\alpha)^2=(0)
 \]
 and $k\G\alpha \neq (0)$, we infer that $k\G$ is not semisimple.
@@ -273,14 +272,14 @@ $\Mapsfrom$: Assume that $\G_1 = \emptyset$. Then
   matrix rings over divisjon rings.
 \end{proof}
 
-Note: $k\G$ is not always semisimple, but some factor of $k\G$ is.
+\textbf{Note}: $k\G$ is not always semisimple, but some factor of $k\G$ is.
 
-\begin{prop}
+\begin{prop}\label{prop:3}
   $\G=(\G_0,\G_1) $ quiver, $k$ field. Let
 \[J = \{\text{all linear combinations of non-trivial paths}\}.\] 
 Then $J$ is an ideal in $k\G$ and
-  $k\G/J \simeq \underbrace{k \times \cdots \times k}_{|\G_0|}$,
-  -semisimple
+  $k\G/J \simeq \underbrace{k \times \cdots \times k}_{|\G_0|}$
+  is semisimple
 \end{prop}
 \begin{proof}[Sketch of proof]
   Define $\psi\colon k\G \rightarrow \underbrace{k \times \cdots \times}_{|\G_0|=n} = k^n $

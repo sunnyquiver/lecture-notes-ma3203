@@ -1,13 +1,17 @@
 %page 40
 \section{Radical of a module}
 \begin{defin}
-$\Lambda$ ring, $A \subseteq B$ $\Lambda$-modules.\\
-$A$ is small in $B$ if $A+X=B$ implies that $X=B$ for every submodule $X$ of $B$. 
+$\Lambda$ ring, $A \subseteq B$ two $\Lambda$-modules. Then 
+$A$ is \emph{small} in $B$ if $A+X=B$ implies that $X=B$ for every submodule $X$ of $B$. 
 \end{defin}
 
 \begin{exam}
 \begin{enumerate}
-\item[(1)] $\Lambda=\mathbb{Z}$ and $B=\Lambda$ then the only small submodule of $B$ is $(0)$. If $(0)\neq A \subsetneq B$ then $A = \mathbb{Z}_n$ for some $n \neq 0,\; 1$. Choose an integer $m \neq 0, \; 1$ such that $\gcd(n, m) = 1$. Then $B = \mathbb{Z}_n + \mathbb{Z}_m = A + X$ but $X \neq B$. Hence $A$ is not small.
+\item[(1)] $\Lambda=\mathbb{Z}$ and $B=\Lambda$ then the only small
+  submodule of $B$ is $(0)$. If $(0)\neq A \subsetneq B$, then $A =
+  \mathbb{Z}n$ for some $n \neq 0,\; 1$. Choose an integer $m \neq 0,
+  \; 1$ such that $\gcd(n, m) = 1$. Then $B = \mathbb{Z}n +
+  \mathbb{Z}m = A + X$ but $X \neq B$. Hence $A$ is not small. 
 
 \item[(2)] $\G : \xymatrix{1\ar[r]^\alpha & 2\ar[r]^\beta & 3}$, $k$ a field $\Lambda = k\G$, $B=k\G e_1$\\
 $\xymatrix{
@@ -16,6 +20,8 @@ $\xymatrix{
 B = k\G e_1	\ar@{~>}[r] 	& k \ar@{->}[d]^1 	&\supseteq 	&k\ar@{->}[d]^1&\supseteq&0\ar@{->}[d]&\supseteq&0\ar@{->}[d]\\
 						 	& k 				&			&k&&k&&0\\
 }$\\
+There are no other proper subrepresentations of $B$.
+
 $\left.\begin{matrix}
 \xymatrix@C-2pc@R-1pc{
 (i) & A &+&(0)& =& A &\neq& B\\
@@ -96,14 +102,16 @@ $\xymatrix@C-1pc@R-1pc{
 \\
 \underline{Induction}: $\mathfrak{r}^nA + X = A$ for all $n \geq 1$.\\
 %Lemma 19 page 35
-Lemma \ref{•} $\implies \mathfrak{r}$ nilpotent $\implies X = A \implies \mathfrak{r}A$ is small in $A \implies \mathfrak{r}A \subseteq \rad A$.
+Lemma \ref{lem:19} $\implies \mathfrak{r}$ nilpotent $\implies X = A
+\implies \mathfrak{r}A$ is small in $A \implies \mathfrak{r}A
+\subseteq \rad A$. 
 
 \begin{equation}
 \label{eq:rad_in_rA}
 \rad A \subseteq \mathfrak{r}A 
 \end{equation}
 %theorem 21 b page 36
-$A/\mathfrak{r}A$ is a semisimple module since $\mathfrak{r} A/\mathfrak{r}A = (0)$ (Theroem \ref{} (b))\\
+$A/\mathfrak{r}A$ is a semisimple module since $\mathfrak{r} A/\mathfrak{r}A = (0)$ (Theroem \ref{thm:21} (b))\\
 We have: $A/\mathfrak{r}A = \bigoplus_{i=1}^t S_i$, $S_i$ simple $\Lambda$-module. Let $A_j =\bigoplus_{i=1, i\neq j}^t S_i \subseteq A/\mathfrak{r}A$, which is a maximal submodule. Furthermore $\bigcap_{j=1}^t A_j = (0)$, so that $\rad(A/\mathfrak{r}A) = (0)$.\\
 \ref{eq:rA_in_rad} $\implies \mathfrak{r}A$ is contained in all maximal submodules of $A$\\
 $\implies \rad (A/\mathfrak{r}A) = (\rad (A)+\mathfrak{r}A)/\mathfrak{r}A = (0)$\\
@@ -195,8 +203,8 @@ $\xymatrix@R-1pc{
 
 %page 44
 \item[(2)] $\G : \xymatrix{1 \ar[r]^\alpha & 2 \ar@(ur, dr)^\beta}, \rho = \{ \beta^2 \}, \Lambda = k\G / \langle \rho \rangle$\\
-$\Lambda e_1 : \xymatrix{k \ar[r]^{\begin{psmallmatrix} 1\\0 \end{psmallmatrix}}  & k^2 \ar@(ur, dr)^{\begin{psmallmatrix} 0&0\\1&0 \end{psmallmatrix}}}, \rad (\Lambda e_1) : \xymatrix{0 \ar[r] & k^2 \ar@(ur, dr)^{\begin{psmallmatrix} 0&0\\1&0 \end{psmallmatrix}}}$\\
-$\Lambda e_2 : \xymatrix{0 \ar[r]  & k^2 \ar@(ur, dr)^{\begin{psmallmatrix} 0&0\\1&0 \end{psmallmatrix}}}, \rad (\Lambda e_2) : \xymatrix{0 \ar[r] & (0) \oplus k \ar@(ur, dr)^0}$\\
+$\Lambda e_1 : \xymatrix{k \ar[r]^{\begin{smallmatrix} 1\\0 \end{smallmatrix}}  & k^2 \ar@(ur, dr)^{\begin{smallmatrix} 0&0\\1&0 \end{smallmatrix}}}, \rad (\Lambda e_1) : \xymatrix{0 \ar[r] & k^2 \ar@(ur, dr)^{\begin{smallmatrix} 0&0\\1&0 \end{smallmatrix}}}$\\
+$\Lambda e_2 : \xymatrix{0 \ar[r]  & k^2 \ar@(ur, dr)^{\begin{smallmatrix} 0&0\\1&0 \end{smallmatrix}}}, \rad (\Lambda e_2) : \xymatrix{0 \ar[r] & (0) \oplus k \ar@(ur, dr)^0}$\\
 \end{enumerate}
 \end{exam}
 
@@ -233,14 +241,14 @@ k\ar[r] &
 \item[(2)]$\xymatrix
 {
 A = \Lambda \overline{e}_1  \ar@{~>}[r] & 
-k\ar[r]^{\begin{psmallmatrix} 1\\0 \end{psmallmatrix}} & 
-k^2 \ar@(ur, dr)^{\begin{psmallmatrix} 0&0\\1&0 \end{psmallmatrix}}
+k\ar[r]^{\begin{smallmatrix} 1\\0 \end{smallmatrix}} & 
+k^2 \ar@(ur, dr)^{\begin{smallmatrix} 0&0\\1&0 \end{smallmatrix}}
 } 
 \supseteq 
 \xymatrix
 {
 0\ar[r] & 
-k^2 \ar@(ur, dr)^{\begin{psmallmatrix} 0&0\\1&0 \end{psmallmatrix}}
+k^2 \ar@(ur, dr)^{\begin{smallmatrix} 0&0\\1&0 \end{smallmatrix}}
 }$
 \\\\
 $\xymatrix

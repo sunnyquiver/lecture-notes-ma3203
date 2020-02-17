@@ -11,7 +11,7 @@ $1_{k\G}=e_1 + e_2$,
 \[e_ie_j=  \begin{cases} \ e_i^2 = e_i,\\
   e_ie_j = 0, \text{\ for $i\neq j$}.
 \end{cases}\]
-\underline{Claim:} $M = e_1M\oplus e_2M$ as vector space over $k$.
+\textbf{Claim}: $M = e_1M\oplus e_2M$ as vector space over $k$.
 \begin{proof}
   \begin{align}
     m & = 1_{k\G}*m\notag\\
@@ -39,12 +39,13 @@ e_1m & = e_1(e_1m + e_2m)\notag\\
          & = e_1^2m + (e_1e_2)m\notag\\
          & = e_1m\notag\\
 \intertext{and}\notag\\
- e_2m & = e_2(e_1m + e_2m) = e_2m\notag\\
+ e_2m & = e_2(e_1m + e_2m) = e_2m\notag,\\
 \alpha m & = \alpha(e_1m + e_2m)\notag\\
-               & = \alpha(e_1m) + \alpha(e_2m)\notag\\
-               & = \alpha(e_1m) + 0\notag\\
-               & = \alpha m = \alpha e_1 m = (e_2\alpha)e_1m\notag\\
-               & = e_2(\alpha e_1 m)\in e_2M\notag
+     & = \alpha(e_1m) + \alpha(e_2m)\notag\\
+     & = (\alpha e_1)m + (\alpha e_2)m\notag\\
+     & = (\alpha e_1)m + 0\cdot m\notag\\
+     & = e_2(\alpha e_1) m = (e_2\alpha)e_1m\notag\\
+     & = e_2(\alpha e_1 m)\in e_2M\notag
 \end{align}
 
 \noindent \(M \xrightarrow{\alpha\cdot-} M \leadsto\) linear map
@@ -113,17 +114,18 @@ f(e_1m)  & = f((e_1e_1)m) \notag\\
               & = e_1f(e_1m) \in e_1N\notag
 \end{align}
 \[\implies f|_{e_1M}:e_1M \to e_1N.\]
-Similarly, \(f|_{e_2M}\colon e2M\xrightarrow{}e_2N\). Furthermore,
+Similarly, \(f|_{e_2M}\colon e_2M\xrightarrow{}e_2N\). Furthermore,
 \begin{align}
      \alpha f|_{e_1M}(e_1m) & = \alpha f(e_1m)\notag\\
                                        & = f(\alpha(e_1m)) \notag\\
-                                       & = \alpha f|_{e_1M}(e_1m)\notag
+                                       & = f|_{e_2M}(\alpha e_1m)\notag
 \end{align}
 since $\alpha = e_2\alpha$. 
 \end{exam}
-\noindent Hence\\
-\(\xymatrix{e_1M\ar[r]^{f|_{e_1M}}\ar[d]^{\alpha\cdot-} & e_1M\ar[d]^{\alpha\cdot\Large-} \\
-e_2M\ar[r]^{f|_{e_2M}} & e_2M}\)
+\noindent Hence
+\[\xymatrix{e_1M\ar[r]^{f|_{e_1M}}\ar[d]^{\alpha\cdot-} & e_1M\ar[d]^{\alpha\cdot\Large-} \\
+    e_2M\ar[r]^{f|_{e_2M}} & e_2M}\]
+is a commutative diagram. 
 \begin{rem}
 \( f\left(\begin{tabular}{c}
      \(1 - 1\) \\ onto \\ isom.

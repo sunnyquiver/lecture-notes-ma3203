@@ -1,5 +1,6 @@
 \documentclass{amsart}
-\usepackage{amsmath, amsthm, amscd, amssymb, latexsym, mathtools, centernot, faktor, mathrsfs}
+\usepackage{amsmath, amsthm, amscd, amssymb, latexsym, mathtools,
+  centernot, faktor, mathrsfs, mathtools}
 \usepackage[all]{xy}
 \usepackage{imakeidx,enumerate, stmaryrd}
 \numberwithin{equation}{section}
@@ -21,12 +22,14 @@
 \newcommand{\extto}{\xrightarrow}
 \newcommand{\Ker}{\operatorname{Ker}\nolimits}
 \renewcommand{\Im}{\operatorname{Im}\nolimits}
-\newcommand {\defeq}{\stackrel{\mathclap{\normalfont\mbox{def}}}{=}}
+%\newcommand {\defeq}{\stackrel{\mathclap{\normalfont\mbox{def}}}{=}}
+\newcommand {\defeq}{\stackrel{\mathclap{\scriptsize\mbox{def}}}{=}}
 \newcommand{\blitza}{{\usefont{U}{ulsy}{m}{n}\symbol{'011}}}
 \newcommand{\kar}{\operatorname{char}\nolimits}
 \newcommand{\rad}{\operatorname{rad}\nolimits}
 \newcommand{\Ann}{\operatorname{Ann}\nolimits}
 \newcommand{\Image}{\operatorname{Im}\nolimits}
+\newcommand{\fl}{\operatorname{fl}\nolimits}
 \DeclareMathOperator{\End}{End}
 \DeclareMathOperator{\Hom}{Hom}
 \renewcommand{\mod}{\operatorname{mod}\nolimits}
@@ -66,11 +69,11 @@ spring 2018 for typesetting the lecture notes from page 40 to page 91.
 \input{page16-20}
 \input{page-25-31}
 \input{page31-39}	
-\input{page40-48}
-\input{page49-60}
-\input{page61-72}
-\input{page73-81}
-\input{page81-91}
+%\input{page40-48}
+%\input{page49-60}
+%\input{page61-72}
+%\input{page73-81}
+%\input{page81-91}
 
 \printindex
 \begin{thebibliography}{ARS}

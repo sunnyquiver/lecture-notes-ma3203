@@ -1,5 +1,5 @@
 
-\section{quiver with relations}
+\section{Quiver with relations}
 Can all algebras over a field k be represented as $k\G$?\\\newline
 \underline{No}: 
 $\Lambda = \frac{k[x]}{\langle x^2\rangle} \ncong k\G \text{ for all quivers }\G
@@ -13,12 +13,12 @@ $\implies \G$ has one vertex, $\xymatrix{1\ar@(ur,dr)^\alpha} $ $\implies$ $\tex
 Let $\G=(\G_0,\G_1)$ be a quiver, k field.\\
 \begin{defin}
 \begin{enumerate}[(a)]
-	~\\ \item A \underline{relation} $\sigma$ in the quiver $\G$ over k is a k-linear combination of paths
+	~\\ \item A \emph{relation} $\sigma$ in the quiver $\G$ over k is a k-linear combination of paths
 	\begin{center}
 		$\sigma = a_1p_1 + a_2p_2+ \cdots + a_tp_t$\\
 	\end{center}
 	where $a_i\in k$, $e(p_i)=e(p_1)$ and $s(p_i)=s(p_1)$ for all $i$, and $l(p_i)\geq 2$ (the length of the path $p_i$ )
-	\item if $\varrho = \{\sigma\}_{l \in T}$ is a set of relations in $\G$ over k, then $(\G,\varrho)$ is a \underline{quiver with relations over k.}  
+	\item if $\varrho = \{\sigma\}_{l \in T}$ is a set of relations in $\G$ over k, then $(\G,\varrho)$ is a \emph{quiver with relations over $k$.}  
 \end{enumerate}
 \end{defin}
 \begin{exam}
@@ -33,7 +33,7 @@ Let $\G=(\G_0,\G_1)$ be a quiver, k field.\\
 	& 4 & }$\newline
 
 $\sigma\in k\G, m \in M.$\\ $ \sigma\cdot m\defeq\pi(\sigma)\cdot m = 0\cdot m = 0, \forall m \in M$\\
-$m=e_1m+e_2m+e_3m+e_4m$, $sigma = e_4\sigma e_1$\\
+$m=e_1m+e_2m+e_3m+e_4m$, $\sigma = e_4\sigma e_1$\\
 $0 = \sigma\cdot m = (\gamma\alpha-\delta\beta)e_1m = \gamma(\alpha e_1m)-\delta(\beta e_1m) = f_\gamma f_\alpha(e_1m)-f_\sigma f_\beta(e_1m) = \underbrace{f_\gamma f_\alpha-f_\sigma f_\beta}_{f_\sigma}(e_im) \implies f_\sigma(e_1M)=0 \implies f_\sigma = 0 $.\\
 Hence $\Lambda$-module $M$ corresponds to a representation of $\G$ satisfying the relation $\sigma(f_\sigma=0)$.\\
 Conversely, we claim that a representation $(V,f)$ of $\G$ 	such that
@@ -41,7 +41,7 @@ Conversely, we claim that a representation $(V,f)$ of $\G$ 	such that
 	$f_\sigma=f_\gamma f_\alpha-f_\sigma f_\beta=0$
 \end{center} 
  gives a module over $\Lambda$.\\\newline
-\underline{Recall:} $I \subseteq R$ ideal: $\frac{R}{I}$-module $M$ is the same as an $R$-module $M$ such that $I\cdot M = (0)$.\\
+\textbf{Recall}: $I \subseteq R$ ideal: $\frac{R}{I}$-module $M$ is the same as an $R$-module $M$ such that $I\cdot M = (0)$.\\
 \begin{center}
 	$M = V(1) \oplus V(2) \oplus V(3) \oplus V(4) \leftarrow k\G$-module\\
 	$e_1\cdot(v_1,v_2,v_3,v_4)=(v_1,0,0,0)$\\
@@ -73,7 +73,7 @@ $ T = P \underbrace{ \left(\begin{smallmatrix} r\begin{cases} \left(\begin{small
 \end{smallmatrix}\right) \end{smallmatrix}\right)}_{T_0}P^{-1} $ $\implies TP= PT_0$ \nolinebreak[4]\\\newline
 $\xymatrix{V \ar@(ur,dr)^{T}} \iff \xymatrix{V \ar@(ur,dr)^{T_0}} \simeq (\xymatrix{k \ar@(ur,dr)^{0}})^r \oplus (\xymatrix{k^2 \ar@(ur,dr)^{\left(\begin{smallmatrix}0&0\\1&0\end{smallmatrix}\right)}})^s  $  isomorphisme of representation
 
-\underline{Show:} $\xymatrix{k \ar@(ur,dr)^{0}} \iff \frac{k\G}{\langle\alpha\rangle}$ and $\xymatrix{k^2 \ar@(ur,dr)^{\left(\begin{smallmatrix}0&0\\1&0\end{smallmatrix}\right)}} \iff \frac{k\G}{\langle\alpha^2\rangle} \implies \Lambda$ is of finite representation type.
+\textbf{Show}: $\xymatrix{k \ar@(ur,dr)^{0}} \iff \frac{k\G}{\langle\alpha\rangle}$ and $\xymatrix{k^2 \ar@(ur,dr)^{\left(\begin{smallmatrix}0&0\\1&0\end{smallmatrix}\right)}} \iff \frac{k\G}{\langle\alpha^2\rangle} \implies \Lambda$ is of finite representation type.
 \end{exam}
 \subsection{Finite length}
 $\Lambda$ ring, $A$ a (left) $\Lambda$-module.
@@ -86,8 +86,13 @@ of submodules of $A$ such that $\frac{A_i}{A_{i+1}} = 0$ or simple for i$=0,1,\c
 
 Let $S$ be a simple $\Lambda$-module. Let
 \begin{equation*}
-m_s^{\mathscr{F}}(A) \defeq\mid\{i !!!!!!! \frac{A_i}{A_{i+1}}\simeq S \}\mid \text{ , } 
-l_{\mathscr{F}} \defeq \sum_{\mathclap{\substack{\small[S] \text{isomorphism} \\ \small\text{classes of simples}}}}m_s^{\mathscr{F}}(A) \text{ and } l(A) \defeq \min_{\mathclap{\substack{\mathscr{F} \text{generalized} \\ \text{composition series}}}} l_{\mathscr{F}}(A)
+m_s^{\mathscr{F}}(A) \defeq\{i \mid \frac{A_i}{A_{i+1}}\simeq S \}\mid
+\text{ , }\notag\\
+l_{\mathscr{F}} \defeq \sum_{\mathclap{\substack{\small[S]
+      \text{isomorphism} \\ \small\text{classes of
+        simples}}}}m_s^{\mathscr{F}}(A)\notag\\
+\intertext{ and }\notag\\
+l(A) \defeq \min_{\mathclap{\substack{\mathscr{F} \text{generalized} \\ \text{composition series}}}} l_{\mathscr{F}}(A)\notag
 \end{equation*}
 \end{defin}
 

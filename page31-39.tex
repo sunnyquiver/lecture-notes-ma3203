@@ -2,8 +2,9 @@
 
 \begin{defin}
 $\Lambda$ ring.  The \emph{(left) radical of $\Lambda$} is the left ideal
-\[\mathfrak{r} = \rad \Lambda = \cap_{\mathfrak{m} \text{maximal left ideal}} \mathfrak{m}\]
-(Also called the Jacobsen radical of $\Lambda$).
+\[\mathfrak{r} = \rad \Lambda = \cap_{\mathfrak{m}} \mathfrak{m}\]
+where the intersection it taken over all maximal left ideals
+$\mathfrak{m}$.  Also called the \emph{Jacobsen radical of $\Lambda$}. 
 \end{defin}
 
 \textbf{Know}: $\mathfrak{r}$ is a left ideal.
@@ -33,7 +34,7 @@ maximal ideals.
 \[(0) = \mathfrak{m}_1 \cap \mathfrak{m}_2 \subseteq \mathfrak{r}
   \Rightarrow \mathfrak{r} = (0).\] 
 \end{exam}
-In general, if we can find a finite set of maximal ideals
+In general, if we can find a finite set of maximal left ideals
 $\{\mathfrak{m}_i\}_{i=1}^t$ such that $\cap_{i=1}^t \mathfrak{m}_i =
 (0)$, then $\mathfrak{r} = (0)$. 
 
@@ -70,7 +71,7 @@ $\overline{e_i}\cdot\overline{e_j} = \begin{cases} \overline{e_i},
 \end{exer}
 \end{exam}
 
-\begin{prop}\label{prop:radcharacterization}
+\begin{prop}\label{prop:16}
 For any ring $\Lambda$ and any $\lambda\in\Lambda$, the following are
 equivalent.
 \begin{enumerate}[\rm(i)]
@@ -124,20 +125,20 @@ $M$.
 
 \begin{cor}
 Given a ring $\Lambda$
-\[\rad\Lambda = \cap_{S \text{\ simple}\\ \text{left
-      $\Lambda$-module}} \Ann_\Lambda(S).\]
-In particular, $\rad\Lambda$ is a two-sided ideal in $\Lambda$. 
+\[\rad\Lambda = \cap_{S} \Ann_\Lambda(S),\]
+where the intersection is taken over all simple left $\Lambda$-modules
+$S$.  In particular, $\rad\Lambda$ is a two-sided ideal in $\Lambda$. 
 \end{cor}
 \begin{proof}
 Follows from (i) $\Leftrightarrow$ (iii) in Proposition
-\ref{prop:radcharacterization}. 
+\ref{prop:16}. 
 \end{proof}
 
 Can we find $\rad\Lambda$ from this?
 
 $S\simeq S' \Rightarrow \Ann_\Lambda(S) = \Ann_\Lambda(S')$. 
 
-\begin{thm}[Nakayama Lemma]
+\begin{thm}[Nakayama Lemma]\label{thm:18}
 Given a ring $\Lambda$ and a finitely generated $\Lambda$-module $M$.
 If $\mathfrak{a}$ is an ideal in $\Lambda$ with $\mathfrak{a}\subseteq
 \rad\Lambda$, then $\mathfrak{a} M = M$ implies that $M = (0)$. 
@@ -150,7 +151,7 @@ $\Lambda$.  Since $\mathfrak{a}M=M$, we have that
 for $\lambda_i\in\mathfrak{a}\subseteq \rad\Lambda$. 
 \[\Rightarrow (1 - \lambda_1)m_1 = \sum_{i=2}^t \lambda_im_i\]
 Since $\lambda_1\in\mathfrak{a}\subseteq \rad\Lambda
-\stackrel{\textrm{Proposition \ref{prop:radcharacterization}}}{\Rightarrow} 1 -
+\stackrel{\textrm{Proposition \ref{prop:16}}}{\Rightarrow} 1 -
 \lambda_1$ has a left inverse, say $u$.
 \[\Rightarrow m_1 = u(1 - \lambda_1) m_1 = \sum_{i=2}^t
   u\lambda_im_i\]
@@ -166,7 +167,7 @@ A left ideal $\mathfrak{a}\subseteq \Lambda$ is
 $\exists n \geq 1$ such that $\mathfrak{a}^n = (0)$. 
 \end{recall}
 
-\begin{lem}
+\begin{lem}\label{lem:19}
 $\Lambda$ ring.
 \begin{enumerate}[\rm(a)]
 \item If $\Lambda$ is a left (right) artinian, then $\rad\Lambda$ is
@@ -201,7 +202,7 @@ $\Rightarrow  (1 + (xa) + (xa)^2 + \cdots (xa)^{n-1} = 1 - (xa)^n = 1$
 
 $\Rightarrow 1 -xa$ has a left inverse for all $x\in\Lambda$.
 
-Proposition \ref{prop:radcharacterization} $\Rightarrow a\in\rad\Lambda \Rightarrow
+Proposition \ref{prop:16} $\Rightarrow a\in\rad\Lambda \Rightarrow
 \mathfrak{a}\subseteq \rad\Lambda$. 
 \end{proof}
 
@@ -218,7 +219,7 @@ Proposition \ref{prop:radcharacterization} $\Rightarrow a\in\rad\Lambda \Rightar
 \end{align}
 \end{recall}
 
-\begin{thm}\label{thm:semisimplechar}
+\begin{thm}\label{thm:20}
 $\Lambda$ ring.
 
 $\Lambda$ semisimple $\Leftrightarrow$ $\Lambda$ left artinian and
@@ -235,13 +236,13 @@ Using this we obtain:
 $\Mapsfrom$ Assume that $\Lambda$ is left artinian with $\rad\Lambda =
 (0)$
 
-Lemma \ref{lem:} $\Rightarrow$ $\Lambda$ has no non-zero nilpotent
+Lemma \ref{lem:19} (b) $\Rightarrow$ $\Lambda$ has no non-zero nilpotent
 left ideals.
 
 $\Rightarrow$ $\Lambda$ is semisimple.
 \end{proof}
 
-\begin{thm}
+\begin{thm}\label{thm:21}
 $\Lambda$ left artinian, $\mathfrak{r} = \rad\Lambda$.
 Then
 \begin{enumerate}[\rm(a)]
@@ -260,7 +261,7 @@ artinian.
 
 $\rad(\Lambda/\mathfrak{r}) = (\rad\Lambda)/\mathfrak{r}$.
 
-Theorem \ref{thm:semisimplechar} $\Rightarrow$ $\Lambda/\mathfrak{r}$
+Theorem \ref{thm:18} $\Rightarrow$ $\Lambda/\mathfrak{r}$
 is semisimple. 
 
 (b)--(d):  Exercise, see the book Proposition 3.1 page 9. 
@@ -271,7 +272,7 @@ $\Lambda$ left artinian $\Leftrightarrow$ $l(_\Lambda\Lambda) <
 \infty$. 
 \end{recall}
 
-\begin{cor}
+\begin{cor}\label{cor:22}
 $\Lambda$ ring. TFAE:
 \begin{enumerate}[\rm(a)]
 \item $\Lambda$ left artinian.
@@ -288,17 +289,17 @@ $\Lambda$-module has finite length.
 $\Rightarrow$ $\Lambda$ is left artinian (and left noetherian). 
 
 (a) $\Rightarrow$ (c):  $\mathfrak{r}$ is nilpotent by Lemma
-\ref{lem:} (a), say $\mathfrak{r}^n = (0)$. 
+\ref{lem:19} (a), say $\mathfrak{r}^n = (0)$. 
 \begin{center}
 \begin{tabular}{rl}
-Theorem \ref{thm:} (d) $\Rightarrow$ & $\Lambda$ left noetherian.\\
+Theorem \ref{thm:21} (d) $\Rightarrow$ & $\Lambda$ left noetherian.\\
 $\Rightarrow$ & $\mathfrak{r}^i$ finitely generated for all $i$ (as a
 left ideal)\\
 $\Rightarrow$ & $\mathfrak{r}^i/\mathfrak{r}^{i+1}$ finitely generated for all $i$ (as a
 left ideal)\\
 \end{tabular}
 \end{center}
-Theorem \ref{thm:} (b) $\Rightarrow$
+Theorem \ref{thm:21} (b) $\Rightarrow$
 $\mathfrak{r}^i/\mathfrak{r}^{i+1}$ semisimple $\Lambda$-module for
 all $i\geq 0$, since $\mathfrak{r}\cdot \mathfrak{r}^i/\mathfrak{r}^{i+1}=(0)$
 
@@ -310,6 +311,156 @@ all $i\geq 0$, since $\mathfrak{r}\cdot \mathfrak{r}^i/\mathfrak{r}^{i+1}=(0)$
 \label{2017-pages}
 
 In particular, we have exact sequences 
+\[\xymatrix{ 
+0\ar[r] & \mathfrak{r}^n\ar@{^(->}[r] & \mathfrak{r}^{n-1}\ar[r] &
+\mathfrak{r}^{n-1}/\mathfrak{r}^n \ar[r] & 0\\
+0\ar[r] & \mathfrak{r}^{n-1}\ar@{^(->}[r] & \mathfrak{r}^{n-2}\ar[r] &
+\mathfrak{r}^{n-2}/\mathfrak{r}^{n-1} \ar[r] & 0\\
+ & \vdots & \vdots & \vdots & \\
+0\ar[r] & \mathfrak{r}^2\ar@{^(->}[r] & \mathfrak{r}\ar[r] &
+\mathfrak{r}/\mathfrak{r}^2 \ar[r] & 0\\
+0\ar[r] & \mathfrak{r}\ar@{^(->}[r] & \Lambda\ar[r] &
+\Lambda/\mathfrak{r} \ar[r] & 0
+}\]
+\textbf{Want to show}: $l(\mathfrak{r}^i/\mathfrak{r}^{i+1}) < \infty$
+for all $i\geq 0$, which implies that $l({_\Lambda\Lambda}) <
+\infty$. 
 
+The module $\mathfrak{r}^i/\mathfrak{r}^{i+1}$ is finitely generated,
+hence there exists $t\geq 1$ and an onto map
+\[\xymatrix{
+\Lambda^t \ar[r]^f\ar@{->>}[d] &  \mathfrak{r}^i/\mathfrak{r}^{i+1}\\
+\Lambda^t/\mathfrak{r}\Lambda^t \ar[ur]^{\overline{f}}\ar[r]^\simeq &
+(\Lambda/\mathfrak{r})^t \ar[u]^{\overline{\overline{f}}}
+}\]
+since $\mathfrak{r}(\mathfrak{r}^i/\mathfrak{r}^{i+1} = (0)$. This
+gives rise to the exact sequence 
+\[0\to U\to (\Lambda/\mathfrak{r})^t \to
+  \mathfrak{r}^i/\mathfrak{r}^{i+1}\to 0\]
+Want to show that $(\Lambda/\mathfrak{r})^t$ has finite length. 
 
+The module and algebra $\Lambda/\mathfrak{r}$ is semisimple, then we
+have
+\[\Lambda/\mathfrak{r} \simeq \oplus_{i=1}^m S_i\]
+with $m<\infty$ and $S_i$ simple $\Lambda$-module. This implies that
+$l(\Lambda/\mathfrak{r} <\infty$, which in particular means that
+$l((\Lambda/\mathfrak{r})^t) < \infty$ for $t < \infty$.  We infer
+that $l(\mathfrak{r}^i/\mathfrak{r}^{i+1}) < \infty$, and consequently
+$l({_\Lambda\Lambda}) < \infty$. 
+
+Since $M$ is a finitely generated $\Lambda$-module, there exists an
+exact sequence
+\[0\to \Ker g \to \Lambda^l \extto{g} M\to 0\]
+with $l<\infty$.  We than know that $l({_\Lambda\Lambda^l}) < \infty$,
+  which implies that $l(M) < \infty$. 
 \end{proof}
+
+\begin{exer}
+Let $\Lambda$ be a finite dimensional $k$-algebra for a field $k$.
+Then the following are equivalent 
+\begin{enumerate}[\rm(i)]
+\item $M$ is a finitely generated $\Lambda$-module,
+\item $l(M) < \infty$, 
+\item $\dim_k M < \infty$. 
+\end{enumerate}
+\end{exer}
+
+\begin{thm}\label{thm:23}
+Let $\Lambda$ be left artinian and $\mathfrak{a}\subseteq \Lambda$ a
+nilpotent ideal.  Then $\Lambda/\mathfrak{a}$ is semisimple if and
+only if $\mathfrak{a} = \rad \Lambda$. 
+\end{thm}
+\begin{proof}
+$\Leftarrow$: Theorem \ref{thm:21} (a) implies that
+$\Lambda/\mathfrak{a}$ is semisimple. 
+
+$\Rightarrow$: Assume that $\Lambda/\mathfrak{a}$ is semisimple.
+Since $\mathfrak{a}$ is nilpotent, then Lemma \ref{lem:19} (b) implies
+that $\mathfrak{a}\subseteq \rad\Lambda$.  We have that
+$\rad(\Lambda/\mathfrak{a}) = \rad \Lambda/\mathfrak{a}$, since
+$\mathfrak{a} \subseteq \rad\Lambda$, the maximal left ideals in
+$\Lambda/\mathfrak{a}$ are given by $\mathfrak{m}/\mathfrak{a}$ where
+$\mathfrak{m}$ is a maximal left ideal in $\Lambda$ with
+$\mathfrak{a}\subseteq \mathfrak{m}$.  Since $\Lambda/\mathfrak{a}$ is
+left artinian, by Theorem \ref{thm:20} we infer that $\rad
+(\Lambda/\mathfrak{a}) = (0)$.  This implies that $\mathfrak{a} =
+\rad\Lambda$. 
+\end{proof}
+
+\begin{exam}
+(1) $\Gamma\colon \xymatrix{ & 1\ar[dl]^\alpha\ar[dr]^\beta & \\
+2\ar[dr]^\gamma & & 3\ar[dl]^\delta \\
+& 4 & 
+}$, $\rho=\{\gamma\alpha - \delta\beta\}$, $k$ a field and $\Lambda =
+k\Gamma/\langle \rho\rangle$.  Let $J = \langle \alpha, \beta, \gamma,
+\delta\rangle \subseteq k\Gamma$ be the ideal generated by the arrows
+in $\Gamma$, and consider $\overline{J} =
+J/\langle\rho\rangle\subseteq \Lambda$.  We have seen that
+$\overline{J} = \mathfrak{m}_1 \cap \mathfrak{m}_2 \cap \mathfrak{m}_3
+\cap \mathfrak{m}_4$ for some maximal left ideal $\mathfrak{m}_i$.  Is
+$\overline{J} = \rad \Lambda$? 
+
+We want to use Theorem \ref{thm:23} to prove this. The algebra
+$k\Gamma$ is finite dimensional, so the quotient $\Lambda$ is also
+finite dimensional.  In particular, $\Lambda$ is left artinian. 
+
+The ideal $\overline{J}$ is nilpotent, since 
+$\overline{J}^3 = (J^3 + \langle\rho\rangle)/\langle\rho\rangle = (0)$
+and all paths length at least three, that is, $J^3=(0)$, is contained
+in $\langle\rho\rangle$.  In addition, we have that 
+\begin{align}
+\Lambda/\overline{J} & = (k\Gamma/\langle\rho\rangle)/(J/\langle\rho\rangle)\notag\\ 
+& \simeq k\Gamma/J \simeq k^4\notag
+\end{align}
+where, $k^4$ is semisimple.  Then Theorem \ref{thm:23} implies that
+$\rad\Lambda = \overline{J}$. 
+
+(2) \textbf{In general}: Given $(\Gamma,\rho)$ a quiver with relations
+$\rho$ over a field $k$, let $J \subseteq k\Gamma$ be the ideal
+generated by the arrows in $\Gamma$.  Assume that 
+\[J^t \subseteq \langle\rho\rangle J^2\]
+for some $t\geq 2$.  In this case we say that the relations $\rho$ are
+\emph{admissible}.  Let $\Lambda = k\Gamma/\langle\rho\rangle$. 
+
+\begin{exer}
+We have that $\dim_k k\Gamma/J^t < \infty$. 
+\end{exer}
+
+We have that $\Lambda \simeq (k\Gamma/J^t)/(\langle\rho\rangle/J^t)$,
+that is, $\Lambda$ is a factor of $k\Gamma/J^t$.  This implies that
+$\Lambda$ a finitely dimensional $k$-algebra.  In particular,
+$\Lambda$ is left artinian.  
+
+$\overline{J} = J/\langle\rho\rangle$ is nilpotent:  We have that 
+\begin{align}
+\overline{J}^t & = (J^t +
+                 \langle\rho\rangle)/\langle\rho\rangle\notag\\
+& = \langle\rho\rangle = (0)\notag
+\end{align}
+since the relations are admissible. 
+
+$\Lambda/\overline{J}$ is semisimple: 
+\begin{align}
+\Lambda/\overline{J} & = (k\Gamma/\langle\rho\rangle)/(J/\langle\rho\rangle)\notag\\ 
+& \simeq k\Gamma/J\notag\\
+& \simeq k^{|\Gamma_0|}\notag
+\end{align}
+where $k^{|\Gamma_0|}$ is semisimple.  Then Theorem \ref{thm:23}
+implies that $\overline{J} = \rad\Lambda$. 
+\end{exam}
+
+\begin{prop}\label{prop:24}
+Let $(\Gamma,\rho)$ and $k$ be as above.  Then
+\[\rad k\Gamma/\langle\rho\rangle = J/\langle\rho\rangle =
+  \overline{J}.\]
+\end{prop}
+
+\textbf{Recall}: Theorem \ref{thm:21} (a) say that for $\Lambda$ left
+artinian, then there are only finitely many non-isomorphic simple
+$\Lambda$-modules, and they all occur as direct summands of
+$\Lambda/\rad\Lambda$.  For example (2):
+\[\Lambda/\overline{J} \simeq k\overline{e}_1 \oplus \cdots \oplus
+  k\overline{e}_n,\]
+where $n = |\Gamma_0|$.  Each direct summand $k\overline{e}_i$
+correspond to the representation with the vector space $k$ in vertex
+$i$ and all the linear maps $\{f_\alpha\}_{\alpha\in\Gamma_1}$. 
