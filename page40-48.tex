@@ -13,7 +13,7 @@ $A$ is \emph{small} in $B$ if $A+X=B$ implies that $X=B$ for every submodule $X$
   \; 1$ such that $\gcd(n, m) = 1$. Then $B = \mathbb{Z}n +
   \mathbb{Z}m = A + X$ but $X \neq B$. Hence $A$ is not small. 
 
-\item[(2)] $\G : \xymatrix{1\ar[r]^\alpha & 2\ar[r]^\beta & 3}$, $k$ a field $\Lambda = k\G$, $B=k\G e_1$\\
+\item[(2)] $\G \colon \xymatrix{1\ar[r]^\alpha & 2\ar[r]^\beta & 3}$, $k$ a field $\Lambda = k\G$, $B=k\G e_1$\\
 $\xymatrix{
 							&					&			& && A\ar@{}[d]|-*[@]{=} &&\\
 							& k \ar@{->}[d]^1 	&			&0\ar@{->}[d]&&0\ar@{->}[d]&&0\ar@{->}[d]\\
@@ -32,7 +32,7 @@ $\left.\begin{matrix}
 }
 \end{matrix}\right\rbrace \implies A$ is small in $B$.
 \\
-\item[(3)] $\G : \vcenter{\xymatrix
+\item[(3)] $\G \colon \vcenter{\xymatrix
 {& 1\ar[dr]\ar[dl] && 4\ar[dl]\\
 2 && 3 &}}, \Lambda = k\G,$ 
 $$B = 
@@ -61,111 +61,125 @@ k && 0 &}}
 %page 41
 \begin{defin}
 $\Lambda$ a ring, $B$ a $\Lambda$-module
-$$\rad B = \bigcap_{A \text{ max. submod. of }B} A = \text{the radical of }B$$
+$$\rad B = \bigcap_{A \text{\ max.\ submod.\ of }B} A = \text{the radical of }B$$
 \begin{note}
 $\rad_\Lambda \Lambda = $ the radical of $\Lambda$ as a ring.
 \end{note}
 \end{defin}
 
-\begin{prop}
-\label{prop:41.25}
-$\Lambda$ a ring, $B$ a finitely generated $\Lambda$-module\\
+\begin{prop}\label{prop:25}
+$\Lambda$ a ring, $B$ a finitely generated $\Lambda$-module. Then
 $A \subseteq B$ is small in $B \iff A \subseteq \rad B$
 \begin{proof}
-$\Leftarrow :$ Assume $A \subseteq \rad B$. Let $X \subsetneq B$. WTS: $A+X \neq B$\\
-Consider $\mathfrak{F} = \{ M \mid M \subsetneq B \text{ submodule }, X \subseteq M \}$. $\mathfrak{F} \neq \emptyset$, since $X \in \mathfrak{F}$. Let $\{ C_\alpha \}_{\alpha \in I}$ be a chain of submodules  of $B$ in $\mathfrak{F}$.\\ Let $u = \bigcup_{\alpha \in I} C_\alpha$, $u$ is a submodule of $B$. If $u = B$ each element in a set of generators $\{ b_1, b_2, \cdots, b_n \}$ of $B$ must be in one $C_\alpha$. Say $b_i \in C_{\alpha_i}$. The chain condition implies that $\{ b_1, b_2, \cdots, b_n \} \subseteq C_\alpha$ for some $\alpha \in I \implies C_\alpha = B$. Contradiction! $\implies$ each chain in $\mathfrak{F}$ has an upper bound in $\mathfrak{F}$.\\
-Zorn's Lemma $\implies \mathfrak{F}$ has a maximal element $B_1$, i.e. $B_1$ is a maximal submodule of $B$.\\
-Then $A \subseteq \rad B \subseteq B_1$ and $X=B_1$, so that $A+X \subseteq B_1 \subsetneq B$\\
-Hence $A$ is small in $B$.\\
-$\Rightarrow :$ Suppose that $A \not\subseteq \rad B$, that is, $\exists $ maximal submodule $B_1 \subseteq B$ such that $A \not\subseteq B_1$. Then $B_1 \not\subseteq A \ B_1 \subseteq B$, and consequently $A+B_1 = B$ (since $B_1$ is maximal) $B_1 \subsetneq B \implies A$ is not small in $B$.
+  $\Leftarrow :$ Assume $A \subseteq \rad B$. Let $X \subsetneq B$.
+  WTS: $A+X \neq B$.\\ 
+  Consider $\mathfrak{F} = \{ M \mid M \subsetneq B \text{ submodule
+  }, X \subseteq M \}$. Then $\mathfrak{F} \neq \emptyset$, since
+  $X \in \mathfrak{F}$.
+ Let $\{ C_\alpha \}_{\alpha \in I}$ be a chain of submodules  of $B$
+ in $\mathfrak{F}$. Let $U = \bigcup_{\alpha \in I} C_\alpha$, then $U$
+ is a submodule of $B$. If $U = B$ each element in a set of generators
+ $\{ b_1, b_2, \ldots, b_n \}$ of $B$ must be in one $C_\alpha$. Say
+ $b_i \in C_{\alpha_i}$. The chain condition implies that $\{ b_1,
+ b_2, \ldots, b_n \} \subseteq C_\alpha$ for some $\alpha \in I
+ \implies C_\alpha = B$. Contradiction! This implies that each chain in
+ $\mathfrak{F}$ has an upper bound in $\mathfrak{F}$.  Then  
+ Zorn's Lemma implies $\mathfrak{F}$ has a maximal element $B_1$, i.e.
+ $B_1$ is a maximal submodule of $B$.  Then $A \subseteq \rad B
+ \subseteq B_1$ and $X \subseteq B_1$, so that $A+X \subseteq B_1 \subsetneq
+ B$.   Hence $A$ is small in $B$.
+
+ $\Rightarrow:$ Suppose that $A \not\subseteq \rad B$, that is,
+  $\exists $ maximal submodule $B_1 \subseteq B$ such that
+  $A \not\subseteq B_1$. Then $B_1 \not\subseteq A + B_1 \subseteq B$,
+  and consequently $A+B_1 = B$ (since $B_1$ is maximal)
+  $B_1 \subsetneq B \implies A$ is not small in $B$.
 \end{proof}
 \end{prop}
 
 %page 42
-\begin{thm}
-\label{thm:rA_eq_radA}
-$\Lambda$ left artinian, $A$ a finitely generated $\Lambda$-module. Then $\rad A=\mathfrak{r}A$ where $\mathfrak{r} = \rad \Lambda$.
+\begin{thm}\label{thm:26}
+$\Lambda$ left artinian, $A$ a finitely generated $\Lambda$-module.
+Then $\rad A=\mathfrak{r}A$ where $\mathfrak{r} = \rad \Lambda$. 
 \begin{proof}
-\begin{equation}
-\label{eq:rA_in_rad}
-\mathfrak{r}A \subseteq \rad A
-\end{equation}
-WTS: $\mathfrak{r}A$ is small in $A$.\\
-%prop 25 page 41
-(Prop \ref{prop:41.25} $\implies \mathfrak{r}A \subseteq \rad A$)\\
-Let $X$ be a submodule of $A$ and suppose that $\mathfrak{r}A + X = A$.\\
-$\xymatrix@C-1pc@R-1pc{
+1) $\mathfrak{r}A \subseteq \rad A$: WTS: $\mathfrak{r}A$ is small in $A$.
+
+Then Proposition \ref{prop:25} $\implies \mathfrak{r}A \subseteq \rad
+A$.
+
+Let $X$ be a submodule of $A$ and suppose that $\mathfrak{r}A + X =
+A$. 
+\[\xymatrix@C-1pc@R-1pc{
 \implies & \mathfrak{r}^2A &+& \mathfrak{r}X &=& \mathfrak{r}A\\
 \implies & \mathfrak{r}^2A &+& \relax\underbrace{\mathfrak{r}X + X}\ar@{}[d]|-*[@]{=} &=& A\\
 \implies & \mathfrak{r}^2A &+& X &=& A
-}$\\
-\\
-\underline{Induction}: $\mathfrak{r}^nA + X = A$ for all $n \geq 1$.\\
+}\]
+\textbf{Induction}: $\mathfrak{r}^nA + X = A$ for all $n \geq 1$.\\
 %Lemma 19 page 35
 Lemma \ref{lem:19} $\implies \mathfrak{r}$ nilpotent $\implies X = A
 \implies \mathfrak{r}A$ is small in $A \implies \mathfrak{r}A
 \subseteq \rad A$. 
 
-\begin{equation}
-\label{eq:rad_in_rA}
-\rad A \subseteq \mathfrak{r}A 
-\end{equation}
-%theorem 21 b page 36
-$A/\mathfrak{r}A$ is a semisimple module since $\mathfrak{r} A/\mathfrak{r}A = (0)$ (Theroem \ref{thm:21} (b))\\
-We have: $A/\mathfrak{r}A = \bigoplus_{i=1}^t S_i$, $S_i$ simple $\Lambda$-module. Let $A_j =\bigoplus_{i=1, i\neq j}^t S_i \subseteq A/\mathfrak{r}A$, which is a maximal submodule. Furthermore $\bigcap_{j=1}^t A_j = (0)$, so that $\rad(A/\mathfrak{r}A) = (0)$.\\
-\ref{eq:rA_in_rad} $\implies \mathfrak{r}A$ is contained in all maximal submodules of $A$\\
+2) $\rad A \subseteq \mathfrak{r}A$:
+The module $A/\mathfrak{r}A$ is a semisimple module since
+$\mathfrak{r} A/\mathfrak{r}A = (0)$ (Theroem \ref{thm:21} (b)). 
+We have that $A/\mathfrak{r}A = \bigoplus_{i=1}^t S_i$, for simple
+$\Lambda$-modules $S_i$. Let $A_j =\bigoplus_{i=1, i\neq j}^t S_i
+\subseteq A/\mathfrak{r}A$, which is a maximal submodule. Furthermore
+$\bigcap_{j=1}^t A_j = (0)$, so that $\rad(A/\mathfrak{r}A) = (0)$.
+Then 1) implies that $\mathfrak{r}A$ is contained in all maximal submodules of $A$\\
 $\implies \rad (A/\mathfrak{r}A) = (\rad (A)+\mathfrak{r}A)/\mathfrak{r}A = (0)$\\
 $\implies \rad A \subseteq \mathfrak{r}A$\\
-$\implies \rad A = \mathfrak{r}A$
+1) and 2) $\implies \rad A = \mathfrak{r}A$.
 \end{proof} 
 \end{thm}
 
 \begin{exam}
-$\G : 
+$\G \colon 
 \vcenter{\xymatrix@C-1pc@R-1pc
 {
 & 1\ar[dl]_\alpha\ar[dr]^\beta & \\
 2\ar[dr]_\gamma && 3\ar[dl]^\delta\\
 & 4 &
 }}, 
-\rho = \gamma\alpha-\delta\beta, k$ field, $\Lambda = k\G / \langle rho \rangle$.
+\rho = \gamma\alpha-\delta\beta, k$ field, $\Lambda = k\G / \langle \rho \rangle$.
 \\
 We have seen: $\mathfrak{r} = \langle \overline{arrows} \rangle = \overline{J}$.\\
 $\xymatrix@R-1pc
 {
-&& 1\ar[dl]_\alpha\ar[dr]^\beta & \\
-\Lambda \overline{e_1}\ar@{~>}[r]\ar@{}[dd]|-*[@]{\supseteq} & 2\ar[dr]_\gamma && 3\ar[dl]^\delta\\
+&& k\ar[dl]_1\ar[dr]^1 & \\
+\Lambda \overline{e_1}\ar@{~>}[r]\ar@{}[dd]|-*[@]{\supseteq} & k\ar[dr]_1 && 3\ar[dl]^1\\
 && 4 &
 \\
-&& 1\ar[dl]_\alpha\ar[dr]^\beta & \\
-\rad \Lambda \overline{e_1} = \mathfrak{r}(\Lambda \overline{e_1}) = \mathfrak{r}\overline{e_1}\ar@{~>}[r] &  2\ar[dr]_\gamma && 3\ar[dl]^\delta\\
-&& 4 &
+&& 0\ar[dl]_0\ar[dr]^0 & \\
+\rad \Lambda \overline{e_1} = \mathfrak{r}(\Lambda \overline{e_1}) = \mathfrak{r}\overline{e_1}\ar@{~>}[r] &  k\ar[dr]_1 && k\ar[dl]^1\\
+&& k &
 }$
 \end{exam}
 %page 43
 \section{The radical of representation}
-$(\G, \rho)$ quiver with relations, $J^t \subseteq \langle \rho \rangle \subseteq J^2$, $k$ field, $\Lambda = k\G / \langle \rho \rangle$, $\G_0 = \{ 1, 2, \cdots , n \}$, $\mathfrak{r} = \overline{J}$.\\
+$(\G, \rho)$ quiver with relations, $J^t \subseteq \langle \rho \rangle \subseteq J^2$, $k$ field, $\Lambda = k\G / \langle \rho \rangle$, $\G_0 = \{ 1, 2, \ldots , n \}$, $\mathfrak{r} = \overline{J}$.\\
 \\
 $\xymatrix
 {
 (V, f) \text{ representation of } (\G, \rho)\ar@{}[d]|-*[@]{\supseteq}\ar@{~>}[r] & M_{(V, f)} = V(1) \oplus V(2) \oplus \cdots \oplus V(n) \ar@{}[d]|-*[@]{\supseteq}\\
-(V', f') \text{ radical of } (V, f)\ar@{~>}[r] & \mathfrak{r}M_{(V, f)} = \{ r_1m_1 + \cdots + r_tm_t \mid r_i \in \mathfrak{r}, m_i \in M_{(V, f)} \}\\
+(V', f') \text{ radical of } (V, f)\ar@{<~}[r] & \mathfrak{r}M_{(V, f)} = \{ r_1m_1 + \cdots + r_tm_t \mid r_i \in \mathfrak{r}, m_i \in M_{(V, f)} \}\\
 }
 $\\
 $\mathfrak{r}$ generated by the arrows $\implies \mathfrak{r}M_{(V,f)}$ is generated by elements on the form
-$\xymatrix@C-3pc@R-1pc{\beta \cdot (v_1, v_2, \cdots v_n) = (0, \cdots, 0, & f_\beta(v_r), & 0, \cdots , 0 )\\
-&s\text{-th coordinate}\ar[u]&}$ for $\beta : r \rightarrow s \in \G_1$\\
+$\xymatrix@C-3pc@R-1pc{\beta \cdot (v_1, v_2, \ldots v_n) = (0, \ldots, 0, & f_\beta(v_r), & 0, \ldots , 0 )\\
+&s\text{-th coordinate}\ar[u]&}$ for $\beta \colon r \rightarrow s \in \G_1$\\
 $$\implies \overline{e_s}\mathfrak{r}M_{(V, f)} = \sum_{\begin{smallmatrix}
 \beta \in \G_1,\\ e(\beta)=s
 \end{smallmatrix}} \Image f_\beta$$\\
 $\implies V'(i) =\overline{e_i}\mathfrak{r}M_{(V, f)}= \sum_{\begin{smallmatrix}
 \beta \in \G_1,\\ e(\beta)=i
-\end{smallmatrix}} \Image f_\beta$ and\\ $f'_\alpha = f_\alpha \mid_{V'(i)} : V'(i) \rightarrow V'(j)$ for $\alpha: i \rightarrow j$.\\
+\end{smallmatrix}} \Image f_\beta$ and\\ $f'_\alpha = f_\alpha \mid_{V'(i)} \colon V'(i) \rightarrow V'(j)$ for $\alpha\colon i \rightarrow j$.\\
 The range is by definition OK since $\Image f_\alpha \subseteq V'(j)$.
 
 \begin{exam}
 \begin{enumerate}
-\item[(1)] $\G : \xymatrix{1 \ar[r]^\alpha & 2\ar[r]^\beta & 3 }, k$ field, $\Lambda = k\G$.\\
+\item[(1)] $\G \colon \xymatrix{1 \ar[r]^\alpha & 2\ar[r]^\beta & 3 }, k$ field, $\Lambda = k\G$.\\
 $\xymatrix@R-1pc{
 &k\ar[d]^1\\
 \Lambda e_1 \ar@{~>}[r]&k\ar[d]^1\\
@@ -202,35 +216,38 @@ $\xymatrix@R-1pc{
 }$
 
 %page 44
-\item[(2)] $\G : \xymatrix{1 \ar[r]^\alpha & 2 \ar@(ur, dr)^\beta}, \rho = \{ \beta^2 \}, \Lambda = k\G / \langle \rho \rangle$\\
-$\Lambda e_1 : \xymatrix{k \ar[r]^{\begin{smallmatrix} 1\\0 \end{smallmatrix}}  & k^2 \ar@(ur, dr)^{\begin{smallmatrix} 0&0\\1&0 \end{smallmatrix}}}, \rad (\Lambda e_1) : \xymatrix{0 \ar[r] & k^2 \ar@(ur, dr)^{\begin{smallmatrix} 0&0\\1&0 \end{smallmatrix}}}$\\
-$\Lambda e_2 : \xymatrix{0 \ar[r]  & k^2 \ar@(ur, dr)^{\begin{smallmatrix} 0&0\\1&0 \end{smallmatrix}}}, \rad (\Lambda e_2) : \xymatrix{0 \ar[r] & (0) \oplus k \ar@(ur, dr)^0}$\\
+\item[(2)] $\G \colon \xymatrix{1 \ar[r]^\alpha & 2 \ar@(ur, dr)^\beta}, \rho = \{ \beta^2 \}, \Lambda = k\G / \langle \rho \rangle$\\
+$\Lambda e_1 \colon \xymatrix{k \ar[r]^{\begin{smallmatrix} 1\\0 \end{smallmatrix}}  & k^2 \ar@(ur, dr)^{\begin{smallmatrix} 0&0\\1&0 \end{smallmatrix}}}, \rad (\Lambda e_1) \colon \xymatrix{0 \ar[r] & k^2 \ar@(ur, dr)^{\begin{smallmatrix} 0&0\\1&0 \end{smallmatrix}}}$\\
+$\Lambda e_2 \colon \xymatrix{0 \ar[r]  & k^2 \ar@(ur, dr)^{\begin{smallmatrix} 0&0\\1&0 \end{smallmatrix}}}, \rad (\Lambda e_2) \colon \xymatrix{0 \ar[r] & (0) \oplus k \ar@(ur, dr)^0}$\\
 \end{enumerate}
 \end{exam}
 
 \begin{note}
-In general, $M$ and $N$ $\Lambda$-modules then $\rad(M \oplus N) = \rad M \oplus \rad N$
+In general, for two $\Lambda$-module $M$ and $N$, then $\rad(M \oplus
+N) = \rad M \oplus \rad N$. 
 \end{note}
 
-\begin{defin}
-$\Lambda$ left artinian, $\mathfrak{r} = \rad \Lambda$, $A$ finitely generated $\Lambda$-module. Then $A / \mathfrak{r}A$ is called \underline{the top of $A$}. 
+\begin{defin} 
+$\Lambda$ left artinian, $\mathfrak{r} = \rad \Lambda$, $A$ finitely
+generated $\Lambda$-module. Then $A / \mathfrak{r}A$ is called
+\emph{the top of $A$}.  
 \end{defin}
 \begin{exam}
 \begin{enumerate}
-\item[(1)] $\G : \xymatrix{1 \ar[r]^\alpha & 2\ar[r]^\beta & 3 }, k$ field, $\Lambda = k\G$.\\
+\item[(1)] $\G \colon \xymatrix{1 \ar[r]^\alpha & 2\ar[r]^\beta & 3 }, k$ field, $\Lambda = k\G$.\\
 \begin{equation*}
 \begin{split}
-A = \Lambda e_1 :& \vcenter{\xymatrix@R-1pc{
+A = \Lambda e_1 \colon& \vcenter{\xymatrix@R-1pc{
 k\ar[r]^1 &
 k\ar[r]^1 &
 k
 }}\\
-\mathfrak{r}A :& \vcenter{\xymatrix@R-1pc{
+\mathfrak{r}A \colon& \vcenter{\xymatrix@R-1pc{
 0\ar[r] &
 k\ar[r]^1 &
 k
 }}\\
-A/\mathfrak{r}A :& \vcenter{\xymatrix@R-1pc{
+A/\mathfrak{r}A \colon& \vcenter{\xymatrix@R-1pc{
 k\ar[r] &
 0\ar[r] &
 0\ar@{~>}[r] & e_1 \Lambda e_1 = ke_1
@@ -238,9 +255,10 @@ k\ar[r] &
 \end{split}
 \end{equation*}
 
-\item[(2)]$\xymatrix
-{
-A = \Lambda \overline{e}_1  \ar@{~>}[r] & 
+\item[(2)] $\G \colon \xymatrix{1 \ar[r]^\alpha & 2 \ar@(ur, dr)^\beta},
+  \rho = \{ \beta^2 \}, \Lambda = k\G / \langle \rho \rangle$. Then 
+\[\xymatrix
+{A = \Lambda \overline{e}_1  \ar@{~>}[r] & 
 k\ar[r]^{\begin{smallmatrix} 1\\0 \end{smallmatrix}} & 
 k^2 \ar@(ur, dr)^{\begin{smallmatrix} 0&0\\1&0 \end{smallmatrix}}
 } 
@@ -249,81 +267,94 @@ k^2 \ar@(ur, dr)^{\begin{smallmatrix} 0&0\\1&0 \end{smallmatrix}}
 {
 0\ar[r] & 
 k^2 \ar@(ur, dr)^{\begin{smallmatrix} 0&0\\1&0 \end{smallmatrix}}
-}$
-\\\\
+}\]
 $\xymatrix
 {
 A/\mathfrak{r}A = \overline{e}_1\Lambda \overline{e}_1 = k\overline{e}_1  \ar@{~>}[r] & 
-k\ar[r] & 0
+k\ar[r] & 0 \ar@(ur, dr)^{0}
 }$\\
 \end{enumerate}
 \end{exam}
 
-In general $\Lambda$ left artinian, $A$ finitely generated\\
-$\xymatrix@C-2pc@R-1pc{
+In general, if $\Lambda$ is left artinian and $A$ is finitely
+generated, then 
+\[\xymatrix@C-2pc@R-1pc{
 A\ar[rrr] &&& A/\mathfrak{r}A &=& S_1 & \oplus &\cdots& \oplus & S_t\\
         &&&                 & & x_1' \neq 0 \ar@{}[u]|-*[@]{\in} &&&& x_t' \neq 0 \ar@{}[u]|-*[@]{\in} &
-}$ semisimple, each $S_i$ simple\\
-Choose $\{ x_1, x_2, \cdots, x_t \}$ inverse images of $x_i'$ in $A$. For $a \in A$, then $\exists \lambda_i \in \Lambda$ such that $a - \sum_{i=1}^t \lambda_i x_i \in \mathfrak{r}A$\\
-$$a - \sum_{i=1}^t \lambda_i x_i = \sum_{j=1}^n r_ja_j, \;\; r_j \in \mathfrak{r}, \;\; a_j \in A$$
-
-Let $A' = \Lambda\{ x_1, \cdots , x_t \} \subseteq A$ be the submodule generated by $\{ x_1, \cdots , x_t \}$ of $A$\\
+      }\]
+is semisimple, each $S_i$ simple.
+Choose $\{ x_1, x_2, \ldots, x_t \}$ inverse images of $x_i'$ in $A$.
+For $a \in A$, then $\exists \lambda_i \in \Lambda$ such that $a -
+\sum_{i=1}^t \lambda_i x_i \in \mathfrak{r}A$. This means that 
+$$a - \sum_{i=1}^t \lambda_i x_i = \sum_{j=1}^n r_ja_j, $$
+for some $r_j \in \mathfrak{r}$ and $a_j \in A$. 
+Let $A' = \Lambda\{ x_1, \ldots , x_t \} \subseteq A$ be the submodule
+generated by $\{ x_1, \ldots , x_t \}$ of $A$. Then 
 $$\mathfrak{r}(A/A') = A/A'$$
-Nakayama Lemma $\implies A/A' = 0 \implies A = A'$ generated by $\{ x_1, \cdots , x_t \}$.\\
-(or use $\mathfrak{r}^m = (0) \cdots$)
+and by the Nakayama Lemma $A/A' = 0$, or equivalently $A = A'$ is
+generated by $\{ x_1, \ldots , x_t \}$ (or use $\mathfrak{r}^m = (0)
+\ldots$). 
 
 %page 45
-\begin{lem}
-\label{lem:f_onto_iff_f-bar_onto}
-$\Lambda$ left artinian, $f: A \to B$ $\Lambda$-homomorphism, $A, B$ finitely generated $\Lambda$-modules. Then
-$$ f: A \to B \text{ is onto} \iff \overline{f}: A/\mathfrak{r}A \to B/\mathfrak{r}B \text{ is onto.} $$
+\begin{lem}\label{lem:f_onto_iff_f-bar_onto}
+$\Lambda$ left artinian, $f\colon A \to B$ some $\Lambda$-homomorphism, and
+$A$ and $B$ finitely generated $\Lambda$-modules. Then
+$$ f\colon A \to B \text{ is onto} \iff \overline{f}\colon A/\mathfrak{r}A \to B/\mathfrak{r}B \text{ is onto.} $$
+\end{lem}
 \begin{proof}
-Let $f: A \to B$ then $f(\mathfrak{r}A) = \mathfrak{r}f(A) \subseteq \mathfrak{r}B$\\
-$$
-\xymatrix{
-a\ar@{|->}[d] & A\ar[r]^f\ar[d]^{P_A} & B\ar[d]^{P_B} & b\ar@{|->}[d]\\
+Let $f\colon A \to B$, then $f(\mathfrak{r}A) = \mathfrak{r}f(A) \subseteq
+\mathfrak{r}B$ and the following diagram commutes
+$$\xymatrix{
+a\ar@{|->}[d] & A\ar[r]^f\ar[d]^{p_A} & B\ar[d]^{p_B} & b\ar@{|->}[d]\\
 a + \mathfrak{r}A & A/\mathfrak{r}A\ar[r]^{\overline{f}} & B/\mathfrak{r}B & b + \mathfrak{r}\\
 & a + \mathfrak{r}A\ar@{|->}[r] & f(a) + \mathfrak{r}B
 }
 $$
-$\underline{\Rightarrow} :$ Assume that $f: A \to B$ is onto\\
-$f, P_B$ onto $\implies P_B \circ f = \overline{f} \circ P_A$ onto $\implies \overline{f}$ onto.\\
-\\
-$\underline{\Leftarrow} :$ Assume $\overline{f}: A \to B$ is onto.\\
-The elements of $\Image \overline{f}$ are $f(a) + \mathfrak{r}B$ for some $a\in A$.\\
-$\implies$ given $b \in B$ then $\exists a \in A$ such that $b + \mathfrak{r}B = f(a) + \mathfrak{r}B$ \\
-$\implies b - f(a) \in \mathfrak{r}B \implies B = \Image f + \mathfrak{r}B$\\
-%thm26 page 42
-Since $\mathfrak{r}B = \rad B$ (Theorem \ref{thm:rA_eq_radA}) is small in $B$ (Prop \ref{prop:41.25}), we have $\Im f = B$ and $f$ is onto.
-\end{proof}
-\end{lem}
+$\underline{\Rightarrow} :$ Assume that $f\colon A \to B$ is onto. Since
+$f$ and $p_B$ are onto, the map $p_B \circ f = \overline{f} \circ p_A$
+is onto. This implies that $\overline{f}$ is onto.
+
+$\underline{\Leftarrow} :$ Assume $\overline{f}\colon A \to B$ is onto. The
+elements of $\Image \overline{f}$ are $f(a) + \mathfrak{r}B$ for some
+$a\in A$. Given $b \in B$, then $\exists a \in A$ such that
+$b + \mathfrak{r}B = f(a) + \mathfrak{r}B$. This implies that
+$b - f(a) \in \mathfrak{r}B$, and therefore
+$B = \Image f + \mathfrak{r}B$. Since $\mathfrak{r}B = \rad B$
+(Theorem \ref{thm:26}) is small in $B$ (Proposition \ref{prop:25}), we
+have $\Im f = B$ and $f$ is onto.
+\end{proof} 
 
 \begin{note}
 Only used that $B$ was finitely generated.
 \end{note}
 
 \begin{defin}
-$f : A \to B$ is an \underline{essential epimorphism} if $f$ is and epimorphism, and if $g: X \to A$ is such that $f \circ g : X \to B$ is onto then $g: X \to A$ is onto.
-
+$f \colon A \to B$ is an \emph{essential epimorphism} if $f$ is and
+epimorphism, and if $g\colon X \to A$ is such that $f \circ g \colon X \to B$ is
+onto then $g\colon X \to A$ is onto. 
+\end{defin}
 \begin{exam}
-\begin{enumerate}
-\item[(1)] $f: A \oplus B \to A$, $f(a,b) = a$, $A, B$ $\Lambda$-modules.
-\item[$\cdot$] $f$ epi OK, $f$ ess. epi?\\
-Consider $g: X= A \to A \oplus B$, $g(a)=(a, 0)$. Then $f \circ g(a) = f(a,0)=a \implies f \circ g$ onto.\\
-If $B \neq (0)$ then $g$ is not onto $\implies f$ is not an essential epimorphism.
+  (1) Let $f\colon A \oplus B \to A$ be given as $f(a,b) = a$ for two
+  $\Lambda$-modules $A$ and $B$. Is $f$ an essential epimorphism? The
+  map $f$ is an epimorphism. Consider $g\colon X= A \to A \oplus B$,
+  $g(a)=(a, 0)$. Then $f \circ g(a) = f(a,0)=a$, which implies that $f
+  \circ g$ is onto. If $B \neq (0)$, then $g$ is not onto and we infer
+  that $f$ is not an  essential epimorphism.
 
-%page 46
-
-\item[(2)] $\G : \xymatrix{1\ar[r]^\alpha & 2\ar[r]^\beta & 3}$, $k$ field, $\Lambda = k\G$\\
-$\xymatrix{
+(2) Let $\G \colon \xymatrix{1\ar[r]^\alpha & 2\ar[r]^\beta & 3}$ for a
+field $k$ field, and let $\Lambda = k\G$. Then we have
+\[\xymatrix{
 &                             k\ar[d]^1 && 0\ar[d]\\
 A = \Lambda e_1 \ar@{~>}[r] & k\ar[d]^1 &\supseteq& 0\ar[d]\\
- & k\ar@{}[d]|-*[@]{=:} && 0\ar@{}[d]|-*[@]{=:}\\
+ & k\ar@{}[d]|-*[@]{=:} && k\ar@{}[d]|-*[@]{=:}\\
  & A && B
-}$\\
-Let $f: A \to A/B$ be the natural epimorphism/projection. Let $g: X \to A$ and assume $g:X \to A$ is not onto.\\
+}\]
+Let $f\colon A \to A/B$ be the natural epimorphism/projection. Let $g\colon X
+\to A$ and assume $g\colon X \to A$ is not onto.
+
 \underline{WTS:} $f \circ g$ not onto.\\
-Proper submodules of $A$: 
+
+All proper submodules of $A$ are: 
 $\vcenter{\xymatrix@C-2pc@R-1pc
 {
 0\ar[d] && 0\ar[d] && 0\ar[d]\\
@@ -379,64 +410,65 @@ $\\
 
 $\implies f \circ g$ not onto $\implies f$ essential epimorphism.
 
-\item[(3)] $\Lambda$ left artinian, $A$ finitely generated $\Lambda$-module\\
-\underline{Claim:} $P_A : A \to A / \mathfrak{r}A$ essential epimorphism.
+(3) Let $\Lambda$ be left artinian, and let $A$ be a finitely
+generated $\Lambda$-module.
+
+\underline{Claim:} $p_A \colon A \to A / \mathfrak{r}A$ essential epimorphism.
 \begin{proof}
-Let $g: X \to A$, and assume that $f \circ g$ is onto\\
+Let $g\colon X \to A$, and assume that $f \circ g$ is onto. We have the
+following commutative diagram:
 $$
 \xymatrix{
-X\ar[d]^g \ar[r]^{P_X} & X/\mathfrak{r}X \ar[d]^{\overline{g}}\\
-A\ar[r]^{P_A} & A/\mathfrak{r}A\\
+X\ar[d]^g \ar[r]^{p_X} & X/\mathfrak{r}X \ar[d]^{\overline{g}}\\
+A\ar[r]^{p_A} & A/\mathfrak{r}A\\
 }
 $$
-\underline{Know:} $g: X \to A$ onto $\iff \overline{g}: X / \mathfrak{r} X \to A / \mathfrak{r}A$ is onto (Lemma \ref{lem:f_onto_iff_f-bar_onto})\\
-$P_A \circ g = \overline{g}\circ P_X$ and $P_A \circ g$ onto $\implies \overline{g}$ onto $\implies g:X \to A$ onto \\
-$\implies P_A$ essential epimorphism.
-
+\underline{Know:} $g\colon X \to A$ onto $\iff \overline{g}\colon X / \mathfrak{r} X \to A / \mathfrak{r}A$ is onto (Lemma \ref{lem:f_onto_iff_f-bar_onto})\\
+$p_A \circ g = \overline{g}\circ p_X$ and $p_A \circ g$ onto $\implies
+\overline{g}$ onto $\implies g\colon X \to A$ onto \\
+$\implies p_A$ essential epimorphism.
 \end{proof}
-
-\end{enumerate}
 \end{exam}
-\end{defin}
 
 \begin{exer}
 $\left.
 \begin{matrix}
-f: A \to B & \text{ ess. epi}\\
-g: B \to C & \text{ ess. epi}
+f\colon A \to B & \text{ ess. epi}\\
+g\colon B \to C & \text{ ess. epi}
 \end{matrix}  
-\right\rbrace \implies g\circ f : A \to C$ ess. epi
+\right\rbrace \implies g\circ f \colon A \to C$ essential epimorphism.
 \end{exer}
 
 %page 47
 
-\begin{prop}
-$\Lambda$ left artinian, $A, B$ finitely generated $\Lambda$-modules. Let $f : A \to B$ be onto. TFAE:
+\begin{prop}\label{prop:28}
+  Let $\Lambda$ be a left artinian algebra and $A$ and $B$ finitely
+  generated $\Lambda$-modules. Let $f \colon A \to B$ be onto. TFAE: 
 \begin{enumerate}
-\item[(a)] $f$ is an essential epimorphism.
-\item[(b)] $\Ker f \subseteq \mathfrak{r}A$, $(\mathfrak{r} = \rad \Lambda)$
-\item[(c)] $\overline{f}: A / \mathfrak{r}A \to B / \mathfrak{r}B$ is an isomorphism.
+\item[(a)] $f$ is an essential epimorphism,
+\item[(b)] $\Ker f \subseteq \mathfrak{r}A$, $(\mathfrak{r} = \rad
+  \Lambda)$, 
+\item[(c)] $\overline{f}\colon A / \mathfrak{r}A \to B / \mathfrak{r}B$ is an isomorphism.
 \end{enumerate}
-
 \begin{proof}
-$\underline{(a)\Rightarrow(b):}$ Assume $f$ is an essential epimorphism. \underline{WTS:} $\Ker f$ is small in $A$, i.e. $\Ker f \subseteq \mathfrak{r}A$ (Prop \ref{prop:41.25} and Theorem \ref{thm:rA_eq_radA})\\ %mener du theorem 26 ikke 27? side 42
+$\underline{(a)\Rightarrow(b):}$ Assume $f$ is an essential epimorphism. \underline{WTS:} $\Ker f$ is small in $A$, i.e. $\Ker f \subseteq \mathfrak{r}A$ (Proposition \ref{prop:25} and Theorem \ref{thm:26})\\ %mener du theorem 26 ikke 27? side 42
 Let $X \subseteq A$. Assume that $\Ker f + X = A$. Then the composition $\xymatrix{
 X\ar@{^{(}->}[r]^i & A\ar[r]^f & B
 }$ is onto (proof?), such that $\xymatrix{
 X\ar@{^{(}->}[r]^i & A
-}$ is onto, since $f$ is an essential epimorphism\\
+}$ is onto, since $f$ is an essential epimorphism.\\
 $\implies X = A \implies \Ker f$ is small in $A \implies \Ker f \subseteq \mathfrak{r}A$\\
-\\
+
 $\underline{(b)\Rightarrow(c):}$ Assume that $\Ker f \subseteq \mathfrak{r}A$. \\
 We have
 $\vcenter{\xymatrix@R-2pc{
 A/\Ker f \ar@{}[r]|-*[@]{\xrightarrow{\sim}}^{f'} & \Im f = B\\
 a + \Ker f \ar@{|->}[r] & f(a)
 }}$ ($f$ onto)\\
-and therefor $\mathfrak{r}(A / \Ker f) = \mathfrak{r}A / \Ker f \xrightarrow{\sim}^{f'} \mathfrak{r}B$ and $
-\left.\left(A / \Ker f \right) \middle/\left(\mathfrak{r}A / \Ker f \right) \right. \simeq B/\mathfrak{r}B
-$\\
-\\
+and therefore $\mathfrak{r}(A / \Ker f) = \mathfrak{r}A / \Ker f \xrightarrow{\sim}^{f'} \mathfrak{r}B$ and $
+\left.\left(A / \Ker f \right) \middle/\left(\mathfrak{r}A / \Ker f
+  \right) \right. \simeq B/\mathfrak{r}B$.  We have the following
+commutative diagram
 $$\xymatrix@C8pc{
 a + \mathfrak{r}A \ar@{|->}[r] \ar@{|->}@/_6pc/[ddd] & f(a) + \mathfrak{r}B\\
 A / \mathfrak{r}A \ar[r]^{\overline{f}} \ar@{}[d]|-*[@]{\simeq} & B / \mathfrak{r}B\\
@@ -444,36 +476,39 @@ A / \mathfrak{r}A \ar[r]^{\overline{f}} \ar@{}[d]|-*[@]{\simeq} & B / \mathfrak{
 (a + \Ker f) + \mathfrak{r}A / \Ker f \ar@{|->}[ur]
 }$$
 $\overline{f}$ is the composition of two isomorphisms $\implies \overline{f}$ is an isomorphism.\\
-\\
-$\underline{(c) \Rightarrow (a):}$ Assume that $\overline{f}: A/\mathfrak{r}A \to B / \mathfrak{r}B$ is an isomorphism. Let $g: X \to A$
 
+$\underline{(c) \Rightarrow (a):}$ Assume that $\overline{f}\colon
+A/\mathfrak{r}A \to B / \mathfrak{r}B$ is an isomorphism. Let $g\colon X
+\to A$. Then we have the following commutative diagram:
 %page 48
 $$\xymatrix{
-X\ar[r]^g \ar[d]^{P_X} & A\ar[r]^f \ar[d]^{P_A} & B \ar[d]^{P_B}\\
+X\ar[r]^g \ar[d]^{p_X} & A\ar[r]^f \ar[d]^{p_A} & B \ar[d]^{p_B}\\
 X /\mathfrak{r} X \ar[r]^{\overline{g}} & A/\mathfrak{r}A\ar@{}[r]|-*[@]{\xrightarrow{\sim}}^{\overline{f}} & B/\mathfrak{r}B\\
 }$$
-Asuume $f \circ g$ is onto\\ $\implies \overline{f \circ g} = \overline{f} \circ \overline{g}:X /\mathfrak{r} X \to B /\mathfrak{r} B$ is onto\\ 
-$\implies \overline{g} = \overline{f}^{-1}\overline{f}\overline{g}:X /\mathfrak{r} X \to A /\mathfrak{r} A$ is onto\\ 
+Assume $f \circ g$ is onto\\ $\implies \overline{f \circ g} =
+\overline{f} \circ \overline{g}\colon X /\mathfrak{r} X \to B /\mathfrak{r} B$ is onto.\\ 
+$\implies \overline{g} =
+\overline{f}^{-1}\overline{f}\overline{g}\colon X /\mathfrak{r} X \to A /\mathfrak{r} A$ is onto.\\ 
 Lemma \ref{lem:f_onto_iff_f-bar_onto} $\implies g$ is onto $\implies f$ is essential epimorphsim.
-
 \end{proof}
 \end{prop}
 
 \begin{exam}
-$\G : 
+$\G \colon 
 \vcenter{\xymatrix@C-1pc@R-1pc{
 &1\ar[ld]_\alpha \ar[rd]^\beta&\\
 2\ar[rd]_\gamma&&3\ar[ld]^\delta\\
 &4&
 }}
-\rho = \{ \gamma\alpha - \delta\beta \}, k$ field, $\Lambda = k\G / \langle \rho \rangle$\\
-$B = 
+\rho = \{ \gamma\alpha - \delta\beta \}, k$ field, $\Lambda = k\G /
+\langle \rho \rangle$. 
+Let $B = 
 \vcenter{\xymatrix@C-1pc@R-1pc{
 &k\ar[ld]_1 \ar[rd]&\\
 k\ar[rd] && 0 \ar[ld]\\
 &0&
-}}$ 
-Find some $f: A \to B$ which is essential epimorphism.\\
+}}.$ 
+Find some $f\colon A \to B$ which is essential epimorphism.\\
 
 \[
 \xy
@@ -527,7 +562,7 @@ A=\Lambda \overline{e_1}
 \endxy
 \]
 
-$\implies f$ is essential epimorphism, or
+$\implies f$ is essential epimorphism, or equivalently 
 \[
 \xymatrix{
                                      &           &k\ar[dr]\ar[dl]&                                                &&           &k\ar[dr]\ar[dl]\\

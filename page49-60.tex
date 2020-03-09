@@ -1,8 +1,8 @@
 %page 49
 \section{Projective Modules}
-$\Lambda$ a ring, $P$ a $\Lambda$-module
+Let $\Lambda$ be a ring, and let $P$ be a $\Lambda$-module. 
 \begin{defin}
-$P$ is \underline{projective} if for every epimorphism $g: B \to C$ and every  $\Lambda$-homomorphism $f: P \to C$ there exists a homomorphism $h: P \to B$ such that
+$P$ is \emph{projective} if for every epimorphism $g: B \to C$ and every  $\Lambda$-homomorphism $f: P \to C$ there exists a homomorphism $h: P \to B$ such that
 $$\xymatrix{
 & P\ar[d]^f \ar@{-->}[ld]_{\exists h}\\
 B \ar[r]^g & C
@@ -16,38 +16,47 @@ $$\xymatrix{
 B \ar[r]^g & C \ar[r] & 0\\
 b\ar@{|->}[rr] && f(1)
 }$$
-$f(\lambda) = f(\lambda \cdot 1) = \lambda f(1)$. Choose $b \in B$ such that $g(b) = f(1)$, and define $h: \Lambda \to B$ by $h(\lambda) = \lambda b$\\
+We have that $f(\lambda) = f(\lambda \cdot 1) = \lambda f(1)$. Choose
+$b \in B$ such that $g(b) = f(1)$, and define $h: \Lambda \to B$ by  $h(\lambda) = \lambda b$.\\
 \underline{Check:} $h$ is $\Lambda$-homomorphism.\\
-Then $gh(\lambda) = g(\lambda b) = \lambda g(b) = \lambda f(1) = f(\lambda \cdot 1) = f(\lambda), \forall \lambda \in \Lambda$\\
+Then $gh(\lambda) = g(\lambda b) = \lambda g(b) = \lambda f(1) =
+f(\lambda \cdot 1) = f(\lambda)$, for all $\lambda \in \Lambda$.\\
 $\implies \Lambda$ projective.
 \end{exam}
 
 \begin{exer}
 $F$ free $\Lambda$-module $\implies F$ is projective ($F \simeq \bigoplus_{i \in I} \Lambda a_i$, $_\Lambda \Lambda a_i \simeq _\Lambda \Lambda$, $\forall i \in I$)
 \end{exer}
-
 \begin{prop}
-$\Lambda$ a ring, $P$ a projective $\Lambda$-module\\
-$P$ projectiv $\iff$ $\exists$ free $\Lambda$-module $F$ and a $\Lambda$-module $Q$ such that $F \simeq P \oplus Q$
+  $\Lambda$ a ring, and $P$ a projective $\Lambda$-module.\\
+  $P$ projectiv $\iff$ $\exists$ free $\Lambda$-module $F$ and a
+  $\Lambda$-module $Q$ such that $F \simeq P \oplus Q$
 \begin{proof}
-$\underline{\Rightarrow :}$ Assume that $P$ is projective. Any module $M$ is a factor of a free module $F_M : $ Let $F_M = \bigoplus_{m \in M} \Lambda_m$, $_\Lambda\Lambda_m = _\Lambda\Lambda$ and define $\varphi: F_M \to M$ by $\varphi((\lambda_m)_{m \in M}) = \sum_{m \in M} \lambda_m m$\\
+  $\underline{\Rightarrow :}$ Assume that $P$ is projective. Any
+  module $M$ is a factor of a free module $F_M : $ Let $F_M =
+  \bigoplus_{m \in M} \Lambda_m$, where ${_\Lambda\Lambda_m} =
+  {_\Lambda\Lambda}$ and define $\varphi: F_M \to M$ by
+  $\varphi((\lambda_m)_{m \in M}) = \sum_{m \in M} \lambda_m m$\\ 
 %page 50
-\underline{Check:} $\varphi$ $\Lambda$-homomorphism, $\varphi$ onto, $m = \varphi((\lambda_x)_{x \in M})$, where $\lambda_x = \begin{cases}
+\underline{Check:} $\varphi$ $\Lambda$-homomorphism, $\varphi$ onto,
+$m = \varphi((\lambda_x)_{x \in M})$, where $\lambda_x = \begin{cases} 
 0, & x \neq m\\
 1, & x = m
 \end{cases}$ 
 
 Let $g: F \to P$ be onto with $F$ free.
 $$\xymatrix{
-& P\ar@{-->}[ld]_h \ar@{}[d]^{1_P}|-*[@]{=} & \text{projective} \ar[l]\\
-F \ar[r]^g & C \ar[r] & 0\\
+& P\ar@{-->}[ld]_h \ar@{=}[d]^{1_P} & \text{projective} \ar[l]\\
+F \ar[r]^g & P \ar[r] & 0\\
 b\ar@{|->}[rr] && f(1)
 }$$
-$\implies \exists h: P \to F$ such that $gh = 1_P$\\
+Since $P$ is projective, there exists $h: P \to F$ such that $gh = 1_P$.\\
 
-\underline{Calim:} $F \simeq \Ker g \oplus \Im h$ (Excersice)\\
+\underline{Claim:} $F \simeq \Im h \oplus \Ker g$ (Excersice).\\
 
-$\underline{\Leftarrow :}$ Assume that $F \xrightarrow{\sim}^\varphi P \oplus Q$ where $F$ is a free $\Lambda$-module. Suppose that $g: B \to C$ is onto nd let $f: P \to C$.
+$\underline{\Leftarrow :}$ Assume that $F \xrightarrow{\sim}^\varphi P
+\oplus Q$ where $F$ is a free $\Lambda$-module. Suppose that $g: B \to
+C$ is onto and let $f: P \to C$.
 $$
 \xymatrix{
 (p, q)\ar@{|->}[r] & p\\
@@ -55,13 +64,14 @@ $$
 B \ar[r]^g & C \ar[r] & 0
 }
 $$
-$\nu(p) = (p, 0)$, $\pi\nu(p) = \pi(p,0) = p$\\
+where $\pi(p,q) = p$ and $\nu(p) = (p,0)$.  Then we have that
+$\pi\nu(p) = \pi(p,0) = p$, hence $\nu\pi = 1_P$.\\
 $F$ projective $\implies \exists h': F \to B$ such that 
 \begin{equation*}
 \begin{split}
 gh' &= f\pi \varphi \;\;\;\;\;\;\; \mid \cdot \varphi^{-1}\\
 gh'\varphi^{-1} &= f\pi \;\;\;\;\;\;\;\;\; \mid \cdot \nu\\
-g(\underbrace{h'\varphi \nu}_h) &= f\phi\nu = f 1_P = f
+g(\underbrace{h'\varphi \nu}_h) &= f\pi\nu = f 1_P = f
 \end{split}
 \end{equation*}
 
@@ -70,14 +80,20 @@ $\implies P$ is projective.
 \end{prop}
 
 \begin{exam}
-$(\G, \rho)$ a quiver with relations, $k$ a field, $J^t \subseteq \langle \rho \rangle \subseteq J^2$, $\G_0 = \{ 1, 2, \cdots , n \}$. $\Lambda = k\G / \langle \rho \rangle$\\
-\underline{Have seen:} $_\Lambda\Lambda = \Lambda \overline{e_1} \oplus \Lambda \overline{e_2} \oplus \cdots \oplus \Lambda \overline{e_n}$\\
-$\implies \Lambda \overline{e_i}$ projective $\Lambda$-modules
+$(\G, \rho)$ a quiver with relations, $k$ a field, $J^t \subseteq
+\langle \rho \rangle \subseteq J^2$, $\G_0 = \{ 1, 2, \cdots , n
+\}$. Let $\Lambda = k\G / \langle \rho \rangle$.\\ 
+\underline{Have seen:} $_\Lambda\Lambda = \Lambda \overline{e_1}
+\oplus \Lambda \overline{e_2} \oplus \cdots \oplus \Lambda
+\overline{e_n} \implies \Lambda \overline{e_i}$ projective
+$\Lambda$-modules. 
 \end{exam}
 
 %page 51
 \begin{defin}
-Let $f: P \to M$ be a $\Lambda$-homomorphism. Then $f:P\to M$ is a \underline{projective cover of $M$} if P is projectiv and $f$ is an essential epimorphism. 
+  Let $f: P \to M$ be a $\Lambda$-homomorphism. Then $f:P\to M$ is a
+  \emph{projective cover of $M$} if P is projectiv and $f$ is an
+  essential epimorphism.
 \end{defin}
 
 \begin{exam}
@@ -125,7 +141,7 @@ $\implies f$ is projective cover.
 
 \begin{thm}
 \label{thm:proj-cov_unique}
-$\Lambda$ left artinian, $A$ finitely generated
+$\Lambda$ left artinian, $A$ finitely generated $\Lambda$-module.
 \begin{enumerate}
 \item[(a)] There exists a projective cover $f:P\to A$ ($P$ finitely generated)
 \item[(b)] Let $f_1 : P_1 \to A$ and $f_2 : P_2 \to A$ be two projective covers of $A$. Then there exists an isomorphism $g : P_1 \to P_2$ such that $f_1 = f_2g$
@@ -139,20 +155,22 @@ P_2 \ar[ur]_{f_2}
 \end{enumerate}
 
 \begin{proof}
-\begin{enumerate}
-\item[(a)]$A$ finitely generated $\implies \exists$ onto $f: \Lambda^n \to A$, $n < \infty$.\\
-Choose $P$ projective, $f : P \to A$ an onto $\Lambda$-homomorphism with $l(P)$ minimal. \underline{WTS:} $f$ projective cover. Consider
+(a) $A$ finitely generated $\implies \exists$ onto $f: \Lambda^n \to A$, $n < \infty$.\\
+Choose $P$ projective, $f : P \to A$ an onto $\Lambda$-homomorphism
+with $l(P)$ minimal. \underline{WTS:} $f$ projective cover. Consider 
 \[
 \xymatrix{
 0\ar[r] & \Ker f \ar@{^{(}->}[r]  & P \ar[r]^f \ar[d]^{\pi_P} & A \ar[r] \ar[d]^{\pi_A} & 0\\
   &        & P/\mathfrak{r}P \ar[r]^{\overline{f}} & A/\mathfrak{r}A \ar[r] & 0
 }
 \]
-Assume that $\Ker f \not\subseteq \mathfrak{r}P$. Then $\pi_P(\Ker f) \neq (0)$ in $P/\mathfrak{r}P$, which is semisimple. We know that
+Assume that $\Ker f \not\subseteq \mathfrak{r}P$. Then $\pi_P(\Ker f)
+\neq (0)$ in $P/\mathfrak{r}P$, which is semisimple. We know that 
 $ P/\mathfrak{r}P = \pi_P(\Ker f) \oplus X $
-for some $X \subseteq P/\mathfrak{r}P$.\\
+for some $X \subseteq P/\mathfrak{r}P$. 
 %page 52
-Define $e : P/\mathfrak{r}P \to P/\mathfrak{r}P$ by letting $e(v, w) = (0, w)$ for $(v, w) \in P/\mathfrak{r}P = \pi_P(\Ker f) \oplus X$.
+Define $e : P/\mathfrak{r}P \to P/\mathfrak{r}P$ by letting $e(v, w) =
+(0, w)$ for $(v, w) \in P/\mathfrak{r}P = \pi_P(\Ker f) \oplus X$. 
 
 \[
 \xymatrix{
@@ -161,11 +179,20 @@ P/\mathfrak{r}P \ar[r]^e & P/\mathfrak{r}P \ar[d]\\
 &0
 }
 \]
-Then $\pi_P e'e' = ee\pi_P = e\pi_P = \pi_P e' \implies \pi_P(e'-e'e') = 0$. Hence, if $x = e'(1_P - e') = (1_P-e')e'$ then $\Im x \subseteq \mathfrak{r}P$. Since $\Im x^2 \subseteq \mathfrak{r}^2 P$ and so on, and $\mathfrak{r}^t = (0)$ for some $t \geq 1$, we have that $x^t = 0$. Let $a = e'$ and $b = 1_P - e'$. Then $$a^tb^t = b^ta^t = x^t = 0$$
-\centerline{and}
-$$1_P = (a+b)^{2t} = \underbrace{a^{2t} + r_1a^{2t-2}b + \cdots r_ta^tb^t}_{\tilde{e}} + \underbrace{r_{t+1}a^{t-1}b^{t+1} + \cdots + r_{2t-1}ab^{2t-1} + b^{2t}}_{\tilde{e}'}$$
+Then $\pi_P e'e' = ee\pi_P = e\pi_P = \pi_P e' \implies \pi_P(e'-e'e')
+= 0$. Hence, if $x = e'(1_P - e') = (1_P-e')e'$, then $\Im x \subseteq
+\mathfrak{r}P$. Since $\Im x^2 \subseteq \mathfrak{r}^2 P$ and so on,
+and $\mathfrak{r}^t = (0)$ for some $t \geq 1$, we have that $x^t =
+0$. Let $a = e'$ and $b = 1_P - e'$. Then $$a^tb^t = b^ta^t = x^t =
+0$$ \centerline{and}
+\begin{multline}
+1_P = (a+b)^{2t} = \underbrace{a^{2t} + r_1a^{2t-2}b + \cdots
+  r_ta^tb^t}_{\tilde{e}} +\notag\\
+ \underbrace{r_{t+1}a^{t-1}b^{t+1} + \cdots + r_{2t-1}ab^{2t-1} +
+   b^{2t}}_{\tilde{e}'}
+\end{multline}
 It follows that $\tilde{e} = \tilde{e}\cdot 1_P = \tilde{e}(\tilde{e} + \tilde{e}') = \tilde{e}^2 + \tilde{e}\tilde{e}' = \tilde{e}^2 + 0 = \tilde{e}^2$\\
-$\implies \tilde{e}$ is aan idempotent.\\
+$\implies \tilde{e}$ is an idempotent.\\
 \underline{Check:} $\overline{\tilde{e}} = e^{2t} = e$ and $\overline{f}(P/\mathfrak{r}P) = \overline{f}(X) = \overline{f}(\Im e)$.\\
 \leavevmode\\
 Then we have 
@@ -189,9 +216,9 @@ $$\xymatrix@R-1pc@C-1pc{
 $\overline{(1_P - \tilde{e})} = 1 - e \neq 0 \implies \Im (1_P \tilde{e}) \neq (0)$.\\
 $\implies l(\Im \tilde{e}) < l(P)$, Contradiction!\\
 $\implies \Ker f \subseteq \mathfrak{r}P$ and $f$ is an essential epimorphsim.\\
-$f$ is projective cover.
+$\implies f$ is projective cover.
 
-\item[(b)] Let $f_i : P_i \to A$ be a projective cover of $A$ for $i = 1, 2$.
+(b) Let $f_i : P_i \to A$ be a projective cover of $A$ for $i = 1, 2$.
 \[\xymatrix{
 P_1 \ar[dr]^{f_1} \ar[d]_{\exists g}&& 0\\
 P_2 \ar[r]^{f_2} \ar[d]_{\exists h} & A \ar[r]\ar[dr]\ar[ur] & 0\\
@@ -201,7 +228,6 @@ $P_1$ projective and $f$ epimorphic $\implies \exists g: P_1 \to P_2$ such that 
 $f_2$ essential epimorphism and $f_1$ epimorphic $\implies g$ epimorphic.\\
 Similarly $h$ is epimorphic.\\
 $\implies l(P_2) \leq l(P_1) \leq l(P_1) \implies l(P_1) = l(P_2) \implies g$ isomorphism. 
-\end{enumerate}
 \end{proof}
 \end{thm}
 
@@ -215,12 +241,12 @@ The map $f: P_1 \oplus P_2 \oplus \cdots \oplus P_m \to A_1 \oplus A_2 \oplus \c
 \end{enumerate}
 
 \begin{proof}
-\begin{enumerate}
-\item[]
 %prop 28 page 48
-\item[(a)] Prop \ref{•}
-\item[(b)] \underline{Exercise:} Use that $\mathfrak{r}(P_1 \oplus \cdots \oplus P_m) = \mathfrak{r}P_1 \oplus \cdots \oplus \mathfrak{r}P_m$, $\mathfrak{r} = \rad \Lambda$ and $(a)$
-\end{enumerate}
+(a) Prop \ref{prop:28}.
+
+(b) \underline{Exercise:} Use that $\mathfrak{r}(P_1 \oplus \cdots
+\oplus P_m) = \mathfrak{r}P_1 \oplus \cdots \oplus \mathfrak{r}P_m$,
+$\mathfrak{r} = \rad \Lambda$ and $(a)$
 \end{proof}
 \end{prop}
 
@@ -229,23 +255,31 @@ The map $f: P_1 \oplus P_2 \oplus \cdots \oplus P_m \to A_1 \oplus A_2 \oplus \c
 \label{prop:P_and_rP}
 $\Lambda$ left artinian, finitely generated modules.
 \begin{enumerate}
-\item[(a)] $P$ projective module then $P \to P/\mathfrak{r}P$ is projective cover.
-\item[(b)] $P,Q$ projective modules, $P \simeq Q \iff P/\mathfrak{r}P \simeq Q/\mathfrak{r}Q$
-\item[(c)] $P$ projective module, $P$ indecomposable $\iff P/\mathfrak{r}P$ simple.
-\item[(d)] Assume that $P = \bigoplus_{i=1}^n P_i \simeq \bigoplus_{j=1}^m Q_j$, with $P$ projective and $P_i$ and $Q_j$ indecomposable.\\
-$\implies n = m$ and $\exists $ permutation $\pi$ of $\{ 1, 2, \cdots, n \}$ such that $P_i \simeq Q_{\pi(i)}$, for $i=1,2,\cdots,n$.
+\item[(a)] If $P$ is a projective module, then $P \to P/\mathfrak{r}P$ is projective cover.
+\item[(b)] If $P$ and $Q$ are projective modules, then $P \simeq Q$ if
+  and only if $P/\mathfrak{r}P \simeq Q/\mathfrak{r}Q$. 
+\item[(c)] If $P$ is a projective module, then $P$ is indecomposable
+  if and only if $P/\mathfrak{r}P$ is simple.
+\item[(d)] Assume that $P = \bigoplus_{i=1}^n P_i \simeq
+  \bigoplus_{j=1}^m Q_j$, with $P$ projective and $P_i$ and $Q_j$
+  indecomposable. Then $n = m$ and $\exists $ permutation $\pi$ of $\{
+  1, 2, \cdots, n \}$ such that $P_i \simeq Q_{\pi(i)}$, for
+  $i=1,2,\cdots,n$.
 \end{enumerate}
 \begin{proof}
-\begin{enumerate}
-\item[]
-\item[(a)] \underline{We have seen:} $A \to A/\mathfrak{r}A$ is essential epimorphism for finitely generated $A$.\\
-$P$ projective $\implies$ $P \to P/\mathfrak{r}P$ projective cover.
+  (a) \underline{We have seen:} $A \to A/\mathfrak{r}A$ is essential
+  epimorphism for all finitely generated $A$.\\
+  $P$ projective $\implies$ $P \to P/\mathfrak{r}P$ projective cover.
 
-\item[(b)] $\underline{\Rightarrow :}$ Clear.\\
+(b) $\underline{\Rightarrow :}$ Clear.\\
 $\underline{\Leftarrow:}$ Assume that $P/\mathfrak{r}P \simeq Q/\mathfrak{r}Q$.\\
-$(a) \implies P \to P/\mathfrak{r}P, Q/\mathfrak{r}Q$ are projective covers. Assumption plus projective cover unique up to isomorphism (Theorem \ref{thm:proj-cov_unique} (b)) $\implies P \simeq Q$.
+$(a) \implies P \to P/\mathfrak{r}P$ and $Q\to Q/\mathfrak{r}Q$ are projective
+covers. Assumption plus projective cover unique up to isomorphism
+(Theorem \ref{thm:proj-cov_unique} (b)) $\implies P \simeq Q$.
 
-\item[(c)] $\underline{\Leftarrow:}$ Assume that $P = P_1 \oplus P_2$ with $P_i \neq (0)$. Since $\mathfrak{r}P = \mathfrak{r}P_1 \oplus \mathfrak{r}P_2$ we have that
+(c) $\underline{\Leftarrow:}$ Assume that $P = P_1 \oplus P_2$ with
+$P_i \neq (0)$. Since $\mathfrak{r}P = \mathfrak{r}P_1 \oplus
+\mathfrak{r}P_2$ we have that
 \[\xymatrix@C-1pc@R-2pc{
 P / \mathfrak{r}P \ar@{}[r]|-*[@]{=} & P_1 \oplus P_2 / \mathfrak{r}P_1 \oplus \mathfrak{r}P_2 \ar@{}[r]|-*[@]{\simeq} & P_1 / \mathfrak{r}P_1 \ar@{}[r]|-*[@]{\oplus} \ar@{}[dd]|-*[@]{\neq} & P_2 /\mathfrak{r}P_2 \ar@{}[dd]|-*[@]{\neq}\\
                   &                                                         &                 &                 \\
@@ -253,9 +287,11 @@ P / \mathfrak{r}P \ar@{}[r]|-*[@]{=} & P_1 \oplus P_2 / \mathfrak{r}P_1 \oplus \
                   &            \text{Nakayama Lemma} \ar@/^/[uur] \ar@/_1pc/[uurr]                       &                 &                 \\
 }
 \]
-$\implies P/ \mathfrak{r}P$ not simple
+$\implies P/ \mathfrak{r}P$ not simple.
 \\\\
-$\underline{\Rightarrow :}$ Assume that $P / \mathfrak{r}P$ is not simple. $P/\mathfrak{r}P$ is a semisimple $\Lambda$-module $\implies P / \mathfrak{r}P = U_1 \oplus U_2$, where $U_i \neq (0)$, $i=1,2$.\\
+$\underline{\Rightarrow :}$ Assume that $P / \mathfrak{r}P$ is not
+simple. The module $P/\mathfrak{r}P$ is a semisimple $\Lambda$-module
+$\implies P / \mathfrak{r}P = U_1 \oplus U_2$, where $U_i \neq (0)$, $i=1,2$.\\ 
 Let $P_i$ be a projective cover of $U_i$ for $i=1,2$.\\
 (a) gives that $P \to P /\mathfrak{r}P$ is a projective cover.\\ 
 \underline{We know:} $P_1 \oplus P_2 \to U_1 \oplus U_2 = P / \mathfrak{r}P$ is a projective cover.\\
@@ -264,13 +300,12 @@ $\implies P$ decomposes.
 
 %page 55
 
-\item[d] \underline{Exercise:}\\
+(d) \underline{Exercise:}\\
 \underline{Note:} $\xymatrix@R-1pc{
 P_i / \mathfrak{r}P_i \ar@{^{(}->}[r] & P_1 / \mathfrak{r}P_1  \oplus \cdots P_n / \mathfrak{r}P_n \ar@{}[d]|-*[@]{\simeq} \\
  & Q_1 / \mathfrak{r}Q_1  \oplus \cdots Q_n / \mathfrak{r}Q_n \ar@{->>}[r] & Q_j / \mathfrak{r}Q_j  \\
 }$\\
 $\implies \exists j$ such that $ Q_j / \mathfrak{r}Q_j \simeq  P_i / \mathfrak{r}P_i \implies P_i \simeq Q_j$
-\end{enumerate}
 \end{proof}
 \end{prop}
 
@@ -287,9 +322,10 @@ $$P \to P/\mathfrak{r}P \simeq S_j \leftarrow P_j \text{ projective cover}$$
 Uniqueness $\implies P \simeq P_j$.
 \end{recall}
 
-\begin{cor}
-$\Lambda$ left artinian. The only indecomposable projective $\Lambda$-modules are $P_1, P_2, \cdots, P_n$ up to isomorphsim.
-
+\begin{cor}\label{prop:33}
+$\Lambda$ left artinian. The only indecomposable projective
+$\Lambda$-modules are $P_1, P_2, \ldots, P_n$ up to isomorphsim. 
+\end{cor}
 \begin{exam}
 $\G : 
 \vcenter{\xymatrix@C-1pc@R-1pc{
@@ -398,10 +434,10 @@ k \ar[dr]_1 \ar@{.>}@/_/["S1"]^1 && 0 \ar[dl]\\
 \end{matrix} 
 \]
 \end{exam}
-\end{cor}
+
 
 %page 56
-\begin{lem}
+\begin{lem}\label{lem:34}
 $\Lambda$ left artinian, $M$ finitely generated.\\
 Let $\xymatrix@C-1pc{P\ar[r]^{f'} & M/\mathfrak{r}M}$ be a projective cover. Then a homomorphism $f: P \to M$ such that 
 \[\xymatrix{
@@ -409,6 +445,7 @@ Let $\xymatrix@C-1pc{P\ar[r]^{f'} & M/\mathfrak{r}M}$ be a projective cover. The
 M \ar[r]^{\pi_M} & M/\mathfrak{r}M
 }\]
 commutes, is a projective cover of $M$.
+\end{lem}
 \begin{proof}
 $$\left.\begin{matrix}
 f' = \pi_M \cdot f & \text{epi.}\\
@@ -417,8 +454,8 @@ f' = \pi_M \cdot f & \text{epi.}\\
 \implies f \text{ epimorphism}$$
 \begin{tabular}{cl}
 $\vcenter{\xymatrix{
-P \ar@{}[d]|-*[@]{=} \ar[r]^f & M \ar[d]^{\pi_M}\\
-P \ar[d]^{\pi_P} \ar[r]^{f'} & M/\mathfrak{r}M \ar@{}[d]|-*[@]{=}\\
+P \ar@{=}[d] \ar[r]^f & M \ar[d]^{\pi_M}\\
+P \ar[d]^{\pi_P} \ar[r]^{f'} & M/\mathfrak{r}M \ar@{=}[d]\\
 P/\mathfrak{r}P \ar[r]^{\overline{f}} & M/\mathfrak{r}M\\
 }}$ &  
 \begin{tabular}{ll}
@@ -427,10 +464,9 @@ P/\mathfrak{r}P \ar[r]^{\overline{f}} & M/\mathfrak{r}M\\
 \underline{We have:} $\overline{f}\pi_P = \pi_M f = f' = \overline{f'}\pi_P$
 \end{tabular}
 \end{tabular}
-$\pi_P$ epimorphic $\implies \overline{f} = \overline{f'} \leftarrow$ isomorphism\\
+$\pi_P$ epimorphic $\implies \overline{f} = \overline{f'} \leftarrow$ isomorphism.\\
 $\implies \overline{f}$ isomorphism $\implies f: P \to M$ projective cover.
 \end{proof}
-\end{lem}
 
 \begin{exam}
 \[\begin{matrix}
@@ -452,7 +488,7 @@ M: & k^2 \ar[dr]_{\begin{psmallmatrix} 1 & -1 \end{psmallmatrix}} && k\ar[dl]^1\
 
 \vcenter{\xymatrix@C-1pc@R-1pc{
 & &k \ar[dl]_0 \ar[dr]&\\
-M / \mathfrak{r}M: & k^2 / k{\begin{psmallmatrix} 1 \\ 1 \end{psmallmatrix}}  \ar[dr] && 0\ar[dl]\\
+M / \mathfrak{r}M: & k^2 / k{\begin{psmallmatrix} 1 \\ 1 \end{psmallmatrix}}  \ar[dr] && k\ar[dl]\\
 && 0 &
 }}
 
@@ -540,19 +576,23 @@ k\ar[dr]_1&&k\ar[dl]^1\\
 %page 57
 
 \begin{defin}
-$\Lambda$ is a \underline{local ring} if the non-invertible elements in $\Lambda$ is an ideal.
+$\Lambda$ is a \emph{local ring} if the non-invertible elements in
+$\Lambda$ is an ideal. 
 \end{defin}
 
 \begin{exam}
-\begin{enumerate}
-\item[]
-\item[(1)] $\mathbb{Z}$ is not a local ring. Invertible elements: $\{ -1, 1 \}$, but $3 + (-2) = 1 \implies 	$ non-invertible elements is not an ideal.
-\item[(2)] $k$ fiel $\implies k$ local
-\item[(3)] $\Lambda_n = k[x]/\langle x^n \rangle$, $k$ a field.\\
+(1) $\mathbb{Z}$ is not a local ring. Invertible elements: $\{ -1, 1
+\}$, but $3 + (-2) = 1 \implies 	$ non-invertible elements is
+not an ideal. 
+
+(2) $k$ field $\implies k$ local.
+
+(3) $\Lambda_n = k[x]/\langle x^n \rangle$, $k$ a field.\\
 Non-invertibel elements: $\langle x \rangle / \langle x^n \rangle$.\\
 Invertible elements: $\{ a + f(x)x + \langle x^n \rangle \mid  a \in k\setminus \{ 0 \}, f(x) \in k[x] \}$.\\
 $\implies \Lambda$ is a local ring.
-\item[(4)] $$\G : 
+
+(4) $$\G : 
 \vcenter{\xy\xymatrix{
 1 \ar@(l,ul)^{\alpha_1} \ar@(u,ur)^{\alpha_2} \ar@(d,dl)^{\alpha_n}
 }
@@ -566,17 +606,17 @@ $\Lambda = k\G / \langle \rho \rangle$ - finitedimensional $k$-algebra, $k$ fiel
 Non-invertible elements: $J / \langle \rho \rangle = \mathfrak{r}$ - ideal\\
 Invertible elements: $\{ ae_1 + r \mid a \in k \setminus \{ 0 \}, r \in \mathfrak{r} \}$\\
 $\implies \Lambda$ a local ring.
-\end{enumerate}
 \end{exam}
 
-\begin{prop}
+\begin{prop}\label{prop:35}
 $\Lambda$ a local ring $\implies 0$ and 1 are the only idempotents.
 \begin{proof}
-Let $e$ be an idempotent in $\Lambda$. Suppose that $e$ is an invertible element, i.e. $\exists f \in \Lambda$ such that $ef = fe = 1$.\\
-$\implies e = e\cdot 1 = e(ef) = e^2f = ef = 1$.\\
-Suppose that $e \neq 0,1$, i.e. $e$ and $1-e$ are both not invertible. Then \[\xy\xymatrix"eq"@C-2pc{1  = & e &+ & (1-e)}
-\POS+(10, -10)
-\xymatrix{\text{not invertible} \ar["eq"r] \ar["eq"rrr]}
+  Let $e$ be an idempotent in $\Lambda$. Suppose that $e$ is an invertible element, i.e. $\exists f \in \Lambda$ such that $ef = fe = 1$.\\
+  $\implies e = e\cdot 1 = e(ef) = e^2f = ef = 1$.\\
+  Suppose that $e \neq 0,1$, i.e. $e$ and $1-e$ are both not
+  invertible. Then \[\xy\xymatrix"eq"@C-2pc{1 = & e &+ & (1-e)}
+  \POS+(10, -10) \xymatrix{\text{not invertible} \ar["eq"r]
+    \ar["eq"rrr]}
 \endxy\]
 $\Lambda$ local $\implies 1$ not invertible. Contradiction!\\
 $\implies 0,1$ the only idempotents in $\Lambda$.
@@ -602,22 +642,21 @@ $M$ $\Lambda$-module, $\End_\Lambda(M)$ a local ring $\implies M$ indecomposable
 \label{prop:local_iff_proj-indec}
 $\Lambda$ left artinian, $P$ finitely generated projective $\Lambda$-module. TFAE:
 \begin{enumerate}
-\item[(a)] $P$ indecomposable
-\item[(b)] $\End_\Lambda(P)$ local
-\item[(c)] $\mathfrak{r}P$ is the only maxiaml submodule of $P$.
+\item[(a)] $P$ indecomposable, 
+\item[(b)] $\End_\Lambda(P)$ local, 
+\item[(c)] $\mathfrak{r}P$ is the only maxiaml submodule of $P$, 
 \item[(d)] $P/ \mathfrak{r}P$ is simple.
 \end{enumerate}
+\end{prop}
 \begin{proof}
-\begin{enumerate}
-\item[]
-\item[$\underline{(a) \iff (d):}$] Prop \ref{prop:P_and_rP} (c).
+$\underline{(a) \iff (d):}$ Prop \ref{prop:P_and_rP} (c).
 
-\item[$\underline{(d) \Rightarrow (c):}$] $P/\mathfrak{r}P$ simple $\implies \mathfrak{r}P$ maximal submodule of $P$.\\
+$\underline{(d) \Rightarrow (c):}$ $P/\mathfrak{r}P$ simple $\implies \mathfrak{r}P$ maximal submodule of $P$.\\
 $$\text{\underline{We have:} } \mathfrak{r}P = \rad P = \bigcap_{\begin{smallmatrix} M \text{ max.} \\ \text{submod. of } P\end{smallmatrix}} M$$
 $\implies \mathfrak{r}P \subseteq M$, $\forall M \subseteq P$ maximal submodule.\\
 $\implies \mathfrak{r}P$ is the only maximal submodule of $P$.
 
-\item[$\underline{(c) \Rightarrow (b):}$] Let $f: P \to P$. Then\\ \begin{tabular}{cl}
+$\underline{(c) \Rightarrow (b):}$ Let $f: P \to P$. Then\\ \begin{tabular}{cl}
 $f$ invertible &$\stackrel{\mathclap{\normalfont\mbox{def}}}{\iff}$ $f$ isomorphism\\
 &$\iff f$ is an epimorphsm ($l(P) < \infty$)\\
 &$\stackrel{\mathclap{\normalfont\mbox{$\mathfrak{r}P$ max}}}{\iff}$ $\Im f \not\subseteq \mathfrak{r}P$
@@ -642,56 +681,69 @@ $f_1, f_2 \in \End_\Lambda(P)$:
 $\implies ff_1, f_1f \in I$, when $f_1 \in I$ and $f \in \End_\Lambda(P)$.\\
 $\implies I$ is an ideal $\implies \End_\Lambda(P)$ a local ring.
 
-\item[$\underline{(b) \Rightarrow (a):}$] Corollary \ref{cor:local_imply_indec}
-\end{enumerate}
+$\underline{(b) \Rightarrow (a):}$ Corollary \ref{cor:local_imply_indec}.
 \end{proof}
-\end{prop}
+
 
 %page 59
 
 \begin{exam}
-\begin{enumerate}
-\item[]
-\item[(1)] $\mathbb{Z}$ projective $\mathbb{Z}$-module, $\mathbb{Z}$ not artinian, $End_\mathbb{Z}(\mathbb{Z}) \simeq \mathbb{Z}$ not local, but $\mathbb{Z}$ indecomposable.
-\item[(2)] $\Lambda = k\G / \langle \rho \rangle$, $k$ field, $J^t \subseteq \langle \rho \rangle \subseteq J^2$, $\Lambda$ left artinian.\\
-\underline{We have:} $\Lambda\overline{e}_i$ indecomposable projective $\Lambda$-modules.\\
-Prop \ref{prop:local_iff_proj-indec} $\implies \End_\Lambda(\Lambda\overline{e}_i) \simeq \overline{e}_i \Lambda \overline{e}_i$ is a local ring.
-\end{enumerate}
+(1) $\mathbb{Z}$ projective $\mathbb{Z}$-module, $\mathbb{Z}$ not
+artinian, $End_\mathbb{Z}(\mathbb{Z}) \simeq \mathbb{Z}$ not local,
+but $\mathbb{Z}$ indecomposable. 
+
+(2) $\Lambda = k\G / \langle \rho \rangle$, $k$ field, $J^t \subseteq
+\langle \rho \rangle \subseteq J^2$, $\Lambda$ left artinian.\\ 
+\underline{We have:} $\Lambda\overline{e}_i$ indecomposable projective
+$\Lambda$-modules.\\ 
+Prop \ref{prop:local_iff_proj-indec}
+$\implies \End_\Lambda(\Lambda\overline{e}_i) \simeq \overline{e}_i
+\Lambda \overline{e}_i$ is a local ring. 
 \end{exam}
 
-\begin{cor}
+\begin{cor}\label{cor:38}
 $\Lambda$ left artinian. TFAE:
 \begin{enumerate}
-\item[(a)] $\Lambda$ local
-\item[(b)] $\mathfrak{r} = \rad \Lambda$ is a maximal left ideal
-\item[(c)] $\Lambda/\mathfrak{r}$ is simple $\Lambda$-module
+\item[(a)] $\Lambda$ local,
+\item[(b)] $\mathfrak{r} = \rad \Lambda$ is a maximal left ideal,
+\item[(c)] $\Lambda/\mathfrak{r}$ is simple $\Lambda$-module.
 \end{enumerate}
-\begin{proof}
-Follows from Prop \ref{prop:local_iff_proj-indec}, noting that $\Lambda \simeq \End_\Lambda(\Lambda)^{op}$
-\end{proof}
 \end{cor}
-
-\begin{prop}
-$\Lambda$ left artinian
-\begin{enumerate}
-\item[(a)] $1 = e_1 +e_2 + \cdots + e_n$ - a sum of primitive orthogonal idempotents.
-\begin{enumerate}
-\item[orthogonal:] $e_ie_j = 0$, $\forall i \neq j$
-\item[primitive:] $e_i \neq 0$ is not a sum of non-zero idempotents
-\end{enumerate}
-
-\item[(b)] Let $e_1, e_2, \cdots, e_m$ be idempotents in $\Lambda$, and let $e = e_1 + e_2 + \cdots + e_m$.\\
-If $e_1, e_2, \cdots, e_m$ are orthogonal then $\Lambda e = \Lambda e_1 \oplus \Lambda e_2 \oplus \cdots \oplus \Lambda e_m$.
-
-\item[(c)] Let $e\neq 0$ be an idempotent. Then $\Lambda e$ indecomposable $\iff e$ is primitive.
-\end{enumerate}
-
-%page 60
-
 \begin{proof}
-\begin{enumerate}
-\item[(a)] $\Lambda / \mathfrak{r}$ semisimple\\
-$\implies \Lambda / \mathfrak{r} = S_1 \oplus S_2 \oplus \cdots \oplus S_n$, $S_i$ simple.\\
+Follows from Prop \ref{prop:local_iff_proj-indec}, noting that
+$\Lambda \simeq \End_\Lambda(\Lambda)^{op}$. 
+\end{proof}
+
+\begin{defin}
+Let $e$ and $\{e_1,e_2,\ldots,e_n\}$ be idempotents in a ring $\Lambda$. 
+\begin{enumerate}[\rm(i)]
+\item The set $\{e_1,e_2,\ldots,e_n\}$ is called \emph{orthogonal} if
+  $e_ie_j = 0$, for all $i \neq j$. 
+\item The idempotent $e$ is called \emph{primitive} if  $e\neq 0$ and
+  $e$ is not a sum of non-zero orthogonal idempotents. 
+\end{enumerate}
+
+\end{defin}
+
+\begin{prop}\label{prop:39}
+$\Lambda$ left artinian
+\begin{enumerate}[\rm(a)]
+\item $1 = e_1 +e_2 + \cdots + e_n$, for some set
+  $\{e_1,e_2,\ldots,e_n\}$ of primitive orthogonal idempotents. 
+\item Let $e_1, e_2, \cdots, e_m$ be idempotents in $\Lambda$, and let
+  $e = e_1 + e_2 + \cdots + e_m$.  If $e_1, e_2, \cdots, e_m$ are
+  orthogonal, then 
+\[\Lambda e = \Lambda e_1 \oplus \Lambda e_2 \oplus
+  \cdots \oplus \Lambda e_m.\]
+\item[(c)] Let $e\neq 0$ be an idempotent. Then $\Lambda e$
+  indecomposable $\iff e$ is primitive. 
+\end{enumerate}
+\end{prop}
+%page 60
+\begin{proof}
+(a) $\Lambda / \mathfrak{r}$ semisimple $\implies \Lambda /
+\mathfrak{r} = S_1 \oplus S_2 \oplus \cdots \oplus S_n$, $S_i$ simple.
+
 Let $P(S_i) \to S_i$ be the projective cover of $S_i$. Then $P(S_i)$ is indecomposable by Prop \ref{prop:P_and_rP} (c). Then by Prop \ref{prop:proj_covers->top_iso} (b): $\bigoplus_{i=1}^n P(S_i) \to \Lambda/ \mathfrak{r}$ is a projective cover. Also $\Lambda \to \Lambda / \mathfrak{r}$ is a projective cover.\\
 Uniqueness $\implies \Lambda \simeq \bigoplus_{i=1}^n P(S_i)$\\
 $\implies \Lambda = P_1 \oplus P_2 \oplus \cdots \oplus P_n$, $P_i$ indecomposable.\\
@@ -714,27 +766,29 @@ x \ar@{}[r]|-*[@]{=}  & x \cdot 1 \ar@{}[r]|-*[@]{=} & xe_1 \ar@{}[r]|-*[@]{+}\a
 }$\\
 Direct sum $\implies x = xe_i \in \Lambda e_i \implies P_i = \Lambda e_i$\\
 \\
-\underline{$e_i$ primitive:} Let $e_i = f_1 + f_2$ with $f_i \neq 0$ fro $i=1,2$, and $f_1$ and $f_2$ are orthogonal idempotents. Using (b):
+\underline{$e_i$ primitive:} Let $e_i = f_1 + f_2$ with $f_i \neq 0$ for $i=1,2$, and $f_1$ and $f_2$ are orthogonal idempotents. Using (b):
 \[
 \Lambda e_i = \xymatrix@C-1pc@R-1pc{ \Lambda f_1 \ar@{}[r]|-*[@]{\oplus}\ar@{}[d]|-*[@]{\neq} & \Lambda f_2 \ar@{}[d]|-*[@]{\neq}\\ (0) & (0)}
 \]
 $\implies P_i $ not indecomposable. Contradiction!\\
 $\implies e_i$ primitive for $i = 1, 2, \cdots , n$.
 
-\item[(b) and (c):] Exercises.
-\end{enumerate}
+(b) and (c): Exercises.
 \end{proof}
+
+\begin{prop}\label{prop:40}
+  $\Lambda$ left artinian, $P$ finitely generated projective
+  $\Lambda$-module. Then \[P \simeq \bigoplus_{i=1}^n P_i\] with $P_i$
+  indecomposable and decomposition is unique up to isomorphism and
+  ordering.
 \end{prop}
-
-\begin{prop}
-$\Lambda$ left artinian, $P$ finitely generated projective $\Lambda$-module. Then \[P \simeq \bigoplus_{i=1}^n P_i\] with $P_i$ indecomposable and decomposition is unique up to isomorphism an ordering.
-
 \begin{proof}
-$P / \mathfrak{r}P = \bigoplus_{i=1}^n S_i$, $S_i$ simple $\Lambda$-modules.\\
-$P \to \mathfrak{r}P$ projective cover and $\bigoplus_{i=1}^n P(S_i) \to \bigoplus_{i=1}^n S_i = P / \mathfrak{r}P$ is a projective cover.\\
-\\
-\centerline{Uniqueness $\implies P \simeq \bigoplus_{i=1}^n \underbrace{P(S_i)}_{indec}$}
+  Have: $P / \mathfrak{r}P = \bigoplus_{i=1}^n S_i$, for $S_i$ simple
+  $\Lambda$-modules.  Then $P \to P/\mathfrak{r}P$ is a projective
+  cover and $\bigoplus_{i=1}^n P(S_i) \to \bigoplus_{i=1}^n S_i = P /
+  \mathfrak{r}P$ is a projective cover.  Uniqueness of projective
+  covers implies that 
+  \[P \simeq \bigoplus_{i=1}^n \underbrace{P(S_i)}_{indec}.\]
 \end{proof}
-\end{prop}
 
 % page 61
