@@ -1,9 +1,9 @@
 \section{Krull-Remak-Schmidth theorem}
 
-\begin{lem}
+\begin{lem}\label{lem:41}
 (Fitting Lemma)\\
 $\Lambda$ a ring, $M$ a $\Lambda$-module with $l(M) < \infty$, $\varphi \in \End_\Lambda(M)$. Then $\exists n \geq 1$ such that \[M = \Im \varphi^n \oplus \Ker \varphi^n\]
-
+\end{lem}
 \begin{proof}
 $l(M) < \infty \implies M$ artinian and noetherian.\\
 $\implies \left\lbrace \begin{matrix}
@@ -15,9 +15,10 @@ $\implies \exists n$ such that $\begin{matrix}
 \Im \varphi^n & = & \Im \varphi^{n+1} & = & \cdots\\
 \Ker \varphi^n & = & \Ker \varphi^{n+1} & = & \cdots\\ 
 \end{matrix}$\\
-$\implies l(\Im \varphi^n) = l(\Im \varphi^{2n})$, $\varphi^n : \Im \varphi^n \to \varphi^{2n}$ is surjective.\\
-$\implies \varphi^n: \xymatrix{\Im \varphi^n \ar[r] \ar@{<--}@/_/[r]_\psi & \Im \varphi^{2n}}$ is an isomorphism.\\
-Let $\psi: \Im \varphi^{2n} \to \Im \varphi$ be an inverse of $\varphi^n$.
+$\implies l(\Im \varphi^n) = l(\Im \varphi^{2n})$, $\varphi^n : \Im
+\varphi^n \to \Im \varphi^{2n}$ is surjective.\\
+$\implies \varphi^n\colon  \xymatrix{\Im \varphi^n \ar[r] \ar@{<--}@/_/[r]_\psi & \Im \varphi^{2n}}$ is an isomorphism.\\
+Let $\psi\colon  \Im \varphi^{2n} \to \Im \varphi$ be an inverse of $\varphi^n|_{\Im\varphi^n}$.
 \begin{enumerate}
 \item We have: $\Im \varphi^n, \Ker \varphi^n \subseteq M$
 \item $\underline{M = \Im \varphi^n + \Ker \varphi^n :}$ Let $m \in M$. Then \[m = \underbrace{\psi\varphi^n(m)}_{\in \Im \varphi^n} + \underbrace{m - \psi\varphi^n(m)}_{\in \Ker \varphi^n}\]
@@ -28,10 +29,10 @@ $\implies m' \Ker \varphi^{2n} = \Ker \varphi^n$\\
 $\implies m = \varphi^n(m') = 0$
 \end{enumerate}
 \end{proof}
-\end{lem}
 
-\begin{thm}
-$\Lambda$ left arinian, $M$ finitely generated. Then \[M \text{ indecomposable} \iff \End_\Lambda(M) \text{ local}\]
+\begin{thm}\label{thm:42}
+$\Lambda$ left arinian, $M$ finitely generated. Then \[M \text{ indecomposable} \iff \End_\Lambda(M) \text{ local.}\]
+\end{thm}
 \begin{proof}
 \underline{$\Rightarrow:$} Have seen (true in general).\\
 \underline{$\Leftarrow:$} Assume that $M$ is indecomposable. Let $\varphi \in \End_\Lambda(M)$ be a non-invertible element. Then $l(\Im \varphi) < l(M)$\\
@@ -44,33 +45,34 @@ $\implies 1_M - \psi\varphi$ invertible in $\End_\Lambda(M)$ for all $\psi \in \
 $\implies \varphi \in \rad \End_\Lambda(M) \subseteq \{ $non-invertible elements of $\End_\Lambda(M) \}$\\
 $\implies \End_\Lambda(M)$ is local.
 \end{proof}
-\end{thm}
 
 %page 62
 
-\begin{thm}
-(Krull-Remak-Schmidt theorem)\\
-$\Lambda$ left artinian, $M$ finitely generated $\Lambda$-module.
-\begin{enumerate}
-\item[]
-\item[(a)] $M$ can be written as a finite direct sum of indecomposable modules, i.e. \[M  = \bigoplus_{i=1}^n M_i \text{ with $M_i$ indecomposable}\]
-
-\item[(b)] The composition of $M$ into idecomposable modules is unique up to isomorphsim and ordering.
+\begin{thm}[Krull-Remak-Schmidt theorem]\label{thm:43}
+Let $\Lambda$ be a left artinian ring, and let $M$ be a finitely generated $\Lambda$-module.
+\begin{enumerate}[\rm(a)]
+\item $M$ can be written as a finite direct sum of indecomposable
+  modules, i.e. \[M  = \bigoplus_{i=1}^n M_i \text{ with $M_i$
+    indecomposable}.\] 
+\item The composition of $M$ into idecomposable modules is unique up
+  to isomorphsim and ordering. 
 \end{enumerate}
-
+\end{thm}
 \begin{proof}
-\begin{enumerate}
-\item[(a)] Induction on $l(M)$:\\
+(a) Induction on $l(M)$:\\
 If $l(M)=1$, then $M$ is simple and clearly indecomposable. Claim in (a) trivially true.\\
-Assume that (a) is true for all $\Lambda$-modules $X$ with $l(X) < n$. Suppose $l(M)=n$. If $M$ is indecomposable then we are done. If $M$ decomposes say $M = M_1 \oplus M_2$ ($M_i \neq (0)$) then $l(M_i) < l(M)$ and we are done by induction.
+Assume that (a) is true for all $\Lambda$-modules $X$ with $l(X) <
+n$. Suppose $l(M)=n$. If $M$ is indecomposable, then we are done. If
+$M$ decomposes say $M = M_1 \oplus M_2$ ($M_i \neq (0)$), then $l(M_i)
+< l(M)$ and we are done by induction. 
 
-\item[(b)] Assume that \[M = \bigoplus_{i=1}^n M_i = \bigoplus_{j=1}^m N_j\] with $M_i$ and $N_j$ indecomposable.
-\begin{enumerate}
-\item If $l(M)=1$ then the claim is true as $M$ is simple and therefor indecomposable.
+(b) Assume that \[M = \bigoplus_{i=1}^n M_i = \bigoplus_{j=1}^m N_j\] with $M_i$ and $N_j$ indecomposable.
+
+(1) If $l(M)=1$, then the claim is true as $M$ is simple and therefor indecomposable.
 
 %page 63
 
-\item Assume true for all modules $X$ with $l(X) < n$. Let $l(M)=n$.\\
+(2) Assume true for all modules $X$ with $l(X) < n$. Let $l(M)=n$.\\
 Denote by $\varphi_{sr}$ and $\psi_{rs}$ the composition
 \[\xymatrix{
 M_r \ar@{^{(}->}[r] & \bigoplus_{i=1}^n M_i =  \bigoplus_{j=1}^m N_j \ar@{->>}[r] & N_s
@@ -79,9 +81,9 @@ M_r \ar@{^{(}->}[r] & \bigoplus_{i=1}^n M_i =  \bigoplus_{j=1}^m N_j \ar@{->>}[r
 \[\xymatrix{
 N_s \ar@{^{(}->}[r] &  \bigoplus_{j=1}^m N_j = \bigoplus_{i=1}^n M_i \ar@{->>}[r] & M_r
 }\]
-respectively. Then \[\sum_{s=1}^m \psi_{is}\varphi_{si} = 1_{M_i}\] Since $\End_\Lambda(M_i)$ is local $\exists j$ such that $\psi_{ij}\varphi_{ji}$ is an isomorphism. If $\varphi_{ji}\psi_{ij} : N_j \to N_j$ is in $\rad\End_\Lambda(N_j)$, then it follows from Fitting Lemma that $\varphi_{ji}\psi_{ij}$ is nilpotent, say $(\varphi_{ji}\psi_{ij})^t = 0$\\
+respectively. Then \[\sum_{s=1}^m \psi_{is}\varphi_{si} = 1_{M_i}\] Since $\End_\Lambda(M_i)$ is local $\exists j$ such that $\psi_{ij}\varphi_{ji}$ is an isomorphism. If $\varphi_{ji}\psi_{ij} \colon  N_j \to N_j$ is in $\rad\End_\Lambda(N_j)$, then it follows from Fitting Lemma that $\varphi_{ji}\psi_{ij}$ is nilpotent, say $(\varphi_{ji}\psi_{ij})^t = 0$\\
 $\implies (\psi_{ij}\varphi_{ji})^{t+1} = 0$ Contradiction!\\
-$\implies \varphi_{ji}\psi_{ij}$ is an isomorphsim\\
+$\implies \varphi_{ji}\psi_{ij}$ is an isomorphsim.\\
 $\implies \varphi_{ji}$ and $\psi_{ij}$ are isomorphisms.\\
 We have that 
 \[\xy
@@ -101,9 +103,9 @@ M \ar@{}[r]|-*[@]{=} & \bigoplus\limits_{r=1}^n M_r \ar@{}[d]|-*[@]{=} \ar[r]^{1
 
 \POS(80, -8)
 \xymatrix{
-a: \hat{M_i} \to N_j\\
-b: M_i \to \hat{N_j}\\
-c: \hat{M_i} \to \hat{N_j}
+a\colon  \hat{M_i} \to N_j\\
+b\colon  M_i \to \hat{N_j}\\
+c\colon  \hat{M_i} \to \hat{N_j}
 }
 
 \endxy\]
@@ -136,36 +138,46 @@ A &= \begin{pmatrix}
 \end{matrix}
 \]
 $A$ an isomorphism $\implies \phi_{ji}$ and $\tilde{c}$ isomorphisms.\\
-$\implies \tilde{c}: \hat{M_i} \to \hat{N_i}$ isomorphism with $l(\hat{M_i}) < l(M)$. By induction the claim is true for $M_i$. Since $M_i \simeq N_j$, the claim follows 
-\end{enumerate}
-\end{enumerate}
+$\implies \tilde{c}\colon  \hat{M_i} \to \hat{N_i}$ isomorphism with
+$l(\hat{M_i}) < l(M)$. By induction the claim is true for
+$\hat{M_i}$. Since $M_i \simeq N_j$, the claim follows.   
 \end{proof}
-\end{thm}
 
 %page 64
 
 \section{Artin Algebras}
 \begin{recall}
-\begin{enumerate}
-\item $\Lambda$ finite dimensional $k$-algebra, $k$ field, $M$ finitely generated $\Lambda$-module $\implies \dim_k M = n < \infty$\\
+(1) $\Lambda$ finite dimensional $k$-algebra, $k$ field, $M$
+  finitely generated $\Lambda$-module $\implies \dim_k M = n <
+  \infty$. \\
 $\implies \End_\Lambda(M) \subseteq \End_k(M) = M_n(k)$ finite dimensional $k$-algebra.
 
-\item $\Lambda$ left artinian, but not right artinian, $M = _\Lambda\Lambda$. Then $\End_\Lambda(M) = \Lambda^{op}$ not left artinian. 
-\end{enumerate}
+(2) $\Lambda$ left artinian, but not right artinian, $M =
+{_\Lambda\Lambda}$. Then $\End_\Lambda(M) = \Lambda^{op}$ not left
+artinian.  
 \end{recall}
 
-$R$ is a commutative ring.
-
+Let $R$ be a commutative ring.
 \begin{defin}
 \begin{enumerate}
-\item[(a)] An \underline{$R$-algebra} $\Lambda$ is a ring $\Lambda$ and a ring homomorphsim $\varphi: R \to \Lambda$ with $\Im \varphi \subseteq Z(\Lambda) = \{ \lambda \in \Lambda \mid \lambda r=r\lambda, \forall r \in \Lambda \}$
+\item[(a)] An \emph{$R$-algebra} $\Lambda$ is a ring $\Lambda$ and a
+  ring homomorphsim $\varphi\colon  R \to \Lambda$ with $\Im \varphi
+  \subseteq Z(\Lambda) = \{ \lambda \in \Lambda \mid \lambda
+  r=r\lambda, \forall r \in \Lambda \}$. 
 
-\item[(b)] $\Lambda_1, \Lambda_2$ $R$-algebras given by $\varphi_1 : R \to \Lambda_1$ and $\varphi_2 : R \to \Lambda_2$. Then $\psi :  \Lambda_1 \to \Lambda_2$ is a homomorphism of $R$-agebras, if $\psi$ is a ring-homomorphism and $\vcenter{\xymatrix@R-1pc@C-1pc{
+\item[(b)] $\Lambda_1, \Lambda_2$ $R$-algebras given by $\varphi_1
+  \colon  R \to \Lambda_1$ and $\varphi_2 \colon  R \to
+  \Lambda_2$. Then $\psi \colon   \Lambda_1 \to \Lambda_2$ is a
+  \emph{homomorphism of $R$-agebras}, if $\psi$ is a ring-homomorphism and
+  $\vcenter{\xymatrix@R-1pc@C-1pc{ 
 R \ar[rr]^{\varphi_1} \ar[dr]_{\varphi_2} && \Lambda_1 \ar[dl]^{\psi}\\
 &\Lambda_2&
 }}$ commutes.
 
-\item[(c)] $\Lambda_1$ is an $R$-subalgebra of $\Lambda_2$ if $\Lambda_1$ is a subring of $\Lambda_2$ and the inclusion $\xymatrix@C-1pc{\Lambda_1 \ar@{^{(}->}[r] & \Lambda_2}$ is a homomorphism of $R$-algebras.
+\item[(c)] $\Lambda_1$ is an $R$-subalgebra of $\Lambda_2$ if
+  $\Lambda_1$ is a subring of $\Lambda_2$ and the inclusion
+  $\xymatrix@C-1pc{\Lambda_1 \ar@{^{(}->}[r] & \Lambda_2}$ is a
+  homomorphism of $R$-algebras. 
 \end{enumerate}
 \end{defin}
 
@@ -174,36 +186,40 @@ $\Lambda$ $R$-algebra $\implies \Lambda$ $R$-module.
 \end{note}
 
 \begin{defin}
-$\Lambda$ is an \underline{artin $R$-algebra} if $\Lambda$ is an $R$-algebra with $R$ a commutative artinian ring and $\Lambda$ is a finitelty generated $R$-module.
+$\Lambda$ is an \emph{artin $R$-algebra} if $\Lambda$ is an
+$R$-algebra with $R$ a commutative artinian ring and $\Lambda$ is a
+finitelty generated $R$-module. 
 \end{defin}
 
 \begin{exam}
-\begin{enumerate}
-\item Any finitely generated algebra over a field $k$ is an artin algebra.
+(1) Any finitely dimensional algebra over a field $k$ is an artin algebra.
 
-\item $k[x]$ is a $k$-algebra ($k$ a field), but not an artin $k$-algebra ($\dim_k k[x] = \infty$).
+(2) $k[x]$ is a $k$-algebra ($k$ a field), but not an artin
+$k$-algebra ($\dim_k k[x] = \infty$).
 
-\item $R$ a commutative artinian ring $\implies R$ an artin $R$-algebra ($\varphi = 1_R : R \to R$, $Z(R) = R$, $R$ generated by 1 over $R$).
-\end{enumerate}
+(3) $R$ a commutative artinian ring $\implies R$ an artin $R$-algebra
+($\varphi = 1_R \colon R \to R$, $Z(R) = R$, $R$ generated by 1 over
+$R$).
 \end{exam}
 
 \begin{note}
-\begin{enumerate}
-\item $\Lambda$ $R$-algebra $\implies \Lambda^{op}$ $R$-algebra.
+(1) $\Lambda$ $R$-algebra $\implies \Lambda^{op}$ $R$-algebra.
 
-\item $A$ a $\Lambda$-module, $\Lambda$ an $R$-algebra, $\varphi: R \to \Lambda$
-$\implies A$ is an $R$-algebra via \[r\cdot a \stackrel{\mathclap{\normalfont\mbox{def}}}{=} \varphi(r)a, \;\; \forall r \in R, \forall a \in A\]
+(2) $A$ a $\Lambda$-module, $\Lambda$ an $R$-algebra, $\varphi\colon
+R \to \Lambda$ 
+$\implies A$ is an $R$-module via \[r\cdot a
+\stackrel{\mathclap{\normalfont\mbox{def}}}{=} \varphi(r)a, \;\;
+\forall r \in R, \forall a \in A\] 
 
 %page 65
 
-\item $A,B$ $\Lambda$-modules, $\Lambda$ an $R$-algebra ($\varphi:R\to\Lambda$)\\
+(3) $A,B$ $\Lambda$-modules, $\Lambda$ an $R$-algebra ($\varphi\colon R\to\Lambda$)\\
 $\implies  \Hom_\Lambda(A,B)$ is an $R$-module via \[f \in  \Hom_\Lambda(A,B), r \in R \;\;\;\; (r \cdot f)(a) \stackrel{\mathclap{\normalfont\mbox{def}}}{=} \varphi(r)f(a)\]
 
 Check this as an exercise.
-\end{enumerate}
 \end{note}
 
-\begin{prop}
+\begin{prop}\label{prop:44}
 $\Lambda$ artin $R$-algebra, finitely generated $\Lambda$-modules.
 \begin{enumerate}
 \item[(a)] $A,B$ $\Lambda$-modules $\implies  \Hom_\Lambda(A,B)$ finitely generated $R$-module.
@@ -212,44 +228,42 @@ $\Lambda$ artin $R$-algebra, finitely generated $\Lambda$-modules.
 
 \item[(c)] $\Lambda$ is a left artinian ring.
 \end{enumerate}
-
+\end{prop}
 \begin{proof}
-\begin{enumerate}
-\item[(a)] \underline{Have:} \begin{enumerate}
-\item[$\cdot$] $\Hom_\Lambda(A,B) \subseteq \Hom_R(A,B)$
-\item[$\cdot$] $R$ artinian $\implies R$ noetherian
+(a) \underline{Have:} \begin{enumerate}
+\item[$\cdot$] $\Hom_\Lambda(A,B) \subseteq \Hom_R(A,B)$.
+\item[$\cdot$] $R$ artinian $\implies R$ noetherian.
 \end{enumerate}
 Enough to show that $\Hom_R(A,B)$ is a finitely generated $R$-module.\\
 $A$ finitely generated $\Lambda$-module $\implies \exists \Lambda^n \to A$ onto $\Lambda$-homomorphism, $n \geq 1$.\\
 $\Lambda$ finitely generated $R$-module $\implies \exists R^m \to \Lambda$ onto $R$-homomorphism, $m \geq 1$.\\
 $\implies \exists \xymatrix{R^{mn} \ar[r]^\pi & A}$ onto $R$-homomorphism.\\
-$\implies \xymatrix{\Hom_R(A,B) \ar[r]^\nu & \Hom_R(R^{mn},B)} \simeq B^{mn}$\\
-\\
+$\implies \xymatrix{\Hom_R(A,B) \ar[r]^\nu & \Hom_R(R^{mn},B)} \simeq B^{mn}$.\\
 \begin{exer}
 \begin{enumerate}
-\item[(i)] $\nu$ 1-1
+\item[(i)] $\nu$ 1-1.
 \item[(ii)] $\Hom_R(R,B) \simeq B$ as $R$-modules ($f \mapsto f(1)$).
 \item[(iii)] $\Hom_R(X \oplus Y, B) \simeq \Hom_R(X,B) \oplus \Hom_R(Y,B)$ as $R$-modules.
 \end{enumerate}
 \end{exer}
 
-Induction: $\Hom_R(R^{mn},B) \simeq B^{mn}$ as $R$-modules\\
+Induction: $\Hom_R(R^{mn},B) \simeq B^{mn}$ as $R$-modules.\\
 $B^{mn}$ finitely generated $R$-module + $R$ noetherian $\implies \Hom_R(A,B)$ finitely generated $R$-module.
 
-\item[(b)] $\End_R(A) = \Hom_R(A,A)$ is finitely genrated $R$-module by (a). $R$-algebra structure is given by $r \mapsto r\cdot 1_A$
+(b) $\End_R(A) = \Hom_R(A,A)$ is finitely genrated $R$-module by
+(a). The $R$-algebra structure is given by $r \mapsto r\cdot 1_A$. 
 
-\item[(c)] $\Lambda$ finitely genrated $R$-module $\implies l_R(\Lambda) < \infty$.\\
+(c) $\Lambda$ finitely genrated $R$-module $\implies l_R(\Lambda) < \infty$.\\
 $\implies \Lambda$ artinian (and noetherian) $R$-module. Every left ideal in $\Lambda$ is an $R$-submodule\\
 $\implies \Lambda$ is left-artinian.
-\end{enumerate}
 \end{proof}
-\end{prop}
+
 
 %page 66
 
 \section{Categories and functors} 
 \begin{defin}
-A \underline{category} $\mathcal{C}$ consist of a collection of \underline{objects}, $\Obj\mathcal{C}$, and for each pair $(A,B)$ in $\mathcal{C}$ a set of morphisms $\Hom_\mathcal{C}(A,B)$ (can be $\emptyset$), write $f:A\to B$ for $f \in \Hom_\mathcal{C}(A,B)$, and \underline{composition of morphisms} 
+A \emph{category} $\mathcal{C}$ consist of a collection of \emph{objects}, $\Obj\mathcal{C}$, and for each pair $(A,B)$ in $\mathcal{C}$ a set of morphisms $\Hom_\mathcal{C}(A,B)$ (can be $\emptyset$), write $f\colon A\to B$ for $f \in \Hom_\mathcal{C}(A,B)$, and \emph{composition of morphisms} 
 \[\xymatrix@R-1pc{
 \Hom_\mathcal{C}(B,C) \times \Hom_\mathcal{C}(A, B) \ar[r] & \Hom_\mathcal{C}(A, C)\\
 (g,f) \ar@{|->}[r]& gf
@@ -282,11 +296,11 @@ $\Vec(k)$ = vectorspaces over $k$ = $\Mod(k)$.
 \end{exam}
 
 \begin{defin}
-$\mathcal{C}$ a category $A,B$ objects in $\mathcal{C}$. A morphism $f:A\to B$ in $\mathcal{C}$ is an isomorphism in $\mathcal{C}$ if $\exists$ a morphism $g:B\to A$ such that\\
+$\mathcal{C}$ a category $A,B$ objects in $\mathcal{C}$. A morphism $f\colon A\to B$ in $\mathcal{C}$ is an isomorphism in $\mathcal{C}$ if $\exists$ a morphism $g\colon B\to A$ such that\\
 \centerline{$gf = 1_A$ and $fg=1_B$.}
 \end{defin}
 \begin{note}
-$\Lambda$ a ring, $f:A\to B$ a $\Lambda$-homomorphism.\\
+$\Lambda$ a ring, $f\colon A\to B$ a $\Lambda$-homomorphism.\\
 \begin{tabular}{cl}
 $f$ isomorphism & $\stackrel{\mathclap{\normalfont\mbox{def}}}{\iff} f$ is bijective\\
 & $\iff f$ is an isomorphism in $\Mod\Lambda$. 
@@ -296,8 +310,8 @@ $f$ isomorphism & $\stackrel{\mathclap{\normalfont\mbox{def}}}{\iff} f$ is bijec
 %page 67
 
 \begin{defin}
-$\mathcal{C}$ a category. A category $\mathcal{D}$ is a \underline{subcategory} of $\mathcal{C}$ if $\Obj\mathcal{D} \subseteq \Obj\mathcal{C}$ and $\Hom_\mathcal{D}(A,B) \subseteq \Hom_\mathcal{C}(A,B)$ for all $A,B \in \mathcal{D}$, and the composition in $\mathcal{D}$ is the restriction of the composition in $\mathcal{C}$.\\
-$\mathcal{D}$ is a \underline{full subcategory} of $\mathcal{C}$ if $\Hom_\mathcal{D}(A,B) = \Hom_\mathcal{C}(A,B)$ for $A,B \in \mathcal{D}$.
+$\mathcal{C}$ a category. A category $\mathcal{D}$ is a \emph{subcategory} of $\mathcal{C}$ if $\Obj\mathcal{D} \subseteq \Obj\mathcal{C}$ and $\Hom_\mathcal{D}(A,B) \subseteq \Hom_\mathcal{C}(A,B)$ for all $A,B \in \mathcal{D}$, and the composition in $\mathcal{D}$ is the restriction of the composition in $\mathcal{C}$.\\
+$\mathcal{D}$ is a \emph{full subcategory} of $\mathcal{C}$ if $\Hom_\mathcal{D}(A,B) = \Hom_\mathcal{C}(A,B)$ for $A,B \in \mathcal{D}$.
 \end{defin}
 \begin{note}
 Full subcategory - enough to describe the objects in the subcategory.
@@ -306,9 +320,9 @@ Full subcategory - enough to describe the objects in the subcategory.
 \begin{exam}
 \begin{enumerate}
 \item $\Lambda$ not commutative: $\Mod \Lambda$ is a subcategory of $\Mod\mathbb{Z}$ which is not full: \[\Hom_\Lambda(\Lambda, \Lambda) \subsetneq \Hom_\mathbb{Z}(\Lambda, \Lambda)\]
-Choose $z \not\in Z(\Lambda)$, $f: \Lambda \to \Lambda$ by $f(\lambda) = z\cdot \lambda$. Then $f \in \Hom_\mathbb{Z}(\Lambda, \Lambda)$, but $f \not\in \Hom_\Lambda(\Lambda,\Lambda)$ 
+Choose $z \not\in Z(\Lambda)$, $f\colon  \Lambda \to \Lambda$ by $f(\lambda) = z\cdot \lambda$. Then $f \in \Hom_\mathbb{Z}(\Lambda, \Lambda)$, but $f \not\in \Hom_\Lambda(\Lambda,\Lambda)$ 
 
-\item $\Lambda$ a ring $I \subseteq \Lambda$ an ideal, $\pi : \Lambda \to \Lambda/I$ natural.\\
+\item $\Lambda$ a ring $I \subseteq \Lambda$ an ideal, $\pi \colon  \Lambda \to \Lambda/I$ natural.\\
 Any $\Lambda/I$-module $M$ is also a $\Lambda$-module via $\lambda \cdot m \stackrel{\mathclap{\normalfont\mbox{def}}}{=} \pi(\lambda)m$
 \begin{exer}
 $\Mod \Lambda/I \subseteq \Mod \Lambda$ is a full subcategory.\\ ($\Lambda/I$ infinite representation type $\implies \Lambda$ infinite representation type.)
@@ -322,14 +336,14 @@ $\add M = $ &all direct summands in a finite number of coppies of $M$\\&($X \in 
 \end{exam}
 
 \begin{defin}
-A (covariant) \underline{functor} $F: \mathcal{C} \to \mathcal{D}$ associates to each object $C$ in $\mathcal{C}$ an object $F(C)$ in $\mathcal{D}$, and to each morphsim $f:A\to B$ in $\mathcal{C}$ a morphism $F(f):F(A)\to F(B)$ in $\mathcal{D}$ such that
+A (covariant) \emph{functor} $F\colon  \mathcal{C} \to \mathcal{D}$ associates to each object $C$ in $\mathcal{C}$ an object $F(C)$ in $\mathcal{D}$, and to each morphsim $f\colon A\to B$ in $\mathcal{C}$ a morphism $F(f)\colon F(A)\to F(B)$ in $\mathcal{D}$ such that
 \begin{enumerate}
 \item[(i)] $F(gf) = F(g)F(f)$ for all composable morphisms in $\mathcal{C}$
 \item[(ii)] $F(1_A) = 1_{F(A)}$ $\forall A \in \Obj \mathcal{C}$
 \end{enumerate}
-$F$ \underline{contravariant} functor:
+$F$ \emph{contravariant} functor:
 \begin{enumerate}
-\item[] $\xymatrix{f:A\to B \ar@{~>}[r] & F(f): F(B) \to F(A)}$
+\item[] $\xymatrix{f\colon A\to B \ar@{~>}[r] & F(f)\colon  F(B) \to F(A)}$
 \item[(i)] $F(gf) = F(f)F(g)$ for all composable morphisms in $\mathcal{C}$
 \item[(ii)] $F(1_A) = 1_{F(A)}$ $\forall A \in \Obj \mathcal{C}$
 \end{enumerate}
@@ -342,11 +356,11 @@ $F$ \underline{contravariant} functor:
 \item[]
 \item $\Lambda = k\G/\langle\rho \rangle$, $J^t \subseteq \langle \rho \rangle \subseteq J^2$, $\G_0 = \{ 1, 2, \cdots, n \}$
 \[\xymatrix@R-2pc{
-F: \mod\Lambda \ar[r] & \Rep(\G, \rho)\\
+F\colon  \mod\Lambda \ar[r] & \Rep(\G, \rho)\\
 M \ar@{|->}[r] & F(M) = (V,f)\\
 & V(i) = \overline{e}_iM\\
-& \alpha: i \to j \in \G_1\\
-& f_\alpha : V(i)= \overline{e}_iM \ar[r]^{\overline{\alpha} \cdot -} & \overline{e}_j M= V(j)\\
+& \alpha\colon  i \to j \in \G_1\\
+& f_\alpha \colon  V(i)= \overline{e}_iM \ar[r]^{\overline{\alpha} \cdot -} & \overline{e}_j M= V(j)\\
 & \overline{e}_i m \ar@{|->}[r] & \overline{\alpha}\cdot\overline{e}_i m
 }\]
 \[\xymatrix{
@@ -354,31 +368,31 @@ M \ar[d]^h="h" & F(M)=(V,f) \ar[d]^{F(h)}="F(h)" \ar@{|->}"h";"F(h)" & V(i) =  \
 M' & F(M') = (V', f') & V'(i) = \overline{e}_i M'
 }\]
 
-\item $\mathcal{C}$ a category, $id_\mathcal{C}: \mathcal{C} \to \mathcal{C}$\\
+\item $\mathcal{C}$ a category, $id_\mathcal{C}\colon  \mathcal{C} \to \mathcal{C}$\\
 $id_\mathcal{C}(C) = C$, $\forall C \in \Obj(\mathcal{C})$\\
-$f:A \to B$ in $\mathcal{C}$\\
-$id_\mathcal{C}(f) = f: id_\mathcal{C}(A) = A \to B = id_\mathcal{C}(B)$\\
+$f\colon A \to B$ in $\mathcal{C}$\\
+$id_\mathcal{C}(f) = f\colon  id_\mathcal{C}(A) = A \to B = id_\mathcal{C}(B)$\\
 $id_\mathcal{C} =$ identity functor.
 
 \item $A \in \Mod \Lambda$\\
-$F = \Hom_\Lambda(A, -): \Mod\Lambda \to Ab$\\
+$F = \Hom_\Lambda(A, -)\colon  \Mod\Lambda \to Ab$\\
 $F(B) =  \Hom_\Lambda(A, B)$\\
-$f: B \to C$, $F(f): \vcenter{\xymatrix@R-1pc{
+$f\colon  B \to C$, $F(f)\colon  \vcenter{\xymatrix@R-1pc{
 F(B) \ar@{}[d]|-*[@]{=} & F(C) \ar@{}[d]|-*[@]{=}\\
 \Hom_\Lambda(A,B) \ar@{}[d]|-*[@]{\ni} \ar[r] & \Hom_\Lambda(A, C)\\
-g: A\to B \ar@{|->}[r] & F(g) = f\cdot g
+g\colon  A\to B \ar@{|->}[r] & F(g) = f\cdot g
 }}$
 
 \item $\G$ a quiver, $\Obj(\G) = \G_0$\\
 morphsims $i\to j$ = all paths from $i$ to $j$.\\
-$\xymatrix{F: \G \to \mod k = \vec k \ar@{~>}[r]&}$ representations of $\G$ over $k$
+$\xymatrix{F\colon  \G \to \mod k = \vec k \ar@{~>}[r]&}$ representations of $\G$ over $k$
 \end{enumerate}
 \end{exam}
 
 %page 69
 
 \begin{defin}
-$\mathcal{C}$ a category, $R$ a commutative ring. $\mathcal{C}$ is \underline{preadditive} ($R$-category) if $\Hom_\mathcal{C}(A,B)$ is an abelian group ($R$-module) for all objects $A$ and $B$ in $\mathcal{C}$, and the composition \[ \varphi: \Hom_\mathcal{C}(B,C) \times \Hom_\mathcal{C}(A,B) \to \Hom_\mathcal{C}(A,C) \] is bilinear ($R$-bilinear) for all $A,B$ and $C$ in $\mathcal{C}$, i.e
+$\mathcal{C}$ a category, $R$ a commutative ring. $\mathcal{C}$ is \emph{preadditive} ($R$-category) if $\Hom_\mathcal{C}(A,B)$ is an abelian group ($R$-module) for all objects $A$ and $B$ in $\mathcal{C}$, and the composition \[ \varphi\colon  \Hom_\mathcal{C}(B,C) \times \Hom_\mathcal{C}(A,B) \to \Hom_\mathcal{C}(A,C) \] is bilinear ($R$-bilinear) for all $A,B$ and $C$ in $\mathcal{C}$, i.e
 \begin{equation*}
 \begin{split}
 \varphi(g_1 + g_2, f) &= \varphi(g_1,f) + \varphi(g_2, f)\\
@@ -389,7 +403,7 @@ $\mathcal{C}$ a category, $R$ a commutative ring. $\mathcal{C}$ is \underline{pr
 \end{defin}
 
 \begin{defin}
-$\mathcal{C}, \mathcal{D}$ preadditve $(R-)$categories. A functor $F: \mathcal{C} \to \mathcal{D}$ is an \underline{additive} $(R-)$functor if the map \[ F: \Hom_\mathcal{C}(A, B) \to \Hom_\mathcal{D}(F(A), F(B))\] is a homomorphism of groups ($R$-modules) for all objects $A$ and $B$ in $\mathcal{C}$.
+$\mathcal{C}, \mathcal{D}$ preadditve $(R-)$categories. A functor $F\colon  \mathcal{C} \to \mathcal{D}$ is an \emph{additive} $(R-)$functor if the map \[ F\colon  \Hom_\mathcal{C}(A, B) \to \Hom_\mathcal{D}(F(A), F(B))\] is a homomorphism of groups ($R$-modules) for all objects $A$ and $B$ in $\mathcal{C}$.
 \end{defin}
 
 \begin{exam}
@@ -400,11 +414,11 @@ $\mathcal{C}, \mathcal{D}$ preadditve $(R-)$categories. A functor $F: \mathcal{C
 $\Rep(\G, \rho)$ -& preadditive $k$-kategory\\
 $\mod\Lambda$ -& ---------------''---------------
 \end{tabular}\\
-$F:\mod\Lambda \to \Rep(\G, \rho)$ additive $k$-functor\\
-$H:\Rep(\G, \rho) \to \mod\Lambda$ additive $k$-functor\\
+$F\colon \mod\Lambda \to \Rep(\G, \rho)$ additive $k$-functor\\
+$H\colon \Rep(\G, \rho) \to \mod\Lambda$ additive $k$-functor\\
 $(V, f) \mapsto H(V,f) = V(1) \oplus V(2) \oplus \cdots \oplus V(n)$\\
 $\overline{e}_i \cdot (v_1, v_2, \cdots, v_n) = (0,0, \cdots, 0, v_i, 0, \cdots, 0)$\\
-$\alpha: i \to j \in \G$\\
+$\alpha\colon  i \to j \in \G$\\
 $\xymatrix@C-2pc@R-2pc{
  && *+[r]{j\text{-th coord}}\ar@/_1pc/[dl]\\
 \overline{\alpha}\cdot (v_1, v_2, \cdots, v_n) = (0,0, \cdots, 0,& f_\alpha(v_i), & 0, \cdots, 0)
@@ -414,7 +428,7 @@ $\xymatrix@C-2pc@R-2pc{
 (V', f')
 }}
 \;\;\;\;
-H(h) = h_1 \oplus h_2 \oplus \cdots \oplus h_n: \vcenter{\xymatrix{
+H(h) = h_1 \oplus h_2 \oplus \cdots \oplus h_n\colon  \vcenter{\xymatrix{
 H(V,f) \ar@{}[r]|-*[@]{=} \ar[d] & V(1) \oplus V(2) \oplus \cdots \oplus V(n)\\
 H(V',f') \ar@{}[r]|-*[@]{=} & V'(1) \oplus V'(2) \oplus \cdots \oplus V'(n)\\
 }}\]
@@ -423,29 +437,29 @@ H(V',f') \ar@{}[r]|-*[@]{=} & V'(1) \oplus V'(2) \oplus \cdots \oplus V'(n)\\
 
 \item $\mathcal{C}$ preadditive, $\mathcal{D} \subseteq \mathcal{C}$ a full subcategory $\implies \mathcal{D}$ preadditive.\\
 In particular, $\Lambda$ artin $R$-algebra $\Mod \Lambda$, $\mod \Lambda$, $\add M$ are $R$-categories\\
-$\Hom_\Lambda(A, -): \mod\Lambda \to \mod R$ additve $R$-functor.
+$\Hom_\Lambda(A, -)\colon  \mod\Lambda \to \mod R$ additve $R$-functor.
 
 \end{enumerate}
 \end{exam}
 
 \subsection{Morphisms of Functors}
 \begin{defin}
-$\mathcal{C}, \mathcal{D}$ categories, $F, G : \mathcal{C} \to \mathcal{D}$ functors. Then $\varphi : F \to G$ is a \underline{morphism of functors} if for each object $C \in \mathcal{C}$ there is a morphism $\varphi_C : F(C) \to G(C)$ in $\mathcal{D}$ such that for each morphism $f : A \to B$ in $\mathcal{C}$ there is a commutative diagram.
+$\mathcal{C}, \mathcal{D}$ categories, $F, G \colon  \mathcal{C} \to \mathcal{D}$ functors. Then $\varphi \colon  F \to G$ is a \emph{morphism of functors} if for each object $C \in \mathcal{C}$ there is a morphism $\varphi_C \colon  F(C) \to G(C)$ in $\mathcal{D}$ such that for each morphism $f \colon  A \to B$ in $\mathcal{C}$ there is a commutative diagram.
 \[\xymatrix{
 F(A) \ar[r]^{\varphi_A} \ar[d]_{F(f)} & G(A) \ar[d]^{G(f)}\\
 F(B) \ar[r]^{\varphi_B} & G(B)
 }\]
-$\varphi: F \to G$ is an \underline{isomorphism} if $\varphi_C : F(C) \to G(C)$ is an isomorphism in $\mathcal{D}$ for all $C$ in $\mathcal{C}$.
+$\varphi\colon  F \to G$ is an \emph{isomorphism} if $\varphi_C \colon  F(C) \to G(C)$ is an isomorphism in $\mathcal{D}$ for all $C$ in $\mathcal{C}$.
 \end{defin}
 
 \begin{exam}
 \begin{enumerate}
 \item[]
 \item[(1)] $k$ field.
-\[(-)^* = \Hom_k(-, k) : \Vec(k) \to \Vec(k)\]
-Define $\varphi: id_{\Vec(k)} \to (-)^* = \Hom_k(\Hom_k(-,k), k)$ by
+\[(-)^* = \Hom_k(-, k) \colon  \Vec(k) \to \Vec(k)\]
+Define $\varphi\colon  id_{\Vec(k)} \to (-)^* = \Hom_k(\Hom_k(-,k), k)$ by
 \[\xymatrix@R-1pc{
-\varphi_V : id_{\Vec(k)}(V) \ar@{}[r]|-*[@]{=} & V \ar[r] & V^{**}\ar@{}[r]|-*[@]{=} & \Hom_k(\Hom_k(V,k), k)\\
+\varphi_V \colon  id_{\Vec(k)}(V) \ar@{}[r]|-*[@]{=} & V \ar[r] & V^{**}\ar@{}[r]|-*[@]{=} & \Hom_k(\Hom_k(V,k), k)\\
                             & v \ar@{}[u]|-*[@]{\in} \ar@{|->}[r] & \varphi_V(v)
 }\]
 where $\varphi_V(v)(f) = f(v)$, $f \in \Hom_k(V,k)$. $\varphi$ is a morphism of functors.
@@ -457,41 +471,41 @@ where $\varphi_V(v)(f) = f(v)$, $f \in \Hom_k(V,k)$. $\varphi$ is a morphism of 
 \end{enumerate}
 \end{exer}
 
-\item[(2)] $\G$ a quiver, $F, G: \G \to \vec(k)$ functors. What is a morphsim $\varphi : F \to G$?
+\item[(2)] $\G$ a quiver, $F, G\colon  \G \to \vec(k)$ functors. What is a morphsim $\varphi \colon  F \to G$?
 \end{enumerate}
 \end{exam}
 
 %page 71
 
 \begin{defin}
-$\mathcal{C}, \mathcal{D}$ ($R$-)categories, $F: \mathcal{C} \to \mathcal{D}$ an ($R$-)functor. Then $F: \mathcal{C} \to \mathcal{D}$ is an \underline{equivalence} of ($R$-)categories if $\exists$ an ($R$-)functor $H: \mathcal{D} \to \mathcal{C}$ such that $HF \simeq id_\mathcal{C}$ and $FH \simeq id_\mathcal{D}$.
+$\mathcal{C}, \mathcal{D}$ ($R$-)categories, $F\colon  \mathcal{C} \to \mathcal{D}$ an ($R$-)functor. Then $F\colon  \mathcal{C} \to \mathcal{D}$ is an \emph{equivalence} of ($R$-)categories if $\exists$ an ($R$-)functor $H\colon  \mathcal{D} \to \mathcal{C}$ such that $HF \simeq id_\mathcal{C}$ and $FH \simeq id_\mathcal{D}$.
 \end{defin}
 
 \begin{defin}
-$F: \mathcal{C} \to \mathcal{D}$ ($R$-)functor
+$F\colon  \mathcal{C} \to \mathcal{D}$ ($R$-)functor
 \begin{enumerate}
-\item[(a)] $F$ is \underline{full} if $F: \Hom_\mathcal{C}(A,B) \to \Hom_\mathcal{D}(F(A), F(B))$ is onto for all $A, B$ in $\mathcal{C}$
-\item[(b)] $F$ is \underline{faithfull} if $F: \Hom_\mathcal{C}(A,B) \to \Hom_\mathcal{D}(F(A), F(B))$ is 1-1 for all $A, B$ in $\mathcal{C}$
-\item[(c)] $F$ is \underline{dense} if for each object $D$ in $\mathcal{D}$, $\exists$ an object $C$ in $\mathcal{C}$ such that $F(C) \simeq D$.
+\item[(a)] $F$ is \emph{full} if $F\colon  \Hom_\mathcal{C}(A,B) \to \Hom_\mathcal{D}(F(A), F(B))$ is onto for all $A, B$ in $\mathcal{C}$
+\item[(b)] $F$ is \emph{faithfull} if $F\colon  \Hom_\mathcal{C}(A,B) \to \Hom_\mathcal{D}(F(A), F(B))$ is 1-1 for all $A, B$ in $\mathcal{C}$
+\item[(c)] $F$ is \emph{dense} if for each object $D$ in $\mathcal{D}$, $\exists$ an object $C$ in $\mathcal{C}$ such that $F(C) \simeq D$.
 \end{enumerate}
 \end{defin}
 
 \underline{It can be shown:}
 \begin{prop}
-$\mathcal{C}, \mathcal{D}$ ($R$-)categories, $F: \mathcal{C} \to \mathcal{D}$ ($R$-)functor.\\
+$\mathcal{C}, \mathcal{D}$ ($R$-)categories, $F\colon  \mathcal{C} \to \mathcal{D}$ ($R$-)functor.\\
 $F$ is an equivalance $\iff$ $F$ is full, faithfull and dense
 \end{prop}
 
 \begin{thm}
-$(\G, \rho)$ quiver with relations, $J^t \subseteq \langle \rho \rangle \subseteq J^2$, $\Lambda = k\G/\langle \rho \rangle$. The functors $F: \mod \Lambda \to \Rep(\G, \rho)$ and $H: \Rep(\G, \rho) \to \mod \Lambda$ are inverse equivalenses of $k$-categories. $HF \simeq id_{\mod \Lambda}$ and $FH \simeq id_{\Rep(\G, \rho)}$
+$(\G, \rho)$ quiver with relations, $J^t \subseteq \langle \rho \rangle \subseteq J^2$, $\Lambda = k\G/\langle \rho \rangle$. The functors $F\colon  \mod \Lambda \to \Rep(\G, \rho)$ and $H\colon  \Rep(\G, \rho) \to \mod \Lambda$ are inverse equivalenses of $k$-categories. $HF \simeq id_{\mod \Lambda}$ and $FH \simeq id_{\Rep(\G, \rho)}$
 
 \begin{proof}
 \begin{enumerate}
 \item[]
 \item \underline{$F$ equivalense:}
 \begin{enumerate}
-\item[(i)] \underline{$F$ faithfull:} $h:A \to B \in \mod \Lambda$, $\G_0 = \{ 1, 2, \cdots , n \}$\\
-$F(h) = \{ h_i \}_{i=1}^n$, where $h_i = h_{\mid \overline{e}_iA} : \overline{e}_iA \to \overline{e}_iB$\\
+\item[(i)] \underline{$F$ faithfull:} $h\colon A \to B \in \mod \Lambda$, $\G_0 = \{ 1, 2, \cdots , n \}$\\
+$F(h) = \{ h_i \}_{i=1}^n$, where $h_i = h_{\mid \overline{e}_iA} \colon  \overline{e}_iA \to \overline{e}_iB$\\
 $F(h) = 0 \implies \xymatrix@C-1pc@R-1pc{
 h_i \ar@{}[r]|-*[@]{=} & 0, \forall i = 1, 2, \cdots, n\\
 h_{\mid \overline{e}_iA} \ar@{}[r]|-*[@]{=} \ar@{}[u]|-*[@]{=} & 0, \forall i = 1, 2, \cdots, n\\
@@ -508,7 +522,7 @@ $\implies h=0 \implies F$ is faithfull.
 \underline{Check:} Given $(V, f) \in \Rep(\G, \rho)$ then \[ FH(V, f) \simeq (V, f),\;\;\; (V, f) \in \Rep(\G, \rho) \]
 $\implies F$ dense.
 
-\item[(iii)] \underline{$F$ full:} Given $\{ h_i \}: F(A) \to F(B)$ i.e. $h_i : \overline{e}_i A \to \overline{e}_iB$ for $i = 1, 2, \cdots , n$.\\
+\item[(iii)] \underline{$F$ full:} Given $\{ h_i \}\colon  F(A) \to F(B)$ i.e. $h_i \colon  \overline{e}_i A \to \overline{e}_iB$ for $i = 1, 2, \cdots , n$.\\
 \underline{Know:} $\xymatrix{
 *+[l]{\tilde{h} = h_1 \oplus \cdots \oplus h_n : A} \ar@{}[d]|-*[@]{=} \ar[r] & B\\
  \overline{e}_1A \oplus \cdots \oplus \overline{e}_nA \ar[r] & \overline{e}_1B \oplus \cdots \oplus \overline{e}_nB
@@ -524,7 +538,7 @@ Exercise.
 \end{thm}
 
 \underline{Can be shown:}\\
-$F: \Mod R \to \Mod S$ equivalence
+$F\colon  \Mod R \to \Mod S$ equivalence
 \begin{enumerate}
 \item[$\cdot$] $M$ (semi)simple, finitely generated, artinian, noetherian, indecomposable\\
 $\iff F(M)$ is

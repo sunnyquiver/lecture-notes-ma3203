@@ -2,7 +2,7 @@
 \section{Projective Modules}
 Let $\Lambda$ be a ring, and let $P$ be a $\Lambda$-module. 
 \begin{defin}
-$P$ is \emph{projective} if for every epimorphism $g: B \to C$ and every  $\Lambda$-homomorphism $f: P \to C$ there exists a homomorphism $h: P \to B$ such that
+$P$ is \emph{projective} if for every epimorphism $g\colon  B \to C$ and every  $\Lambda$-homomorphism $f\colon  P \to C$ there exists a homomorphism $h\colon  P \to B$ such that
 $$\xymatrix{
 & P\ar[d]^f \ar@{-->}[ld]_{\exists h}\\
 B \ar[r]^g & C
@@ -17,7 +17,7 @@ B \ar[r]^g & C \ar[r] & 0\\
 b\ar@{|->}[rr] && f(1)
 }$$
 We have that $f(\lambda) = f(\lambda \cdot 1) = \lambda f(1)$. Choose
-$b \in B$ such that $g(b) = f(1)$, and define $h: \Lambda \to B$ by  $h(\lambda) = \lambda b$.\\
+$b \in B$ such that $g(b) = f(1)$, and define $h\colon  \Lambda \to B$ by  $h(\lambda) = \lambda b$.\\
 \underline{Check:} $h$ is $\Lambda$-homomorphism.\\
 Then $gh(\lambda) = g(\lambda b) = \lambda g(b) = \lambda f(1) =
 f(\lambda \cdot 1) = f(\lambda)$, for all $\lambda \in \Lambda$.\\
@@ -35,7 +35,7 @@ $F$ free $\Lambda$-module $\implies F$ is projective ($F \simeq \bigoplus_{i \in
   $\underline{\Rightarrow :}$ Assume that $P$ is projective. Any
   module $M$ is a factor of a free module $F_M : $ Let $F_M =
   \bigoplus_{m \in M} \Lambda_m$, where ${_\Lambda\Lambda_m} =
-  {_\Lambda\Lambda}$ and define $\varphi: F_M \to M$ by
+  {_\Lambda\Lambda}$ and define $\varphi\colon  F_M \to M$ by
   $\varphi((\lambda_m)_{m \in M}) = \sum_{m \in M} \lambda_m m$\\ 
 %page 50
 \underline{Check:} $\varphi$ $\Lambda$-homomorphism, $\varphi$ onto,
@@ -44,19 +44,19 @@ $m = \varphi((\lambda_x)_{x \in M})$, where $\lambda_x = \begin{cases}
 1, & x = m
 \end{cases}$ 
 
-Let $g: F \to P$ be onto with $F$ free.
+Let $g\colon  F \to P$ be onto with $F$ free.
 $$\xymatrix{
 & P\ar@{-->}[ld]_h \ar@{=}[d]^{1_P} & \text{projective} \ar[l]\\
 F \ar[r]^g & P \ar[r] & 0\\
 b\ar@{|->}[rr] && f(1)
 }$$
-Since $P$ is projective, there exists $h: P \to F$ such that $gh = 1_P$.\\
+Since $P$ is projective, there exists $h\colon  P \to F$ such that $gh = 1_P$.\\
 
 \underline{Claim:} $F \simeq \Im h \oplus \Ker g$ (Excersice).\\
 
 $\underline{\Leftarrow :}$ Assume that $F \xrightarrow{\sim}^\varphi P
-\oplus Q$ where $F$ is a free $\Lambda$-module. Suppose that $g: B \to
-C$ is onto and let $f: P \to C$.
+\oplus Q$ where $F$ is a free $\Lambda$-module. Suppose that $g\colon  B \to
+C$ is onto and let $f\colon  P \to C$.
 $$
 \xymatrix{
 (p, q)\ar@{|->}[r] & p\\
@@ -66,7 +66,7 @@ B \ar[r]^g & C \ar[r] & 0
 $$
 where $\pi(p,q) = p$ and $\nu(p) = (p,0)$.  Then we have that
 $\pi\nu(p) = \pi(p,0) = p$, hence $\nu\pi = 1_P$.\\
-$F$ projective $\implies \exists h': F \to B$ such that 
+$F$ projective $\implies \exists h'\colon  F \to B$ such that 
 \begin{equation*}
 \begin{split}
 gh' &= f\pi \varphi \;\;\;\;\;\;\; \mid \cdot \varphi^{-1}\\
@@ -91,7 +91,7 @@ $\Lambda$-modules.
 
 %page 51
 \begin{defin}
-  Let $f: P \to M$ be a $\Lambda$-homomorphism. Then $f:P\to M$ is a
+  Let $f\colon  P \to M$ be a $\Lambda$-homomorphism. Then $f\colon P\to M$ is a
   \emph{projective cover of $M$} if P is projectiv and $f$ is an
   essential epimorphism.
 \end{defin}
@@ -143,8 +143,8 @@ $\implies f$ is projective cover.
 \label{thm:proj-cov_unique}
 $\Lambda$ left artinian, $A$ finitely generated $\Lambda$-module.
 \begin{enumerate}
-\item[(a)] There exists a projective cover $f:P\to A$ ($P$ finitely generated)
-\item[(b)] Let $f_1 : P_1 \to A$ and $f_2 : P_2 \to A$ be two projective covers of $A$. Then there exists an isomorphism $g : P_1 \to P_2$ such that $f_1 = f_2g$
+\item[(a)] There exists a projective cover $f\colon P\to A$ ($P$ finitely generated)
+\item[(b)] Let $f_1 \colon  P_1 \to A$ and $f_2 \colon  P_2 \to A$ be two projective covers of $A$. Then there exists an isomorphism $g \colon  P_1 \to P_2$ such that $f_1 = f_2g$
 \[
 \xymatrix@R-2pc{
 P_1\ar@{}[dd]_g|-*[@]{\xrightarrow{\sim}} \ar[dr]^{f_1}\\
@@ -155,8 +155,8 @@ P_2 \ar[ur]_{f_2}
 \end{enumerate}
 
 \begin{proof}
-(a) $A$ finitely generated $\implies \exists$ onto $f: \Lambda^n \to A$, $n < \infty$.\\
-Choose $P$ projective, $f : P \to A$ an onto $\Lambda$-homomorphism
+(a) $A$ finitely generated $\implies \exists$ onto $f\colon  \Lambda^n \to A$, $n < \infty$.\\
+Choose $P$ projective, $f \colon  P \to A$ an onto $\Lambda$-homomorphism
 with $l(P)$ minimal. \underline{WTS:} $f$ projective cover. Consider 
 \[
 \xymatrix{
@@ -169,7 +169,7 @@ Assume that $\Ker f \not\subseteq \mathfrak{r}P$. Then $\pi_P(\Ker f)
 $ P/\mathfrak{r}P = \pi_P(\Ker f) \oplus X $
 for some $X \subseteq P/\mathfrak{r}P$. 
 %page 52
-Define $e : P/\mathfrak{r}P \to P/\mathfrak{r}P$ by letting $e(v, w) =
+Define $e \colon  P/\mathfrak{r}P \to P/\mathfrak{r}P$ by letting $e(v, w) =
 (0, w)$ for $(v, w) \in P/\mathfrak{r}P = \pi_P(\Ker f) \oplus X$. 
 
 \[
@@ -206,7 +206,7 @@ P/\mathfrak{r}P \ar[r]^e & P/\mathfrak{r}P \ar[r]^{\overline{f}} & A/\mathfrak{r
 *+[F_\}]{\overline{f}e \pi_P} \ar@{}[r]|-*[@]{=} & *+[F_\}]{\pi_A f \tilde{e}}\\
 \text{onto} \ar@{}[r]|-*[@]{\implies} & \text{onto} 
 }\]
-\underline{Seen:} $\pi_A$ essential epimorphism $\implies f \tilde{e}$ onto $\implies f \mid_{\Im \tilde{e}}: \Im \tilde{e} \to A$ onto.\\
+\underline{Seen:} $\pi_A$ essential epimorphism $\implies f \tilde{e}$ onto $\implies f \mid_{\Im \tilde{e}}\colon  \Im \tilde{e} \to A$ onto.\\
 
 $$\xymatrix@R-1pc@C-1pc{
 \text{We have } & P \ar@{}[r]|-*[@]{=} & \Im \tilde{e} \ar@{}[r]|-*[@]{\oplus} & \Ker \tilde{e}\\
@@ -218,13 +218,13 @@ $\implies l(\Im \tilde{e}) < l(P)$, Contradiction!\\
 $\implies \Ker f \subseteq \mathfrak{r}P$ and $f$ is an essential epimorphsim.\\
 $\implies f$ is projective cover.
 
-(b) Let $f_i : P_i \to A$ be a projective cover of $A$ for $i = 1, 2$.
+(b) Let $f_i \colon  P_i \to A$ be a projective cover of $A$ for $i = 1, 2$.
 \[\xymatrix{
 P_1 \ar[dr]^{f_1} \ar[d]_{\exists g}&& 0\\
 P_2 \ar[r]^{f_2} \ar[d]_{\exists h} & A \ar[r]\ar[dr]\ar[ur] & 0\\
 P_1 \ar[ur]_{f_1} && 0
 }\]
-$P_1$ projective and $f$ epimorphic $\implies \exists g: P_1 \to P_2$ such that $f_1 = f_2g$.\\
+$P_1$ projective and $f$ epimorphic $\implies \exists g\colon  P_1 \to P_2$ such that $f_1 = f_2g$.\\
 $f_2$ essential epimorphism and $f_1$ epimorphic $\implies g$ epimorphic.\\
 Similarly $h$ is epimorphic.\\
 $\implies l(P_2) \leq l(P_1) \leq l(P_1) \implies l(P_1) = l(P_2) \implies g$ isomorphism. 
@@ -233,11 +233,11 @@ $\implies l(P_2) \leq l(P_1) \leq l(P_1) \implies l(P_1) = l(P_2) \implies g$ is
 
 \begin{prop}
 \label{prop:proj_covers->top_iso}
-$\Lambda$ left artinian, $f: P \to A$ an epimorphism, $A$ finitely generated, $P$ projective $\Lambda$-module.
+$\Lambda$ left artinian, $f\colon  P \to A$ an epimorphism, $A$ finitely generated, $P$ projective $\Lambda$-module.
 \begin{enumerate}
-\item[(a)] $f:P \to A$ projective cover $\iff \overline{f}: P/\mathfrak{r}P \to A/\mathfrak{r}A$ isomorphic.
-\item[(b)] $\{ f_i : P_i \to A_i \}_{i=1}^m$, $f_i$ onto, $P_i$ projective\\
-The map $f: P_1 \oplus P_2 \oplus \cdots \oplus P_m \to A_1 \oplus A_2 \oplus \cdots \oplus A_m $ defined by $(p_1, p_2, \cdots , p_m) \mapsto (f_1(p_1), f_2(p_2), \cdots , f_m(p_m))$ is a projectiv cover $\iff$ each $f_i:P_i \to A$ is a projectiv cover.
+\item[(a)] $f\colon P \to A$ projective cover $\iff \overline{f}\colon  P/\mathfrak{r}P \to A/\mathfrak{r}A$ isomorphic.
+\item[(b)] $\{ f_i \colon  P_i \to A_i \}_{i=1}^m$, $f_i$ onto, $P_i$ projective\\
+The map $f\colon  P_1 \oplus P_2 \oplus \cdots \oplus P_m \to A_1 \oplus A_2 \oplus \cdots \oplus A_m $ defined by $(p_1, p_2, \cdots , p_m) \mapsto (f_1(p_1), f_2(p_2), \cdots , f_m(p_m))$ is a projectiv cover $\iff$ each $f_i\colon P_i \to A$ is a projectiv cover.
 \end{enumerate}
 
 \begin{proof}
