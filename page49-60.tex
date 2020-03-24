@@ -2,7 +2,7 @@
 \section{Projective Modules}
 Let $\Lambda$ be a ring, and let $P$ be a $\Lambda$-module. 
 \begin{defin}
-$P$ is \emph{projective} if for every epimorphism $g\colon  B \to C$ and every  $\Lambda$-homomorphism $f\colon  P \to C$ there exists a homomorphism $h\colon  P \to B$ such that
+$P$ is \emph{projective}\index{module!projective} if for every epimorphism $g\colon  B \to C$ and every  $\Lambda$-homomorphism $f\colon  P \to C$ there exists a homomorphism $h\colon  P \to B$ such that
 $$\xymatrix{
 & P\ar[d]^f \ar@{-->}[ld]_{\exists h}\\
 B \ar[r]^g & C
@@ -92,7 +92,7 @@ $\Lambda$-modules.
 %page 51
 \begin{defin}
   Let $f\colon  P \to M$ be a $\Lambda$-homomorphism. Then $f\colon P\to M$ is a
-  \emph{projective cover of $M$} if P is projectiv and $f$ is an
+  \emph{projective cover of $M$}\index{homomorphism!projective cover} if P is projectiv and $f$ is an
   essential epimorphism.
 \end{defin}
 
@@ -471,8 +471,8 @@ $\implies \overline{f}$ isomorphism $\implies f: P \to M$ projective cover.
 \begin{exam}
 \[\begin{matrix}
 \vcenter{\xymatrix@C-1pc@R-1pc{
-& &k \ar[dl]_{\begin{psmallmatrix} 1\\1 \end{psmallmatrix}} \ar[dr]^0&\\
-M: & k^2 \ar[dr]_{\begin{psmallmatrix} 1 & -1 \end{psmallmatrix}} && k\ar[dl]^1\\
+& &k \ar[dl]_{\left(\begin{smallmatrix} 1\\1 \end{smallmatrix}\right)} \ar[dr]^0&\\
+M: & k^2 \ar[dr]_{\left(\begin{smallmatrix} 1 & -1 \end{smallmatrix}\right)} && k\ar[dl]^1\\
 && k &
 }}
 
@@ -480,7 +480,7 @@ M: & k^2 \ar[dr]_{\begin{psmallmatrix} 1 & -1 \end{psmallmatrix}} && k\ar[dl]^1\
 
 \vcenter{\xymatrix@C-1pc@R-1pc{
 & &0 \ar[dl] \ar[dr]&\\
-\mathfrak{r}M: & k{\begin{psmallmatrix} 1 \\ 1 \end{psmallmatrix}} \ar[dr] && 0\ar[dl]\\
+\mathfrak{r}M: & k{\left(\begin{smallmatrix} 1 \\ 1 \end{smallmatrix}\right)} \ar[dr] && 0\ar[dl]\\
 && k &
 }}
 
@@ -488,7 +488,7 @@ M: & k^2 \ar[dr]_{\begin{psmallmatrix} 1 & -1 \end{psmallmatrix}} && k\ar[dl]^1\
 
 \vcenter{\xymatrix@C-1pc@R-1pc{
 & &k \ar[dl]_0 \ar[dr]&\\
-M / \mathfrak{r}M: & k^2 / k{\begin{psmallmatrix} 1 \\ 1 \end{psmallmatrix}}  \ar[dr] && k\ar[dl]\\
+M / \mathfrak{r}M: & k^2 / k{\left(\begin{smallmatrix} 1 \\ 1 \end{smallmatrix}\right)}  \ar[dr] && k\ar[dl]\\
 && 0 &
 }}
 
@@ -517,7 +517,7 @@ M / \mathfrak{r}M: & k^2 / k{\begin{psmallmatrix} 1 \\ 1 \end{psmallmatrix}}  \a
 \POS+(30, 2)
 \xymatrix"D2"{
 &0 \ar[dr] \ar[dl]&\\
-\frac{k^2}{k{\begin{psmallmatrix} 1 \\ 1 \end{psmallmatrix}}}\ar[dr]&&0\ar[dl]\\
+\frac{k^2}{k{\left(\begin{smallmatrix} 1 \\ 1 \end{smallmatrix}\right)}}\ar[dr]&&0\ar[dl]\\
 &0&
 }
 
@@ -534,8 +534,8 @@ M / \mathfrak{r}M: & k^2 / k{\begin{psmallmatrix} 1 \\ 1 \end{psmallmatrix}}  \a
 }
 \POS(-30, 0)
 \xymatrix"M"{
-&k \ar[dl]_{\begin{psmallmatrix} 1\\1 \end{psmallmatrix}} \ar[dr]^0 \ar@{.>}["D1"]^1&\\
-k^2 \ar[dr]_{\begin{psmallmatrix} 1 & -1 \end{psmallmatrix}} \ar@{.>}@/_4pc/["D2"]_{\text{proj.}} && k\ar[dl]^1 \ar@{.>}@/_4pc/["D3"]_1 \ar["D1"ll]\\
+&k \ar[dl]_{\left(\begin{smallmatrix} 1\\1 \end{smallmatrix}\right)} \ar[dr]^0 \ar@{.>}["D1"]^1&\\
+k^2 \ar[dr]_{\left(\begin{smallmatrix} 1 & -1 \end{smallmatrix}\right)} \ar@{.>}@/_4pc/["D2"]_{\text{proj.}} && k\ar[dl]^1 \ar@{.>}@/_4pc/["D3"]_1 \ar["D1"ll]\\
 & k &
 }
 
@@ -553,7 +553,7 @@ k\ar[dr]_1&&k\ar[dl]^1\\
 \POS+(33, 0)
 \xymatrix"U2"{
 &0 \ar[dr] \ar[dl]&\\
-\ar@{.>}@/^1pc/["M"]_{\begin{psmallmatrix} 1\\0\end{psmallmatrix}} \ar@{.>}["D2"]^{\begin{psmallmatrix} 1\\0\end{psmallmatrix}} k \ar[dr]_1&&0\ar[dl]\\
+\ar@{.>}@/^1pc/["M"]_{\left(\begin{smallmatrix} 1\\0\end{smallmatrix}\right)} \ar@{.>}["D2"]^{\left(\begin{smallmatrix} 1\\0\end{smallmatrix}\right)} k \ar[dr]_1&&0\ar[dl]\\
 &k\ar["D2"uu]&
 }
 
@@ -576,7 +576,7 @@ k\ar[dr]_1&&k\ar[dl]^1\\
 %page 57
 
 \begin{defin}
-$\Lambda$ is a \emph{local ring} if the non-invertible elements in
+$\Lambda$ is a \emph{local ring}\index{local ring} if the non-invertible elements in
 $\Lambda$ is an ideal. 
 \end{defin}
 
@@ -717,9 +717,9 @@ $\Lambda \simeq \End_\Lambda(\Lambda)^{op}$.
 \begin{defin}
 Let $e$ and $\{e_1,e_2,\ldots,e_n\}$ be idempotents in a ring $\Lambda$. 
 \begin{enumerate}[\rm(i)]
-\item The set $\{e_1,e_2,\ldots,e_n\}$ is called \emph{orthogonal} if
+\item The set $\{e_1,e_2,\ldots,e_n\}$ is called \emph{orthogonal}\index{orthogonal}\index{idempotent!orthogonal} if
   $e_ie_j = 0$, for all $i \neq j$. 
-\item The idempotent $e$ is called \emph{primitive} if  $e\neq 0$ and
+\item The idempotent $e$ is called \emph{primitive}\index{idempotent!primitive} if  $e\neq 0$ and
   $e$ is not a sum of non-zero orthogonal idempotents. 
 \end{enumerate}
 
