@@ -6,8 +6,8 @@ $\mathcal{C}$, $\mathcal{D}$ ($R$-)categories, $F\colon \mathcal{C} \to
 \mathcal{D}$ a contravariant ($R$-)functor. Then $F$ is a
 \emph{duality}\index{functor!duality}\index{category!duality} if there exists a contravariant ($R$-)functor $H:
 \mathcal{D} \to \mathcal{C}$ such that \\ 
-\centerline{$HF \simeq id_\mathcal{C}$ and $FH \simeq
-  id_\mathcal{D}$}\\ 
+\centerline{$HF \simeq \id_\mathcal{C}$ and $FH \simeq
+  \id_\mathcal{D}$}\\ 
 as ($R$-)functors.
 \end{defin}
 
@@ -31,7 +31,7 @@ where $\varphi_V(v)(f) = f(v)$ for $f \in D(V)$.
 (a) $\varphi_V$ is 1-1 ($\Rightarrow \varphi_V$ is an isomorphism for
 $\dim_k V < \infty$). 
 
-(b) $\varphi = \{ \varphi_V \}_{V \in \vec(k)} \colon id_{\vec(k)} \to DD$ is an isomorphism of functors.
+(b) $\varphi = \{ \varphi_V \}_{V \in \vec(k)} \colon \id_{\vec(k)} \to DD$ is an isomorphism of functors.
 \end{exer}
 
 \underline{Check:}
@@ -149,7 +149,7 @@ $\G^{\op}: \xymatrix{
 
 \begin{minipage}{0.5\textwidth}
 \[\Lambda\overline{e}_1 : \xymatrix{
-k \ar@/^0.5pc/[r]^{\begin{psmallmatrix} 1\\0 \end{psmallmatrix}} \ar@/_0.5pc/[r]_{\begin{psmallmatrix} 0\\1 \end{psmallmatrix}} & k^2 \ar[r]^{\begin{psmallmatrix} 1 & 0 \end{psmallmatrix}} & k
+k \ar@/^0.5pc/[r]^{\left(\begin{smallmatrix} 1\\0 \end{smallmatrix}\right)} \ar@/_0.5pc/[r]_{\left(\begin{smallmatrix} 0\\1 \end{smallmatrix}\right)} & k^2 \ar[r]^{\left(\begin{smallmatrix} 1 & 0 \end{smallmatrix}\right)} & k
 }\]
 \vspace*{4pt}
 \[
@@ -165,9 +165,9 @@ k \ar@/^0.5pc/[r]^{\begin{psmallmatrix} 1\\0 \end{psmallmatrix}} \ar@/_0.5pc/[r]
 \rule[-50pt]{1.5pt}{100pt}
 \begin{minipage}{0.5\textwidth}
 \[D(\Lambda\overline{e}_1) : \xymatrix{
-k \ar@{<-}@/^0.5pc/[r]^{\begin{psmallmatrix} 1 & 0 \end{psmallmatrix}}
-\ar@{<-}@/_0.5pc/[r]_{\begin{psmallmatrix} 0 &1 \end{psmallmatrix}} &
-k^2 \ar@{<-}[r]^{\begin{psmallmatrix} 1 \\ 0 \end{psmallmatrix}} & k 
+k \ar@{<-}@/^0.5pc/[r]^{\left(\begin{smallmatrix} 1 & 0 \end{smallmatrix}\right)}
+\ar@{<-}@/_0.5pc/[r]_{\left(\begin{smallmatrix} 0 &1 \end{smallmatrix}\right)} &
+k^2 \ar@{<-}[r]^{\left(\begin{smallmatrix} 1 \\ 0 \end{smallmatrix}\right)} & k 
 }\]
 \vspace*{4pt}
 \[
@@ -193,8 +193,8 @@ $\iff \xymatrix@C-1pc{0 \ar[r] & D(C) \ar[r]^{D(g)} & D(B) \ar[r]^{D(f)} & D(A) 
 \item $l(A) = l(D(A))$ for $A \in \mod\Lambda$. 
 \end{enumerate}
 \end{lem}
-\begin[Sketch of proof]{proof}
-(a) Use that $\eta$ splits as a sequence of $k$-modules, that $D$ preserves $k$-dimesnion and that $D^2 \simeq id_{\mod\Lambda}$.
+\begin{proof}[Sketch of proof]
+(a) Use that $\eta$ splits as a sequence of $k$-modules, that $D$ preserves $k$-dimesnion and that $D^2 \simeq \id_{\mod\Lambda}$.
 
 (b) Use (a).
 
@@ -281,9 +281,7 @@ $\implies$ we can restrict ourselves to finitely generated modules. Use dual arg
     \hspace{1cm}\\ 
               &&&        &&&      & \ar@/^1pc/[ul] \text{injective $\Lambda$-module}}\]
 
-\end{enumerate}
 \end{proof}
-\end{prop}
 
 % page 87
 
@@ -572,8 +570,8 @@ $\G: \xymatrix{
 }$, $\rho = \{ \gamma\beta \}$, $k$ a field, $\Lambda = k\G/\langle \rho \rangle$
 \[
 \Lambda \overline{e}_1: \vcenter{\xymatrix{
-k \ar@/_0.5pc/[d]_-{\begin{psmallmatrix} 1\\0 \end{psmallmatrix}} \ar@/^0.5pc/[d]^-{\begin{psmallmatrix} 0\\1 \end{psmallmatrix}}\\
-k^2 \ar[d]^-{\begin{psmallmatrix} 0 & 1 \end{psmallmatrix}}\\
+k \ar@/_0.5pc/[d]_-{\left(\begin{smallmatrix} 1\\0 \end{smallmatrix}\right)} \ar@/^0.5pc/[d]^-{\left(\begin{smallmatrix} 0\\1 \end{smallmatrix}\right)}\\
+k^2 \ar[d]^-{\left(\begin{smallmatrix} 0 & 1 \end{smallmatrix}\right)}\\
 k
 }}
 \hspace{2cm}
